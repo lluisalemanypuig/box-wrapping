@@ -7,5 +7,5 @@ This repository contains 3 different approaches to solve the Box Wrapping Proble
 
 This is part of the course project [Combinatorial Problem solving](http://www.cs.upc.edu/~erodri/webpage/cps/cps.html).
 The complete specification of the problem (input and output format, exact goals, ..) can be found
-[in this pdf file](https://github.com/lluisalemanypuig/box-wrapping/blob/master/statement.pdf), downloaded
+[in this pdf file](https://github.com/lluisalemanypuig/box-wrapping/blob/master/statement.pdf), which can be downloaded
 from the course's webpage.
