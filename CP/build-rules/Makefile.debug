@@ -1,0 +1,35 @@
+
+#############
+# DEBUG FLAGS
+
+DEB_FLAGS = -O0 $(GEN_FLAGS)
+
+###############
+# DEBUG OBJECTS
+
+DEB_WRAPPING_BOXES = $(DEB_BIN_DIR)/main.o
+
+###########
+# DIRECTORY
+
+debugdirectory: $(DEB_BIN_DIR)
+$(DEB_BIN_DIR):
+	mkdir -p $(DEB_BIN_DIR)
+
+######################
+# EXECUTABLE
+
+$(DEB_BIN_DIR)/$(EXE_NAME): $(DEB_WRAPPING_BOXES)
+	g++ $(DEB_FLAGS) -o $@ $(DEB_WRAPPING_BOXES) $(LIBS)
+
+$(DEB_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+############
+
+debugclean:
+	rm -f $(DEB_WRAPPING_BOXES)
+
+debugdistclean:
+	make -f $(RULES_DIR)/Makefile debugclean
+	rm -f $(DEB_BIN_DIR)/$(EXE_NAME)
