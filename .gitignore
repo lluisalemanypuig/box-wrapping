@@ -1,0 +1,3 @@
+CP/bin-debug/*
+CP/bin-release/*
+*.o
