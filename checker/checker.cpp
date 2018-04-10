@@ -67,7 +67,7 @@ void check_solution() {
 				 << br << " does not match any in input data" << endl;
 			
 			if (dx <= 0 or dy <= 0) {
-				return false;
+				exit(1);
 			}
 		}
 		
