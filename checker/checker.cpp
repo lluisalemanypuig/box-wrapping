@@ -17,6 +17,7 @@ typedef vector<VPI>    VVPI;
 
 const PI UNDEF(P(0, 0), 0);
 const int MAX_COLORS = 256;
+const int empty_cell = 0;	// colour of empty cell
 
 ifstream in_ins, in_sol;
 int  width, length;
@@ -114,15 +115,13 @@ void check_solution() {
 	cout << endl;
 }
 
-string int2string(int x) {
-	ostringstream out;
-	out << x;
-	return out.str();
-}
-
 string set_color(int c) {
 	assert(0 <= c and c < MAX_COLORS);
-	return string("\033[m\033[48;5;" + int2string(c) + "m").c_str();
+	return string("\033[m\033[48;5;" + std::to_string(c) + "m");
+}
+
+string empty_cell_color() {
+	return string("\033[m\033[48;5;" + std::to_string(empty_cell) + "m");
 }
 
 string unset_color() {
@@ -148,7 +147,7 @@ void display_solution() {
 		cout << "     ";
 		for (int j = 0; j < width; ++j) {
 			if (board[i][j] == UNDEF) {
-				cout << ' ';
+				cout << empty_cell_color() << '.' << unset_color();
 			}
 			else {
 				int c = color[board[i][j].first];
@@ -159,7 +158,7 @@ void display_solution() {
 		cout << endl;
 	}
 	cout << endl << endl;
-
+	
 	cout << "Input data:" << endl << endl;
 	for (auto p : color) {
 		cout << set_color(p.second) << p.first.first << "x"
@@ -172,7 +171,7 @@ void read_instance(char* file) {
 	in_ins.open(file);
 	in_ins >> width;
 	int n, x, y;
-	int c = 1;
+	int c = empty_cell + 1;
 	while (in_ins >> n >> x >> y) {
 		order[P(x, y)] = n;
 		color[P(x, y)] = c;
