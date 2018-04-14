@@ -1,0 +1,8074 @@
+Input data read:
+    W=3
+    sum lengths=   4
+    sum max sides= 4
+    box 1: 2 2
+    box 2: 1 1
+    box 3: 1 1
+
+In 0.005834 seconds
+--------------------
+1)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 3 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 2
+--------------------
+2)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | 3 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+3)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | . 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+4)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | . . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+5)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | . . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+6)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | . . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+7)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 2 
+1 | 1 1 . 
+2 | . . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+8)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 2 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 2
+--------------------
+9)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | 3 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+10)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | . 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+11)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | . . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+12)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | . . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+13)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | . . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+14)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 2 
+2 | . . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+15)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | 2 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+16)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | 2 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+17)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 2 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+18)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 2 . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+19)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 2 . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+20)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 2 . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+21)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 2 . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+22)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | . 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+23)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | . 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+24)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 3 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+25)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 2 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+26)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 2 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+27)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 2 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+28)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 2 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+29)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | . . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+30)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | . . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+31)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 3 . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+32)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 3 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+33)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 2 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+34)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 2 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+35)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 2 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+36)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | . . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+37)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | . . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+38)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 3 . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+39)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 3 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+40)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 3 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+41)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | 2 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+42)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | 2 . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+43)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | . . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+44)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | . . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+45)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 3 . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+46)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 3 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+47)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 3 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+48)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | 3 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+49)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | . 2 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+50)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 3 
+1 | 1 1 . 
+2 | . . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+51)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 3 
+2 | . . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+52)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | 3 . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+53)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . 3 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+54)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . 3 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+55)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | 3 . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+56)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 1 1 . 
+2 | . . . 
+3 | . 3 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+57)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | 3 1 1 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 2
+--------------------
+58)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | 3 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+59)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | . 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+60)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | . . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+61)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+62)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+63)
+  | W
+L | 0 1 2 
+----------
+0 | 2 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+64)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | 2 1 1 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 2
+--------------------
+65)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | 3 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+66)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | . 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+67)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | . . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+68)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | . . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+69)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | . . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+70)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 2 1 1 
+2 | . . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+71)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | 2 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+72)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | 2 . . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+73)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 2 3 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+74)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 2 . 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+75)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 2 . . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+76)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 2 . . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+77)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 2 . . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+78)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | . 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+79)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | . 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+80)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 3 2 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+81)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 2 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+82)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 2 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+83)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 2 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+84)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 2 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+85)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | . . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+86)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | . . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+87)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 3 . 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+88)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 3 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 3
+--------------------
+89)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 2 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+90)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 2 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+91)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 2 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+92)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+93)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | . . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+94)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 3 . . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+95)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 3 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+96)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 3 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+97)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 2 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+98)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 2 . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+99)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+100)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | . . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+101)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 3 . . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+102)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 3 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+103)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 3 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+104)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 3 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+105)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . 2 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+106)
+  | W
+L | 0 1 2 
+----------
+0 | 3 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+107)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | 3 1 1 
+2 | . . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+108)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | 3 . . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+109)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . 3 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Roll length used: 4
+--------------------
+110)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . 3 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+111)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | 3 . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+112)
+  | W
+L | 0 1 2 
+----------
+0 | . 1 1 
+1 | . 1 1 
+2 | . . . 
+3 | . 3 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+113)
+  | W
+L | 0 1 2 
+----------
+0 | 2 3 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+114)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . 3 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+115)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+116)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+117)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+118)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+119)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+120)
+  | W
+L | 0 1 2 
+----------
+0 | 3 2 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+121)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 3 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+122)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+123)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+124)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+125)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+126)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+127)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . 2 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+128)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 2 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+129)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+130)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+131)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+132)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+133)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+134)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+135)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+136)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+137)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 2 
+2 | 1 1 3 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 3
+--------------------
+138)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+139)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+140)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 2 
+2 | 1 1 . 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+141)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+142)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+143)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+144)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 3 
+2 | 1 1 2 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 3
+--------------------
+145)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+146)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+147)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 2 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+148)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+149)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+150)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+151)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+152)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+153)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 2 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+154)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 2 . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+155)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+156)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+157)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+158)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+159)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+160)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 3 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+161)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 2 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+162)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+163)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+164)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+165)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 3 
+2 | 1 1 . 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+166)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 3 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+167)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | 3 . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+168)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 1 1 . 
+2 | 1 1 . 
+3 | . 3 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+169)
+  | W
+L | 0 1 2 
+----------
+0 | 2 3 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+170)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . 3 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+171)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 3 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+172)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 1 1 
+2 | 3 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+173)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+174)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+175)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+176)
+  | W
+L | 0 1 2 
+----------
+0 | 3 2 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+177)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 3 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+178)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 3 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+179)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 1 1 
+2 | 3 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+180)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+181)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+182)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+183)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . 2 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+184)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 2 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+185)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 3 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+186)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 1 1 
+2 | 3 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+187)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 1 1 
+2 | . 1 1 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+188)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+189)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+190)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 2 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+191)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 2 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+192)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 2 1 1 
+2 | . 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+193)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 1 1 
+2 | 3 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 3
+--------------------
+194)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 1 1 
+2 | . 1 1 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+195)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 1 1 
+2 | . 1 1 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+196)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 1 1 
+2 | . 1 1 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+197)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 1 1 
+2 | 2 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 3
+--------------------
+198)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 1 1 
+2 | 2 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 3
+--------------------
+199)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 1 1 
+2 | 2 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 3
+--------------------
+200)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 1 1 
+2 | 2 1 1 
+3 | . . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 3
+--------------------
+201)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 2 1 1 
+3 | 3 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+202)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 2 1 1 
+3 | . 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+203)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 2 1 1 
+3 | . . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+204)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+205)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+206)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 1 1 
+2 | . 1 1 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+207)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 1 1 
+2 | . 1 1 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+208)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 3 1 1 
+3 | 2 . . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+209)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 2 3 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+210)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 2 . 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+211)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+212)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+213)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+214)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 1 1 
+2 | . 1 1 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+215)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 3 1 1 
+3 | . 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+216)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 3 2 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+217)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 2 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+218)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+219)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+220)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 1 1 
+2 | . 1 1 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+221)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 1 1 
+2 | . 1 1 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+222)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | 3 1 1 
+3 | . . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+223)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | 3 . 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+224)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 1 1 
+2 | . 1 1 
+3 | . 3 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (1,1)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (3,1)
+        bottom right (3,1)
+
+    Roll length used: 4
+--------------------
+225)
+  | W
+L | 0 1 2 
+----------
+0 | 2 3 . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+226)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . 3 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+227)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 3 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+228)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 3 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+229)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . 3 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+230)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . . 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+231)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+232)
+  | W
+L | 0 1 2 
+----------
+0 | 3 2 . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+233)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 3 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+234)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 3 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+235)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 3 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+236)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . 3 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+237)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . . 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+238)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+239)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . 2 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+240)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 2 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+241)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 3 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+242)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 3 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+243)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . 3 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+244)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . . 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+245)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+246)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 2 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+247)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 2 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+248)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 2 . . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+249)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 3 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+250)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . 3 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+251)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . . 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+252)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . . 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+253)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 2 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+254)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 2 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+255)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 2 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+256)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 2 . 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+257)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 3 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+258)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 . 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+259)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 . 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+260)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . 2 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+261)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . 2 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+262)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . 2 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+263)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . 2 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+264)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 2 
+2 | 1 1 . 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+265)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 2 
+2 | 1 1 3 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+266)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 2 
+2 | 1 1 . 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+267)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . . 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+268)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . . 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+269)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . . 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+270)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . . 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+271)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 . 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+272)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 3 
+2 | 1 1 2 
+3 | 1 1 . 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+273)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . . 
+2 | 1 1 2 
+3 | 1 1 3 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Box 3 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Roll length used: 4
+--------------------
+274)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+275)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+276)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . . 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+277)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . . 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+278)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 . 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+279)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 3 
+2 | 1 1 . 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+280)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . . 
+2 | 1 1 3 
+3 | 1 1 2 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 2 is at 
+        top left     (3,2)
+        bottom right (3,2)
+
+    Box 3 is at 
+        top left     (2,2)
+        bottom right (2,2)
+
+    Roll length used: 4
+--------------------
+281)
+  | W
+L | 0 1 2 
+----------
+0 | 2 3 . 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+282)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . 3 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+283)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | 3 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+284)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . 3 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+285)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . 3 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+286)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . . 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+287)
+  | W
+L | 0 1 2 
+----------
+0 | 2 . . 
+1 | . . . 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+288)
+  | W
+L | 0 1 2 
+----------
+0 | 3 2 . 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+289)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 3 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+290)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | 3 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+291)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . 3 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+292)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . 3 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+293)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . . 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+294)
+  | W
+L | 0 1 2 
+----------
+0 | . 2 . 
+1 | . . . 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+295)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . 2 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+296)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 2 
+1 | . . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+297)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | 3 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+298)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . 3 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+299)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . 3 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+300)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . . 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+301)
+  | W
+L | 0 1 2 
+----------
+0 | . . 2 
+1 | . . . 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+302)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | 2 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+303)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | 2 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+304)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | 2 . . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+305)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 3 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+306)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . 3 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+307)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . . 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+308)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 2 . . 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+309)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . 2 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+310)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . 2 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+311)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . 2 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+312)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 2 . 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+313)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 3 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+314)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 . 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+315)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 2 . 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+316)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . 2 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+317)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . 2 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+318)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . 2 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+319)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . 2 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+320)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 2 
+2 | . 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+321)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 2 
+2 | 3 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
+322)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 2 
+2 | . 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+323)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . . 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+324)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . . 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+325)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . . 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+326)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . . 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+327)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 . 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+328)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 3 
+2 | 2 1 1 
+3 | . 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+329)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . . 
+2 | 2 1 1 
+3 | 3 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Roll length used: 4
+--------------------
+330)
+  | W
+L | 0 1 2 
+----------
+0 | 3 . . 
+1 | . . . 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Roll length used: 4
+--------------------
+331)
+  | W
+L | 0 1 2 
+----------
+0 | . 3 . 
+1 | . . . 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Roll length used: 4
+--------------------
+332)
+  | W
+L | 0 1 2 
+----------
+0 | . . 3 
+1 | . . . 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Roll length used: 4
+--------------------
+333)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | 3 . . 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 4
+--------------------
+334)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . 3 . 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,1)
+        bottom right (1,1)
+
+    Roll length used: 4
+--------------------
+335)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . 3 
+2 | . 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (1,2)
+        bottom right (1,2)
+
+    Roll length used: 4
+--------------------
+336)
+  | W
+L | 0 1 2 
+----------
+0 | . . . 
+1 | . . . 
+2 | 3 1 1 
+3 | 2 1 1 
+
+Boxes' corners:      (l,w)
+    Box 1 is at 
+        top left     (2,1)
+        bottom right (3,2)
+
+    Box 2 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 4
+--------------------
