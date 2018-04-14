@@ -31,7 +31,6 @@ ostream& operator << (ostream& out, const P& p) {
 	return out;
 }
 
-
 bool within_bounds(P point) {
 	return
 		0 <= point.first  and point.first  < width and
@@ -59,11 +58,17 @@ void check_solution() {
 		
 		int dx = br.first  - tl.first + 1;
 		int dy = br.second - tl.second + 1;
-		P rec = (dx <= dy ? P(dx, dy) : P(dy, dx));
-		if (order.count(rec) == 0) {
+		
+		P rec (dx, dy);
+		P recR(dy, dx);
+		
+		if (order.count(rec) == 0 and order.count(recR) == 0) {
 			ok = false;
-			cout << "Error: rectangle of dimensions " << rec.first << "x"
-				 << rec.second << " defined by positions top-left corner "
+			cout << "Error: no rectangle of dimensions "
+				 << "(" << rec.first << "x" << rec.second << ")"
+				 << " or of dimensions "
+				 << "(" << recR.first << "x" << recR.second << ")"
+				 << " defined by positions top-left corner "
 				 << tl << " and bottom-right corner "
 				 << br << " does not match any in input data" << endl;
 			
@@ -72,11 +77,21 @@ void check_solution() {
 			}
 		}
 		
-		--order[rec];
-		if (order[rec] < 0) {
+		P rectangle;
+		if (order.count(rec) > 0) {
+			--order[rec];
+			rectangle = rec;
+		}
+		else if (order.count(recR) > 0) {
+			--order[recR];
+			rectangle = recR;
+		}
+		
+		if (order[rectangle] < 0) {
 			ok = false;
 			cout << "Error: too many rectangles of dimensions "
-				 << rec.first << "x" << rec.second << endl;
+				 << "(" << rectangle.first << "x" << rectangle.second << ")"
+				 << endl;
 		}
 		
 		for (int i = tl.second; i <= br.second; ++i) {
@@ -90,11 +105,11 @@ void check_solution() {
 						 << "x" << board[i][j].first.second << " at position "
 						 << P(j, i) << endl;
 				}
-				if (order[rec] < 0) {
-					board[i][j] = PI(rec, 0);
+				if (order[rectangle] < 0) {
+					board[i][j] = PI(rectangle, 0);
 				}
 				else {
-					board[i][j] = PI(rec, order[rec]);
+					board[i][j] = PI(rectangle, order[rectangle]);
 				}
 			}
 		}
