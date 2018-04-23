@@ -1,5 +1,17 @@
 #!/bin/bash
 
+CHECKER_PROG=checker
+
+if [ -f $CHECKER_PROG ];
+then
+	echo -e "\e[1;32mChecker program exists. Proceed to check.\e[0m"
+else
+	echo -e "\e[1;31mChecker program does not exist\e[0m"
+	echo -e "\e[1;31mModify variable 'CHECKER_PROG'\e[0m"
+	exit
+fi
+
+
 PROJ_DIR=..
 
 IN_DIR=$1	# input directory
@@ -24,12 +36,12 @@ do
 		echo -e "\e[1;33m     Input file:\e[0m \e[3;34m$IN_DIR/$INFILE\e[0m"
 		echo -e "\e[1;33m    Output file:\e[0m \e[3;34m$OUT_DIR/$OUTFILE\e[0m"
 		
-		./checker $IN_DIR/$INFILE $OUT_DIR/$OUTFILE
+		./$CHECKER_PROG $IN_DIR/$INFILE $OUT_DIR/$OUTFILE
 		if [ $? -eq 1 ];
 		then
-			echo -e "\e[1;33m----------------------\e[0m"
-			echo -e "\e[1;33m  **  CHECK FAILED  **\e[0m"
-			echo -e "\e[1;33m----------------------\e[0m"
+			echo -e "\e[1;31m----------------------\e[0m"
+			echo -e "\e[1;31m  **  CHECK FAILED  **\e[0m"
+			echo -e "\e[1;31m----------------------\e[0m"
 			exit
 		fi
 	fi
