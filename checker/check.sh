@@ -1,34 +1,40 @@
 #!/bin/bash
 
 PROJ_DIR=..
-INPUTS_DIR=$PROJ_DIR/inputs
-MATERIAL_IN=$INPUTS_DIR/material
-CUSTOM_IN=$INPUTS_DIR/custom
 
-OUTPUTS_DIR=$PROJ_DIR/outputs
-HAND_MADE_OUT=$OUTPUTS_DIR/hand-made
+IN_DIR=$1	# input directory
+OUT_DIR=$2	# where to find the corresponding outputs
+SUFFIX=$3	# an optional suffix, like .CP, .LP, .SAT,
 
-OUTPUTS=(
-	$HAND_MADE_OUT/bwp_3_1_1.out $HAND_MADE_OUT/bwp_3_2_1.out $HAND_MADE_OUT/bwp_3_3_2.out \
-	$HAND_MADE_OUT/bwp_3_4_1.out $HAND_MADE_OUT/bwp_3_6_1.out $HAND_MADE_OUT/bwp_3_1_2.out \
-	$HAND_MADE_OUT/bwp_3_3_1.out $HAND_MADE_OUT/bwp_3_3_3.out $HAND_MADE_OUT/bwp_3_5_1.out \
-	$HAND_MADE_OUT/bwp_3_7_1.out
-)
-INPUTS=(
-	$CUSTOM_IN/bwp_3_1_1.in $MATERIAL_IN/bwp_3_2_1.in $CUSTOM_IN/bwp_3_3_2.in \
-	$MATERIAL_IN/bwp_3_4_1.in $MATERIAL_IN/bwp_3_6_1.in $CUSTOM_IN/bwp_3_1_2.in \
-	$MATERIAL_IN/bwp_3_3_1.in $CUSTOM_IN/bwp_3_3_3.in $MATERIAL_IN/bwp_3_5_1.in \
-	$MATERIAL_IN/bwp_3_7_1.in
-)
-
-for (( i = 0 ; i < ${#OUTPUTS[@]} ; i=$i+1 ));
+for INFILE in $(ls $IN_DIR);
 do
-	in=${INPUTS[${i}]}
-	out=${OUTPUTS[${i}]}
+	# retrieve input identifier. E.g.: 8_10_11
+	INFILE_LENGTH=${#INFILE}
+	ID=${INFILE:4:($INFILE_LENGTH - 4 - 3)}
 	
-	echo -e "\e[7;34m-----------------------------\e[0m"
-	echo "in: $in, out: $out"
-	./checker $in $out
-	echo " "
-	echo " "
+	# build output file name. Do not forget the suffix!
+	OUTFILE="bwp_"$ID$SUFFIX".out"
+	
+	# if the output file exists (because it may not...)
+	# then run the checker
+	if [ -f $OUT_DIR/$OUTFILE ];
+	then
+		echo -e "\e[1;34m---------------------------------\e[0m"
+		echo -e "\e[1;32mExecuting checker on:\e[0m"
+		echo -e "\e[1;33m     Input file:\e[0m \e[3;34m$IN_DIR/$INFILE\e[0m"
+		echo -e "\e[1;33m    Output file:\e[0m \e[3;34m$OUT_DIR/$OUTFILE\e[0m"
+		
+		./checker $IN_DIR/$INFILE $OUT_DIR/$OUTFILE
+		if [ $? -eq 1 ];
+		then
+			echo -e "\e[1;33m----------------------\e[0m"
+			echo -e "\e[1;33m  **  CHECK FAILED  **\e[0m"
+			echo -e "\e[1;33m----------------------\e[0m"
+			exit
+		fi
+	fi
 done
+
+echo
+echo -e "\e[1;34m-------------------------------------\e[0m"
+echo -e "\e[1;32mAll checks succeded. Congratulations!\e[0m"
