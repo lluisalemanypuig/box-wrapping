@@ -37,23 +37,20 @@ bool within_bounds(P point) {
 		0 <= point.second and point.second < length;
 }
 
-void check_solution() {
-	ok = true;
+bool check_solution() {
 	order0 = order;
 	board = VVPI(length, VPI(width, UNDEF));
 
 	for (auto p : sol) {
 		P tl = p.first;
 		if (not within_bounds(tl)) {
-			ok = false;
 			cout << "Error: position " << tl << " is out of bounds" << endl;
-			exit(1);
+			return false;
 		}
 		P br = p.second;
 		if (not within_bounds(br)) {
-			ok = false;
 			cout << "Error: position " << br << " is out of bounds" << endl;
-			exit(1);
+			return false;
 		}
 		
 		int dx = br.first  - tl.first + 1;
@@ -63,7 +60,6 @@ void check_solution() {
 		P recR(dy, dx);
 		
 		if (order.count(rec) == 0 and order.count(recR) == 0) {
-			ok = false;
 			cout << "Error: no rectangle of dimensions "
 				 << "(" << rec.first << "x" << rec.second << ")"
 				 << " or of dimensions "
@@ -73,7 +69,7 @@ void check_solution() {
 				 << br << " does not match any in input data" << endl;
 			
 			if (dx <= 0 or dy <= 0) {
-				exit(1);
+				return false;
 			}
 		}
 		
@@ -88,22 +84,24 @@ void check_solution() {
 		}
 		
 		if (order[rectangle] < 0) {
-			ok = false;
 			cout << "Error: too many rectangles of dimensions "
 				 << "(" << rectangle.first << "x" << rectangle.second << ")"
 				 << endl;
+			
+			return false;
 		}
 		
 		for (int i = tl.second; i <= br.second; ++i) {
 			for (int j = tl.first; j <= br.first; ++j) {
 				if (board[i][j] != UNDEF) {
-					ok = false;
 					cout << "Error:"
 						 << " rectangle defined by top-left corner " << tl
 						 << " and bottom-right corner " << br << " overlaps"
 						 << " rectangle of dimensions " << board[i][j].first.first
 						 << "x" << board[i][j].first.second << " at position "
 						 << P(j, i) << endl;
+					
+					return false;
 				}
 				if (order[rectangle] < 0) {
 					board[i][j] = PI(rectangle, 0);
@@ -117,17 +115,16 @@ void check_solution() {
 
 	for (auto p : order) {
 		if (p.second > 0) {
-			ok = false;
 			cout << "Error: at least one rectangle of dimensions "
 				 << p.first.first << "x" << p.first.second
 				 << " is missing" << endl;
+			
+			return false;
 		}
 	}
-
-	if (ok) {
-		cout << "OK" << endl;
-	}
-	cout << endl;
+	
+	cout << "OK" << endl;
+	return true;
 }
 
 string set_color(int c) {
@@ -234,7 +231,13 @@ int main(int argc, char** argv) {
 	read_instance(argv[1]);
 	read_solution(argv[2]);
 	
-	check_solution();
+	bool sane = check_solution();
+	if (not sane) {
+		cout << "Solution not sane!" << endl;
+		return 1;
+	}
+	
 	display_solution();
+	return 0;
 }
 
