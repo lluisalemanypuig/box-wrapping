@@ -2,10 +2,12 @@
 
 /// C++ includes
 #include <utility>
+#include <cstdint>
 using namespace std;
 
-typedef size_t length;
-typedef size_t width;
-typedef size_t area;
-typedef pair<size_t, size_t> corner;
-typedef pair<size_t, size_t> cell;
+typedef uint32_t uint32;
+typedef uint32_t length;
+typedef uint32_t width;
+typedef uint32_t area;
+typedef pair<uint32_t, uint32_t> corner;
+typedef pair<uint32_t, uint32_t> cell;

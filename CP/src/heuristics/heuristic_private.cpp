@@ -6,7 +6,7 @@ namespace heur_private {
 	bool call_solver
 	(
 		Options& ops, const gifts& data,
-		size_t stop_at,
+		uint32 stop_at,
 		bool stop_time, double stop_when,
 		bool verbose,
 		wrapped_boxes& BEST, bool& error

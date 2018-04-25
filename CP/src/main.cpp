@@ -260,15 +260,15 @@ int main(int argc, char *argv[]) {
 	bool heuris_rand = false;
 	bool heuris_mix = false;
 	
-	size_t stop_at = -1;
+	uint32 stop_at = -1;
 	bool stop_time = false;
 	double stop_when = 99999.9;
-	size_t n_threads = 1;
+	uint32 n_threads = 1;
 	
 	bool scramble = false;
 	bool seed = false;
 	
-	size_t n_exe_rand = 10;
+	uint32 n_exe_rand = 10;
 	bool heuris_verbose = false;
 	
 	// process arguments

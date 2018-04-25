@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <math.h>
 
+/// Custom includes
+#include "definitions.hpp"
+
 namespace parse {
 	
 	/* In both functions context is a string containing a VERY short
@@ -16,7 +19,7 @@ namespace parse {
 	 * should ideally containg 'parsing the number of threads'.
 	 */
 	
-	void parse_uli(const char *context, const char *str, unsigned long int *v, char *should_exit);
+	void parse_uli(const char *context, const char *str, uint32 *v, char *should_exit);
 	void parse_double(const char *context, const char *str, double *s, char *should_exit);
 	
 }

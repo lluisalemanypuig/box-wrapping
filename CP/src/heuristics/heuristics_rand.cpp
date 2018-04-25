@@ -5,7 +5,7 @@ namespace heuristics {
 	bool heuristic_rand
 	(
 		Options& ops,
-		size_t rand_times, size_t stop_at,
+		uint32 rand_times, uint32 stop_at,
 		bool stop_time, double stop_when,
 		bool verbose,
 		const gifts& input_data,

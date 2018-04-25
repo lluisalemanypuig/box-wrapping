@@ -5,7 +5,7 @@ namespace heuristics {
 	bool heuristic_dec
 	(
 		Options& ops,
-		size_t stop_at,
+		uint32 stop_at,
 		bool stop_time, double stop_when,
 		bool verbose,
 		const gifts& input_data,
