@@ -1,4 +1,11 @@
-CP/bin-debug/*
-CP/bin-release/*
-*.o
-checker/checker
+report/build
+*.aux
+*.bcf
+*.log
+*.xml
+*.gz
+*.toc
+
+*.bbl
+*.blg
+*.pdf
