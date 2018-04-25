@@ -87,15 +87,17 @@ do
 	# execute the exe file
 	if [ "$SOLVER_TEC" == "CP" ]; then
 		
-		./$EXE_FILE 							\
-			-i $INPUT_DIR/$INFILE 				\
-			-o $OUTPUT_DIR/$OUTFILE 			\
-			--heuris-rand 						\
-			--stop-at 3 --stop-when 2 -Nr 2		\
-			>>  logs/$OUT_LOG_FILE				\
-			2>> logs/$ERR_LOG_FILE
-		
 		echo "Executing solver with input file: $INPUT_DIR/$INFILE"
+		
+		begin=$(date +%s%3N)
+		./$EXE_FILE 						\
+			-i $INPUT_DIR/$INFILE 			\
+			-o $OUTPUT_DIR/$OUTFILE 		\
+			--heuris-mix 					\
+			--stop-at 5 --stop-when 2 -Nr 5	\
+			>>  logs/$OUT_LOG_FILE			\
+			2>> logs/$ERR_LOG_FILE
+		end=$(date +%s%3N)
 		
 		# if file with optimal solution exists check optimality
 		if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
@@ -104,7 +106,7 @@ do
 			
 			if [ $opt_length == $sol_length ]; then
 				echo -e "    \e[1;32mOptimal solution reached at length: \e[0m"$opt_length
-			else if [ $opt_length > $sol_length ]; then
+			elif [ $opt_length -gt $sol_length ]; then
 				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
 				echo    "        Optimal: $opt_length"
 				echo    "        $SOLVER_TEC: $sol_length"
@@ -113,8 +115,9 @@ do
 				echo    "        Optimal: $opt_length"
 				echo    "        $SOLVER_TEC: $sol_length"
 			fi
-			
 		fi
+		secs=$(($end - $begin))
+		echo "    In $secs miliseconds."
 		
 	else
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
