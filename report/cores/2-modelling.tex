@@ -1,9 +1,9 @@
 \section{Modelling the problem}
 \label{sec:modelling}
 
-As mentioned in the introduction (see section \ref{sec:introduction}) the mathematical
-model consists of variables and constraints. These constraints relate the variables that
-will have to be assigned a value that satisfies each of the constraints.
+In this section we describe the generic mathematical model used to solve the problem.
+First, the variables (see section \ref{sec:modelling:variables}) and then the 
+constraints (see section \ref{sec:modelling:constraints}).
 
 \subsection{Variables}
 \label{sec:modelling:variables}
@@ -85,7 +85,7 @@ appropriate for the variable selection made.
     
     \item \label{constr:box-rot-span} Depending on the rotation of the box and its top-left
     corner's position, a box occupies certain cells of the roll. In order to speed up the
-    solvers, the constraints for square boxes are different from those for rectangular boxes
+    solvers, the constraints for square boxes are simpler than those for rectangular boxes
     (because there is no need to consider a rotation for square boxes). Furthermore, since
     a box should not be placed where there is no space for it in the roll (see figure
     \ref{fig:box-out-bounds}) these constraints will not be added for these positions.
@@ -98,10 +98,10 @@ appropriate for the variable selection made.
         \label{eq:span-cells:square-boxes}
         \begin{split}
         (R_b = 0) \wedge \left( X_{b,x,y} = 1 \Longrightarrow C_{b, x + i, y + j} = 1 \right),
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b = l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + w_b \le W \wedge y + l_b \le L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b = l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + w_b \le W \wedge y + l_b \le L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
         \end{split}
         \end{flalign}
         
@@ -110,42 +110,69 @@ appropriate for the variable selection made.
         \label{eq:span-cells:rectangular-boxes:0}
         \begin{split}
         (R_b = 0 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + i, y + j} = 1,
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b \neq l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + w_b \le W \wedge y + l_b \le L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + w_b \le W \wedge y + l_b \le L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
         \end{split}
         \end{flalign}
         \begin{flalign}
         \label{eq:span-cells:rectangular-boxes:1}
         \begin{split}
         (R_b = 1 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + j, y + i} = 1,
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b \neq l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + l_b \le W \wedge y + w_b \le L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + l_b \le W \wedge y + w_b \le L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
         \end{split}
         \end{flalign}
         
     \end{itemize}
     
+	The constraints for the square boxes should be read as: for all boxes $b$ that are squares
+	$(w_b = l_b)$, take all cells of the roll $(x,y)$ within the corresponding limits 
+	$1 \le x \le W, 1 \le y \le L$ that are candidates for its top-left corner ``s.t.
+	$(x + w_b \le W \wedge y + l_b \le L)$'' and, for each of these cells, impose that the
+	corresponding cells occupied by $b$ according to its dimensions are occupied by it:
+	$\forall i,j,\; 0 \le i < w_b, 0 \le j < l_b: X_{b,x,y} = 1 \Longrightarrow C_{b, x + i, y + j} = 1$.
+	The constraints for rectangular boxes are read in a similar fashion but adding ``if the
+	box is not/is rotated'' after the ``for all rectangular boxes''.
+
+	\begin{figure}[H]
+	    \centering
+	    \begin{subfigure}{0.45\textwidth}
+	    	\centering
+	    	\includegraphics[scale=0.125]{out-of-bounds-no-rot}
+	    	\centeredcaption{A non-rotated box that would be out of bounds if placed
+	    	in the light-red cell.}
+	    \end{subfigure}
+	    \begin{subfigure}{0.45\textwidth}
+	        \centering
+	    	\includegraphics[scale=0.125]{out-of-bounds-rot}
+	    	\centeredcaption{A rotated box that would be out of bounds if placed
+	    	in the light-red cell.}
+	    \end{subfigure}
+	    \centeredcaption{Two situations in which a box would be out of bounds}
+	    \label{fig:box-out-bounds}
+	\end{figure} 
+    
     \item \label{constr:box-forbid} Forbid the placement of a box in certain cells: it is
     known that, for a given rotation, a box cannot possibly be placed in certain cells of
     the roll because it would end up out of its bounds. This will stop the solvers from
     assigning positive values to these cells, that is, assign a box, in the hope that they
-    find the instance unfeasible as soon as possible. Again, the constraints are different
-    for square boxes from those for rectangular boxes.
+    detect the unfeasibility of an instance as soon as possible. Again, the constraints
+    for square boxes are different from those for rectangular boxes.   
     
     \begin{itemize}
         \item For square boxes:
         \begin{flalign}
         \label{eq:forbid-span-cells:square-boxes}
         \begin{split}
-        X_{b,x,y} = 0,
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b = l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + w_b > W \vee y + l_b > L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        X_{b,x+i,y+j} = 0,
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b = l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + w_b > W \vee y + l_b > L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
         \end{split}
         \end{flalign}
         
@@ -153,24 +180,30 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:forbid-span-cells:rectangular-boxes:0}
         \begin{split}
-        R_b = 0 \Longrightarrow X_{b,x,y} = 0,
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b \neq l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + w_b > W \vee y + l_b > L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        R_b = 0 \Longrightarrow X_{b,x+i,y+j} = 0,
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + w_b > W \vee y + l_b > L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
         \end{split}
         \end{flalign}
         \begin{flalign}
         \label{eq:forbid-span-cells:rectangular-boxes:1}
         \begin{split}
-        R_b = 1 \Longrightarrow X_{b,x,y} = 0,
-        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } w_b \neq l_b \\
-        & \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
-        & \qquad \qquad \text{ s.t. } x + l_b > W \vee y + w_b > L \\
-        & \qquad \forall i,j,\; 1 \le i \le w_b, 1 \le j \le l_b
+        R_b = 1 \Longrightarrow X_{b,x+j,y+i} = 0,
+        & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
+        & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
+        & \quad \qquad \qquad \text{ s.t. } (x + l_b > W \vee y + w_b > L) \\
+        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
         \end{split}
         \end{flalign}
         
     \end{itemize}
     
+	The constraints that forbid placing a box at a certain cell are read similarly to those
+	that allow a box to be placed at a certain cell. In this case, we want those cells $(x,y)$
+	that are not valid candidates for the top-left corner for a box.
+    
 \end{enumerate}
+
+
