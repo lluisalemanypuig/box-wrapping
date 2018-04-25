@@ -65,6 +65,8 @@ fi
 mkdir -p $OUTPUT_DIR
 # create log directory (just in case we might need the output of the executions)
 mkdir -p logs
+# directory with optimal outputs
+OPT_OUTPUT_DIR=$PROJ_DIR/outputs/hand-made
 
 for INFILE in $(ls -v $INPUT_DIR);
 do
@@ -74,14 +76,13 @@ do
 	
 	# build output file name. Do not forget the suffix!
 	BASE_OUTFILE="bwp_"$ID$SUFFIX
+	OPT_FILE="bwp_"$ID.out
 	OUT_LOG_FILE=$BASE_OUTFILE.log.out
 	ERR_LOG_FILE=$BASE_OUTFILE.log.err
 	OUTFILE=$BASE_OUTFILE.out
 	
 	echo $(date) >> logs/$OUTFILE.out
 	echo $(date) >> logs/$OUTFILE.err
-	
-	echo "Solve for file $INPUT_DIR/$INFILE"
 	
 	# execute the exe file
 	if [ "$SOLVER_TEC" == "CP" ]; then
@@ -93,6 +94,28 @@ do
 			--stop-at 3 --stop-when 2 -Nr 2		\
 			>>  logs/$OUT_LOG_FILE				\
 			2>> logs/$ERR_LOG_FILE
+		
+		echo "Executing solver with input file: $INPUT_DIR/$INFILE"
+		
+		# if file with optimal solution exists check optimality
+		if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
+			opt_length=$(head -n 1 $OPT_OUTPUT_DIR/$OPT_FILE)
+			sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
+			
+			if [ $opt_length == $sol_length ]; then
+				echo -e "    \e[1;32mOptimal solution reached at length: \e[0m"$opt_length
+			else if [ $opt_length > $sol_length ]; then
+				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
+				echo    "        Optimal: $opt_length"
+				echo    "        $SOLVER_TEC: $sol_length"
+			else
+				echo -e "    \e[1;33mSuboptimal solution:\e[0m"
+				echo    "        Optimal: $opt_length"
+				echo    "        $SOLVER_TEC: $sol_length"
+			fi
+			
+		fi
+		
 	else
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
 	fi
