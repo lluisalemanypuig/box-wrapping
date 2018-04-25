@@ -233,7 +233,7 @@ length wrapped_boxes::get_roll_length() const {
 
 void wrapped_boxes::store(ofstream& fout) const {
 	// a line containing the roll's length used
-	fout << L << endl;
+	fout << roll_length << endl;
 	
 	// the coordinates of the top-left and bottom-right
 	// corners of all boxes
