@@ -3,16 +3,6 @@
 namespace heuristics {
 namespace heur_private {
 	
-	#define sanity_check(wb, error)					\
-		string msg;									\
-		bool sane = wb.is_sane(msg);				\
-		if (not sane) {								\
-			cout << "Solution not sane!" << endl;	\
-			cout << wb << endl << endl;				\
-			cout << msg << endl;					\
-			error = true;							\
-		}
-	
 	bool call_solver
 	(
 		Options& ops, const gifts& data,
@@ -40,7 +30,14 @@ namespace heur_private {
 			sol->to_wrapped_boxes(data, wb);
 			
 			#ifdef BOX_DEBUG
-			sanity_check(wb, error)
+			string msg;
+			bool sane = wb.is_sane(msg);
+			if (not sane) {
+				cout << "Solution not sane!" << endl;
+				cout << wb << endl << endl;
+				cout << msg << endl;
+				error = true;
+			}
 			#endif
 			
 			if (wb < BEST) {
