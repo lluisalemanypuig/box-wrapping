@@ -30,25 +30,18 @@ for i in "$@"; do
 	esac
 done
 
+if [ "$SOLVER_TEC" == "" ]; then
+	echo -e "    \e[1;31mError: solver technology not specified\e[0m"
+	exit
+fi
+
 if [ "$SOLVER_TEC" != "CP" ] && [ "$SOLVER_TEC" != "LP" ] && [ "$SOLVER_TEC" != "SAT" ]; then
 	echo -e "\e[1;31mError invalid solver technology. Choose either CP, LP, or SAT\e[0m"
 	exit
 fi
 
-EXE_CP=$PROJ_DIR/CP/bin-release/wrapping-boxes
-EXE_LP=$PROJ_DIR/LP/bin-release/wrapping-boxes
-EXE_SAT=$PROJ_DIR/SAT/bin-release/wrapping-boxes
-
-if [ "$SOLVER_TEC" == "CP" ]; then
-	EXE_FILE=$EXE_CP
-	SUFFIX=".CP"
-elif [ "$SOLVER_TEC" == "LP" ]; then
-	EXE_FILE=$EXE_LP
-	SUFFIX=".LP"
-elif [ "$SOLVER_TEC" == "SAT" ]; then
-	EXE_FILE=$EXE_SAT
-	SUFFIX=".SAT"
-fi
+EXE_FILE=$PROJ_DIR/$SOLVER_TEC/bin-release/wrapping-boxes
+SUFFIX="."$SOLVER_TEC
 
 echo "Exe file used: $EXE_FILE"
 if [ ! -f $EXE_FILE ]; then
