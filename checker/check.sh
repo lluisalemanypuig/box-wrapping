@@ -11,12 +11,10 @@ else
 	exit
 fi
 
-
 PROJ_DIR=..
-
 IN_DIR=$1	# input directory
 OUT_DIR=$2	# where to find the corresponding outputs
-SUFFIX=$3	# an optional suffix, like .CP, .LP, .SAT,
+SUFFIX=.$3	# an optional suffix, like .CP, .LP, .SAT,
 
 for INFILE in $(ls $IN_DIR);
 do
@@ -44,6 +42,9 @@ do
 			echo -e "\e[1;31m----------------------\e[0m"
 			exit
 		fi
+	else
+		echo -e "\e[1;31mWarning: output file '$OUT_DIR/$OUTFILE' does not exist\e[0m"
+		echo -e "    \e[1;31mSkipping...\e[0m"
 	fi
 done
 
