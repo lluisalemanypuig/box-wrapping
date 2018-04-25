@@ -73,7 +73,7 @@ mkdir -p $OUTPUT_DIR
 # create log directory (just in case we might need the output of the executions)
 mkdir -p logs
 
-for INFILE in $(ls $INPUT_DIR);
+for INFILE in $(ls -v $INPUT_DIR);
 do
 	# retrieve input identifier. E.g.: 8_10_11
 	INFILE_LENGTH=${#INFILE}

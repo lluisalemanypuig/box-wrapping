@@ -16,7 +16,7 @@ IN_DIR=$1	# input directory
 OUT_DIR=$2	# where to find the corresponding outputs
 SUFFIX=.$3	# an optional suffix, like .CP, .LP, .SAT,
 
-for INFILE in $(ls $IN_DIR);
+for INFILE in $(ls -v $IN_DIR);
 do
 	# retrieve input identifier. E.g.: 8_10_11
 	INFILE_LENGTH=${#INFILE}
