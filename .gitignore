@@ -2,3 +2,4 @@ CP/bin-debug/*
 CP/bin-release/*
 *.o
 checker/checker
+box-wrapper/box-wrapper.pro.user
