@@ -9,6 +9,10 @@ void LSButton::set_ref_organizer(BoxOrganizer *r) {
 	box_org = r;
 }
 
+void LSButton::set_input_label(QLabel *l) {
+	input_label = l;
+}
+
 void LSButton::load() {
 	box_org->clear_boxes();
 
@@ -18,8 +22,10 @@ void LSButton::load() {
 		tr("BWP instance (*.in);;All Files (*)")
 	);
 
+	string stdname = fileName.toStdString();
+
 	ifstream fin;
-	fin.open(fileName.toStdString().c_str());
+	fin.open(stdname.c_str());
 	if (not fin.is_open()) {
 		cerr << "Error: could not open '" << fileName.toStdString() << "'" << endl;
 		return;
@@ -35,10 +41,20 @@ void LSButton::load() {
 			box_org->add_box(w,h);
 		}
 	}
-
 	fin.close();
 
 	box_org->repaint();
+
+	size_t i = stdname.length() - 1;
+	while (i > 0 and stdname[i] != '/') {
+		--i;
+	}
+	if (i == 0) {
+		input_label->setText(QString::fromStdString( stdname ));
+	}
+	else {
+		input_label->setText(QString::fromStdString( stdname.substr(i + 1, stdname.length() - i) ));
+	}
 }
 
 void LSButton::save() {

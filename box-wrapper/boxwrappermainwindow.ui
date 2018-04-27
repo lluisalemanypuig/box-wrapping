@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>674</height>
+    <height>679</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,6 +58,13 @@
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="inputNameLabel">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="verticalSpacer">
