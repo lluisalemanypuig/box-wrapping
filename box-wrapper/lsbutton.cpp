@@ -1,36 +1,34 @@
 #include "lsbutton.hpp"
 
-LSButton::LSButton(QWidget *p) : QPushButton(p)
-{
+/// NON-CLASS
 
-}
+inline
+void split_path_filename(const string& full_path, string& filename, string& extension) {
 
-void LSButton::set_ref_organizer(BoxOrganizer *r) {
-	box_org = r;
-}
+	// iterator over 'full_path'
+	size_t i = full_path.size() - 1;
 
-void LSButton::set_input_label(QLabel *l) {
-	input_label = l;
-}
-
-void LSButton::load() {
-	box_org->clear_boxes();
-
-	QString fileName = QFileDialog::getOpenFileName(this,
-		tr("Open BWP instance"),
-		"/home/lluis/Documents/projects/box-wrapping/inputs/",
-		tr("BWP instance (*.in);;All Files (*)")
-	);
-
-	string stdname = fileName.toStdString();
-
-	ifstream fin;
-	fin.open(stdname.c_str());
-	if (not fin.is_open()) {
-		cerr << "Error: could not open '" << fileName.toStdString() << "'" << endl;
-		return;
+	// extract extension
+	size_t ext_length = 0;
+	while (i > 0 and full_path[i] != '.') {
+		--i;
+		++ext_length;
 	}
+	extension = full_path.substr(i + 1, ext_length);
 
+	// extract filename
+	--i;
+	size_t filename_length = 0;
+	while (i > 0 and full_path[i] != '/') {
+		--i;
+		++filename_length;
+	}
+	filename = full_path.substr(i + 1, filename_length);
+}
+
+/// PRIVATE
+
+void LSButton::read_input(ifstream& fin) {
 	int W;
 	fin >> W;
 	box_org->set_max_width(W);
@@ -41,28 +39,76 @@ void LSButton::load() {
 			box_org->add_box(w,h);
 		}
 	}
-	fin.close();
+}
 
-	box_org->repaint();
+void LSButton::read_output(ifstream& fin) {
 
-	size_t i = stdname.length() - 1;
-	while (i > 0 and stdname[i] != '/') {
-		--i;
+}
+
+/// PUBLIC
+
+LSButton::LSButton(QWidget *p) : QPushButton(p)
+{
+	box_org = nullptr;
+	input_label = nullptr;
+	save_button = nullptr;
+}
+
+void LSButton::set_instance_name(const string& iname) {
+	instance_name = iname;
+}
+
+void LSButton::load() {
+	box_org->clear_boxes();
+
+	QString fileName = QFileDialog::getOpenFileName(this,
+		tr("Open BWP instance"),
+		"../inputs/material/",
+		tr("BWP instance (*.in);;All Files (*)")
+	);
+
+	string stdname = fileName.toStdString();
+
+	// read file, if it exists
+	ifstream fin;
+	fin.open(stdname.c_str());
+	if (not fin.is_open()) {
+		cerr << "Error: could not open '" << fileName.toStdString() << "'" << endl;
+		return;
 	}
-	if (i == 0) {
-		input_label->setText(QString::fromStdString( stdname ));
+
+	string file_ext;
+	split_path_filename(stdname, instance_name, file_ext);
+
+	if (file_ext == "in") {
+		read_input(fin);
+	}
+	else if (file_ext == "out") {
+		read_output(fin);
 	}
 	else {
-		input_label->setText(QString::fromStdString( stdname.substr(i + 1, stdname.length() - i) ));
+		cerr << "Error: file '" << stdname << "' could not be recognised as input or output" << endl;
 	}
+	fin.close();
+	// finish reading file
+
+	// update widgets
+	box_org->repaint();
+	input_label->setText(QString::fromStdString(instance_name));
+	save_button->set_instance_name(instance_name);
 }
 
 void LSButton::save() {
+
 	QString fileName = QFileDialog::getSaveFileName(this,
 		tr("Store BWP solution"),
-		"/home/lluis/Documents/projects/box-wrapping/outputs/hand-made/",
+		QString::fromStdString("../outputs/hand-made/" + instance_name + ".out"),
 		tr("BWP instance (*.out);;All Files (*)")
 	);
+
+	if (fileName == "") {
+		return;
+	}
 
 	ofstream fout;
 	fout.open(fileName.toStdString().c_str());

@@ -7,9 +7,11 @@ BoxWrapperMainWindow::BoxWrapperMainWindow(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	ui->loadButton->set_ref_organizer(ui->organizer);
-	ui->loadButton->set_input_label(ui->inputNameLabel);
-	ui->saveButton->set_ref_organizer(ui->organizer);
+	ui->loadButton->box_org = ui->organizer;
+	ui->loadButton->input_label = ui->inputNameLabel;
+	ui->loadButton->save_button = ui->saveButton;
+
+	ui->saveButton->box_org = ui->organizer;
 }
 
 BoxWrapperMainWindow::~BoxWrapperMainWindow()

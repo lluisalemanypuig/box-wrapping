@@ -169,10 +169,6 @@ void BoxOrganizer::mouseMoveEvent(QMouseEvent *e) {
 	repaint();
 }
 
-void BoxOrganizer::mouseReleaseEvent(QMouseEvent *e) {
-
-}
-
 void BoxOrganizer::paintGL() {
 	// clear the screen
 	glColor3f(0,0,0);
@@ -214,19 +210,10 @@ void BoxOrganizer::clear_boxes() {
 }
 
 void BoxOrganizer::get_box_corners(int& L, vector<coord>& tls, vector<coord>& brs) const {
-	cout << "Get box corners..." << endl;
-
-	cout << "boxes_tl.size()= " << boxes_tl.size() << endl;
-
 	L = 0;
 	tls = boxes_tl;
-
-
 	for (size_t i = 0; i < tls.size(); ++i) {
-		cout << "i= " << i << endl;
-
 		brs.push_back( coord( tls[i].first + dims[i].first, tls[i].second + dims[i].second ) );
 		L = max(L, tls[i].second + dims[i].second);
 	}
-	cout << "L= " << L << endl;
 }
