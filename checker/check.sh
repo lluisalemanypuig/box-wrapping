@@ -14,7 +14,10 @@ fi
 PROJ_DIR=..
 IN_DIR=$1	# input directory
 OUT_DIR=$2	# where to find the corresponding outputs
-SUFFIX=.$3	# an optional suffix, like .CP, .LP, .SAT,
+SUFFIX=$3	# an optional suffix, like .CP, .LP, .SAT,
+if [ "$SUFFIX" != "" ]; then
+	SUFFIX=.$SUFFIX
+fi
 
 for INFILE in $(ls -v $IN_DIR);
 do
