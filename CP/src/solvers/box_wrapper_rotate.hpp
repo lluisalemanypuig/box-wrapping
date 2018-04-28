@@ -26,7 +26,7 @@ class box_wrapper_rotate : public Space {
 		void span_cells_non_rot
 		(
 			length L, width W,
-			size_t b, length i, width j,
+			int b, length i, width j,
 			length b_length, width b_width
 		);
 		
@@ -35,7 +35,7 @@ class box_wrapper_rotate : public Space {
 		void span_cells_rot
 		(
 			length L, width W,
-			size_t b, length i, width j,
+			int b, length i, width j,
 			length b_length, width b_width
 		);
 		
@@ -43,7 +43,7 @@ class box_wrapper_rotate : public Space {
 		void span_cells_square
 		(
 			length L, width W,
-			size_t b, length i, width j,
+			int b, length i, width j,
 			length b_length, width b_width
 		);
 		

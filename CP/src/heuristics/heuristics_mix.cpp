@@ -5,7 +5,7 @@ namespace heuristics {
 	bool heuristic_mix
 	(
 		Options& ops,
-		uint32 rand_times, uint32 stop_at,
+		int rand_times, int stop_at,
 		bool stop_time, double stop_when,
 		bool verbose,
 		const gifts& input_data,
@@ -50,7 +50,7 @@ namespace heuristics {
 		srand(time(NULL)); // seed rng only once
 		bool sol_rand = false;
 		
-		for (size_t i = 0; i < rand_times; ++i) {
+		for (int i = 0; i < rand_times; ++i) {
 			data_copy.scramble();
 			if (verbose) {
 				cout << "----------------------------" << endl;

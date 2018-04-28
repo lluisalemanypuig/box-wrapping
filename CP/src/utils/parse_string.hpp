@@ -19,7 +19,7 @@ namespace parse {
 	 * should ideally containg 'parsing the number of threads'.
 	 */
 	
-	void parse_uli(const char *context, const char *str, uint32 *v, char *should_exit);
+	void parse_long(const char *context, const char *str, int *v, char *should_exit);
 	void parse_double(const char *context, const char *str, double *s, char *should_exit);
 	
 }

@@ -16,10 +16,10 @@ class wrapped_boxes {
 	private:
 		width W;
 		length L, roll_length;
-		size_t N;
+		int N;
 		
 		// roll[i][j] = k <-> box k occupies cell k
-		vector<vector<size_t> > roll;
+		vector<vector<int> > roll;
 		
 		// tl_corner[k] = (i,j) <-> top-left corner of box k is (i,j)
 		vector<corner> tl_corner;
@@ -28,18 +28,18 @@ class wrapped_boxes {
 		vector<corner> br_corner;
 	
 	private:
-		length box_length(size_t box_idx) const;
-		width box_width(size_t box_idx) const;
+		length box_length(int box_idx) const;
+		width box_width(int box_idx) const;
 	
 		void display_box_cells(ostream& os) const;
 		void display_box_corners(ostream& os) const;
 	
 	public:
 		wrapped_boxes();
-		wrapped_boxes(size_t N, length L, width W);
+		wrapped_boxes(int N, length L, width W);
 		~wrapped_boxes();
 		
-		void init(size_t N, length L, width W);
+		void init(int N, length L, width W);
 		
 		/// OPERATORS
 		
@@ -57,9 +57,9 @@ class wrapped_boxes {
 		// c: (i, j), where
 		//    0 <= i <= L - 1, with L the total length of the roll
 		//    0 <= j <= W - 1, with W the (fixed) width of the roll
-		void set_tl_box_corner(size_t k, const corner& c);
-		void set_br_box_corner(size_t k, const corner& c);
-		void set_box_cell(size_t k, const cell& c);
+		void set_tl_box_corner(int k, const corner& c);
+		void set_br_box_corner(int k, const corner& c);
+		void set_box_cell(int k, const cell& c);
 		void set_roll_length(length L);
 		
 		/// GETTERS

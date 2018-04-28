@@ -2,11 +2,11 @@
 
 /// PRIVATE
 
-length wrapped_boxes::box_length(size_t b) const {
+length wrapped_boxes::box_length(int b) const {
 	return br_corner[b].first - tl_corner[b].first + 1;
 }
 
-width wrapped_boxes::box_width(size_t b) const {
+width wrapped_boxes::box_width(int b) const {
 	return br_corner[b].second - tl_corner[b].second + 1;
 }
 
@@ -62,7 +62,7 @@ void wrapped_boxes::display_box_corners(ostream& os) const {
 	   << setw(std::to_string(N).size()) << " "
 	   << "     (w,l)" << endl;
 	
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		roll_length_used = max(roll_length_used, br_corner[b].first);
 		
 		os << "    Box " << setw(std::to_string(N).size()) << b + 1 << " is at " << endl
@@ -84,18 +84,18 @@ void wrapped_boxes::display_box_corners(ostream& os) const {
 wrapped_boxes::wrapped_boxes() {
 	init(0,0,0);
 }
-wrapped_boxes::wrapped_boxes(size_t _N, length _L, width _W) {
+wrapped_boxes::wrapped_boxes(int _N, length _L, width _W) {
 	init(_N, _L, _W);
 }
 wrapped_boxes::~wrapped_boxes() { }
 
-void wrapped_boxes::init(size_t _N, length _L, width _W) {
+void wrapped_boxes::init(int _N, length _L, width _W) {
 	N = _N;
 	L = _L;
 	W = _W;
-	roll_length = numeric_limits<size_t>::max();
+	roll_length = numeric_limits<int>::max();
 	
-	roll = vector<vector<size_t> >(L, vector<size_t>(W, 0));
+	roll = vector<vector<int> >(L, vector<int>(W, 0));
 	tl_corner = vector<corner>(N);
 	br_corner = vector<corner>(N);
 }
@@ -118,13 +118,13 @@ bool wrapped_boxes::operator< (const wrapped_boxes& wb) const {
 	return roll_length < wb.roll_length;
 }
 
-void wrapped_boxes::set_tl_box_corner(size_t k, const corner& c) {
+void wrapped_boxes::set_tl_box_corner(int k, const corner& c) {
 	tl_corner[k] = c;
 }
 
-void wrapped_boxes::set_br_box_corner(size_t k, const corner& c) {
+void wrapped_boxes::set_br_box_corner(int k, const corner& c) {
 	br_corner[k] = c;
-	if (roll_length == numeric_limits<size_t>::max()) {
+	if (roll_length == numeric_limits<int>::max()) {
 		roll_length = c.first + 1;
 	}
 	else {
@@ -132,7 +132,7 @@ void wrapped_boxes::set_br_box_corner(size_t k, const corner& c) {
 	}
 }
 
-void wrapped_boxes::set_box_cell(size_t k, const cell& c) {
+void wrapped_boxes::set_box_cell(int k, const cell& c) {
 	roll[c.first][c.second] = k;
 }
 
@@ -143,7 +143,7 @@ bool wrapped_boxes::is_sane(string& error_msg) const {
 	/// within bounds for that box
 	/// 3. If a box has its corner at (i,j) then
 	/// the spanning cells must have that box
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		length tl_pl = tl_corner[b].first;
 		width tl_pw = tl_corner[b].second;
 		
@@ -172,7 +172,7 @@ bool wrapped_boxes::is_sane(string& error_msg) const {
 		for (length ii = tl_pl; ii <= br_pl; ++ii) {
 			for (width jj = tl_pw; jj <= br_pw; ++jj) {
 				
-				size_t box_idx = roll[ii][jj];
+				int box_idx = roll[ii][jj];
 				
 				// some box at (ii,jj) -> it should be 'b'
 				if (box_idx != 0 and box_idx != b + 1) {
@@ -191,17 +191,17 @@ bool wrapped_boxes::is_sane(string& error_msg) const {
 	}
 	
 	/// 4. All boxes occupy as many cells as they have area
-	vector<size_t> area_box(N, 0);
+	vector<int> area_box(N, 0);
 	for (length i = 0; i < L; ++i) {
 		for (width j = 0; j < W; ++j) {
-			size_t box_idx = roll[i][j];
+			int box_idx = roll[i][j];
 			if (box_idx == 0) continue; // no box
 			
 			area_box[box_idx - 1] += 1;
 		}
 	}
 	
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		length b_length = br_corner[b].first - tl_corner[b].first + 1;
 		width b_width = br_corner[b].second - tl_corner[b].second + 1;
 		area A = b_length*b_width;
@@ -237,7 +237,7 @@ void wrapped_boxes::store(ofstream& fout) const {
 	
 	// the coordinates of the top-left and bottom-right
 	// corners of all boxes
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		fout << tl_corner[b].second << " " << tl_corner[b].first;
 		fout << "\t\t";
 		fout << br_corner[b].second << " " << br_corner[b].first;

@@ -5,7 +5,7 @@
 void box_wrapper_rotate::span_cells_non_rot
 (
 	length L, width W,
-	size_t b, length i, width j,
+	int b, length i, width j,
 	length b_length, width b_width
 )
 {
@@ -27,7 +27,7 @@ void box_wrapper_rotate::span_cells_non_rot
 void box_wrapper_rotate::span_cells_rot
 (
 	length L, width W,
-	size_t b, length i, width j,
+	int b, length i, width j,
 	length b_length, width b_width
 )
 {
@@ -49,7 +49,7 @@ void box_wrapper_rotate::span_cells_rot
 void box_wrapper_rotate::span_cells_square
 (
 	length L, width W,
-	size_t b, length i, width j,
+	int b, length i, width j,
 	length b_length, width b_width
 )
 {
@@ -69,7 +69,7 @@ void box_wrapper_rotate::span_cells_square
 box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	upper_bound_L = max_L;
 	
-	const size_t N = data.total_boxes;
+	const int N = data.total_boxes;
 	const width W = data.W;
 	const length L = min(upper_bound_L, data.get_max_length_ro());
 	
@@ -79,7 +79,7 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	box_corner = BoolVarArray(*this, N*W*L, 0, 1);
 	
 	// make constraints
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		/// (1). Exactly one corner per box
 		rel(*this, sum(box_corner.slice(b*W*L, 1, W*L)) == 1);
 		
@@ -93,7 +93,7 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	
 	/// (3). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
 		length b_length = BOX.l;
 		width b_width = BOX.w;
@@ -133,7 +133,7 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	
 	/// (4). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
 		length b_length = BOX.l;
 		width b_width = BOX.w;

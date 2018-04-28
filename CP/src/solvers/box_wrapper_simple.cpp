@@ -5,7 +5,7 @@
 box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	upper_bound_L = max_L;
 	
-	const size_t N = data.total_boxes;
+	const int N = data.total_boxes;
 	const width W = data.W;
 	const length L = min(upper_bound_L, data.get_max_length_s());
 	
@@ -15,7 +15,7 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	
 	/// CONSTRAINTS
 	
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		/// (1). Exactly one corner per box
 		rel(*this, sum(box_corner.slice(b*W*L, 1, W*L)) == 1);
 		
@@ -29,7 +29,7 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	
 	/// (3). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
 		width b_width = data.all_boxes[b].w;
 		
@@ -57,7 +57,7 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	
 	/// (4). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
 		width b_width = data.all_boxes[b].w;
 		
@@ -92,13 +92,13 @@ Space *box_wrapper_simple::copy() {
 }
 
 void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) const {
-	const size_t N = data.total_boxes;
+	const int N = data.total_boxes;
 	const width W = data.W;
 	const length L = min(upper_bound_L, data.get_max_length_s());
 	
 	wb.init(N, L, W);
 	
-	for (size_t b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		bool found = false;
 		length pl = L + 1;
 		width pw = W + 1;

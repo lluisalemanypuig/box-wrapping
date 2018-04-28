@@ -2,7 +2,7 @@
 
 namespace parse {
 	
-	void parse_uli(const char *ctxt, const char *str, uint32 *v, char *should_exit) {
+	void parse_long(const char *ctxt, const char *str, int *v, char *should_exit) {
 		if (str == NULL) {
 			fprintf(stderr, "Error when %s: input string is empty\n", ctxt);
 			*should_exit = 1;

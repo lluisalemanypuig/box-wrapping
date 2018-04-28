@@ -122,9 +122,9 @@ void print_stats(const S<T>& G_SOLVER, size_t n_sols) {
 }
 
 template<template<class> class S, class T>
-size_t solver_enum
+int solver_enum
 (
-	const Options& ops, const gifts& data, size_t stop_at,
+	const Options& ops, const gifts& data, int stop_at,
 	vector<wrapped_boxes>& sols, bool& error
 )
 {
@@ -132,7 +132,7 @@ size_t solver_enum
 	S<T> G_SOLVER(boxes, ops);
 	delete boxes;
 	
-	size_t n_sols = 0;
+	int n_sols = 0;
 	T *sol;
 	
 	while (n_sols < stop_at and (sol = G_SOLVER.next()) and not error) {
@@ -162,17 +162,17 @@ size_t solver_enum
 }
 
 template<template<class> class S, class T>
-size_t solver_count
+int solver_count
 (
 	const Options& ops, const gifts& data,
-	size_t stop_at, bool& error
+	int stop_at, bool& error
 )
 {
 	T *boxes = new T(data);
 	S<T> G_SOLVER(boxes, ops);
 	delete boxes;
 	
-	size_t n_sols = 0;
+	int n_sols = 0;
 	T *sol;
 	
 	while (n_sols < stop_at and (sol = G_SOLVER.next()) and not error) {
@@ -200,10 +200,10 @@ size_t solver_count
 }
 
 template<template<class> class S, class T>
-size_t print_or_count
+int print_or_count
 (
 	Options& ops, bool enumerate, const gifts& data,
-	size_t stop_at,
+	int stop_at,
 	vector<wrapped_boxes>& solutions, bool& error
 )
 {
@@ -217,8 +217,8 @@ size_t print_or_count
 void choose_solver
 (
 	bool simple, bool rotate, bool optim, const gifts& data,
-	bool enumerate, size_t n_threads, size_t stop_at, bool stop_time, double stop_when,
-	vector<wrapped_boxes>& solutions, size_t& n_sols,
+	bool enumerate, int n_threads, int stop_at, bool stop_time, double stop_when,
+	vector<wrapped_boxes>& solutions, int& n_sols,
 	bool& error
 )
 {
@@ -260,15 +260,15 @@ int main(int argc, char *argv[]) {
 	bool heuris_rand = false;
 	bool heuris_mix = false;
 	
-	uint32 stop_at = -1;
+	int stop_at = -1;
 	bool stop_time = false;
 	double stop_when = 99999.9;
-	uint32 n_threads = 1;
+	int n_threads = 1;
 	
 	bool scramble = false;
 	bool seed = false;
 	
-	uint32 n_exe_rand = 10;
+	int n_exe_rand = 10;
 	bool heuris_verbose = false;
 	
 	// process arguments
@@ -318,7 +318,7 @@ int main(int argc, char *argv[]) {
 			enumerate = false;
 		}
 		else if (strcmp(argv[i], "-Nr") == 0 or strcmp(argv[i], "--n-rand") == 0) {
-			parse::parse_uli("parsing # times random", argv[i + 1], &n_exe_rand, &fatal_error);
+			parse::parse_long("parsing # times random", argv[i + 1], &n_exe_rand, &fatal_error);
 			++i;
 		}
 		else if (strcmp(argv[i], "-v") == 0 or strcmp(argv[i], "--verbose") == 0) {
@@ -327,7 +327,7 @@ int main(int argc, char *argv[]) {
 		
 		/// TERMINATING OPTIONS
 		else if (strcmp(argv[i], "--stop-at") == 0) {
-			parse::parse_uli("parsing max number solutions", argv[i + 1], &stop_at, &fatal_error);
+			parse::parse_long("parsing max number solutions", argv[i + 1], &stop_at, &fatal_error);
 			++i;
 		}
 		else if (strcmp(argv[i], "--stop-when") == 0) {
@@ -338,7 +338,7 @@ int main(int argc, char *argv[]) {
 		
 		/// EFFICIENCY OPTIONS
 		else if (strcmp(argv[i], "--n-threads") == 0) {
-			parse::parse_uli("parsing number of threads", argv[i + 1], &n_threads, &fatal_error);
+			parse::parse_long("parsing number of threads", argv[i + 1], &n_threads, &fatal_error);
 			++i;
 		}
 		
@@ -366,7 +366,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	
-	size_t solvers_selected = simple + rotate + optim + heuris_inc + heuris_dec + heuris_rand + heuris_mix;
+	int solvers_selected = simple + rotate + optim + heuris_inc + heuris_dec + heuris_rand + heuris_mix;
 	if (solvers_selected == 0) {
 		cerr << "Error: no solver was selected. Choose exactly one." << endl;
 		return 1;
@@ -394,7 +394,7 @@ int main(int argc, char *argv[]) {
 	
 	// variables for exploration
 	vector<wrapped_boxes> solutions;
-	size_t n_sols;
+	int n_sols;
 	bool error = false;
 	
 	double begin = timing::now();
@@ -436,7 +436,7 @@ int main(int argc, char *argv[]) {
 	
 	if (enumerate) {
 		cout << "--------------------" << endl;
-		for (size_t i = 0; i < n_sols; ++i) {
+		for (int i = 0; i < n_sols; ++i) {
 			cout << i + 1 << ")" << endl;
 			cout << solutions[i] << endl;
 			cout << "--------------------" << endl;

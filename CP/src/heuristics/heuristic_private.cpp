@@ -6,7 +6,7 @@ namespace heur_private {
 	bool call_solver
 	(
 		Options& ops, const gifts& data,
-		uint32 stop_at,
+		int stop_at,
 		bool stop_time, double stop_when,
 		bool verbose,
 		wrapped_boxes& BEST, bool& error
@@ -16,7 +16,7 @@ namespace heur_private {
 			ops.stop = Stop::time( (unsigned long int)(1000.0*stop_when) );
 		}
 		
-		size_t n_sols;
+		int n_sols;
 		box_wrapper_optim *boxes = nullptr;
 		box_wrapper_optim *sol;
 		

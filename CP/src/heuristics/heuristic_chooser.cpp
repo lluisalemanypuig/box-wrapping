@@ -5,11 +5,11 @@ namespace heuristics {
 	void heuristic_chooser
 	(
 		bool heuris_inc, bool heuris_dec, bool heuris_rand, bool heuris_mix,
-		uint32 n_threads, uint32 rand_times,
-		uint32 stop_at, bool stop_time, double stop_when,
+		int n_threads, int rand_times,
+		int stop_at, bool stop_time, double stop_when,
 		bool verbose,
 		const gifts& input_data,
-		wrapped_boxes& solution, uint32& n_sols,
+		wrapped_boxes& solution, int& n_sols,
 		bool& error
 	)
 	{
