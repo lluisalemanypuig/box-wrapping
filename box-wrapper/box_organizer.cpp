@@ -43,10 +43,15 @@ void BoxOrganizer::draw_box(int i) const {
 }
 
 void BoxOrganizer::draw_grid() const {
-	// vertical lines
 	int w = width();
+	int h = height();
+	float xcoord, ycoord, nxcoord, nycoord;
+	int x, y;
+
+	// vertical lines
+	w = width();
 	for (int x = 0; x < w; x += sqw) {
-		float xcoord = (2.0/w)*x - 1;
+		xcoord = (2.0/w)*x - 1;
 
 		glColor3f(1,1,1);
 		glBegin(GL_LINES);
@@ -56,9 +61,9 @@ void BoxOrganizer::draw_grid() const {
 	}
 
 	// horizontal lines
-	int h = height();
-	for (int y = 0; y < h; y += sqh) {
-		float ycoord = (2.0/h)*y - 1;
+	h = height();
+	for (y = 0; y < h; y += sqh) {
+		ycoord = (2.0/h)*y - 1;
 
 		glColor3f(1,1,1);
 		glBegin(GL_LINES);
@@ -68,11 +73,11 @@ void BoxOrganizer::draw_grid() const {
 	}
 
 	// diagonal lines
-	float xcoord = (2.0/w)*maxW - 1;
-	for (int y = 0; y < h; y += sqh) {
-		float ycoord = (2.0/h)*y - 1;
+	xcoord = (2.0/w)*maxW - 1;
+	for (y = 0; y < h; y += sqh) {
+		ycoord = (2.0/h)*y - 1;
 		int Y = y + width() - maxW;
-		float nycoord = (2.0/h)*Y - 1;
+		nycoord = (2.0/h)*Y - 1;
 
 		glColor3f(1,1,1);
 		glBegin(GL_LINES);
@@ -81,11 +86,11 @@ void BoxOrganizer::draw_grid() const {
 		glEnd();
 	}
 
-	for (int x = maxW + sqw; x < w; x += sqw) {
+	for (x = maxW + sqw; x < w; x += sqw) {
 		xcoord = (2.0/w)*x - 1;
 
 		int Y = width() - x;
-		float nycoord = (2.0/h)*Y - 1;
+		nycoord = (2.0/h)*Y - 1;
 
 		glColor3f(1,1,1);
 		glBegin(GL_LINES);
@@ -106,9 +111,9 @@ BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
 	box_col[ 1] = color(0,1,0);
 	box_col[ 2] = color(0,0,1);
 	box_col[ 3] = color(1,0,1);
-	box_col[ 4] = color(1,1,0);
+	box_col[ 4] = color(1,0.78,0);
 	box_col[ 5] = color(0,1,1);
-	box_col[ 6] = color(1,1,1);
+	box_col[ 6] = color(0.9,0.4,1);
 	box_col[ 7] = color(0.5,0.5,0);
 	box_col[ 8] = color(1,0,0.5);
 	box_col[ 9] = color(1,0.5,0);
@@ -125,7 +130,7 @@ BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
 	box_col[20] = color(0,0.8,0);
 	box_col[21] = color(0.9,0,0);
 	box_col[22] = color(0,0.48,0);
-	box_col[23] = color(0,0,0);
+	box_col[23] = color(0,0.7,0.36);
 	box_col[24] = color(0,0.31,0);
 	box_col[25] = color(0,0.7,0.8);
 }
@@ -201,6 +206,11 @@ void BoxOrganizer::add_box(int w, int h) {
 
 	dims.push_back(coord(w,h));
 	boxes_tl.push_back(tl);
+}
+
+void BoxOrganizer::set_boxes(const vector<coord>& tls, const vector<coord>& ds) {
+	boxes_tl = tls;
+	dims = ds;
 }
 
 void BoxOrganizer::clear_boxes() {

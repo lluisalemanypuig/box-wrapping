@@ -58,6 +58,7 @@ class BoxOrganizer : public QOpenGLWidget
 
 		void set_max_width(int W);
 		void add_box(int w, int h);
+		void set_boxes(const vector<coord>& tls, const vector<coord>& dims);
 		void clear_boxes();
 
 		void get_box_corners(int& L, vector<coord>& tls, vector<coord>& brs) const;

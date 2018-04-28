@@ -42,7 +42,27 @@ void LSButton::read_input(ifstream& fin) {
 }
 
 void LSButton::read_output(ifstream& fin) {
+	vector<coord> tls, dims;
 
+	int L;
+	fin >> L;
+
+	int xtl,ytl, xbr,ybr;
+	while (fin >> xtl >> ytl >> xbr >> ybr) {
+		tls.push_back(coord(xtl,ytl));
+		dims.push_back(coord(xbr - xtl + 1, ybr - ytl + 1));
+	}
+
+	// 01234
+	// bwp_*
+	int i = 4;
+	while (i < instance_name.length() and instance_name[i] != '_') {
+		++i;
+	}
+	int W = atoi(instance_name.substr(4, i - 1 - 3 + 1).c_str());
+
+	box_org->set_max_width(W);
+	box_org->set_boxes(tls, dims);
 }
 
 /// PUBLIC
@@ -59,12 +79,10 @@ void LSButton::set_instance_name(const string& iname) {
 }
 
 void LSButton::load() {
-	box_org->clear_boxes();
-
 	QString fileName = QFileDialog::getOpenFileName(this,
 		tr("Open BWP instance"),
 		"../inputs/material/",
-		tr("BWP instance (*.in);;All Files (*)")
+		tr("BWP instance (*.in);;BWP solution (*.out);;All Files (*)")
 	);
 
 	string stdname = fileName.toStdString();
@@ -81,9 +99,11 @@ void LSButton::load() {
 	split_path_filename(stdname, instance_name, file_ext);
 
 	if (file_ext == "in") {
+		box_org->clear_boxes();
 		read_input(fin);
 	}
 	else if (file_ext == "out") {
+		box_org->clear_boxes();
 		read_output(fin);
 	}
 	else {
