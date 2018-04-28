@@ -12,6 +12,8 @@ BoxWrapperMainWindow::BoxWrapperMainWindow(QWidget *parent) :
 	ui->loadButton->save_button = ui->saveButton;
 
 	ui->saveButton->box_org = ui->organizer;
+
+	ui->organizer->length_label = ui->lengthLabel;
 }
 
 BoxWrapperMainWindow::~BoxWrapperMainWindow()

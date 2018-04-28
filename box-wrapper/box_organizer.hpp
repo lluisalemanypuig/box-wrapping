@@ -10,6 +10,7 @@ using namespace std;
 #include <QOpenGLWidget>
 #include <QMouseEvent>
 #include <QWidget>
+#include <QLabel>
 
 typedef pair<int,int> coord;
 
@@ -50,6 +51,9 @@ class BoxOrganizer : public QOpenGLWidget
 		void draw_box(int i) const;
 		void draw_grid() const;
 		void get_max_length();
+
+	public:
+		QLabel *length_label;
 
 	public:
 		BoxOrganizer(QWidget *w = 0);

@@ -126,6 +126,7 @@ void BoxOrganizer::draw_grid() const {
 /// PUBLIC
 
 BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
+	length_label = nullptr;
 	round = 0;
 	selected_box = -1;
 	maxW = 20*sqw; // all roll available
@@ -176,6 +177,9 @@ void BoxOrganizer::mousePressEvent(QMouseEvent *e) {
 	else if (e->button() == Qt::RightButton) {
 		swap(dims[selected_box].first, dims[selected_box].second);
 		get_max_length();
+
+		length_label->setText(QString::fromStdString(std::to_string(maxL)));
+
 		repaint();
 	}
 }
@@ -197,6 +201,9 @@ void BoxOrganizer::mouseMoveEvent(QMouseEvent *e) {
 	boxes_tl[selected_box].first = x/sqw;
 	boxes_tl[selected_box].second = y/sqh;
 	get_max_length();
+
+	length_label->setText(QString::fromStdString(std::to_string(maxL)));
+
 	repaint();
 }
 
@@ -234,6 +241,7 @@ void BoxOrganizer::add_box(int w, int h) {
 
 	dims.push_back(coord(w,h));
 	boxes_tl.push_back(tl);
+	length_label->setText(QString::fromStdString(std::to_string(maxL)));
 }
 
 void BoxOrganizer::set_boxes(const vector<coord>& tls, const vector<coord>& ds) {
