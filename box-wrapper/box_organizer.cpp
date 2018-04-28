@@ -23,6 +23,13 @@ int BoxOrganizer::find_box(int x, int y) const {
 	return p;
 }
 
+void BoxOrganizer::get_max_length() {
+	maxL = 0;
+	for (size_t i = 0; i < boxes_tl.size(); ++i) {
+		maxL = max(maxL, boxes_tl[i].second + dims[i].second);
+	}
+}
+
 void BoxOrganizer::draw_box(int i) const {
 	float w = width();
 	float h = height();
@@ -98,6 +105,22 @@ void BoxOrganizer::draw_grid() const {
 			glVertex2f(1, nycoord);
 		glEnd();
 	}
+
+	// max length bar
+	float xtlnorm = -1;
+	float ytlnorm = (2.0/h)*maxL*sqh - 1;
+	float xbrnorm = 1.0;
+	float ybrnorm = (2.0/h)*(maxL*sqh + sqh) - 1;
+	float incr = (xbrnorm - xtlnorm)/20.0;
+	glColor3f(1,0,0);
+	glLineWidth(10.0);
+	for (xcoord = xtlnorm; xcoord <= xbrnorm; xcoord += incr) {
+		glBegin(GL_LINES);
+			glVertex2f(xcoord, ytlnorm);
+			glVertex2f(xcoord + 0.05, ybrnorm);
+		glEnd();
+	}
+	glLineWidth(1.0);
 }
 
 /// PUBLIC
@@ -105,7 +128,8 @@ void BoxOrganizer::draw_grid() const {
 BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
 	round = 0;
 	selected_box = -1;
-	maxW = 20*sqw;
+	maxW = 20*sqw; // all roll available
+	maxL = 0; // no roll used
 
 	box_col[ 0] = color(1,0,0);
 	box_col[ 1] = color(0,1,0);
@@ -151,6 +175,7 @@ void BoxOrganizer::mousePressEvent(QMouseEvent *e) {
 	}
 	else if (e->button() == Qt::RightButton) {
 		swap(dims[selected_box].first, dims[selected_box].second);
+		get_max_length();
 		repaint();
 	}
 }
@@ -171,6 +196,7 @@ void BoxOrganizer::mouseMoveEvent(QMouseEvent *e) {
 
 	boxes_tl[selected_box].first = x/sqw;
 	boxes_tl[selected_box].second = y/sqh;
+	get_max_length();
 	repaint();
 }
 
@@ -204,6 +230,8 @@ void BoxOrganizer::add_box(int w, int h) {
 		tl.second = 0;
 	}
 
+	maxL = max(maxL, tl.second + h);
+
 	dims.push_back(coord(w,h));
 	boxes_tl.push_back(tl);
 }
@@ -214,6 +242,7 @@ void BoxOrganizer::set_boxes(const vector<coord>& tls, const vector<coord>& ds) 
 }
 
 void BoxOrganizer::clear_boxes() {
+	maxL = 0;
 	round = 0;
 	dims.clear();
 	boxes_tl.clear();

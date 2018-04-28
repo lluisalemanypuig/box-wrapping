@@ -39,6 +39,8 @@ class BoxOrganizer : public QOpenGLWidget
 
 		// actual width of the roll. Merely used to draw the grid
 		int maxW;
+		// length of the roll used. Used to display a bar
+		int maxL;
 
 		// index of the select box (-1 if no box is selected)
 		int selected_box;
@@ -47,13 +49,13 @@ class BoxOrganizer : public QOpenGLWidget
 		int find_box(int x, int y) const;
 		void draw_box(int i) const;
 		void draw_grid() const;
+		void get_max_length();
 
 	public:
 		BoxOrganizer(QWidget *w = 0);
 
 		void mousePressEvent(QMouseEvent *e);
 		void mouseMoveEvent(QMouseEvent *e);
-
 		void paintGL();
 
 		void set_max_width(int W);
