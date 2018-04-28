@@ -40,14 +40,14 @@ if [ "$SOLVER_TEC" != "CP" ] && [ "$SOLVER_TEC" != "LP" ] && [ "$SOLVER_TEC" != 
 	exit
 fi
 
-EXE_FILE=$PROJ_DIR/$SOLVER_TEC/bin-release/wrapping-boxes
+EXE_FILE=$PROJ_DIR/$SOLVER_TEC/build-release/wrapping-boxes
 SUFFIX="."$SOLVER_TEC
 
 echo "Exe file used: $EXE_FILE"
 if [ ! -f $EXE_FILE ]; then
-	echo -e "    \e[1;31mError: solver for $SOLVER_TEC does not exist\e[0m"
+	echo -e "\e[1;31mError: solver for $SOLVER_TEC does not exist\e[0m"
 else
-	echo -e "    \e[1;32mSolver for $SOLVER_TEC exists. Proceed to benchmarking...\e[0m"
+	echo -e "\e[1;32mSolver for\e[0m \e[1;4;32m$SOLVER_TEC\e[0m \e[1;32mexists. Proceed to benchmarking...\e[0m"
 fi
 
 echo -e "\e[1;4mRead\e[0m inputs from '$INPUT_DIR'"
@@ -60,6 +60,7 @@ if [ "$OUTPUT_DIR" == "" ]; then
 	echo -e "    \e[1;31mError: output directory not specified\e[0m"
 	exit
 fi
+echo "" # blank line left intentionally
 
 # create output directory
 mkdir -p $OUTPUT_DIR
@@ -67,6 +68,15 @@ mkdir -p $OUTPUT_DIR
 mkdir -p logs
 # directory with optimal outputs
 OPT_OUTPUT_DIR=$PROJ_DIR/outputs/hand-made
+
+# number of instances solved optimally
+n_optimal=0
+# number of instances solved suboptimally
+n_suboptimal=0
+# total number of instances solved
+n_total=0
+# time so far (in milliseconds)
+total_time_ms=0
 
 for INFILE in $(ls -v $INPUT_DIR);
 do
@@ -90,14 +100,16 @@ do
 		echo "Executing solver with input file: $INPUT_DIR/$INFILE"
 		
 		begin=$(date +%s%3N)
-		./$EXE_FILE 						\
-			-i $INPUT_DIR/$INFILE 			\
-			-o $OUTPUT_DIR/$OUTFILE 		\
-			--heuris-mix 					\
-			--stop-at 5 --stop-when 2 -Nr 5	\
-			>>  logs/$OUT_LOG_FILE			\
+		./$EXE_FILE 							\
+			-i $INPUT_DIR/$INFILE 				\
+			-o $OUTPUT_DIR/$OUTFILE 			\
+			--heuris-mix 						\
+			--stop-at 3 --stop-when 3 -Nr 5		\
+			>>  logs/$OUT_LOG_FILE				\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
+		
+		n_total=$((n_total + 1))
 		
 		# if file with optimal solution exists check optimality
 		if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
@@ -105,19 +117,33 @@ do
 			sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
 			
 			if [ $opt_length == $sol_length ]; then
-				echo -e "    \e[1;32mOptimal solution reached at length: \e[0m"$opt_length
-			elif [ $opt_length -gt $sol_length ]; then
-				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
-				echo    "        Optimal: $opt_length"
-				echo    "        $SOLVER_TEC: $sol_length"
-			else
+				echo -e "    \e[1;32mOptimal solution reached\e[0m"
+				n_optimal=$((n_optimal + 1))
+			elif [ $opt_length -lt $sol_length ]; then
 				echo -e "    \e[1;33mSuboptimal solution:\e[0m"
-				echo    "        Optimal: $opt_length"
-				echo    "        $SOLVER_TEC: $sol_length"
+				echo -e "        Optimal: \e[1;32m$opt_length\e[0m"
+				echo -e "        CP:      \e[1;31m$sol_length\e[0m"
+				n_suboptimal=$((n_suboptimal + 1))
+			else
+				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
+				echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
+				echo -e "        CP:      \e[1;32m$sol_length\e[0m"
 			fi
 		fi
-		secs=$(($end - $begin))
-		echo "    In $secs miliseconds."
+
+		msecs=$(($end - $begin))
+		solv_time_secs=$(echo "scale=3; $msecs/1000" | bc)
+		echo "    In $solv_time_secs seconds"
+
+		total_time_ms=$(($total_time_ms + $msecs))
+		total_time_secs=$(echo "scale=3; $total_time_ms/1000" | bc)
+
+		per_opt=$(echo "scale=2; (100*$n_optimal)/$n_total" | bc)
+		per_sopt=$(echo "scale=2; (100*$n_suboptimal)/$n_total" | bc)
+		echo "    Current progress:"
+		echo "        Solved optimally    : $n_optimal / $n_total ( $per_opt% )"
+		echo "        Solved sub-optimally: $n_suboptimal / $n_total ( $per_sopt% )"
+		echo "        Time elapsed        : $total_time_secs seconds"
 		
 	else
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
