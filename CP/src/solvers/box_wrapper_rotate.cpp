@@ -62,12 +62,18 @@ void box_wrapper_rotate::span_cells_square
 			);
 		}
 	}
+	rel(*this, box_rotated[b] == 0);
 }
 
 /// PUBLIC
 
 box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
-	upper_bound_L = max_L;
+	if (max_L < 0) {
+		upper_bound_L = inf_t<int>();
+	}
+	else {
+		upper_bound_L = max_L;
+	}
 	
 	const int N = data.total_boxes;
 	const width W = data.W;
@@ -109,8 +115,6 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 					bool within = (i + b_length - 1 < L) and (j + b_width - 1 < W);
 					if (within) {
 						span_cells_square(L, W, b, i, j, b_length, b_width);
-						
-						rel(*this, box_rotated[b] == 0);
 					}
 				}
 				else {

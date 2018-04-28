@@ -3,7 +3,12 @@
 /// PUBLIC
 
 box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
-	upper_bound_L = max_L;
+	if (max_L < 0) {
+		upper_bound_L = inf_t<int>();
+	}
+	else {
+		upper_bound_L = max_L;
+	}
 	
 	const int N = data.total_boxes;
 	const width W = data.W;
