@@ -2,7 +2,7 @@
 
 /// C++ includes
 #include <utility>
-#include <cstdint>
+#include <limits>
 using namespace std;
 
 typedef int length;
@@ -11,3 +11,5 @@ typedef int area;
 
 typedef pair<int, int> corner;
 typedef pair<int, int> cell;
+
+template<typename T> T inf_t() { return numeric_limits<T>::max(); }
