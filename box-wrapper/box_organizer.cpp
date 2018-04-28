@@ -115,9 +115,10 @@ void BoxOrganizer::draw_grid() const {
 	glColor3f(1,0,0);
 	glLineWidth(10.0);
 	for (xcoord = xtlnorm; xcoord <= xbrnorm; xcoord += incr) {
+		nxcoord = xcoord + 0.05;
 		glBegin(GL_LINES);
 			glVertex2f(xcoord, ytlnorm);
-			glVertex2f(xcoord + 0.05, ybrnorm);
+			glVertex2f(nxcoord, ybrnorm);
 		glEnd();
 	}
 	glLineWidth(1.0);
