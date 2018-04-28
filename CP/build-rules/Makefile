@@ -10,8 +10,8 @@ HEUR_DIR = $(SRC_DIR)/heuristics
 SOLV_DIR = $(SRC_DIR)/solvers
 
 RULES_DIR = $(PROJ_DIR)/build-rules
-DEB_BIN_DIR = $(PROJ_DIR)/bin-debug
-REL_BIN_DIR = $(PROJ_DIR)/bin-release
+DEB_BIN_DIR = $(PROJ_DIR)/build-debug
+REL_BIN_DIR = $(PROJ_DIR)/build-release
 
 LIBS =	-lgecodeflatzinc -lgecodedriver \
 		-lgecodegist -lgecodesearch		\
