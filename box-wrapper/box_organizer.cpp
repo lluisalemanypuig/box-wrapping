@@ -223,6 +223,11 @@ void BoxOrganizer::set_max_width(int W) {
 	maxW = W*sqw;
 }
 
+void BoxOrganizer::set_max_length(int L) {
+	maxL = L;
+	length_label->setText(QString::fromStdString(std::to_string(maxL)));
+}
+
 void BoxOrganizer::add_box(int w, int h) {
 	coord tl(0,0);
 	if (boxes_tl.size() > 0) {
@@ -251,16 +256,16 @@ void BoxOrganizer::set_boxes(const vector<coord>& tls, const vector<coord>& ds) 
 
 void BoxOrganizer::clear_boxes() {
 	maxL = 0;
+	maxW = 0;
 	round = 0;
 	dims.clear();
 	boxes_tl.clear();
 }
 
 void BoxOrganizer::get_box_corners(int& L, vector<coord>& tls, vector<coord>& brs) const {
-	L = 0;
+	L = maxL;
 	tls = boxes_tl;
 	for (size_t i = 0; i < tls.size(); ++i) {
 		brs.push_back( coord( tls[i].first + dims[i].first, tls[i].second + dims[i].second ) );
-		L = max(L, tls[i].second + dims[i].second);
 	}
 }

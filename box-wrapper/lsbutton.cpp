@@ -62,6 +62,7 @@ void LSButton::read_output(ifstream& fin) {
 	int W = atoi(instance_name.substr(4, i - 1 - 3 + 1).c_str());
 
 	box_org->set_max_width(W);
+	box_org->set_max_length(L);
 	box_org->set_boxes(tls, dims);
 }
 
