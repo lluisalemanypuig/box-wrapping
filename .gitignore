@@ -1,5 +1,7 @@
-CP/bin-debug/*
-CP/bin-release/*
+CP/build-debug/*
+CP/build-release/*
 *.o
 checker/checker
 box-wrapper/box-wrapper.pro.user
+build-wrap-debug/
+build-wrap-release/
