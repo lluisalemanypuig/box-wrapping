@@ -97,11 +97,11 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:span-cells:square-boxes}
         \begin{split}
-        (R_b = 0) \wedge \left( X_{b,x,y} = 1 \Longrightarrow C_{b, x + i, y + j} = 1 \right),
+        (R_b = 0) \wedge \left( X_{b,x,y} = 1 \Longrightarrow C_{b, x + j, y + i} = 1 \right),
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b = l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + w_b \le W \wedge y + l_b \le L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
+        & \quad \qquad \forall i,j,\; 0 \le i < l_b, 0 \le j < w_b)
         \end{split}
         \end{flalign}
         
@@ -109,21 +109,21 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:span-cells:rectangular-boxes:0}
         \begin{split}
-        (R_b = 0 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + i, y + j} = 1,
+        (R_b = 0 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + j, y + i} = 1,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + w_b \le W \wedge y + l_b \le L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
+        & \quad \qquad \forall i,j,\; 0 \le i < l_b, 0 \le j < w_b)
         \end{split}
         \end{flalign}
         \begin{flalign}
         \label{eq:span-cells:rectangular-boxes:1}
         \begin{split}
-        (R_b = 1 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + j, y + i} = 1,
+        (R_b = 1 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + i, y + j} = 1,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + l_b \le W \wedge y + w_b \le L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
+        & \quad \qquad \forall i,j,\; 0 \le i < l_b, 0 \le j < w_b)
         \end{split}
         \end{flalign}
         
@@ -134,7 +134,7 @@ appropriate for the variable selection made.
 	$1 \le x \le W, 1 \le y \le L$ that are candidates for its top-left corner ``s.t.
 	$(x + w_b \le W \wedge y + l_b \le L)$'' and, for each of these cells, impose that the
 	corresponding cells occupied by $b$ according to its dimensions are occupied by it:
-	$\forall i,j,\; 0 \le i < w_b, 0 \le j < l_b: X_{b,x,y} = 1 \Longrightarrow C_{b, x + i, y + j} = 1$.
+	$\forall i,j,\; 0 \le i < w_b, 0 \le j < l_b: X_{b,x,y} = 1 \Longrightarrow C_{b, x + j, y + i} = 1$.
 	The constraints for rectangular boxes are read in a similar fashion but adding ``if the
 	box is not/is rotated'' after the ``for all rectangular boxes''.
 
@@ -161,18 +161,19 @@ appropriate for the variable selection made.
     the roll because it would end up out of its bounds. This will stop the solvers from
     assigning positive values to these cells, that is, assign a box, in the hope that they
     detect the unfeasibility of an instance as soon as possible. Again, the constraints
-    for square boxes are different from those for rectangular boxes.   
+    for square boxes are different from those for rectangular boxes. Moreover, it suffices
+    to forbid the placement of a box's top-left corner in these cells.
     
     \begin{itemize}
         \item For square boxes:
         \begin{flalign}
         \label{eq:forbid-span-cells:square-boxes}
         \begin{split}
-        X_{b,x+i,y+j} = 0,
+        X_{b,x+j,y+i} = 0,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b = l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + w_b > W \vee y + l_b > L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
+        & \quad \qquad \forall i,j,\; 0 \le i \le L - y, 0 \le j \le W - x)
         \end{split}
         \end{flalign}
         
@@ -180,21 +181,21 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:forbid-span-cells:rectangular-boxes:0}
         \begin{split}
-        R_b = 0 \Longrightarrow X_{b,x+i,y+j} = 0,
+        R_b = 0 \Longrightarrow X_{b,x+j,y+i} = 0,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + w_b > W \vee y + l_b > L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
+        & \quad \qquad \forall i,j,\; 0 \le i \le L - y, 0 \le j \le W - x)
         \end{split}
         \end{flalign}
         \begin{flalign}
         \label{eq:forbid-span-cells:rectangular-boxes:1}
         \begin{split}
-        R_b = 1 \Longrightarrow X_{b,x+j,y+i} = 0,
+        R_b = 1 \Longrightarrow X_{b,x+i,y+j} = 0,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + l_b > W \vee y + w_b > L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i \le W - x, 0 \le j \le L - y)
+        & \quad \qquad \forall i,j,\; 0 \le i \le L - y, 0 \le j \le W - x)
         \end{split}
         \end{flalign}
         
