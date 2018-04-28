@@ -230,7 +230,7 @@ void choose_solver
 	
 	if (simple) {
 		n_sols =
-			print_or_count<DFS, box_wrapper_rotate>
+			print_or_count<DFS, box_wrapper_simple>
 			(ops, enumerate, data, stop_at, solutions, error);
 	}
 	else if (rotate) {
@@ -260,7 +260,7 @@ int main(int argc, char *argv[]) {
 	bool heuris_rand = false;
 	bool heuris_mix = false;
 	
-	int stop_at = -1;
+	int stop_at = numeric_limits<int>::max();
 	bool stop_time = false;
 	double stop_when = 99999.9;
 	int n_threads = 1;
