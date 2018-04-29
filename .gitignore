@@ -5,6 +5,7 @@ report/build
 *.xml
 *.gz
 *.toc
+*.out
 
 *.bbl
 *.blg
