@@ -199,6 +199,12 @@ void BoxOrganizer::mouseMoveEvent(QMouseEvent *e) {
 		return;
 	}
 
+	int sel_x = boxes_tl[selected_box].first;
+	int sel_y = boxes_tl[selected_box].second;
+	if (x/sqw == sel_x and y/sqh == sel_y) {
+		return;
+	}
+
 	boxes_tl[selected_box].first = x/sqw;
 	boxes_tl[selected_box].second = y/sqh;
 	get_max_length();
