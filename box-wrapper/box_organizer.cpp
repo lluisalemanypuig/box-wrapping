@@ -30,6 +30,60 @@ void BoxOrganizer::get_max_length() {
 	}
 }
 
+void BoxOrganizer::make_vert_hor_lines() {
+	vertical.clear();
+	horizontal.clear();
+
+	// make horizontal and vertical lines for our grid
+	// vertical lines
+	int w = width();
+	for (int x = 0; x < w; x += sqw) {
+		float xcoord = (2.0/w)*x - 1;
+		vertical.push_back(vec2f(xcoord,  1.0));
+		vertical.push_back(vec2f(xcoord, -1.0));
+	}
+
+	// horizontal lines
+	int h = height();
+	for (int y = 0; y < h; y += sqh) {
+		float ycoord = (2.0/h)*y - 1;
+		horizontal.push_back(vec2f( 1.0, ycoord));
+		horizontal.push_back(vec2f(-1.0, ycoord));
+	}
+}
+
+void BoxOrganizer::make_diagonal_lines() {
+	diagonal.clear();
+
+	const int w = width();
+	const int h = height();
+
+	float xcoord, ycoord;
+	float nxcoord, nycoord;
+
+	nxcoord = 1.0;
+
+	// diagonal lines
+	for (int y = 0; y < h; y += sqh) {
+		xcoord = (2.0/w)*maxW - 1;
+		ycoord = (2.0/h)*y - 1;
+		nycoord = (2.0/h)*(y + w - maxW) - 1;
+
+		diagonal.push_back(vec2f(xcoord, ycoord));
+		diagonal.push_back(vec2f(nxcoord, nycoord));
+	}
+
+	ycoord = -1.0;
+
+	for (int x = maxW + sqw; x < w; x += sqw) {
+		xcoord = (2.0/w)*x - 1.0;
+		nycoord = (2.0/h)*(w - x) - 1.0;
+
+		diagonal.push_back(vec2f(xcoord, ycoord));
+		diagonal.push_back(vec2f(nxcoord, nycoord));
+	}
+}
+
 void BoxOrganizer::draw_box(int i) const {
 	float w = width();
 	float h = height();
@@ -50,72 +104,44 @@ void BoxOrganizer::draw_box(int i) const {
 }
 
 void BoxOrganizer::draw_grid() const {
-	int w = width();
-	int h = height();
-	float xcoord, ycoord, nxcoord, nycoord;
-	int x, y;
+	glColor3f(1,1,1);
 
 	// vertical lines
-	w = width();
-	for (int x = 0; x < w; x += sqw) {
-		xcoord = (2.0/w)*x - 1;
-
-		glColor3f(1,1,1);
+	for (int i = 0; i < vertical.size(); i += 2) {
 		glBegin(GL_LINES);
-			glVertex2f(xcoord, 1);
-			glVertex2f(xcoord, -1);
+			glVertex2f(vertical[i].x, vertical[i].y);
+			glVertex2f(vertical[i + 1].x, vertical[i + 1].y);
 		glEnd();
 	}
 
 	// horizontal lines
-	h = height();
-	for (y = 0; y < h; y += sqh) {
-		ycoord = (2.0/h)*y - 1;
-
-		glColor3f(1,1,1);
+	for (int i = 0; i < horizontal.size(); i += 2) {
 		glBegin(GL_LINES);
-			glVertex2f(1, ycoord);
-			glVertex2f(-1, ycoord);
+			glVertex2f(horizontal[i].x, horizontal[i].y);
+			glVertex2f(horizontal[i + 1].x, horizontal[i + 1].y);
 		glEnd();
 	}
 
 	// diagonal lines
-	xcoord = (2.0/w)*maxW - 1;
-	for (y = 0; y < h; y += sqh) {
-		ycoord = (2.0/h)*y - 1;
-		int Y = y + width() - maxW;
-		nycoord = (2.0/h)*Y - 1;
-
-		glColor3f(1,1,1);
+	for (int i = 0; i < diagonal.size(); i += 2) {
 		glBegin(GL_LINES);
-			glVertex2f(xcoord, ycoord);
-			glVertex2f(1, nycoord);
-		glEnd();
-	}
-
-	for (x = maxW + sqw; x < w; x += sqw) {
-		xcoord = (2.0/w)*x - 1;
-
-		int Y = width() - x;
-		nycoord = (2.0/h)*Y - 1;
-
-		glColor3f(1,1,1);
-		glBegin(GL_LINES);
-			glVertex2f(xcoord, -1);
-			glVertex2f(1, nycoord);
+			glVertex2f(diagonal[i].x, diagonal[i].y);
+			glVertex2f(diagonal[i + 1].x, diagonal[i + 1].y);
 		glEnd();
 	}
 
 	// max length bar
+	const int h = height();
+
 	float xtlnorm = -1;
 	float ytlnorm = (2.0/h)*maxL*sqh - 1;
 	float xbrnorm = 1.0;
 	float ybrnorm = (2.0/h)*(maxL*sqh + sqh) - 1;
 	float incr = (xbrnorm - xtlnorm)/20.0;
-	glColor3f(1,0,0);
+	glColor3f(1.0,0.0,0.0);
 	glLineWidth(10.0);
-	for (xcoord = xtlnorm; xcoord <= xbrnorm; xcoord += incr) {
-		nxcoord = xcoord + 0.05;
+	for (float xcoord = xtlnorm; xcoord <= xbrnorm; xcoord += incr) {
+		float nxcoord = xcoord + 0.05;
 		glBegin(GL_LINES);
 			glVertex2f(xcoord, ytlnorm);
 			glVertex2f(nxcoord, ybrnorm);
@@ -126,7 +152,7 @@ void BoxOrganizer::draw_grid() const {
 
 /// PUBLIC
 
-BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
+BoxOrganizer::BoxOrganizer(QWidget *parent) : QOpenGLWidget(parent) {
 	length_label = nullptr;
 	round = 0;
 	selected_box = -1;
@@ -159,6 +185,11 @@ BoxOrganizer::BoxOrganizer(QWidget *w) : QOpenGLWidget(w) {
 	box_col[23] = color(0,0.7,0.36);
 	box_col[24] = color(0,0.31,0);
 	box_col[25] = color(0,0.7,0.8);
+}
+
+void BoxOrganizer::init() {
+	make_vert_hor_lines();
+	make_diagonal_lines();
 }
 
 void BoxOrganizer::mousePressEvent(QMouseEvent *e) {
@@ -228,6 +259,7 @@ void BoxOrganizer::paintGL() {
 
 void BoxOrganizer::set_max_width(int W) {
 	maxW = W*sqw;
+	make_diagonal_lines();
 }
 
 void BoxOrganizer::set_max_length(int L) {

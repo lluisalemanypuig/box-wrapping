@@ -30,9 +30,20 @@ class BoxOrganizer : public QOpenGLWidget
 			color(float _r, float _g, float _b) : r(_r), g(_g), b(_b) {}
 		};
 
+		struct vec2f {
+			float x,y;
+
+			vec2f() {}
+			vec2f(float _x, float _y) : x(_x), y(_y) {}
+			vec2f(const vec2f& v) : x(v.x), y(v.y) {}
+		};
+
+		// arrays for our grid
+		vector<vec2f> vertical, horizontal, diagonal;
+
+		// boxes' coordinates, and colour
 		vector<coord> boxes_tl;
 		vector<coord> dims;
-
 		map<size_t, color> box_col;
 
 		// used to place boxes correctly when first added
@@ -52,11 +63,16 @@ class BoxOrganizer : public QOpenGLWidget
 		void draw_grid() const;
 		void get_max_length();
 
+		void make_vert_hor_lines();
+		void make_diagonal_lines();
+
 	public:
 		QLabel *length_label;
 
 	public:
 		BoxOrganizer(QWidget *w = 0);
+
+		void init();
 
 		void mousePressEvent(QMouseEvent *e);
 		void mouseMoveEvent(QMouseEvent *e);
