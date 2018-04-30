@@ -13,11 +13,6 @@
     \maketitle
 }
 
-\lstset{
-    tabsize=4,
-    basicstyle=\scriptsize
-}
-
 \newcommand \centeredcaption[1]
 {
     \captionsetup{justification=centering}
@@ -65,9 +60,20 @@
 	{ y_{#1}^{(br)} }
 }
 
+\makeatletter
+% command \NOINDENT to be used in a group   
+\newcommand \NOINDENT{\@@par   % clear parshape parameters
+% fool list-awareness code (as supposedly in lstlisting, not checked)
+      \@totalleftmargin\z@ \@listdepth\z@ \rightmargin\z@
+}
+\makeatother
+
 \lstset{language=C++,
-        keywordstyle=\color{blue},
-        stringstyle=\color{red},
-        commentstyle=\color{green},
-        morecomment=[l][\color{magenta}]{\#}
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{green},
+	morecomment=[l][\color{magenta}]{\#},
+	tabsize=4,
+	basicstyle=\scriptsize,
+	showstringspaces=false
 }

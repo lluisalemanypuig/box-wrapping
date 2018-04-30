@@ -17,21 +17,21 @@ as the upper bound on the roll's length calculated with equation
 \begin{enumerate}
     \item Array for variables \ref{var:box-cell}:
     
-    \begin{lstlisting}
+    {\NOINDENT \begin{lstlisting}
     box_cell = BoolVarArray(*this, N*W*L, 0, 1);
-    \end{lstlisting}
+    \end{lstlisting}}
     
     \item Array for variables \ref{var:box-corner}:
     
-    \begin{lstlisting}
+    {\NOINDENT \begin{lstlisting}
     box_corner = BoolVarArray(*this, N*W*L, 0, 1);
-    \end{lstlisting}
+    \end{lstlisting}}
     
     \item Array for variables \ref{var:box-rotated}:
     
-    \begin{lstlisting}
+    {\NOINDENT \begin{lstlisting}
     box_rotated = BoolVarArray(*this, N, 0, 1);
-    \end{lstlisting}
+    \end{lstlisting}}
     
 \end{enumerate}
 
@@ -42,15 +42,15 @@ Also, the implementation of the constraints is as follows:
     \ref{constr:box-placed}), also read as ``assign a top-left corner
     to each box''.
     
-	\begin{lstlisting}
+	{\NOINDENT \begin{lstlisting}
     for (int b = 0; b < N; ++b) {
 		rel(*this, sum(box_corner.slice(b*W*L, 1, W*L)) == 1);
 	}
-    \end{lstlisting}
+	\end{lstlisting}}
     
     \item Boxes cannot overlap (constraint formalised in \ref{constr:no-overlap}).
     
-    \begin{lstlisting}
+    {\NOINDENT \begin{lstlisting}
     for (int b = 0; b < N; ++b) {l
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
@@ -58,7 +58,7 @@ Also, the implementation of the constraints is as follows:
 			}
 		}
 	}
-	\end{lstlisting}
+	\end{lstlisting}}
     
     \item Depending on their rotation, boxes occupy certain cells of the roll
     (constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$
@@ -66,7 +66,7 @@ Also, the implementation of the constraints is as follows:
 
 	\begin{itemize}
 		\item For square boxes:
-		\begin{lstlisting}
+		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
 				rel(*this,
@@ -77,10 +77,10 @@ Also, the implementation of the constraints is as follows:
 			}
 		}
 		rel(*this, box_rotated[b] == 0);
-		\end{lstlisting}
+		\end{lstlisting}}
 		
 		\item For rectangular boxes:
-		\begin{lstlisting}
+		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
 				rel(*this,
@@ -91,8 +91,8 @@ Also, the implementation of the constraints is as follows:
 				);
 			}
 		}
-		\end{lstlisting}
-		\begin{lstlisting}
+		\end{lstlisting}}
+		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_width - 1; ++i) {
 			for (width j = x; j <= x + b_length - 1; ++j) {
 				rel(*this,
@@ -103,7 +103,7 @@ Also, the implementation of the constraints is as follows:
 				);
 			}
 		}
-		\end{lstlisting}
+		\end{lstlisting}}
 	\end{itemize}
     
     \item Depending on their rotation, boxes cannot occupy certain cells of the
@@ -112,25 +112,25 @@ Also, the implementation of the constraints is as follows:
     
     \begin{itemize}
 		\item For square boxes:
-		\begin{lstlisting}
+		{\NOINDENT \begin{lstlisting}
 		rel(*this, box_corner[b*W*L + y*W + x] == 0);
-		\end{lstlisting}
+		\end{lstlisting}}
 		
 		\item For rectangular boxes:
-		\begin{lstlisting}
+		{\NOINDENT \begin{lstlisting}
 		rel(*this,
 			(box_rotated[b] == 0)
 			>>
 			(box_corner[b*W*L + y*W + x] == 0)
 		);
-		\end{lstlisting}
-		\begin{lstlisting}
+		\end{lstlisting}}
+		{\NOINDENT \begin{lstlisting}
 		rel(*this,
 			(box_rotated[b] == 1)
 			>>
 			(box_corner[b*W*L + y*W + x] == 0)
 		);
-		\end{lstlisting}
+		\end{lstlisting}}
 	\end{itemize}
     
 \end{enumerate}
@@ -139,17 +139,17 @@ Also, the implementation of the constraints is as follows:
 \label{sec:constraint-programming:optimum}
 
 The constraints presented in the previous section only guarantee that if a feasible solution
-exists it will be found. However, they do not, and can not possibly guarantee, by definitino,
-the optimality of the solution. For this reason, in order to make Gecode find an optimum solution
-we use the \textit{Branch \& Bound} solver that needs the implementation of a function,
+exists it will be found. However, they do not, and can not possibly guarantee, by definition,
+the optimality of the solution. For this reason, in order to make Gecode look for an optimum
+solution, we use the \textit{Branch \& Bound} solver that needs the implementation of a function,
 \textit{constrain}, in which we can impose new constraints that can help the solver find
 better solutions.
 
 \begin{figure}[H]
 	\centering
-	\begin{lstlisting}[xleftmargin=.24\textwidth]
+	{\NOINDENT \begin{lstlisting}[xleftmargin=.24\textwidth]
 	virtual void constrain(const Space& _b);
-	\end{lstlisting}
+	\end{lstlisting}}
 	\centeredcaption{The header of the function \textit{constrain}}
 	\label{fig:constrain-header}
 \end{figure}
@@ -163,7 +163,7 @@ of variables and their value(s) and impose new constraints to force Gecode find 
 
 An easy approach to make Gecode find solutions that use shorter roll length is to forbid placing
 any box on all those cells with length $\optlength$, where $\optlength$ is the shortest length found
-so far. That is, for all those cells $(x,y)$ such that $y \ge \optlength$, impose that it cannot
+so far. That is, for all those cells $(x,y)$ such that $y \ge \optlength$, impose that they cannot
 contain a box. This way the next solution found, if there is any, will have stricter shorter length.
 In general, given a roll length $\optlength$, the new constraints imposed are:
 
@@ -178,7 +178,7 @@ C_{b,x,y} = 0,
 
 In Gecode, this is solved with the following code:
 
-\begin{lstlisting}
+{\NOINDENT \begin{lstlisting}
 for (int b = 0; b < N; ++b) {
 	for (length i = RL - 1; i < L; ++i) {
 		for (width j = 0; j < W; ++j) {
@@ -186,7 +186,7 @@ for (int b = 0; b < N; ++b) {
 		}
 	}
 }
-\end{lstlisting}
+\end{lstlisting}}
 
 where $RL = \optlength$ can be calculated using the values assigned to the variables in the 
 \textit{Space} object passed as parameter to the function \textit{constrain}.
