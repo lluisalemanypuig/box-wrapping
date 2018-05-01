@@ -220,7 +220,9 @@ unassigned, and for the values, the maximum in the domain of the variable chosen
 Since all the variables are Boolean, the value chosen is 1, interpreted as ``always
 assign''. In Gecode, this is implemented as follows:
 
-\lluis{Gecode code for branching strategy}
+{\NOINDENT \begin{lstlisting}
+branch(*this, box_rotated + box_corner, BOOL_VAR_NONE(), BOOL_VAL_MAX());
+\end{lstlisting}}
 
 Now, notice that in the implementation of the constraints of the generic model
 in Gecode needs an array with the list of boxes from the input. The only thing
