@@ -104,7 +104,7 @@ do
 			-i $INPUT_DIR/$INFILE 				\
 			-o $OUTPUT_DIR/$OUTFILE 			\
 			--heuris-mix 						\
-			--stop-at 3 --stop-when 3 -Nr 5		\
+			--stop-at 1 --stop-when 3 -Nr 5		\
 			>>  logs/$OUT_LOG_FILE				\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
@@ -127,7 +127,7 @@ do
 			else
 				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
 				echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
-				echo -e "        CP:      \e[1;32m$sol_length\e[0m"
+				echo -e "             CP: \e[1;32m$sol_length\e[0m"
 			fi
 		fi
 
