@@ -6,7 +6,7 @@ report/build
 *.gz
 *.toc
 *.out
-
+*.pyg
 *.bbl
 *.blg
 *.pdf
