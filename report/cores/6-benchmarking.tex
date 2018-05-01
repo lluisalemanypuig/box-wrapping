@@ -1,25 +1,21 @@
 \section{Benchmarking}
 \label{sec:benchmarking}
 
-A quick shortcut for an execution of any solver on all files describing
-an input each inside a directory can be found in the script ``benchmark.sh''
-in the ``scripts/'' directory:
-\begin{minted}{bash}
-~/box-wrapping: cd scripts
-\end{minted}
-
-Its usage is very simple: each solver is called with the parameters that
-should make it behave at its best. Therefore, we only have to indicate the solver
-we want to execute, the directory with all the inputs and where to store the
-output found for each input. An example can be found in figure \ref{fig:benchmark-example}.
+A quick shortcut for the execution of any solver on all files, describing
+an input each, inside a directory can be found in the script ``benchmark.sh''
+in the ``scripts/'' directory. Its usage is very simple: each solver is
+called with the parameters that should make it behave at its best. Therefore,
+we only have to indicate the solver we want to execute, the directory with
+all the inputs and where to store the output found for each input. An example
+can be found in figure \ref{fig:benchmark-example}.
 
 \begin{figure}[H]
 \centering
 \begin{minted}{bash}
 	./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
 \end{minted}
-\centeredcaption{Options of the benchmarking script to execute the solver for Constraint
-Programming on the inputs in the ``material'' directory.}
+\centeredcaption{How to use the benchmarking script to execute the solver for
+Constraint Programming on the inputs in the ``material'' directory.}
 \label{fig:benchmark-example}
 \end{figure}
 
@@ -40,7 +36,7 @@ similar to the one in figure \ref{fig:benchmark-verbose:optimal}.
 			Solved sub-optimally: 15 / 105 ( 14.28% )
 			Time elapsed        : 1367.485 seconds
 \end{minted}
-\centeredcaption{Example of the progress of the benchmark script for the
+\centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is optimal.}
 \label{fig:benchmark-verbose:optimal}
 \end{figure}
@@ -53,10 +49,11 @@ In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 23 minutes to
 solve a total of 105 inputs, 85 of them optimally and 15 of them suboptimally.
 The inputs used to get the message in figure \ref{fig:benchmark-verbose:optimal} were
 all the inputs sorted lexicographically from the ``bwp\_3\_3\_1.in'' to the
-``bwp\_11\_10\_1.in''. The total output for the same computer can be found
-in the file ``scripts/CP-benchmark-log''. An example of the message output by
-the script when the solution is not optimal is shown in figure
-\ref{fig:benchmark-verbose:suboptimal}.
+``bwp\_11\_10\_1.in''. The total output for the same CPU can be found
+in the file ``scripts/CP-benchmark-log''\footnote{In a Unix-like environment use
+the \textit{cat}, not the \textit{less}, software to display it on the command shell.}.
+An example of the message output by the script when the solution is not optimal is
+shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
@@ -71,7 +68,7 @@ the script when the solution is not optimal is shown in figure
 			Solved sub-optimally: 15 / 103 ( 14.56% )
 			Time elapsed        : 1334.431 seconds
 \end{minted}
-\centeredcaption{Example of the progress of the benchmark script for the
+\centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is not optimal.}
 \label{fig:benchmark-verbose:suboptimal}
 \end{figure}

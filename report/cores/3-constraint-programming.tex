@@ -312,9 +312,9 @@ Here are a few of the options explained:
 \begin{itemize}
 	\item If one wants to find $n$ solutions to a certain input, and store the
 	best found in a certain file, issue the following command:
-	\begin{minted}{bash}
-	./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-at n --enumerate --rotate
-	\end{minted}
+\begin{minted}{bash}
+./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-at n --enumerate --rotate
+\end{minted}
 	
 	Storing the best solution is indicated by specifying an output file with ``-o''.
 	The option ``enumerate'' will print on standard output all $n$ solutions found.
@@ -324,9 +324,9 @@ Here are a few of the options explained:
 	
 	\item If one wants to find the best solution to an instance, use the ``optim'' solver
 	instead of the solver ``rotate''.
-	\begin{minted}{bash}
-	./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-when 10.0 --enumerate --optim
-	\end{minted}
+\begin{minted}{bash}
+./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-when 10.0 --enumerate --optim
+\end{minted}
 	
 	The option ``enumerate'' will make the program list all solutions found from
 	the first (and probably worst) solution to the optimal (or quasi-optimal) one.
@@ -335,7 +335,10 @@ Here are a few of the options explained:
 
 There are more options one could use: indicate the number of threads that the solver
 can use, scramble (permute randomly) the input data and seed the random number generator
-so that the permutation is different at every execution.
+so that the permutation is different at every execution. It is important to say that
+the option ``stop-at'' should always be specified, otherwise the solver will try to
+find all feasible solutions within the matrix defined for variables \ref{var:box-cell}
+(what cells does a box occupy) and \ref{var:box-corner} (where is a box's corner placed at).
 
 \hfill
 
@@ -343,5 +346,6 @@ In order to use a heuristic, use the option ``heuris-*'', where '*' is either: `
 ``decr'', ``rand'', or ``mix'', each of these being an alias for the heuristics
 described in section \ref{sec:constraint-programming:optimum:heuristics}, in the same
 order of appearance. These also have options of their own, like indicating how many
-times the solver should be executed with the input data randomly permuted.
+times the solver should be executed with the input data randomly permuted (the other
+strategies are used only once).
 
