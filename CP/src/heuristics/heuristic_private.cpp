@@ -20,7 +20,7 @@ namespace heur_private {
 		box_wrapper_optim *boxes = nullptr;
 		box_wrapper_optim *sol;
 		
-		boxes = new box_wrapper_optim(data, BEST.get_roll_length());
+		boxes = new box_wrapper_optim(data, BEST.get_roll_length() - 1);
 		BAB<box_wrapper_optim> INC_SOLV(boxes, ops);
 		delete boxes;
 		
