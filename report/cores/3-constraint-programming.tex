@@ -39,8 +39,8 @@ Also, the implementation of the constraints is as follows:
 
 \begin{enumerate}
     \item All boxes must be in the solution (constraint formalised in
-    \ref{constr:box-placed}), also read as ``assign a top-left corner
-    to each box''.
+    \ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
+    also read as ``assign a top-left corner to each box''.
     
 	{\NOINDENT \begin{lstlisting}
     for (int b = 0; b < N; ++b) {
@@ -48,7 +48,8 @@ Also, the implementation of the constraints is as follows:
 	}
 	\end{lstlisting}}
     
-    \item Boxes cannot overlap (constraint formalised in \ref{constr:no-overlap}).
+    \item Boxes cannot overlap (constraint formalised in
+    \ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
     
     {\NOINDENT \begin{lstlisting}
     for (int b = 0; b < N; ++b) {l
@@ -61,11 +62,11 @@ Also, the implementation of the constraints is as follows:
 	\end{lstlisting}}
     
     \item Depending on their rotation, boxes occupy certain cells of the roll
-    (constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$
-    within bounds for $b$-th box:
+    (constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$ within
+    bounds for $b$-th box:
 
 	\begin{itemize}
-		\item For square boxes:
+		\item For square boxes (constraint \ref{eq:span-cells:square-boxes}):
 		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
@@ -79,7 +80,8 @@ Also, the implementation of the constraints is as follows:
 		rel(*this, box_rotated[b] == 0);
 		\end{lstlisting}}
 		
-		\item For rectangular boxes:
+		\item For rectangular boxes (constraints \ref{eq:span-cells:rectangular-boxes:0} and
+		\ref{eq:span-cells:rectangular-boxes:1}):
 		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
@@ -111,12 +113,13 @@ Also, the implementation of the constraints is as follows:
     out of bounds for $b$-th box:
     
     \begin{itemize}
-		\item For square boxes:
+		\item For square boxes (constraint \ref{eq:forbid-span-cells:square-boxes}):
 		{\NOINDENT \begin{lstlisting}
 		rel(*this, box_corner[b*W*L + y*W + x] == 0);
 		\end{lstlisting}}
 		
-		\item For rectangular boxes:
+		\item For rectangular boxes (constraints \ref{eq:forbid-span-cells:rectangular-boxes:0}
+		and \ref{eq:forbid-span-cells:rectangular-boxes:1}):
 		{\NOINDENT \begin{lstlisting}
 		rel(*this,
 			(box_rotated[b] == 0)
@@ -138,12 +141,13 @@ Also, the implementation of the constraints is as follows:
 \subsection{Finding the optimum solution}
 \label{sec:constraint-programming:optimum}
 
-The constraints presented in the previous section only guarantee that if a feasible solution
-exists it will be found. However, they do not, and can not possibly guarantee, by definition,
-the optimality of the solution. For this reason, in order to make Gecode look for an optimum
-solution, we use the \textit{Branch \& Bound} solver that needs the implementation of a function,
-\textit{constrain}, in which we can impose new constraints that can help the solver find
-better solutions.
+The constraints presented in the previous section only guarantee that if a
+feasible solution exists then, eventually, it will be found. However, they
+do not, and can not possibly guarantee, by definition, the optimality of the
+solution. For this reason, in order to make Gecode look for an optimum solution,
+we use the \textit{Branch \& Bound} solver that needs the implementation of
+a function, \textit{constrain}, in which we can impose new constraints that
+can help the solver find better solutions.
 
 \begin{figure}[H]
 	\centering
@@ -154,18 +158,21 @@ better solutions.
 	\label{fig:constrain-header}
 \end{figure}
 
-The function \textit{constrain} (see figure \ref{fig:constrain-header}) is simple to understand:
-it receives a single parameter of type \textit{Space}, which can be cast to the same type as
-our solver, and contains the current best solution. Using this object, we can access its arrays
-of variables and their value(s) and impose new constraints to force Gecode find better solutions.
+The function \textit{constrain} (see figure \ref{fig:constrain-header}) is
+simple to understand: it receives a single parameter of type \textit{Space},
+which can be cast to the same type as our solver, and contains the current
+best solution. Using this object, we can access its arrays of variables and
+their value(s) and impose new constraints to force Gecode find better solutions.
 
 \hfill
 
-An easy approach to make Gecode find solutions that use shorter roll length is to forbid placing
-any box on all those cells with length $\optlength$, where $\optlength$ is the shortest length found
-so far. That is, for all those cells $(x,y)$ such that $y \ge \optlength$, impose that they cannot
-contain a box. This way the next solution found, if there is any, will have stricter shorter length.
-In general, given a roll length $\optlength$, the new constraints imposed are:
+An easy approach to make Gecode find solutions that use shorter roll length is
+to forbid placing any box on all those cells with length $\optlength$, where
+$\optlength$ is the shortest length found so far. That is, for all those cells
+$(x,y)$ such that $y \ge \optlength$, impose that they cannot contain a box.
+This way the next solution found, if there is any, will have stricter shorter
+length. In general, given a roll length $\optlength$, the new constraints imposed
+are:
 
 \begin{flalign}
 \label{eq:optimal-solution}
@@ -176,7 +183,8 @@ C_{b,x,y} = 0,
 \end{split}
 \end{flalign}
 
-In Gecode, this is solved with the following code:
+The implementation of the constraints in \ref{eq:optimal-solution} in Gecode is done
+with the following code:
 
 {\NOINDENT \begin{lstlisting}
 for (int b = 0; b < N; ++b) {
@@ -188,9 +196,152 @@ for (int b = 0; b < N; ++b) {
 }
 \end{lstlisting}}
 
-where $RL = \optlength$ can be calculated using the values assigned to the variables in the 
-\textit{Space} object passed as parameter to the function \textit{constrain}.
+where $RL = \optlength$ can be calculated using the values assigned to the variables
+in the \textit{Space} object passed as parameter to the function \textit{constrain}.
 
-\subsection{Heuristics}
+\subsubsection{Heuristics}
+\label{sec:constraint-programming:optimum:heuristics}
 
-\subsection{Executing the code}
+Given enough time, Gecode is, by definition, ensured to be able to find an optimal
+solution: each solution found using the method explained in section \ref{sec:constraint-programming:optimum}
+will have strictly shorter roll length than the previous. Therefore, eventually,
+Gecode will find a solution with a series of constraints (limiting the roll length
+used) that will make the instance infeasible. The solution found before that point
+is the optimal. However, that will only happen ``given enough time'', that is, even
+though Gecode is rather efficient this might mean several hours. In order to tackle
+this issue, we implemented a number of heuristics that should make Gecode stop as
+soon as possible.
+
+\hfill
+
+All the heuristics implemented are very simple. The variable and value selection
+strategies are kept as simple as possible: for the variables, choose the first
+unassigned, and for the values, the maximum in the domain of the variable chosen.
+Since all the variables are Boolean, the value chosen is 1, interpreted as ``always
+assign''. In Gecode, this is implemented as follows:
+
+\lluis{Gecode code for branching strategy}
+
+Now, notice that in the implementation of the constraints of the generic model
+in Gecode needs an array with the list of boxes from the input. The only thing
+done as an attempt to speed up the solver's execution time is to rearrange
+the boxes in this array so that the constraints are ordered in a particular way.
+For example, we may want the solver to assign larger boxes first, and smaller boxes
+last. Or simply select each boxes at random\footnote{This could have been implemented
+in the variable selection strategy. However, this way we avoid the solver computing
+a maximum or minimum each time it has to select a variable.}.
+
+\hfill
+
+The order is not the only attempt at speeding up the code. Several strategies
+are ``concatenated'', that is, executed one after the other, in the following
+way: after the solver has finished its execution with a particular ordering of
+the boxes with a solution of roll length $\optlength_1$, execute again the solver with a
+different ordering and, instead of using the upper bound on the maximum length
+$L$ defined in equation \ref{eq:upper-bound-L}, use the minimum of the two (see
+equation \ref{eq:upper-bound-L:better}) which means that the matrices for variables
+\ref{var:box-cell} and \ref{var:box-corner} will become smaller with every step.
+\begin{equation}
+\label{eq:upper-bound-L:better}
+L' = \min\{L, \optlength_1\}
+\end{equation}
+
+Algorithmically, this can be formalised in algorithm \ref{alg:constraint:programming:generic-heuristic}.
+
+\begin{algorithm}[H]
+	\label{alg:constraint:programming:generic-heuristic}
+    \DontPrintSemicolon
+    
+    \caption{Generic heuristic}
+    
+	$L := $ \textsc{UpperBoundRollLength}($\mathcal{B}$), using equation \ref{eq:upper-bound-L} \;
+	$\mathcal{B}' :=$ sort boxes in $\mathcal{B}$ increasingly by area \;
+	$S_1 := \textsc{Solve}(\mathcal{B}', L - 1)$ \;
+	\;
+	$L := \min\{ \text{length}(S_1), L \}$ \;
+	$\mathcal{B}' :=$ sort boxes in $\mathcal{B}$ decreasingly by area \;
+	$S_2 := \textsc{Solve}(\mathcal{B}', L - 1)$ \;
+	\;
+	$\cdots$ \;
+	\;
+	$L := \min\{ \text{length}(S_{n-1}), L \}$ \;
+	$\mathcal{B}' :=$ sort boxes in $\mathcal{B}$ using some other criteria \;
+	$S_n := \textsc{Solve}(\mathcal{B}', L - 1)$ \;
+	\Return $S_n$
+\end{algorithm}
+
+where $\text{length}(S_i)$ is the roll's length used in solution $S_i$, and $n$ is
+the limit on the amount of heuristics concatenated. Needless to say that, if $S_i$
+is an optimal solution, the solver should not take much time in concluding that
+it can not possible find a solution at step $i+1$, basically due to not being enough
+variables.
+
+\hfill
+
+Several heuristics were studied:
+\begin{enumerate}
+	\item Sort increasingly by area $+$ increasingly by width.
+	\item Sort decreasingly by area $+$ decreasingly by width.
+	\item Random permutation: scramble randomly the contents of $\mathcal{B}$
+	and find a solution for it. This step is concatenated several times.
+	\item Mixed heuristic: concatenate all the previous heuristics in the order
+	they are listed.
+\end{enumerate}
+
+The mixed heuristic proved to be the best in practice.
+
+\subsection{Compilation and execution}
+\label{sec:constraint-programming:compilation-execution}
+
+In order to compile this part of the project, while assuming that we are at the
+root directory of the project, one should issue the following commands:
+\begin{minted}{bash}
+~/box-wrapping: cd CP/build-rules
+~/box-wrapping/CP/build-rules/: make -f Makefile release
+~/box-wrapping/CP/build-rules/: cd ..
+~/box-wrapping/CP/: cd build-release
+\end{minted}
+
+Once the compilation has finished we can execute the binary file generated. The
+complete usage can be seen by issuing the command:
+\begin{minted}{bash}
+./wrapping-boxes --help
+\end{minted}
+
+Here are a few of the options explained:
+\begin{itemize}
+	\item If one wants to find $n$ solutions to a certain input, and store the
+	best found in a certain file, issue the following command:
+	\begin{minted}{bash}
+	./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-at n --enumerate --rotate
+	\end{minted}
+	
+	Storing the best solution is indicated by specifying an output file with ``-o''.
+	The option ``enumerate'' will print on standard output all $n$ solutions found.
+	The solver used is ``rotate'', which will not try to find an optimal solution.
+	The ``stop-at'' option indicates the solver to stop when $n$ solutions were
+	found.
+	
+	\item If one wants to find the best solution to an instance, use the ``optim'' solver
+	instead of the solver ``rotate''.
+	\begin{minted}{bash}
+	./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-when 10.0 --enumerate --optim
+	\end{minted}
+	
+	The option ``enumerate'' will make the program list all solutions found from
+	the first (and probably worst) solution to the optimal (or quasi-optimal) one.
+	With the option ``stop-when'' the solver will stop finding solutions after 10 seconds.
+\end{itemize}
+
+There are more options one could use: indicate the number of threads that the solver
+can use, scramble (permute randomly) the input data and seed the random number generator
+so that the permutation is different at every execution.
+
+\hfill
+
+In order to use a heuristic, use the option ``heuris-*'', where '*' is either: ``incr'',
+``decr'', ``rand'', or ``mix'', each of these being an alias for the heuristics
+described in section \ref{sec:constraint-programming:optimum:heuristics}, in the same
+order of appearance. These also have options of their own, like indicating how many
+times the solver should be executed with the input data randomly permuted.
+

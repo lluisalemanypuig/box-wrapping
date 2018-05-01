@@ -46,7 +46,7 @@ us a total of $N(2WL + 1)$ Boolean variables.
 Notice that this model has a slight drawback: using Boolean variables forces us to define
 two fixed-size matrices for which we need to know the value of $L$. This is only a minor
 issue since we can easily determine an upper bound on the length of the roll used: in the
-worst case we might need to put all boxes one ``next to the other'' in the roll. Therefore,
+worst case we might need to put all boxes ``one next to the other'' in the roll. Therefore,
 in order to build the matrices we use the value
 \begin{equation}
 \label{eq:upper-bound-L}
@@ -57,7 +57,7 @@ Notice that the maximum ensures a solution when the boxes are allowed to rotate:
 model can be obtained by not implementing variables $R_b$ (and changing the subsequent
 constraints so that boxes are not rotated at all) so that an upper bound on $L$ can be
 obtained by just adding up the lengths of the input boxes, but this does not guarantee
-a solution to all instances (imagine an instance where all boxes had width $w_b > W$:
+a solution to all instances (imagine an instance where at least one box had width $w_b > W$:
 without rotations this instance does not have a solution).
 
 \subsection{Constraints}
