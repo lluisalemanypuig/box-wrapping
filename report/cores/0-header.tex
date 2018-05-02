@@ -29,7 +29,6 @@
 \usepackage{subcaption}
 
 \usepackage{listings}
-\usepackage{minted} % for bash listing
 \usepackage{enumitem}
 
 %\usepackage[disable]{todonotes}
@@ -37,3 +36,13 @@
 
 \usepackage{xifthen}	% for optional parameters
 \usepackage{hyperref}	% for hyperlinks
+
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother

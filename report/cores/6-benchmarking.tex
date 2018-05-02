@@ -11,9 +11,9 @@ can be found in figure \ref{fig:benchmark-example}.
 
 \begin{figure}[H]
 \centering
-\begin{minted}{bash}
-	./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
-\end{minted}
+\begin{lstlisting}[language=bash,basicstyle=\centering]
+./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
+\end{lstlisting}
 \centeredcaption{How to use the benchmarking script to execute the solver for
 Constraint Programming on the inputs in the ``material'' directory.}
 \label{fig:benchmark-example}
@@ -27,15 +27,15 @@ similar to the one in figure \ref{fig:benchmark-verbose:optimal}.
 
 \begin{figure}[H]
 \centering
-\begin{minted}{bash}
-	Executing solver with input file: ../inputs/material/bwp_11_10_1.in
-		Optimal solution reached
-		In 22.898 seconds
-		Current progress:
-			Solved optimally    : 85 / 105 ( 80.95% )
-			Solved sub-optimally: 15 / 105 ( 14.28% )
-			Time elapsed        : 1367.485 seconds
-\end{minted}
+\begin{lstlisting}[language=bash]
+				Executing solver with input file: ../inputs/material/bwp_11_10_1.in
+					Optimal solution reached
+					In 22.898 seconds
+					Current progress:
+						Solved optimally    : 85 / 105 ( 80.95% )
+						Solved sub-optimally: 15 / 105 ( 14.28% )
+						Time elapsed        : 1367.485 seconds
+\end{lstlisting}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is optimal.}
 \label{fig:benchmark-verbose:optimal}
@@ -57,17 +57,17 @@ shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
-\begin{minted}{bash}
-	Executing solver with input file: ../inputs/material/bwp_11_8_1.in
-		Suboptimal solution:
-			Optimal: 12
-			CP:      15
-		In 27.030 seconds
-		Current progress:
-			Solved optimally    : 83 / 103 ( 80.58% )
-			Solved sub-optimally: 15 / 103 ( 14.56% )
-			Time elapsed        : 1334.431 seconds
-\end{minted}
+\begin{lstlisting}[language=bash]
+				Executing solver with input file: ../inputs/material/bwp_11_8_1.in
+					Suboptimal solution:
+						Optimal: 12
+						CP:      15
+					In 27.030 seconds
+					Current progress:
+						Solved optimally    : 83 / 103 ( 80.58% )
+						Solved sub-optimally: 15 / 103 ( 14.56% )
+						Time elapsed        : 1334.431 seconds
+\end{lstlisting}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is not optimal.}
 \label{fig:benchmark-verbose:suboptimal}

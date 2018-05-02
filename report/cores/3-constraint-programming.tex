@@ -297,26 +297,26 @@ The mixed heuristic proved to be the best in practice.
 
 In order to compile this part of the project, while assuming that we are at the
 root directory of the project, one should issue the following commands:
-\begin{minted}{bash}
+\begin{lstlisting}[language=bash]
 ~/box-wrapping: cd CP/build-rules
 ~/box-wrapping/CP/build-rules/: make -f Makefile release
 ~/box-wrapping/CP/build-rules/: cd ..
 ~/box-wrapping/CP/: cd build-release
-\end{minted}
+\end{lstlisting}
 
 Once the compilation has finished we can execute the binary file generated. The
 complete usage can be seen by issuing the command:
-\begin{minted}{bash}
+\begin{lstlisting}[language=bash]
 ./wrapping-boxes --help
-\end{minted}
+\end{lstlisting}
 
 Here are a few of the options explained:
 \begin{itemize}
 	\item If one wants to find $n$ solutions to a certain input, and store the
 	best found in a certain file, issue the following command:
-\begin{minted}{bash}
+\begin{lstlisting}[language=bash]
 ./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-at n --enumerate --rotate
-\end{minted}
+\end{lstlisting}
 	
 	Storing the best solution is indicated by specifying an output file with ``-o''.
 	The option ``enumerate'' will print on standard output all $n$ solutions found.
@@ -326,9 +326,9 @@ Here are a few of the options explained:
 	
 	\item If one wants to find the best solution to an instance, use the ``optim'' solver
 	instead of the solver ``rotate''.
-\begin{minted}{bash}
+\begin{lstlisting}[language=bash]
 ./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-when 10.0 --enumerate --optim
-\end{minted}
+\end{lstlisting}
 	
 	The option ``enumerate'' will make the program list all solutions found from
 	the first (and probably worst) solution to the optimal (or quasi-optimal) one.
