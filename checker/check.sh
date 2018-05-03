@@ -8,6 +8,7 @@ then
 else
 	echo -e "\e[1;31mChecker program does not exist\e[0m"
 	echo -e "\e[1;31mModify variable 'CHECKER_PROG'\e[0m"
+	echo -e "    \e[1;31mDid you compile the source file?\e[0m"
 	exit
 fi
 
@@ -47,6 +48,7 @@ do
 		fi
 	else
 		echo -e "\e[1;31mWarning: output file '$OUT_DIR/$OUTFILE' does not exist\e[0m"
+		echo -e "    \e[1;31mAre you missing the prefix??\e[0m"
 		echo -e "    \e[1;31mSkipping...\e[0m"
 	fi
 done
