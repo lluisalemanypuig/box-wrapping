@@ -104,7 +104,7 @@ do
 			-i $INPUT_DIR/$INFILE 				\
 			-o $OUTPUT_DIR/$OUTFILE 			\
 			--heuris-mix 						\
-			--stop-at 1 --stop-when 3 -Nr 5		\
+			--stop-at 1 --stop-when 5 -Nr 5		\
 			>>  logs/$OUT_LOG_FILE				\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
@@ -143,7 +143,7 @@ do
 		echo "    Current progress:"
 		echo "        Solved optimally    : $n_optimal / $n_total ( $per_opt% )"
 		echo "        Solved sub-optimally: $n_suboptimal / $n_total ( $per_sopt% )"
-		echo "        Time elapsed        : $total_time_secs seconds"
+		echo "        Total time elapsed  : $total_time_secs seconds"
 		
 	else
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
