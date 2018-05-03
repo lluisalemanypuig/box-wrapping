@@ -1,0 +1,150 @@
+In 44.9926 seconds (average)
+--------------------
+1)
+   | W
+ L |  0  1  2  3  4  5  6 
+-------------------------
+ 0 |  1  1  1  1  2  2  2 
+ 1 |  1  1  1  1  2  2  2 
+ 2 |  1  1  1  1  2  2  2 
+ 3 |  3  3  3  4  4  4 12 
+ 4 |  3  3  3  4  4  4 13 
+ 5 |  3  3  3  4  4  4  . 
+ 6 |  5  5  5  6  6  6  . 
+ 7 |  5  5  5  6  6  6  . 
+ 8 |  5  5  5  6  6  6  . 
+ 9 |  7  7  7  8  8  8  . 
+10 |  7  7  7  8  8  8  . 
+11 |  7  7  7  9  9  9  . 
+12 | 10 10 10  9  9  9  . 
+13 | 10 10 10 11 11 11  . 
+14 |  .  .  . 11 11 11  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (3,2)
+
+    Box  2 is at 
+        top left     (4,0)
+        bottom right (6,2)
+
+    Box  3 is at 
+        top left     (0,3)
+        bottom right (2,5)
+
+    Box  4 is at 
+        top left     (3,3)
+        bottom right (5,5)
+
+    Box  5 is at 
+        top left     (0,6)
+        bottom right (2,8)
+
+    Box  6 is at 
+        top left     (3,6)
+        bottom right (5,8)
+
+    Box  7 is at 
+        top left     (0,9)
+        bottom right (2,11)
+
+    Box  8 is at 
+        top left     (3,9)
+        bottom right (5,10)
+
+    Box  9 is at 
+        top left     (3,11)
+        bottom right (5,12)
+
+    Box 10 is at 
+        top left     (0,12)
+        bottom right (2,13)
+
+    Box 11 is at 
+        top left     (3,13)
+        bottom right (5,14)
+
+    Box 12 is at 
+        top left     (6,3)
+        bottom right (6,3)
+
+    Box 13 is at 
+        top left     (6,4)
+        bottom right (6,4)
+
+    Roll length used: 15
+--------------------
+   | W
+ L |  0  1  2  3  4  5  6 
+-------------------------
+ 0 |  1  1  1  1  2  2  2 
+ 1 |  1  1  1  1  2  2  2 
+ 2 |  1  1  1  1  2  2  2 
+ 3 |  3  3  3  4  4  4 12 
+ 4 |  3  3  3  4  4  4 13 
+ 5 |  3  3  3  4  4  4  . 
+ 6 |  5  5  5  6  6  6  . 
+ 7 |  5  5  5  6  6  6  . 
+ 8 |  5  5  5  6  6  6  . 
+ 9 |  7  7  7  8  8  8  . 
+10 |  7  7  7  8  8  8  . 
+11 |  7  7  7  9  9  9  . 
+12 | 10 10 10  9  9  9  . 
+13 | 10 10 10 11 11 11  . 
+14 |  .  .  . 11 11 11  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (3,2)
+
+    Box  2 is at 
+        top left     (4,0)
+        bottom right (6,2)
+
+    Box  3 is at 
+        top left     (0,3)
+        bottom right (2,5)
+
+    Box  4 is at 
+        top left     (3,3)
+        bottom right (5,5)
+
+    Box  5 is at 
+        top left     (0,6)
+        bottom right (2,8)
+
+    Box  6 is at 
+        top left     (3,6)
+        bottom right (5,8)
+
+    Box  7 is at 
+        top left     (0,9)
+        bottom right (2,11)
+
+    Box  8 is at 
+        top left     (3,9)
+        bottom right (5,10)
+
+    Box  9 is at 
+        top left     (3,11)
+        bottom right (5,12)
+
+    Box 10 is at 
+        top left     (0,12)
+        bottom right (2,13)
+
+    Box 11 is at 
+        top left     (3,13)
+        bottom right (5,14)
+
+    Box 12 is at 
+        top left     (6,3)
+        bottom right (6,3)
+
+    Box 13 is at 
+        top left     (6,4)
+        bottom right (6,4)
+
+    Roll length used: 15

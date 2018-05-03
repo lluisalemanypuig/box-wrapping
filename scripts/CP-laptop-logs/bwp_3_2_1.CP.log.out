@@ -1,0 +1,40 @@
+In 0.003017 seconds (average)
+--------------------
+1)
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 2 2 . 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,0)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (1,1)
+
+    Roll length used: 2
+--------------------
+  | W
+L | 0 1 2 
+----------
+0 | 1 1 . 
+1 | 2 2 . 
+2 | . . . 
+3 | . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,0)
+
+    Box 2 is at 
+        top left     (0,1)
+        bottom right (1,1)
+
+    Roll length used: 2

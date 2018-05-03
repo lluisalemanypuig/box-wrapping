@@ -1,0 +1,100 @@
+In 25.9731 seconds (average)
+--------------------
+1)
+  | W
+L | 0 1 2 3 4 
+--------------
+0 | 1 1 2 2 7 
+1 | 1 1 2 2 8 
+2 | 3 3 4 4 9 
+3 | 3 3 4 4 . 
+4 | 5 5 6 6 . 
+5 | 5 5 6 6 . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (1,3)
+
+    Box 4 is at 
+        top left     (2,2)
+        bottom right (3,3)
+
+    Box 5 is at 
+        top left     (0,4)
+        bottom right (1,5)
+
+    Box 6 is at 
+        top left     (2,4)
+        bottom right (3,5)
+
+    Box 7 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box 8 is at 
+        top left     (4,1)
+        bottom right (4,1)
+
+    Box 9 is at 
+        top left     (4,2)
+        bottom right (4,2)
+
+    Roll length used: 6
+--------------------
+  | W
+L | 0 1 2 3 4 
+--------------
+0 | 1 1 2 2 7 
+1 | 1 1 2 2 8 
+2 | 3 3 4 4 9 
+3 | 3 3 4 4 . 
+4 | 5 5 6 6 . 
+5 | 5 5 6 6 . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box 2 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box 3 is at 
+        top left     (0,2)
+        bottom right (1,3)
+
+    Box 4 is at 
+        top left     (2,2)
+        bottom right (3,3)
+
+    Box 5 is at 
+        top left     (0,4)
+        bottom right (1,5)
+
+    Box 6 is at 
+        top left     (2,4)
+        bottom right (3,5)
+
+    Box 7 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box 8 is at 
+        top left     (4,1)
+        bottom right (4,1)
+
+    Box 9 is at 
+        top left     (4,2)
+        bottom right (4,2)
+
+    Roll length used: 6
