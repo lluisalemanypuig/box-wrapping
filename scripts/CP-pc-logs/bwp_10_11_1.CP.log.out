@@ -1,0 +1,156 @@
+In 44.7148 seconds (average)
+--------------------
+1)
+   | W
+ L |  0  1  2  3  4  5  6  7 8 9 
+---------------------------------
+ 0 |  1  2  3  4  5  6  6  6 . . 
+ 1 |  7  7  7  .  .  6  6  6 . . 
+ 2 |  7  7  7  8  8  8  9  9 9 9 
+ 3 |  .  .  .  8  8  8  9  9 9 9 
+ 4 | 10 10 10 10 11 11 11 11 . . 
+ 5 | 10 10 10 10 11 11 11 11 . . 
+ 6 |  .  .  .  .  .  .  .  . . . 
+ 7 |  .  .  .  .  .  .  .  . . . 
+ 8 |  .  .  .  .  .  .  .  . . . 
+ 9 |  .  .  .  .  .  .  .  . . . 
+10 |  .  .  .  .  .  .  .  . . . 
+11 |  .  .  .  .  .  .  .  . . . 
+12 |  .  .  .  .  .  .  .  . . . 
+13 |  .  .  .  .  .  .  .  . . . 
+14 |  .  .  .  .  .  .  .  . . . 
+15 |  .  .  .  .  .  .  .  . . . 
+16 |  .  .  .  .  .  .  .  . . . 
+17 |  .  .  .  .  .  .  .  . . . 
+18 |  .  .  .  .  .  .  .  . . . 
+19 |  .  .  .  .  .  .  .  . . . 
+20 |  .  .  .  .  .  .  .  . . . 
+21 |  .  .  .  .  .  .  .  . . . 
+22 |  .  .  .  .  .  .  .  . . . 
+23 |  .  .  .  .  .  .  .  . . . 
+24 |  .  .  .  .  .  .  .  . . . 
+25 |  .  .  .  .  .  .  .  . . . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box  2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box  3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box  4 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box  5 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box  6 is at 
+        top left     (5,0)
+        bottom right (7,1)
+
+    Box  7 is at 
+        top left     (0,1)
+        bottom right (2,2)
+
+    Box  8 is at 
+        top left     (3,2)
+        bottom right (5,3)
+
+    Box  9 is at 
+        top left     (6,2)
+        bottom right (9,3)
+
+    Box 10 is at 
+        top left     (0,4)
+        bottom right (3,5)
+
+    Box 11 is at 
+        top left     (4,4)
+        bottom right (7,5)
+
+    Roll length used: 6
+--------------------
+   | W
+ L |  0  1  2  3  4  5  6  7 8 9 
+---------------------------------
+ 0 |  1  2  3  4  5  6  6  6 . . 
+ 1 |  7  7  7  .  .  6  6  6 . . 
+ 2 |  7  7  7  8  8  8  9  9 9 9 
+ 3 |  .  .  .  8  8  8  9  9 9 9 
+ 4 | 10 10 10 10 11 11 11 11 . . 
+ 5 | 10 10 10 10 11 11 11 11 . . 
+ 6 |  .  .  .  .  .  .  .  . . . 
+ 7 |  .  .  .  .  .  .  .  . . . 
+ 8 |  .  .  .  .  .  .  .  . . . 
+ 9 |  .  .  .  .  .  .  .  . . . 
+10 |  .  .  .  .  .  .  .  . . . 
+11 |  .  .  .  .  .  .  .  . . . 
+12 |  .  .  .  .  .  .  .  . . . 
+13 |  .  .  .  .  .  .  .  . . . 
+14 |  .  .  .  .  .  .  .  . . . 
+15 |  .  .  .  .  .  .  .  . . . 
+16 |  .  .  .  .  .  .  .  . . . 
+17 |  .  .  .  .  .  .  .  . . . 
+18 |  .  .  .  .  .  .  .  . . . 
+19 |  .  .  .  .  .  .  .  . . . 
+20 |  .  .  .  .  .  .  .  . . . 
+21 |  .  .  .  .  .  .  .  . . . 
+22 |  .  .  .  .  .  .  .  . . . 
+23 |  .  .  .  .  .  .  .  . . . 
+24 |  .  .  .  .  .  .  .  . . . 
+25 |  .  .  .  .  .  .  .  . . . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box  2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box  3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box  4 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box  5 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box  6 is at 
+        top left     (5,0)
+        bottom right (7,1)
+
+    Box  7 is at 
+        top left     (0,1)
+        bottom right (2,2)
+
+    Box  8 is at 
+        top left     (3,2)
+        bottom right (5,3)
+
+    Box  9 is at 
+        top left     (6,2)
+        bottom right (9,3)
+
+    Box 10 is at 
+        top left     (0,4)
+        bottom right (3,5)
+
+    Box 11 is at 
+        top left     (4,4)
+        bottom right (7,5)
+
+    Roll length used: 6

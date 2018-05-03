@@ -1,0 +1,134 @@
+In 44.7428 seconds (average)
+--------------------
+1)
+   | W
+ L | 0 1  2  3 
+--------------
+ 0 | 1 2  2  . 
+ 1 | 3 3  4  4 
+ 2 | 5 5  6  6 
+ 3 | 7 7  6  6 
+ 4 | 7 7  8  8 
+ 5 | 9 9  8  8 
+ 6 | 9 9 10 10 
+ 7 | . . 10 10 
+ 8 | . .  .  . 
+ 9 | . .  .  . 
+10 | . .  .  . 
+11 | . .  .  . 
+12 | . .  .  . 
+13 | . .  .  . 
+14 | . .  .  . 
+15 | . .  .  . 
+16 | . .  .  . 
+17 | . .  .  . 
+18 | . .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box  2 is at 
+        top left     (1,0)
+        bottom right (2,0)
+
+    Box  3 is at 
+        top left     (0,1)
+        bottom right (1,1)
+
+    Box  4 is at 
+        top left     (2,1)
+        bottom right (3,1)
+
+    Box  5 is at 
+        top left     (0,2)
+        bottom right (1,2)
+
+    Box  6 is at 
+        top left     (2,2)
+        bottom right (3,3)
+
+    Box  7 is at 
+        top left     (0,3)
+        bottom right (1,4)
+
+    Box  8 is at 
+        top left     (2,4)
+        bottom right (3,5)
+
+    Box  9 is at 
+        top left     (0,5)
+        bottom right (1,6)
+
+    Box 10 is at 
+        top left     (2,6)
+        bottom right (3,7)
+
+    Roll length used: 8
+--------------------
+   | W
+ L | 0 1  2  3 
+--------------
+ 0 | 1 2  2  . 
+ 1 | 3 3  4  4 
+ 2 | 5 5  6  6 
+ 3 | 7 7  6  6 
+ 4 | 7 7  8  8 
+ 5 | 9 9  8  8 
+ 6 | 9 9 10 10 
+ 7 | . . 10 10 
+ 8 | . .  .  . 
+ 9 | . .  .  . 
+10 | . .  .  . 
+11 | . .  .  . 
+12 | . .  .  . 
+13 | . .  .  . 
+14 | . .  .  . 
+15 | . .  .  . 
+16 | . .  .  . 
+17 | . .  .  . 
+18 | . .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box  2 is at 
+        top left     (1,0)
+        bottom right (2,0)
+
+    Box  3 is at 
+        top left     (0,1)
+        bottom right (1,1)
+
+    Box  4 is at 
+        top left     (2,1)
+        bottom right (3,1)
+
+    Box  5 is at 
+        top left     (0,2)
+        bottom right (1,2)
+
+    Box  6 is at 
+        top left     (2,2)
+        bottom right (3,3)
+
+    Box  7 is at 
+        top left     (0,3)
+        bottom right (1,4)
+
+    Box  8 is at 
+        top left     (2,4)
+        bottom right (3,5)
+
+    Box  9 is at 
+        top left     (0,5)
+        bottom right (1,6)
+
+    Box 10 is at 
+        top left     (2,6)
+        bottom right (3,7)
+
+    Roll length used: 8
