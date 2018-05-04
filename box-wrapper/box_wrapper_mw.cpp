@@ -7,9 +7,17 @@ BoxWrapperMainWindow::BoxWrapperMainWindow(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	ui->loadButton->box_org = ui->organizer;
-	ui->loadButton->input_label = ui->inputNameLabel;
-	ui->loadButton->save_button = ui->saveButton;
+	ui->loadInputButton->box_org = ui->organizer;
+	ui->loadInputButton->input_label = ui->inputNameLabel;
+	ui->loadInputButton->save_button = ui->saveButton;
+	ui->loadInputButton->defaultdir = "../inputs/material";
+	ui->loadInputButton->filter = "BWP instance (*.in)";
+
+	ui->loadOutputButton->box_org = ui->organizer;
+	ui->loadOutputButton->input_label = ui->inputNameLabel;
+	ui->loadOutputButton->save_button = ui->saveButton;
+	ui->loadOutputButton->defaultdir = "../outputs/hand-made";
+	ui->loadOutputButton->filter = "BWP output (*.out)";
 
 	ui->saveButton->box_org = ui->organizer;
 

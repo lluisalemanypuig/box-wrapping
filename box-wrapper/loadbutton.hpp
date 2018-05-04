@@ -13,8 +13,9 @@ using namespace std;
 
 /// Custom includes
 #include "box_organizer.hpp"
+#include "savebutton.hpp"
 
-class LSButton : public QPushButton
+class LoadButton : public QPushButton
 {
 	Q_OBJECT
 
@@ -29,17 +30,16 @@ class LSButton : public QPushButton
 		// references to other widgets... ugly solution?
 		BoxOrganizer *box_org;
 		QLabel *input_label;
-		LSButton *save_button;
+		SaveButton *save_button;
+		string defaultdir;
+		string filter;
 
 	public:
-		LSButton(QWidget *p = 0);
-
-		void set_instance_name(const string& iname);
+		LoadButton(QWidget *p = 0);
 
 		const string& get_instance_name() const;
 
 	public slots:
 		void load();
-		void save();
 
 };

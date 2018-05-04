@@ -23,12 +23,14 @@ SOURCES += \
     main.cpp \
     box_organizer.cpp \
     box_wrapper_mw.cpp \
-    lsbutton.cpp
+    loadbutton.cpp \
+    savebutton.cpp
 
 HEADERS += \
     box_organizer.hpp \
     box_wrapper_mw.hpp \
-    lsbutton.hpp
+    loadbutton.hpp \
+    savebutton.hpp
 
 FORMS += \
     boxwrappermainwindow.ui

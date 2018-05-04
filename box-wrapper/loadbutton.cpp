@@ -1,4 +1,4 @@
-#include "lsbutton.hpp"
+#include "loadbutton.hpp"
 
 /// NON-CLASS
 
@@ -28,7 +28,7 @@ void split_path_filename(const string& full_path, string& filename, string& exte
 
 /// PRIVATE
 
-void LSButton::read_input(ifstream& fin) {
+void LoadButton::read_input(ifstream& fin) {
 	int W;
 	fin >> W;
 	box_org->set_max_width(W);
@@ -41,7 +41,7 @@ void LSButton::read_input(ifstream& fin) {
 	}
 }
 
-void LSButton::read_output(ifstream& fin) {
+void LoadButton::read_output(ifstream& fin) {
 	vector<coord> tls, dims;
 
 	int L;
@@ -68,22 +68,20 @@ void LSButton::read_output(ifstream& fin) {
 
 /// PUBLIC
 
-LSButton::LSButton(QWidget *p) : QPushButton(p)
+LoadButton::LoadButton(QWidget *p) : QPushButton(p)
 {
 	box_org = nullptr;
 	input_label = nullptr;
 	save_button = nullptr;
+	defaultdir = "none";
+	filter = "none";
 }
 
-void LSButton::set_instance_name(const string& iname) {
-	instance_name = iname;
-}
-
-void LSButton::load() {
+void LoadButton::load() {
 	QString fileName = QFileDialog::getOpenFileName(this,
 		tr("Open BWP instance"),
-		"../inputs/material/",
-		tr("BWP instance (*.in);;BWP solution (*.out);;All Files (*)")
+		QString::fromStdString(defaultdir),
+		QString::fromStdString(filter + ";;All Files (*)")
 	);
 
 	string stdname = fileName.toStdString();
@@ -118,38 +116,3 @@ void LSButton::load() {
 	input_label->setText(QString::fromStdString(instance_name));
 	save_button->set_instance_name(instance_name);
 }
-
-void LSButton::save() {
-
-	QString fileName = QFileDialog::getSaveFileName(this,
-		tr("Store BWP solution"),
-		QString::fromStdString("../outputs/hand-made/" + instance_name + ".out"),
-		tr("BWP instance (*.out);;All Files (*)")
-	);
-
-	if (fileName == "") {
-		return;
-	}
-
-	ofstream fout;
-	fout.open(fileName.toStdString().c_str());
-	if (not fout.is_open()) {
-		cerr << "Error: could not open '" << fileName.toStdString() << "'" << endl;
-		return;
-	}
-
-	int L;
-	vector<coord> tls, brs;
-	box_org->get_box_corners(L, tls, brs);
-
-	fout << L << endl;
-	for (size_t i = 0; i < tls.size(); ++i) {
-		fout << tls[i].first << " " << tls[i].second;
-		fout << "\t\t";
-		fout << brs[i].first - 1 << " " << brs[i].second - 1;
-		fout << endl;
-	}
-
-	fout.close();
-}
-
