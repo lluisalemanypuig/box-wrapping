@@ -12,62 +12,62 @@ can be found in figure \ref{fig:benchmark-example}.
 \begin{figure}[H]
 \centering
 \begin{lstlisting}[language=bash,basicstyle=\centering]
-./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
+$ ./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
 \end{lstlisting}
 \centeredcaption{How to use the benchmarking script to execute the solver for
-Constraint Programming on the inputs in the ``material'' directory.}
+Constraint Programming on the inputs in the \textit{inputs/material} directory.}
 \label{fig:benchmark-example}
 \end{figure}
 
 This script will, for every input, invoke the specified solver and check the
-quality of the solution found with a \textit{hand-made} solution of that same
-instance, that can be found in the directory ``outputs/hand-made''. If the
-solution is as good as the \textit{hand-made} then it will output a message
+quality of the solution found with a ``hand-made'' solution of that same
+instance, that can be found in the directory \textit{outputs/hand-made/}. If the
+solution is as good as the hand-made then it will output a message
 similar to the one in figure \ref{fig:benchmark-verbose:optimal}.
 
 \begin{figure}[H]
 \centering
-\begin{lstlisting}[language=bash]
-				Executing solver with input file: ../inputs/material/bwp_11_10_1.in
-					Optimal solution reached
-					In 22.898 seconds
-					Current progress:
-						Solved optimally    : 85 / 105 ( 80.95% )
-						Solved sub-optimally: 15 / 105 ( 14.28% )
-						Time elapsed        : 1367.485 seconds
-\end{lstlisting}
+\begin{BVerbatim}
+Executing solver with input file: ../inputs/material/bwp_11_10_1.in
+    Optimal solution reached
+    In 34.622 seconds
+    Current progress:
+        Solved optimally    : 90 / 105 ( 85.71% )
+        Solved sub-optimally: 15 / 105 ( 14.28% )
+        Total time elapsed  : 2095.598 seconds
+\end{BVerbatim}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is optimal.}
 \label{fig:benchmark-verbose:optimal}
 \end{figure}
 
-The information shown in figure \ref{fig:benchmark-verbose:optimal} is the following:
-it tells whether the optimal solution was reached or not (assuming that the
-corresponding output in the ``outputs/hand-made'' directory is indeed optimal),
-the time needed to reach that solution, and finally the progress of the script.
-In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 23 minutes to
-solve a total of 105 inputs, 85 of them optimally and 15 of them suboptimally.
+The format of the information shown in figure \ref{fig:benchmark-verbose:optimal}
+is as follows: it tells whether the optimal solution was reached or not (assuming
+that the corresponding output in the \textit{outputs/hand-made/} directory is indeed
+optimal), the time needed to reach that solution, and finally the progress of the
+script. In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 23 minutes
+to solve a total of 105 inputs, 85 of them optimally and 15 of them suboptimally.
 The inputs used to get the message in figure \ref{fig:benchmark-verbose:optimal} were
 all the inputs sorted lexicographically from the ``bwp\_3\_3\_1.in'' to the
 ``bwp\_11\_10\_1.in''. The total output for the same CPU can be found
-in the file ``scripts/CP-benchmark-log''\footnote{In a Unix-like environment use
+in the file ``scripts/CP-p4-benchmark-log''\footnote{ In a Unix-like environment use
 the \textit{cat}, not the \textit{less}, software to display it on the command shell.}.
 An example of the message output by the script when the solution is not optimal is
 shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
-\begin{lstlisting}[language=bash]
-				Executing solver with input file: ../inputs/material/bwp_11_8_1.in
-					Suboptimal solution:
-						Optimal: 12
-						CP:      15
-					In 27.030 seconds
-					Current progress:
-						Solved optimally    : 83 / 103 ( 80.58% )
-						Solved sub-optimally: 15 / 103 ( 14.56% )
-						Time elapsed        : 1334.431 seconds
-\end{lstlisting}
+\begin{BVerbatim}
+Executing solver with input file: ../inputs/material/bwp_11_8_1.in
+    Suboptimal solution:
+        Optimal: 12
+        CP:      15
+    In 45.022 seconds
+    Current progress:
+        Solved optimally    : 88 / 103 ( 85.43% )
+        Solved sub-optimally: 15 / 103 ( 14.56% )
+        Total time elapsed  : 2050.956 seconds
+\end{BVerbatim}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is not optimal.}
 \label{fig:benchmark-verbose:suboptimal}
@@ -79,18 +79,49 @@ One can design their own inputs and allow the benchmark script to compare
 the solution found by any solver to the optimal solution found by hand by
 making a file containing the output following the format specified in the
 report. Also, one could use the Box Wrapper user interface used to make the
-optimal outputs for all the inputs in directory ``inputs/material'' (see
-section \ref{sec:box-wrapper}).
+optimal outputs for all the inputs in directory \textit{inputs/material/}
+(see section \ref{sec:box-wrapper-gui}).
 
 \subsection{Constraint Programming}
 \label{sec:benchmarking:constraint-programming}
 
-The parameters that we think that makes the Constraint Programming solver to behave
-at its best are the following:
+The parameters used to execute the Constraint Programming solver described in section
+\ref{sec:constraint-programming} are the following:
 \begin{itemize}
 	\item Use the mixed heuristic (described in section \ref{sec:constraint-programming:optimum:heuristics}).
 	\item The solver will stop as soon as it found one solution.
-	\item The solver will stop after 3 seconds of its execution.
+	\item The solver will stop after 5 seconds of its execution.
 	\item The solver will be executed on randomly permuted data $5$ times (needless to
 	say that the data will also be permuted $5$ times).
 \end{itemize}
+
+With these parameters, the solver has a ``natural'' timeout of \textbf{45} seconds.
+That is, each execution of the solver with the data sorted increasingly by area, by
+width, decreasingly sorted by area, by width, and each of the 5 random permutations
+have a time limit of 5 seconds. With a total of 9 executions that makes $5 \cdot 9 = 45$
+seconds of time limit.
+
+\subsubsection{Results}
+\label{sec:benchmarking:constraint-programming:results}
+
+Needless to say that depending on the machine this software is executed on,
+in spite of having the same time limits, a more powerful computer is more likely
+to find better solutions since it can explore the search tree more exhaustively
+in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-results}.
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{rcc}
+								& Pentium IV 1.8 GHz & i7-6700 HQ 3.5 GHz \\
+		\midrule
+		Optimal solutions		& 93 / 108			 & 97 / 108 \\
+		Sub-optimal solutions	& 15 / 108			 & 11 / 108 \\
+		Total time				& 37 mins			 & 33 mins \\
+	\end{tabular}
+	\centeredcaption{Comparison between two different CPUs over all the 108 instances
+	in the \textit{inputs/material/} directory.}
+	\label{table:CP-results}
+\end{table}
+
+The outputs can be found in the \textit{outputs/} directory, inside folders
+\textit{CP-p4/} and \textit{CP-i7/} respectively.

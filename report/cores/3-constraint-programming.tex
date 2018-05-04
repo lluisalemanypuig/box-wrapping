@@ -4,7 +4,7 @@
 In this part of the project the problem is solved using the Constraint Programming
 paradigm. In particular, we used the library Gecode for C++ (version 6.0.0)
 (see \cite{GecodeWEB}) in order to implement the mathematical model that models
-the problem and helps us solve it without implement our own algorithm.
+the problem and helps us solve it without having to implement our own algorithm.
 
 \hfill
 
@@ -15,19 +15,19 @@ as the upper bound on the roll's length calculated with equation
 (\ref{eq:upper-bound-L}), the arrays are initialised as follows:
 
 \begin{enumerate}
-    \item Array for variables \ref{var:box-cell}:
+    \item Array for variables in \ref{var:box-cell}:
     
     {\NOINDENT \begin{lstlisting}
     box_cell = BoolVarArray(*this, N*W*L, 0, 1);
     \end{lstlisting}}
     
-    \item Array for variables \ref{var:box-corner}:
+    \item Array for variables in \ref{var:box-corner}:
     
     {\NOINDENT \begin{lstlisting}
     box_corner = BoolVarArray(*this, N*W*L, 0, 1);
     \end{lstlisting}}
     
-    \item Array for variables \ref{var:box-rotated}:
+    \item Array for variables in \ref{var:box-rotated}:
     
     {\NOINDENT \begin{lstlisting}
     box_rotated = BoolVarArray(*this, N, 0, 1);
@@ -202,15 +202,15 @@ in the \textit{Space} object passed as parameter to the function \textit{constra
 \subsubsection{Heuristics}
 \label{sec:constraint-programming:optimum:heuristics}
 
-Given enough time, Gecode is, by definition, ensured to be able to find an optimal
-solution: each solution found using the method explained in section \ref{sec:constraint-programming:optimum}
-will have strictly shorter roll length than the previous. Therefore, eventually,
-Gecode will find a solution with a series of constraints (limiting the roll length
-used) that will make the instance infeasible. The solution found before that point
-is the optimal. However, that will only happen ``given enough time'', that is, even
-though Gecode is rather efficient this might mean several hours. In order to tackle
-this issue, we implemented a number of heuristics that should make Gecode stop as
-soon as possible.
+When using the method described in section \ref{sec:constraint-programming:optimum}
+and when given enough time, Gecode is ensured to eventually be able to find an
+optimal solution: each solution found using that method will have strictly shorter
+roll length than the previous. Therefore, eventually, Gecode will find a solution
+with a series of constraints (limiting the roll length used) that will make the
+instance infeasible. The solution found before that point is the optimal. However,
+that will only happen ``given enough time'', that is, even though Gecode is rather
+efficient this might mean several hours. In order to tackle this issue, we
+implemented a number of heuristics that should make Gecode stop as soon as possible.
 
 \hfill
 
@@ -229,16 +229,16 @@ in Gecode needs an array with the list of boxes from the input. The only thing
 done as an attempt to speed up the solver's execution time is to rearrange
 the boxes in this array so that the constraints are ordered in a particular way.
 For example, we may want the solver to assign larger boxes first, and smaller boxes
-last. Or simply select each boxes at random\footnote{This could have been implemented
+last. Or simply select each boxes at random\footnote{ This could have been implemented
 in the variable selection strategy. However, this way we avoid the solver computing
 a maximum or minimum each time it has to select a variable.}.
 
 \hfill
 
-The order is not the only attempt at speeding up the code. Several strategies
-are ``concatenated'', that is, executed one after the other, in the following
-way: after the solver has finished its execution with a particular ordering of
-the boxes with a solution of roll length $\optlength_1$, execute again the solver with a
+The order is not the only attempt at speeding up the code. Several strategies are
+``concatenated'', that is, executed one after the other, in the following way:
+after the solver has finished its execution with a particular ordering of the boxes
+with a solution of roll length $\optlength_1$, execute the solver again with a
 different ordering and, instead of using the upper bound on the maximum length
 $L$ defined in equation \ref{eq:upper-bound-L}, use the minimum of the two (see
 equation \ref{eq:upper-bound-L:better}) which means that the matrices for variables
@@ -249,6 +249,8 @@ L' = \min\{L, \optlength_1\}
 \end{equation}
 
 Algorithmically, this can be formalised in algorithm \ref{alg:constraint:programming:generic-heuristic}.
+
+\hfill
 
 \begin{algorithm}[H]
 	\label{alg:constraint:programming:generic-heuristic}
@@ -272,11 +274,13 @@ Algorithmically, this can be formalised in algorithm \ref{alg:constraint:program
 	\Return $S_n$
 \end{algorithm}
 
+\hfill
+
 where $\text{length}(S_i)$ is the roll's length used in solution $S_i$, and $n$ is
 the limit on the amount of heuristics concatenated. Needless to say that, if $S_i$
 is an optimal solution, the solver should not take much time in concluding that
 it can not possible find a solution at step $i+1$, basically due to not being enough
-variables.
+variables. Each call to \textsc{Solve} executes the solver once.
 
 \hfill
 
@@ -298,16 +302,17 @@ The mixed heuristic proved to be the best in practice.
 In order to compile this part of the project, while assuming that we are at the
 root directory of the project, one should issue the following commands:
 \begin{lstlisting}[language=bash]
-~/box-wrapping: cd CP/build-rules
-~/box-wrapping/CP/build-rules/: make -f Makefile release
-~/box-wrapping/CP/build-rules/: cd ..
-~/box-wrapping/CP/: cd build-release
+~/box-wrapping$ cd CP/build-rules
+~/box-wrapping/CP/build-rules$ make -f Makefile release
+~/box-wrapping/CP/build-rules$ cd ..
+~/box-wrapping/CP$ cd build-release
 \end{lstlisting}
 
-Once the compilation has finished we can execute the binary file generated. The
+Once the compilation has finished we can execute the binary file generated\footnote{ There
+is no need to create the directory \textit{build-release/} prior to compiling.}. The
 complete usage can be seen by issuing the command:
 \begin{lstlisting}[language=bash]
-./wrapping-boxes --help
+$ ./wrapping-boxes --help
 \end{lstlisting}
 
 Here are a few of the options explained:
@@ -315,7 +320,7 @@ Here are a few of the options explained:
 	\item If one wants to find $n$ solutions to a certain input, and store the
 	best found in a certain file, issue the following command:
 \begin{lstlisting}[language=bash]
-./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-at n --enumerate --rotate
+$ ./wrapping-boxes -i $INPUT_FILE -o $OUTPUT_FILE --stop-at n --enumerate --rotate
 \end{lstlisting}
 	
 	Storing the best solution is indicated by specifying an output file with ``-o''.
@@ -327,7 +332,7 @@ Here are a few of the options explained:
 	\item If one wants to find the best solution to an instance, use the ``optim'' solver
 	instead of the solver ``rotate''.
 \begin{lstlisting}[language=bash]
-./wrapping-boxes -i INPUT_FILE -o OUTPUT_FILE --stop-when 10.0 --enumerate --optim
+$ ./wrapping-boxes -i $INPUT_FILE -o $OUTPUT_FILE --stop-when 10.0 --enumerate --optim
 \end{lstlisting}
 	
 	The option ``enumerate'' will make the program list all solutions found from
