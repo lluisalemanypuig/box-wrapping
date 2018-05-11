@@ -124,4 +124,33 @@ in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-res
 \end{table}
 
 The outputs can be found in the \textit{outputs/} directory, inside folders
-\textit{CP-p4/} and \textit{CP-i7/} respectively.
+\textit{CP-p4/} and \textit{CP-i7/} respectively. Table \ref{table:CP-results:suboptimalinstances}
+gives the list of instances solved suboptimally for each CPU.
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{cccccc}
+		\multicolumn{3}{c}{Instance name}
+					& Pentium IV 1.8 GHz	& i7-6700 HQ 3.5 GHz	& Optimal value \\
+		\midrule
+		3 & 7 & 1	& 13					& 						& 12 \\
+		3 & 11 & 1	& 31					& 31					& 29 \\
+		3 & 12 & 1	& 16					& 16					& 15 \\
+		3 & 13 & 1	& 23					& 23					& 22 \\
+		4 & 11 & 1	& 12					& 12					& 11 \\
+		5 & 12 & 1	& 27					& 27					& 24 \\
+		6 & 11 & 1	& 15					& 15					& 13 \\
+		6 & 13 & 1	& 36					& 36					& 35 \\
+		7 & 13 & 1	& 15					& 15					& 14 \\
+		8 & 13 & 1	& 20					& 20					& 17 \\
+		9 & 11 & 1	& 7						&						& 6 \\
+		9 & 13 & 1	& 16					&						& 15 \\
+		10 & 11 & 1	& 6						&						& 5 \\
+		10 & 13 & 1	& 15					& 15					& 14 \\
+		11 & 8 & 1	& 15					& 15					& 12 \\
+	\end{tabular}
+	\centeredcaption{Instances in the \textit{inputs/material/} directory
+	solved suboptimally. An empty cell in the table indicates that the instance
+	was solved optimally.}
+	\label{table:CP-results:suboptimalinstances}
+\end{table}
