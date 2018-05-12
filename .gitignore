@@ -1,5 +1,7 @@
 CP/build-debug/*
 CP/build-release/*
+LP/build-debug/*
+LP/build-release/*
 *.o
 checker/checker
 box-wrapper/box-wrapper.pro.user
