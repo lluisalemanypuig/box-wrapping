@@ -10,11 +10,9 @@ void box_wrapper_rotate::span_cells_non_rot
 {
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			rel(*this,
-				((R(b) == 0) && (X(b,i,j) == 1))
-				>>
-				(C(b,ii,jj) == 1)
-			);
+			
+			rel(*this, ((R(b) == 0) && (X(b,i,j) == 1)) >> (C(b,ii,jj) == 1) );
+			
 		}
 	}
 }
