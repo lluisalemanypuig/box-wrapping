@@ -20,7 +20,7 @@ ILOSTLBEGIN
 #include "solvers/box_wrapper_optim.hpp"
 
 void print_usage() {
-	cout << "BOX WRAPPING PROBLEM - Constraint Programming Solver" << endl;
+	cout << "BOX WRAPPING PROBLEM - Linear Programming Solver" << endl;
 	cout << endl;
 	cout << "This software uses the library Gecode (tested under version 6.0.0)" << endl;
 	cout << "to solve the Box Wrapping Problem (BWP). It admits several options" << endl;
