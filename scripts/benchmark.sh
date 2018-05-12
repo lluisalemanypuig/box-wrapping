@@ -46,6 +46,8 @@ SUFFIX="."$SOLVER_TEC
 echo "Exe file used: $EXE_FILE"
 if [ ! -f $EXE_FILE ]; then
 	echo -e "\e[1;31mError: solver for $SOLVER_TEC does not exist\e[0m"
+	echo -e "    \e[1;31mCheck corresponding *build-release* directory\e[0m"
+	exit
 else
 	echo -e "\e[1;32mSolver for\e[0m \e[1;4;32m$SOLVER_TEC\e[0m \e[1;32mexists. Proceed to benchmarking...\e[0m"
 fi
