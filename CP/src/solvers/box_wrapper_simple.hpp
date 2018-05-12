@@ -18,21 +18,29 @@ using namespace Gecode;
 
 class box_wrapper_simple : public Space {
 	protected:
-		// box_cell[k][i][j] = 1 <-> cell (i, j) is occupied by box k
+		// box_cell[b][i][j] = 1 <-> cell (i, j) is occupied by box b
 		BoolVarArray box_cell;
 		
-		// box_corner[k][i][j] = 1 <-> top-left corner of box k
+		// box_corner[b][i][j] = 1 <-> top-left corner of box b
 		// is at cell (i,j) with
-		//     1 <= j <= W - w_k (width)
-		//     1 <= i <= L - l_k (length)
+		//     1 <= j <= W - w_b (width)
+		//     1 <= i <= L - l_b (length)
 		// where
-		//     w_k is the width of box k
-		//     l_k is the length of box k
+		//     w_b is the width of box b
+		//     l_b is the length of box b
 		BoolVarArray box_corner;
 		
 		// upper bound on the roll's length
-		length upper_bound_L;
-		
+		length L;
+		// roll's width. Fixed value.
+		width W;
+	
+	protected:
+		inline BoolVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
+		inline BoolVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
+		inline BoolVar C(size_t b, size_t i, size_t j) const { return box_cell[b*W*L + i*W + j]; }
+		inline BoolVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
+	
 	public:
 		box_wrapper_simple(const gifts& gs, length max_L = -1);
 		box_wrapper_simple(box_wrapper_simple& bw);

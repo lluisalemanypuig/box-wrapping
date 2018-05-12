@@ -4,7 +4,6 @@
 
 void box_wrapper_rotate::span_cells_non_rot
 (
-	length L, width W,
 	int b, length i, width j,
 	length b_length, width b_width
 )
@@ -12,13 +11,9 @@ void box_wrapper_rotate::span_cells_non_rot
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
 			rel(*this,
-				(
-					(box_rotated[b] == 0)
-					&&
-					(box_corner[b*W*L + i*W + j] == 1)
-				)
+				((R(b) == 0) && (X(b,i,j) == 1))
 				>>
-				(box_cell[b*W*L + ii*W + jj] == 1)
+				(C(b,ii,jj) == 1)
 			);
 		}
 	}
@@ -26,40 +21,30 @@ void box_wrapper_rotate::span_cells_non_rot
 
 void box_wrapper_rotate::span_cells_rot
 (
-	length L, width W,
 	int b, length i, width j,
 	length b_length, width b_width
 )
 {
 	for (length ii = i; ii <= i + b_width - 1; ++ii) {
 		for (width jj = j; jj <= j + b_length - 1; ++jj) {
-			rel(*this,
-				(
-					(box_rotated[b] == 1)
-					&&
-					(box_corner[b*W*L + i*W + j] == 1)
-				)
-				>>
-				(box_cell[b*W*L + ii*W + jj] == 1)
-			);
+			
+			rel(*this, ((R(b) == 1) && (X(b,i,j) == 1)) >> (C(b,ii,jj) == 1) );
+			
 		}
 	}
 }
 
 void box_wrapper_rotate::span_cells_square
 (
-	length L, width W,
 	int b, length i, width j,
 	length b_length, width b_width
 )
 {
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			rel(*this,
-				(box_corner[b*W*L + i*W + j] == 1)
-				>>
-				(box_cell[b*W*L + ii*W + jj] == 1)
-			);
+			
+			rel(*this, (X(b,i,j) == 1) >> (C(b,ii,jj) == 1) );
+			
 		}
 	}
 	rel(*this, box_rotated[b] == 0);
@@ -69,15 +54,15 @@ void box_wrapper_rotate::span_cells_square
 
 box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	if (max_L < 0) {
-		upper_bound_L = inf_t<int>();
+		L = inf_t<int>();
 	}
 	else {
-		upper_bound_L = max_L;
+		L = max_L;
 	}
 	
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_ro());
+	W = data.W;
+	L = min(L, data.get_max_length_ro());
 	
 	// initialise arrays
 	box_rotated = BoolVarArray(*this, N, 0, 1);
@@ -114,7 +99,7 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 					// consider only the cases where the whole box is within bounds
 					bool within = (i + b_length - 1 < L) and (j + b_width - 1 < W);
 					if (within) {
-						span_cells_square(L, W, b, i, j, b_length, b_width);
+						span_cells_square(b, i, j, b_length, b_width);
 					}
 				}
 				else {
@@ -123,12 +108,12 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 					// consider only the cases where the whole box is within bounds
 					bool within1 = (i + b_length - 1 < L) and (j + b_width - 1 < W);
 					if (within1) {
-						span_cells_non_rot(L, W, b, i, j, b_length, b_width);
+						span_cells_non_rot(b, i, j, b_length, b_width);
 					}
 					
 					bool within2 = (i + b_width - 1 < L) and (j + b_length - 1 < W);
 					if (within2) {
-						span_cells_rot(L, W, b, i, j, b_length, b_width);
+						span_cells_rot(b, i, j, b_length, b_width);
 					}
 				}
 			}
@@ -152,7 +137,7 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 					// if the box is WITHIN limits then ignore
 					bool within = (i + b_length - 1 <= L - 1) and (j + b_width - 1 <= W - 1);
 					if (not within) {
-						rel(*this, box_corner[b*W*L + i*W + j] == 0);
+						rel(*this, X(b,i,j) == 0);
 					}
 				}
 				else {
@@ -163,20 +148,12 @@ box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 					
 					bool within1 = (i + b_length - 1 <= L - 1) and (j + b_width - 1 <= W - 1);
 					if (not within1) {
-						rel(*this,
-							(box_rotated[b] == 0)
-							>>
-							(box_corner[b*W*L + i*W + j] == 0)
-						);
+						rel(*this, (R(b) == 0) >> (X(b,i,j) == 0) );
 					}
 					
 					bool within2 = (i + b_width - 1 <= L - 1) and (j + b_length - 1 <= W - 1);
 					if (not within2) {
-						rel(*this,
-							(box_rotated[b] == 1)
-							>>
-							(box_corner[b*W*L + i*W + j] == 0)
-						);
+						rel(*this, (R(b) == 1) >> (X(b,i,j) == 0) );
 					}
 				}
 			}
@@ -195,7 +172,8 @@ box_wrapper_rotate::box_wrapper_rotate(box_wrapper_rotate& bw) : Space(bw) {
 	box_rotated.update(*this, bw.box_rotated);
 	box_cell.update(*this, bw.box_cell);
 	box_corner.update(*this, bw.box_corner);
-	upper_bound_L = bw.upper_bound_L;
+	L = bw.L;
+	W = bw.W;
 }
 
 box_wrapper_rotate::~box_wrapper_rotate() {
@@ -207,8 +185,6 @@ Space *box_wrapper_rotate::copy() {
 
 void box_wrapper_rotate::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) const {
 	const size_t N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_ro());
 	
 	wb.init(N, L, W);
 	
@@ -222,7 +198,7 @@ void box_wrapper_rotate::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 				
 				// for corner finding
 				if (not found) {
-					BoolVar BX(box_corner[b*W*L + i*W + j]);
+					BoolVar BX(X(b,i,j));
 					if (BX.val() == 1) {
 						pl = i;
 						pw = j;
@@ -231,7 +207,7 @@ void box_wrapper_rotate::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 				}
 				
 				// for roll copying
-				BoolVar BC(box_cell[b*W*L + i*W + j]);
+				BoolVar BC(C(b,i,j));
 				if (not BC.none() and BC.val() == 1) {
 					wb.set_box_cell(b + 1, cell(i, j));
 				}
@@ -243,7 +219,7 @@ void box_wrapper_rotate::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 		length box_length = data.all_boxes[b].l;
 		width box_width = data.all_boxes[b].w;
 		
-		BoolVar BR(box_rotated[b]);
+		BoolVar BR(R(b));
 		assert(not BR.none());
 		
 		if (BR.val() == 0) {

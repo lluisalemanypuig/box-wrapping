@@ -19,8 +19,6 @@ void box_wrapper_optim::constrain(const Space& _b) {
 	const box_wrapper_optim& ROLL = static_cast<const box_wrapper_optim&>(_b);
 	
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_ro());
 	
 	// T := this solution's score (i.e. roll's length)
 	// R := ROLL's score (i.e. roll's length)
@@ -36,9 +34,9 @@ void box_wrapper_optim::constrain(const Space& _b) {
 		bool found = false;
 		for (length i = 0; i < L and not found; ++i) {
 			for (width j = 0; j < W and not found; ++j) {
-				if (ROLL.box_corner[b*W*L + i*W + j].val() == 1) {
+				if (ROLL.X(b,i,j).val() == 1) {
 					found = true;
-					if (ROLL.box_rotated[b].val() == 0) {
+					if (ROLL.R(b).val() == 0) {
 						RL = max(RL, i + data.all_boxes[b].l);
 					}
 					else {
@@ -53,7 +51,7 @@ void box_wrapper_optim::constrain(const Space& _b) {
 		// take up more than RL length of the roll
 		for (length i = RL - 1; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
-				rel(*this, box_cell[b*W*L + i*W + j] == 0);
+				rel(*this, C(b,i,j) == 0);
 			}
 		}
 	}

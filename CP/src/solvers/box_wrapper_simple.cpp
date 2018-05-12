@@ -4,15 +4,15 @@
 
 box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	if (max_L < 0) {
-		upper_bound_L = inf_t<int>();
+		L = inf_t<int>();
 	}
 	else {
-		upper_bound_L = max_L;
+		L = max_L;
 	}
 	
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_s());
+	W = data.W;
+	L = min(L, data.get_max_length_s());
 	
 	// initialise arrays
 	box_cell = BoolVarArray(*this, N*W*L, 0, 1);
@@ -50,9 +50,9 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 					for (width jj = j; jj <= j + b_width - 1; ++jj) {
 						
 						rel(*this,
-							(box_corner[b*W*L + i*W + j] == 1)
+							(X(b,i,j) == 1)
 							>>
-							(box_cell[b*W*L + ii*W + jj] == 1)
+							(C(b,ii,jj) == 1)
 						);
 					}
 				}
@@ -73,7 +73,7 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 				// if the box is WITHIN limits then ignore
 				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) continue;
 				
-				rel(*this, box_corner[b*W*L + i*W + j] == 0);
+				rel(*this, X(b,i,j) == 0);
 			}
 		}
 	}
@@ -88,7 +88,8 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 box_wrapper_simple::box_wrapper_simple(box_wrapper_simple& bw) : Space(bw) {
 	box_cell.update(*this, bw.box_cell);
 	box_corner.update(*this, bw.box_corner);
-	upper_bound_L = bw.upper_bound_L;
+	L = bw.L;
+	W = bw.W;
 }
 
 Space *box_wrapper_simple::copy() {
@@ -97,8 +98,6 @@ Space *box_wrapper_simple::copy() {
 
 void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) const {
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_s());
 	
 	wb.init(N, L, W);
 	
@@ -112,7 +111,7 @@ void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 				
 				// for corner finding
 				if (not found) {
-					BoolVar BX(box_corner[b*W*L + i*W + j]);
+					BoolVar BX(X(b,i,j));
 					if (BX.val() == 1) {
 						pl = i;
 						pw = j;
@@ -121,7 +120,7 @@ void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 				}
 				
 				// for roll copying
-				BoolVar BC(box_cell[b*W*L + i*W + j]);
+				BoolVar BC(C(b,i,j));
 				if (not BC.none() and BC.val() == 1) {
 					wb.set_box_cell(b + 1, cell(i, j));
 				}
