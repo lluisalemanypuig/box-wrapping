@@ -1,19 +1,19 @@
 #pragma once
 
-/// C includes
+// C includes
 #include <stdlib.h>
 #include <time.h>
 
-/// C++ includes
+// C++ includes
 #include <vector>
 using namespace std;
 
-/// Gecode
+// Gecode
 #include <gecode/search.hh>
 using namespace Gecode;
 using namespace Search;
 
-/// Custom includes
+// Custom includes
 #include "solvers/box_wrapper_optim.hpp"
 #include "utils/wrapped_boxes.hpp"
 #include "utils/input_data.hpp"

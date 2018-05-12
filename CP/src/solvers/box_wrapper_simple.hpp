@@ -1,16 +1,16 @@
 #pragma once
 
-/// C++ includes
+// C++ includes
 #include <iostream>
 using namespace std;
 
-/// Gecode
+// Gecode
 #include <gecode/minimodel.hh>
 #include <gecode/search.hh>
 #include <gecode/int.hh>
 using namespace Gecode;
 
-/// Custom includes
+// Custom includes
 #include "utils/wrapped_boxes.hpp"
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"

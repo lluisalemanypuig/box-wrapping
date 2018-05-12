@@ -1,17 +1,17 @@
 #pragma once
 
-/// C includes
+// C includes
 #include <stdlib.h>
 #include <time.h>
 
-/// C++ includes
+// C++ includes
 #include <algorithm>
 #include <fstream>
 #include <utility>
 #include <vector>
 using namespace std;
 
-/// Custom includes
+// Custom includes
 #include "definitions.hpp"
 
 /* BOX CLASS */

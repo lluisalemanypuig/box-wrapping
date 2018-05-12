@@ -1,6 +1,6 @@
 #pragma once
 
-/// C++ includes
+// C++ includes
 #include <iostream>
 #include <fstream>
 

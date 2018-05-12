@@ -1,6 +1,6 @@
 #pragma once
 
-/// C++ includes
+// C++ includes
 #include <iostream>
 #include <utility>
 #include <fstream>
@@ -9,7 +9,7 @@
 #include <limits>
 using namespace std;
 
-/// Custom includes
+// Custom includes
 #include "definitions.hpp"
 
 class wrapped_boxes {

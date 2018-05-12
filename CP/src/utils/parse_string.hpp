@@ -1,6 +1,6 @@
 #pragma once
 
-/// C includes
+// C includes
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h>
 
-/// Custom includes
+// Custom includes
 #include "definitions.hpp"
 
 namespace parse {
