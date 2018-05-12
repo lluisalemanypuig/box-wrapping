@@ -14,9 +14,7 @@ using namespace std;
 /// Custom includes
 #include "definitions.hpp"
 
-/// <<
-/// BOX class
-
+/* BOX CLASS */
 class box {
 	private:
 	public:
@@ -29,7 +27,7 @@ class box {
 		box(const box& b);
 		~box();
 		
-		/// OPERATORS
+		/* OPERATORS */
 		
 		box& operator= (const box& b);
 		
@@ -45,17 +43,13 @@ class box {
 			return os;
 		}
 		
-		/// GETTERS
+		/* GETTERS */
 		
 		bool is_square() const;
 };
 
-/// BOX class
-/// >>
 
-/// <<
-/// GIFTS class
-
+/* GIFTS class */
 class gifts {
 	private:
 	public:
@@ -72,7 +66,7 @@ class gifts {
 		gifts(const gifts& gs);
 		~gifts();
 		
-		/// OPERATORS
+		/* OPERATORS */
 		
 		gifts& operator= (const gifts& gs);
 		
@@ -102,7 +96,7 @@ class gifts {
 			return os;
 		}
 		
-		/// MODIFIERS
+		/* MODIFIERS */
 		
 		// makes 'summary' of input data
 		void fill_fields();
@@ -117,7 +111,7 @@ class gifts {
 		void sort_width_inc();
 		void sort_width_dec();
 		
-		/// GETTERS
+		/* GETTERS */
 		
 		// return the maximum length appropriate for the 'simple' solver
 		length get_max_length_s() const;
@@ -128,5 +122,3 @@ class gifts {
 		
 };
 
-/// GIFTS class
-/// >>

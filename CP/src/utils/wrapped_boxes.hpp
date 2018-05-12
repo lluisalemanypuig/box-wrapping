@@ -41,7 +41,7 @@ class wrapped_boxes {
 		
 		void init(int N, length L, width W);
 		
-		/// OPERATORS
+		/* OPERATORS */
 		
 		wrapped_boxes& operator= (const wrapped_boxes& wb);
 		bool operator< (const wrapped_boxes& wb) const;
@@ -62,7 +62,7 @@ class wrapped_boxes {
 		void set_box_cell(int k, const cell& c);
 		void set_roll_length(length L);
 		
-		/// GETTERS
+		/* GETTERS */
 		
 		// makes a sanity check
 		bool is_sane(string& error_msg) const;

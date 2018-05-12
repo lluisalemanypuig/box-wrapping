@@ -1,8 +1,6 @@
 #include "input_data.hpp"
 
-/// <<
-/// BOX class
-
+/* BOX class */
 box::box() : w(0), l(0) { }
 box::box(width _w, length _l) : w(_w), l(_l) { }
 box::box(const box& b) {
@@ -20,12 +18,7 @@ bool box::is_square() const {
 	return w == l;
 }
 
-/// BOX class
-/// >>
-
-
-/// <<
-/// GIFTS class
+/* GIFTS class */
 
 gifts::gifts() : W(0) { }
 gifts::gifts(const gifts& gs) {
@@ -98,5 +91,3 @@ length gifts::get_max_length_ro() const {
 	return sum_max_sides;
 }
 
-/// GIFTS class
-/// >>

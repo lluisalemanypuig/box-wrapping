@@ -1,6 +1,6 @@
 #include "box_wrapper_simple.hpp"
 
-/// PUBLIC
+/* PUBLIC */
 
 box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 	if (max_L < 0) {
@@ -86,7 +86,6 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 }
 
 box_wrapper_simple::box_wrapper_simple(box_wrapper_simple& bw) : Space(bw) {
-	//data = bw.data;
 	box_cell.update(*this, bw.box_cell);
 	box_corner.update(*this, bw.box_corner);
 	upper_bound_L = bw.upper_bound_L;

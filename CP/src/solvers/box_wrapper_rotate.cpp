@@ -1,6 +1,6 @@
 #include "box_wrapper_rotate.hpp"
 
-/// PRIVATE
+/* PRIVATE */
 
 void box_wrapper_rotate::span_cells_non_rot
 (
@@ -65,7 +65,7 @@ void box_wrapper_rotate::span_cells_square
 	rel(*this, box_rotated[b] == 0);
 }
 
-/// PUBLIC
+/* PUBLIC */
 
 box_wrapper_rotate::box_wrapper_rotate(const gifts& data, length max_L) {
 	if (max_L < 0) {

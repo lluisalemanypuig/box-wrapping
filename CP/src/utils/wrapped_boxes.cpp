@@ -1,6 +1,6 @@
 #include "wrapped_boxes.hpp"
 
-/// PRIVATE
+/* PRIVATE */
 
 length wrapped_boxes::box_length(int b) const {
 	return br_corner[b].first - tl_corner[b].first + 1;
@@ -22,7 +22,7 @@ void wrapped_boxes::display_box_cells(ostream& os) const {
 		col_width[j] = max(col_width[j], header_length);
 	}
 	
-	/// actually output info
+	/// now output the info
 	
 	// output header
 	size_t header_length = 0;
@@ -79,7 +79,7 @@ void wrapped_boxes::display_box_corners(ostream& os) const {
 	os << "    Roll length used: " << roll_length_used;
 }
 
-/// PUBLIC
+/* PUBLIC */
 
 wrapped_boxes::wrapped_boxes() {
 	init(0,0,0);
