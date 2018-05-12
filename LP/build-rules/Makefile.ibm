@@ -1,0 +1,17 @@
+
+####################################################
+# CHANGE ONLY THESE VARIABLES
+SYSTEM		= x86-64_linux
+LIB_FORMAT	= static_pic
+CPLEX_DIR	= /opt/ibm/ILOG/CPLEX_Studio1271/cplex
+CONCERT_DIR	= /opt/ibm/ILOG/CPLEX_Studio1271/concert
+####################################################
+
+CPLEX_BIN_DIR	= $(CPLEX_DIR)/bin
+CPLEX_LIB_DIR	= $(CPLEX_DIR)/lib/$(SYSTEM)/$(LIB_FORMAT)
+CONCERT_LIB_DIR	= $(CONCERT_DIR)/lib/$(SYSTEM)/$(LIB_FORMAT)
+
+CONCERT_INC_DIR	= $(CONCERT_DIR)/include
+CPLEX_INC_DIR	= $(CPLEX_DIR)/include
+
+IBM_FLAGS	= -DIL_STD

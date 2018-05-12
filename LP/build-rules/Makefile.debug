@@ -1,0 +1,64 @@
+
+#############
+# DEBUG FLAGS
+
+DEB_FLAGS = $(BASE_FLAGS) -DBOX_DEBUG
+
+###############
+# DEBUG OBJECTS
+
+DEB_WRAPPING_BOXES = $(DEB_BIN_DIR)/main.o					\
+					 $(DEB_BIN_DIR)/time.o					\
+					 $(DEB_BIN_DIR)/parse_string.o			\
+					 $(DEB_BIN_DIR)/wrapped_boxes.o			\
+					 $(DEB_BIN_DIR)/input_data.o			\
+					 $(DEB_BIN_DIR)/box_wrapper_simple.o	\
+					 $(DEB_BIN_DIR)/box_wrapper_rotate.o	\
+					 $(DEB_BIN_DIR)/box_wrapper_optim.o
+
+###########
+# DIRECTORY
+
+debugdirectory: $(DEB_BIN_DIR)
+$(DEB_BIN_DIR):
+	mkdir -p $(DEB_BIN_DIR)
+
+######################
+# EXECUTABLE
+
+$(DEB_BIN_DIR)/$(EXE_NAME): $(DEB_WRAPPING_BOXES)
+	g++ $(DEB_FLAGS) -o $@ $(DEB_WRAPPING_BOXES) $(LIBS)
+
+$(DEB_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/parse_string.o: $(UTILS_DIR)/parse_string.cpp $(PARSE_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/box_wrapper_simple.o: $(SOLV_DIR)/box_wrapper_simple.cpp $(BOX_WRAPPER_SIMPLE_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/box_wrapper_rotate.o: $(SOLV_DIR)/box_wrapper_rotate.cpp $(BOX_WRAPPER_ROTATE_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/box_wrapper_optim.o: $(SOLV_DIR)/box_wrapper_optim.cpp $(BOX_WRAPPER_OPTIM_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+############
+
+debugclean:
+	rm -f $(DEB_WRAPPING_BOXES)
+
+debugdistclean:
+	make -f $(RULES_DIR)/Makefile debugclean
+	rm -f $(DEB_BIN_DIR)/$(EXE_NAME)
+	mkdir --ignore-fail-on-non-empty $(DEB_BIN_DIR)
