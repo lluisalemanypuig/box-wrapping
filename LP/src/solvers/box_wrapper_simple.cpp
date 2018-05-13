@@ -2,11 +2,11 @@
 
 /* PUBLIC */
 
-box_wrapper_simple::box_wrapper_simple() {
+box_wrapper_simple::box_wrapper_simple() : box_solver() {
 	
 }
 
-box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) {
+box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) : box_solver() {
 	box_cell = bw.box_cell;
 	box_corner = bw.box_corner;
 	L = bw.L;
@@ -128,15 +128,14 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 void box_wrapper_simple::solve() {
 	
 	cout << "About to solve..." << endl;
-	bool solved = cplex.solve();
+	is_solved = cplex.solve();
 	
-	if (solved) {
-		cout << "Is solved? " << (solved ? "Yes" : "No") << endl;
+	if (is_solved) {
+		cout << "Is solved? " << (is_solved ? "Yes" : "No") << endl;
 	}
-	
 }
 
-void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) const {
+void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 	const int N = data.total_boxes;
 	
 	wb.init(N, L, W);

@@ -13,8 +13,9 @@ ILOSTLBEGIN
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+#include "box_solver.hpp"
 
-class box_wrapper_simple {
+class box_wrapper_simple : public box_solver {
 	protected:
 		// box_cell[b][i][j] = 1 <-> cell (i, j) is occupied by box b
 		IloNumVarArray box_cell;
@@ -50,6 +51,6 @@ class box_wrapper_simple {
 		
 		void init(const gifts& gs, length max_L = -1);
 		void solve();
-		void to_wrapped_boxes(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
+		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
 

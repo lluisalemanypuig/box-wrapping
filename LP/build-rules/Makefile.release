@@ -44,6 +44,9 @@ $(REL_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 $(REL_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+$(REL_BIN_DIR)/box_solver.o: $(SOLV_DIR)/box_solver.cpp $(BOX_SOLVER_DPS)
+	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
 $(REL_BIN_DIR)/box_wrapper_simple.o: $(SOLV_DIR)/box_wrapper_simple.cpp $(BOX_WRAPPER_SIMPLE_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 

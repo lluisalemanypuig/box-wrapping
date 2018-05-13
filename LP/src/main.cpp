@@ -15,6 +15,7 @@ ILOSTLBEGIN
 #include "utils/parse_string.hpp"
 #include "utils/input_data.hpp"
 #include "utils/time.hpp"
+#include "solvers/box_solver.hpp"
 #include "solvers/box_wrapper_simple.hpp"
 #include "solvers/box_wrapper_rotate.hpp"
 #include "solvers/box_wrapper_optim.hpp"
@@ -47,7 +48,6 @@ int main(int argc, char *argv[]) {
 	string outfile = "none";
 	
 	char fatal_error = 0;
-	bool enumerate = true;
 	
 	bool simple = false;
 	bool rotate = false;
@@ -122,16 +122,37 @@ int main(int argc, char *argv[]) {
 	
 	INPUT.fill_fields();
 	
+	
+	box_solver *bs;
 	if (simple) {
-		box_wrapper_simple bws;
-		bws.init(INPUT);
-		bws.solve();
-		
+		bs = new box_wrapper_simple();
+	}
+	
+	bs->init(INPUT);
+	bs->solve();
+	
+	if (bs->found_solution()) {
 		wrapped_boxes SOL;
-		bws.to_wrapped_boxes(INPUT, SOL);
+		bs->solution(INPUT, SOL);
 		
 		cout << SOL << endl;
+		
+		if (outfile != "none") {
+			ofstream fout;
+			fout.open(outfile.c_str());
+			
+			// terminate in error if output file could not be found
+			if (not fout.is_open()) {
+				cerr << "Error: could not open output file '" << outfile << "'" << endl;
+				return 1;
+			}
+			
+			SOL.store(fout);
+			fout.close();
+		}
 	}
+	
+	delete bs;
 	
 	return 0;
 }
