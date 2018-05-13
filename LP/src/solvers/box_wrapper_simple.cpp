@@ -66,7 +66,27 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 	cout << "Built!" << endl;
 	cout << "Building 3... ";
 	
-	/// (3). Placing the top-left corner of a box at (i,j)
+	/*
+	/// (3). Area occupied exactly by a box is exactly the area of the box
+	for (int b = 0; b < N; ++b) {
+		length b_length = data.all_boxes[b].l;
+		width b_width = data.all_boxes[b].w;
+		
+		IloExpr areaB(env);
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				areaB += C(b,i,j);
+			}
+		}
+		model.add(areaB == b_length*b_width);
+		areaB.end();
+	}
+	*/
+	
+	cout << "Built!" << endl;
+	cout << "Building 4... ";
+	
+	/// (4). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
 	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
@@ -97,9 +117,9 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 	}
 	
 	cout << "Built!" << endl;
-	cout << "Building 4... ";
+	cout << "Building 5... ";
 	
-	/// (4). Cannot place the top-left corner of a box at
+	/// (5). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
 	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
@@ -142,22 +162,19 @@ void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 		length pl = L + 1;
 		width pw = W + 1;
 		
-		for (length i = 0; i < L; ++i) {
-			for (width j = 0; j < W; ++j) {
-				
-				// for corner finding
-				if (not found) {
-					if (cplex.getValue(X(b,i,j)) == 1) {
-						pl = i;
-						pw = j;
-						found = true;
-					}
-				}
-				
-				// for roll copying
-				if (cplex.getValue(C(b,i,j)) == 1) {
-					wb.set_box_cell(b + 1, cell(i, j));
-				}
+		size_t k = 0;
+		while (k < L*W and not found) {
+			if (cplex.getValue(box_corner[b*L*W + k]) == 1) {
+				pl = k/W;
+				pw = k%W;
+				found = true;
+			}
+			++k;
+		}
+		
+		for (length i = pl; i < pl + data.all_boxes[b].l; ++i) {
+			for (width j = pw; j < pw + data.all_boxes[b].w; ++j) {
+				wb.set_box_cell(b, cell(i,j) );
 			}
 		}
 		
