@@ -37,8 +37,9 @@ class box_wrapper_simple : public Space {
 	
 	protected:
 		inline BoolVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
-		inline BoolVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
 		inline BoolVar C(size_t b, size_t i, size_t j) const { return box_cell[b*W*L + i*W + j]; }
+		
+		inline BoolVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
 		inline BoolVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
 	
 	public:

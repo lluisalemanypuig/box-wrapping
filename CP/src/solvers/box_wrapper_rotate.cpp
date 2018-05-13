@@ -45,7 +45,7 @@ void box_wrapper_rotate::span_cells_square
 			
 		}
 	}
-	rel(*this, box_rotated[b] == 0);
+	rel(*this, R(b) == 0);
 }
 
 /* PUBLIC */
