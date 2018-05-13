@@ -35,7 +35,20 @@ as the upper bound on the roll's length calculated with equation
     
 \end{enumerate}
 
-Also, the implementation of the constraints is as follows:
+Assuming the implementation of the following functions to facilitate
+access to the arrays of variables:
+
+{\NOINDENT \begin{lstlisting}
+inline BoolVar X(size_t b, size_t x, size_t y) const { return box_corner[b*W*L + y*W + x]; }
+inline BoolVar C(size_t b, size_t x, size_t y) const { return box_cell[b*W*L + y*W + x]; }
+inline BoolVar R(size_t b) const { return box_rotated[b]; }
+
+inline BoolVar X(size_t b, size_t x, size_t y) { return box_corner[b*W*L + y*W + x]; }
+inline BoolVar C(size_t b, size_t x, size_t y) { return box_cell[b*W*L + y*W + x]; }
+inline BoolVar R(size_t b) { return box_rotated[b]; }
+\end{lstlisting}}
+
+the implementation of the constraints using the Gecode library is as follows:
 
 \begin{enumerate}
     \item All boxes must be in the solution (constraint formalised in
@@ -43,7 +56,7 @@ Also, the implementation of the constraints is as follows:
     also read as ``assign a top-left corner to each box''.
     
 	{\NOINDENT \begin{lstlisting}
-    for (int b = 0; b < N; ++b) {
+	for (int b = 0; b < N; ++b) {
 		rel(*this, sum(box_corner.slice(b*W*L, 1, W*L)) == 1);
 	}
 	\end{lstlisting}}
@@ -52,7 +65,7 @@ Also, the implementation of the constraints is as follows:
     \ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
     
     {\NOINDENT \begin{lstlisting}
-    for (int b = 0; b < N; ++b) {l
+	for (int b = 0; b < N; ++b) {l
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
 				rel(*this, sum(box_cell.slice(b*W*L + i*W + j, W*L, N)) <= 1);
@@ -70,14 +83,10 @@ Also, the implementation of the constraints is as follows:
 		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
-				rel(*this,
-					(box_corner[b*W*L + y*W + x] == 1)
-					>>
-					(box_cell[b*W*L + i*W + j] == 1)
-				);
+				rel(*this, (X(b,x,y) == 1) >> (C(b,j,i) == 1) );
 			}
 		}
-		rel(*this, box_rotated[b] == 0);
+		rel(*this, R(b) == 0);
 		\end{lstlisting}}
 		
 		\item For rectangular boxes (constraints \ref{eq:span-cells:rectangular-boxes:0} and
@@ -85,24 +94,14 @@ Also, the implementation of the constraints is as follows:
 		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_length - 1; ++i) {
 			for (width j = x; j <= x + b_width - 1; ++j) {
-				rel(*this,
-					((box_rotated[b] == 0) &&
-					(box_corner[b*W*L + y*W + x] == 1))
-					>>
-					(box_cell[b*W*L + i*W + j] == 1)
-				);
+				rel(*this, ((R(b) == 0) && (X(b,x,y) == 1)) >> (C(b,j,i) == 1) );
 			}
 		}
 		\end{lstlisting}}
 		{\NOINDENT \begin{lstlisting}
 		for (length i = y; i <= y + b_width - 1; ++i) {
 			for (width j = x; j <= x + b_length - 1; ++j) {
-				rel(*this,
-					((box_rotated[b] == 1) &&
-					(box_corner[b*W*L + y*W + x] == 1))
-					>>
-					(box_cell[b*W*L + i*W + j] == 1)
-				);
+				rel(*this, ((R(b) == 1) && (X(b,x,y) == 1)) >> (C(b,j,i) == 1) );
 			}
 		}
 		\end{lstlisting}}
@@ -115,24 +114,16 @@ Also, the implementation of the constraints is as follows:
     \begin{itemize}
 		\item For square boxes (constraint \ref{eq:forbid-span-cells:square-boxes}):
 		{\NOINDENT \begin{lstlisting}
-		rel(*this, box_corner[b*W*L + y*W + x] == 0);
+		rel(*this, X(b,x,y) == 0);
 		\end{lstlisting}}
 		
 		\item For rectangular boxes (constraints \ref{eq:forbid-span-cells:rectangular-boxes:0}
 		and \ref{eq:forbid-span-cells:rectangular-boxes:1}):
 		{\NOINDENT \begin{lstlisting}
-		rel(*this,
-			(box_rotated[b] == 0)
-			>>
-			(box_corner[b*W*L + y*W + x] == 0)
-		);
+		rel(*this, (R(b) == 0) >> (X(b,x,y) == 0) );
 		\end{lstlisting}}
 		{\NOINDENT \begin{lstlisting}
-		rel(*this,
-			(box_rotated[b] == 1)
-			>>
-			(box_corner[b*W*L + y*W + x] == 0)
-		);
+		rel(*this, (R(b) == 1) >> (X(b,x,y) == 0) );
 		\end{lstlisting}}
 	\end{itemize}
     
@@ -190,7 +181,7 @@ with the following code:
 for (int b = 0; b < N; ++b) {
 	for (length i = RL - 1; i < L; ++i) {
 		for (width j = 0; j < W; ++j) {
-			rel(*this, box_cell[b*W*L + i*W + j] == 0);
+			rel(*this, C(b,j,i) == 0);
 		}
 	}
 }
