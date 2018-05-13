@@ -2,36 +2,71 @@
 
 /* PUBLIC */
 
-box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
+box_wrapper_simple::box_wrapper_simple() {
+	
+}
+
+box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) {
+	box_cell = bw.box_cell;
+	box_corner = bw.box_corner;
+	L = bw.L;
+	W = bw.W;
+}
+
+void box_wrapper_simple::init(const gifts& data, length max_L) {
+	// Initialise CPLEX variables needed to create the model
+	env = IloEnv();
+	model = IloModel(env);
+	cplex = IloCplex(model);
+	
 	if (max_L < 0) {
-		upper_bound_L = inf_t<int>();
+		L = inf_t<int>();
 	}
 	else {
-		upper_bound_L = max_L;
+		L = max_L;
 	}
 	
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_s());
+	W = data.W;
+	L = min(L, data.get_max_length_s());
 	
-	/*
 	// initialise arrays
-	box_cell = BoolVarArray(*this, N*W*L, 0, 1);
-	box_corner = BoolVarArray(*this, N*W*L, 0, 1);
+	box_cell = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
+	box_corner = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
 	
 	/// CONSTRAINTS
 	
+	cout << "Building 1... ";
+	
+	/// (1). Exactly one corner per box
 	for (int b = 0; b < N; ++b) {
-		/// (1). Exactly one corner per box
-		rel(*this, sum(box_corner.slice(b*W*L, 1, W*L)) == 1);
-		
-		/// (2). At most one box per cell
+		IloExpr exa_X(env);
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
-				rel(*this, sum(box_cell.slice(b*W*L + i*W + j, W*L, N)) <= 1);
+				exa_X += X(b,i,j);
 			}
 		}
+		model.add(exa_X == 1);
+		exa_X.end();
 	}
+	
+	cout << "Built!" << endl;
+	cout << "Building 2... ";
+	
+	/// (2). At most one box per cell
+	for (length i = 0; i < L; ++i) {
+		for (width j = 0; j < W; ++j) {
+			IloExpr amo_C(env);
+			for (int b = 0; b < N; ++b) {
+				amo_C += C(b,i,j);
+			}
+			model.add(amo_C <= 1);
+			amo_C.end();
+		}
+	}
+	
+	cout << "Built!" << endl;
+	cout << "Building 3... ";
 	
 	/// (3). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
@@ -47,19 +82,24 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 				if (i + b_length - 1 >= L) continue;
 				if (j + b_width - 1 >= W) continue;
 				
+				IloExpr span(env);
+				
 				for (length ii = i; ii <= i + b_length - 1; ++ii) {
 					for (width jj = j; jj <= j + b_width - 1; ++jj) {
-						
-						rel(*this,
-							(box_corner[b*W*L + i*W + j] == 1)
-							>>
-							(box_cell[b*W*L + ii*W + jj] == 1)
-						);
+						span += C(b,ii,jj);
 					}
 				}
+				
+				model.add(
+					IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
+				);
+				span.end();
 			}
 		}
 	}
+	
+	cout << "Built!" << endl;
+	cout << "Building 4... ";
 	
 	/// (4). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
@@ -74,31 +114,30 @@ box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
 				// if the box is WITHIN limits then ignore
 				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) continue;
 				
-				rel(*this, box_corner[b*W*L + i*W + j] == 0);
+				model.add(X(b,i,j) == 0);
 			}
 		}
 	}
 	
-	// Do not add the variables in array box_cell: if a variable
-	// is not assigned consider it as a 0 "no box in that cell".
-	// This way we avoid the solver assigning 1's wherever it can
-	// (whether it is on the slice for box 1, or for box 2, ...)
-	branch(*this, box_corner, BOOL_VAR_NONE(), BOOL_VAL_MAX());
-	*/
+	cout << "Built!" << endl;
+	
+	
+	cplex = IloCplex(model);
 }
 
-box_wrapper_simple::box_wrapper_simple(box_wrapper_simple& bw) {
-	/*
-	box_cell.update(*this, bw.box_cell);
-	box_corner.update(*this, bw.box_corner);
-	upper_bound_L = bw.upper_bound_L;
-	*/
+void box_wrapper_simple::solve() {
+	
+	cout << "About to solve..." << endl;
+	bool solved = cplex.solve();
+	
+	if (solved) {
+		cout << "Is solved? " << (solved ? "Yes" : "No") << endl;
+	}
+	
 }
 
 void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) const {
 	const int N = data.total_boxes;
-	const width W = data.W;
-	const length L = min(upper_bound_L, data.get_max_length_s());
 	
 	wb.init(N, L, W);
 	
@@ -110,11 +149,9 @@ void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
 				
-				/*
 				// for corner finding
 				if (not found) {
-					BoolVar BX(box_corner[b*W*L + i*W + j]);
-					if (BX.val() == 1) {
+					if (cplex.getValue(cX(b,i,j)) == 1) {
 						pl = i;
 						pw = j;
 						found = true;
@@ -122,12 +159,9 @@ void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 				}
 				
 				// for roll copying
-				BoolVar BC(box_cell[b*W*L + i*W + j]);
-				if (not BC.none() and BC.val() == 1) {
+				if (cplex.getValue(cC(b,i,j)) == 1) {
 					wb.set_box_cell(b + 1, cell(i, j));
 				}
-				*/
-				
 			}
 		}
 		
