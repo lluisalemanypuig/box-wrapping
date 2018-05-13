@@ -119,11 +119,11 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:span-cells:rectangular-boxes:1}
         \begin{split}
-        (R_b = 1 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + i, y + j} = 1,
+        (R_b = 1 \wedge X_{b,x,y} = 1) \Longrightarrow C_{b, x + j, y + i} = 1,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + l_b \le W \wedge y + w_b \le L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i < l_b, 0 \le j < w_b)
+        & \quad \qquad \forall i,j,\; 0 \le i < w_b, 0 \le j < l_b)
         \end{split}
         \end{flalign}
         
@@ -191,11 +191,11 @@ appropriate for the variable selection made.
         \begin{flalign}
         \label{eq:forbid-span-cells:rectangular-boxes:1}
         \begin{split}
-        R_b = 1 \Longrightarrow X_{b,x+i,y+j} = 0,
+        R_b = 1 \Longrightarrow X_{b,x + j, y + i} = 0,
         & \qquad \forall b,\; 1 \le b \le N, \text{ s.t. } (w_b \neq l_b\; \wedge \\
         & \quad \qquad \forall x,y,\; 1 \le x \le W, 1 \le y \le L \\
         & \quad \qquad \qquad \text{ s.t. } (x + l_b > W \vee y + w_b > L) \\
-        & \quad \qquad \forall i,j,\; 0 \le i \le L - y, 0 \le j \le W - x)
+        & \quad \qquad \forall i,j,\; 0 \le i \le W - y, 0 \le j \le L - x)
         \end{split}
         \end{flalign}
         
