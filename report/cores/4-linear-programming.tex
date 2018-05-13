@@ -1,2 +1,40 @@
 \section{Linear Programming}
 \label{sec:linear-programming}
+
+In this part of the project the problem is solved using the Linear Programming
+paradigm. In particular, we used the library CPLEX for C++ (version 12.7)
+(see \cite{CplexWEB}) in order to implement the mathematical model that models
+the problem and helps us solve it without having to implement our own algorithm.
+
+\hfill
+
+The use of this paradigm has its advantages and disadvantages.
+One of the disadvantages is that it is not as expressive as the constraint
+programming paradigm. For example, it does not easily allow logical expressions,
+since they are not linear expressions. For example, in order to implement the
+logical or ($a \vee b$) we have to introduce some new variables to help the
+solver satisfy one of the two conditions.
+
+\lluis{Give example for OR expression}
+\lluis{Give example for AND expression}
+\lluis{How to implement an implication?}
+
+\lluis{Advantages: it allows easy optimisation}
+
+\hfill
+
+In spite of this, we do not to reformulate the constraints epxlained in
+section \ref{sec:modelling} because CPLEX does the necessary transformations
+seamlessly.
+
+\lluis{After writing how are the constraints implemented, say that:
+the constraint (3) in the simple solver is not needed, although without
+it the solver assigns invalid values to the variables that model the cells
+of each box.
+
+\hfill
+
+Look at commit\\
+https://github.com/lluisalemanypuig/box-wrapping/commit/9a2c91a2fd8344e3e078649da105cd4d7227da71
+}
+
