@@ -36,8 +36,6 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 	
 	/// CONSTRAINTS
 	
-	cout << "Building 1... ";
-	
 	/// (1). Exactly one corner per box
 	for (int b = 0; b < N; ++b) {
 		IloExpr exa_X(env);
@@ -68,25 +66,7 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 	cout << "Built!" << endl;
 	cout << "Building 3... ";
 	
-	/// (3). Area occupied exactly by a box is exactly the area of the box
-	for (int b = 0; b < N; ++b) {
-		length b_length = data.all_boxes[b].l;
-		width b_width = data.all_boxes[b].w;
-		
-		IloExpr areaB(env);
-		for (length i = 0; i < L; ++i) {
-			for (width j = 0; j < W; ++j) {
-				areaB += C(b,i,j);
-			}
-		}
-		model.add(areaB == b_length*b_width);
-		areaB.end();
-	}
-	
-	cout << "Built!" << endl;
-	cout << "Building 4... ";
-	
-	/// (4). Placing the top-left corner of a box at (i,j)
+	/// (3). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
 	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
@@ -100,22 +80,26 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 				if (i + b_length - 1 >= L) continue;
 				if (j + b_width - 1 >= W) continue;
 				
+				IloExpr span(env);
+				
 				for (length ii = i; ii <= i + b_length - 1; ++ii) {
 					for (width jj = j; jj <= j + b_width - 1; ++jj) {
-						model.add(
-							IloIfThen(env, (X(b,i,j) == 1), (C(b,ii,jj) == 1))
-						);
+						span += C(b,ii,jj);
 					}
 				}
+				
+				model.add(
+					IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
+				);
 				
 			}
 		}
 	}
 	
 	cout << "Built!" << endl;
-	cout << "Building 5... ";
+	cout << "Building 4... ";
 	
-	/// (5). Cannot place the top-left corner of a box at
+	/// (4). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
 	for (int b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
