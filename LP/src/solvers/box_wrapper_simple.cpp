@@ -171,12 +171,9 @@ void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 				}
 				
 				// for roll copying
-				cout << "b= " << b << ". cell at (" << i << "," << j << "): " << cplex.getValue(C(b,i,j));
 				if (cplex.getValue(C(b,i,j)) == 1) {
-					cout << " is 1";
 					wb.set_box_cell(b + 1, cell(i, j));
 				}
-				cout << endl;
 			}
 		}
 		
