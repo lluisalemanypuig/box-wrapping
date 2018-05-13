@@ -122,6 +122,17 @@ int main(int argc, char *argv[]) {
 	
 	INPUT.fill_fields();
 	
+	if (simple) {
+		box_wrapper_simple bws;
+		bws.init(INPUT);
+		bws.solve();
+		
+		wrapped_boxes SOL;
+		bws.to_wrapped_boxes(INPUT, SOL);
+		
+		cout << SOL << endl;
+	}
+	
 	return 0;
 }
 
