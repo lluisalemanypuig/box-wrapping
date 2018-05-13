@@ -30,8 +30,19 @@ for i in "$@"; do
 	esac
 done
 
-if [ "$SOLVER_TEC" == "" ]; then
+if [ -z $SOLVER_TEC ]; then
 	echo -e "    \e[1;31mError: solver technology not specified\e[0m"
+	exit
+fi
+
+echo -e "\e[1;4mRead\e[0m inputs from '$INPUT_DIR'"
+if [ -z $INPUT_DIR ]; then
+	echo -e "    \e[1;31mError: input directory not specified\e[0m"
+	exit
+fi
+echo -e "\e[1;4mStore\e[0m outputs in '$OUTPUT_DIR'"
+if [ -z $OUTPUT_DIR ]; then
+	echo -e "    \e[1;31mError: output directory not specified\e[0m"
 	exit
 fi
 
@@ -52,16 +63,6 @@ else
 	echo -e "\e[1;32mSolver for\e[0m \e[1;4;32m$SOLVER_TEC\e[0m \e[1;32mexists. Proceed to benchmarking...\e[0m"
 fi
 
-echo -e "\e[1;4mRead\e[0m inputs from '$INPUT_DIR'"
-if [ "$INPUT_DIR" == "" ]; then
-	echo -e "    \e[1;31mError: input directory not specified\e[0m"
-	exit
-fi
-echo -e "\e[1;4mStore\e[0m outputs in '$OUTPUT_DIR'"
-if [ "$OUTPUT_DIR" == "" ]; then
-	echo -e "    \e[1;31mError: output directory not specified\e[0m"
-	exit
-fi
 echo "" # blank line left intentionally
 
 # create output directory
@@ -93,8 +94,8 @@ do
 	ERR_LOG_FILE=$BASE_OUTFILE.log.err
 	OUTFILE=$BASE_OUTFILE.out
 	
-	echo $(date) >> logs/$OUTFILE.out
-	echo $(date) >> logs/$OUTFILE.err
+	echo $(date) >> logs/$OUT_LOG_FILE
+	echo $(date) >> logs/$ERR_LOG_FILE
 	
 	# execute the exe file
 	if [ "$SOLVER_TEC" == "CP" ]; then
@@ -105,11 +106,12 @@ do
 		./$EXE_FILE 							\
 			-i $INPUT_DIR/$INFILE 				\
 			-o $OUTPUT_DIR/$OUTFILE 			\
-			--heuris-mix 						\
+			--heuris-mix -v 					\
 			--stop-at 1 --stop-when 5 -Nr 5		\
 			>>  logs/$OUT_LOG_FILE				\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
+		msecs=$(($end - $begin))
 		
 		n_total=$((n_total + 1))
 		
@@ -132,22 +134,22 @@ do
 				echo -e "             CP: \e[1;32m$sol_length\e[0m"
 			fi
 		fi
-
-		msecs=$(($end - $begin))
-		solv_time_secs=$(echo "scale=3; $msecs/1000" | bc)
-		echo "    In $solv_time_secs seconds"
-
-		total_time_ms=$(($total_time_ms + $msecs))
-		total_time_secs=$(echo "scale=3; $total_time_ms/1000" | bc)
-
-		per_opt=$(echo "scale=2; (100*$n_optimal)/$n_total" | bc)
-		per_sopt=$(echo "scale=2; (100*$n_suboptimal)/$n_total" | bc)
-		echo "    Current progress:"
-		echo "        Solved optimally    : $n_optimal / $n_total ( $per_opt% )"
-		echo "        Solved sub-optimally: $n_suboptimal / $n_total ( $per_sopt% )"
-		echo "        Total time elapsed  : $total_time_secs seconds"
-		
-	else
+	elif [ "$SOLVER_TEC" == "LP" ]; then
+		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
+	elif [ "$SOLVER_TEC" == "SAT" ]; then
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
 	fi
+	
+	solv_time_secs=$(echo "scale=3; $msecs/1000" | bc)
+	echo "    In $solv_time_secs seconds"
+	
+	total_time_ms=$(($total_time_ms + $msecs))
+	total_time_secs=$(echo "scale=3; $total_time_ms/1000" | bc)
+	
+	per_opt=$(echo "scale=2; (100*$n_optimal)/$n_total" | bc)
+	per_sopt=$(echo "scale=2; (100*$n_suboptimal)/$n_total" | bc)
+	echo "    Current progress:"
+	echo "        Solved optimally    : $n_optimal / $n_total ( $per_opt% )"
+	echo "        Solved sub-optimally: $n_suboptimal / $n_total ( $per_sopt% )"
+	echo "        Total time elapsed  : $total_time_secs seconds"
 done
