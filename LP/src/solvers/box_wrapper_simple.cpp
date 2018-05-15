@@ -13,6 +13,8 @@ box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) : box_solve
 	W = bw.W;
 }
 
+box_wrapper_simple::~box_wrapper_simple() { }
+
 void box_wrapper_simple::init(const gifts& data, length max_L) {
 	// Initialise CPLEX variables needed to create the model
 	env = IloEnv();
@@ -48,9 +50,6 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 		exa_X.end();
 	}
 	
-	cout << "Built!" << endl;
-	cout << "Building 2... ";
-	
 	/// (2). At most one box per cell
 	for (length i = 0; i < L; ++i) {
 		for (width j = 0; j < W; ++j) {
@@ -62,9 +61,6 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 			amo_C.end();
 		}
 	}
-	
-	cout << "Built!" << endl;
-	cout << "Building 3... ";
 	
 	/*
 	/// (3). Area occupied exactly by a box is exactly the area of the box
@@ -82,9 +78,6 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 		areaB.end();
 	}
 	*/
-	
-	cout << "Built!" << endl;
-	cout << "Building 4... ";
 	
 	/// (4). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
@@ -116,9 +109,6 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 		}
 	}
 	
-	cout << "Built!" << endl;
-	cout << "Building 5... ";
-	
 	/// (5). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
 	for (int b = 0; b < N; ++b) {
@@ -137,19 +127,7 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 		}
 	}
 	
-	cout << "Built!" << endl;
-	
 	cplex = IloCplex(model);
-}
-
-void box_wrapper_simple::solve() {
-	
-	cout << "About to solve..." << endl;
-	is_solved = cplex.solve();
-	
-	if (is_solved) {
-		cout << "Is solved? " << (is_solved ? "Yes" : "No") << endl;
-	}
 }
 
 void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
@@ -174,7 +152,7 @@ void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 		
 		for (length i = pl; i < pl + data.all_boxes[b].l; ++i) {
 			for (width j = pw; j < pw + data.all_boxes[b].w; ++j) {
-				wb.set_box_cell(b, cell(i,j) );
+				wb.set_box_cell(b + 1, cell(i,j) );
 			}
 		}
 		

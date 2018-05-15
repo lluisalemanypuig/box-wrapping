@@ -29,11 +29,6 @@ class box_wrapper_simple : public box_solver {
 		//     l_b is the length of box b
 		IloNumVarArray box_corner;
 		
-		// CPLEX variables
-		IloEnv env;
-		IloModel model;
-		IloCplex cplex;
-		
 		// upper bound on the roll's length
 		length L;
 		// roll's width. Fixed value
@@ -49,9 +44,9 @@ class box_wrapper_simple : public box_solver {
 	public:
 		box_wrapper_simple();
 		box_wrapper_simple(const box_wrapper_simple& bw);
+		~box_wrapper_simple();
 		
 		void init(const gifts& gs, length max_L = -1);
-		void solve();
 		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
 
