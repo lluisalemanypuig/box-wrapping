@@ -40,6 +40,7 @@ class box_wrapper_rotate : public box_solver {
 			length b_length, width b_width
 		);
 		
+		virtual void add_objective(const gifts& gs);
 		void _init(const gifts& gs);
 		
 	protected:
@@ -68,8 +69,6 @@ class box_wrapper_rotate : public box_solver {
 		IloNumVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
 		IloNumVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
 		IloNumVar R(size_t b) { return box_rotated[b]; }
-		
-		virtual void add_objective();
 		
 	public:
 		box_wrapper_rotate();

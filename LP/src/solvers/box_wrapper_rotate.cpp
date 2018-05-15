@@ -55,11 +55,9 @@ void box_wrapper_rotate::span_cells_square
 	model.add(R(b) == 0);
 }
 
+void box_wrapper_rotate::add_objective(const gifts& ) { }
+
 void box_wrapper_rotate::_init(const gifts& data) {
-	cout << "N= " << N << endl;
-	cout << "W= " << W << endl;
-	cout << "L= " << L << endl;
-	
 	// initialise arrays
 	box_cell = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
 	box_corner = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
@@ -173,12 +171,10 @@ void box_wrapper_rotate::_init(const gifts& data) {
 		}
 	}
 	
-	add_objective();
+	add_objective(data);
 	
 	cplex = IloCplex(model);
 }
-
-void box_wrapper_rotate::add_objective() { }
 
 /* PUBLIC */
 
