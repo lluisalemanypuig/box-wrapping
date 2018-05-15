@@ -1,37 +1,8 @@
 #include "box_wrapper_simple.hpp"
 
-/* PUBLIC */
+/* PROTECTED */
 
-box_wrapper_simple::box_wrapper_simple() : box_solver() {
-	
-}
-
-box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) : box_solver() {
-	box_cell = bw.box_cell;
-	box_corner = bw.box_corner;
-	L = bw.L;
-	W = bw.W;
-}
-
-box_wrapper_simple::~box_wrapper_simple() { }
-
-void box_wrapper_simple::init(const gifts& data, length max_L) {
-	// Initialise CPLEX variables needed to create the model
-	env = IloEnv();
-	model = IloModel(env);
-	cplex = IloCplex(model);
-	
-	if (max_L < 0) {
-		L = inf_t<int>();
-	}
-	else {
-		L = max_L;
-	}
-	
-	const int N = data.total_boxes;
-	W = data.W;
-	L = min(L, data.get_max_length_s());
-	
+void box_wrapper_simple::_init(const gifts& data) {
 	// initialise arrays
 	box_cell = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
 	box_corner = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
@@ -130,9 +101,23 @@ void box_wrapper_simple::init(const gifts& data, length max_L) {
 	cplex = IloCplex(model);
 }
 
-void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
-	const int N = data.total_boxes;
+/* PUBLIC */
+
+box_wrapper_simple::box_wrapper_simple() : box_solver() {
 	
+}
+
+box_wrapper_simple::box_wrapper_simple(const box_wrapper_simple& bw) : box_solver() {
+	box_cell = bw.box_cell;
+	box_corner = bw.box_corner;
+	N = bw.N;
+	L = bw.L;
+	W = bw.W;
+}
+
+box_wrapper_simple::~box_wrapper_simple() { }
+
+void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 	wb.init(N, L, W);
 	
 	for (int b = 0; b < N; ++b) {

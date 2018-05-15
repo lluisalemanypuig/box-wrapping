@@ -28,11 +28,6 @@ class box_wrapper_simple : public box_solver {
 		//     w_b is the width of box b
 		//     l_b is the length of box b
 		IloNumVarArray box_corner;
-		
-		// upper bound on the roll's length
-		length L;
-		// roll's width. Fixed value
-		width W;
 	
 	protected:
 		IloNumVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
@@ -41,12 +36,13 @@ class box_wrapper_simple : public box_solver {
 		IloNumVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
 		IloNumVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
 		
+		void _init(const gifts& gs);
+		
 	public:
 		box_wrapper_simple();
 		box_wrapper_simple(const box_wrapper_simple& bw);
 		~box_wrapper_simple();
 		
-		void init(const gifts& gs, length max_L = -1);
 		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
 

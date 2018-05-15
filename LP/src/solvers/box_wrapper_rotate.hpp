@@ -40,6 +40,8 @@ class box_wrapper_rotate : public box_solver {
 			length b_length, width b_width
 		);
 		
+		void _init(const gifts& gs);
+		
 	protected:
 		// box_rotated[b] = 0 <-> box b is placed in the way it is indicated
 		// 						  in the input (l,w)
@@ -57,11 +59,6 @@ class box_wrapper_rotate : public box_solver {
 		//     w_b is the width of box b
 		//     l_b is the length of box b
 		IloNumVarArray box_corner;
-		
-		// upper bound on the roll's length
-		length L;
-		// roll's width. Fixed value
-		width W;
 	
 	protected:
 		IloNumVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
@@ -79,7 +76,6 @@ class box_wrapper_rotate : public box_solver {
 		box_wrapper_rotate(const box_wrapper_rotate& bw);
 		virtual ~box_wrapper_rotate();
 		
-		void init(const gifts& gs, length max_L = -1);
 		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
 

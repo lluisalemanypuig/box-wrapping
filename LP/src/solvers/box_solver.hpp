@@ -13,12 +13,23 @@ ILOSTLBEGIN
 class box_solver {
 	private:
 	protected:
-		bool is_solved;
-		
-		// CPLEX variables
+		/* CPLEX variables */
 		IloEnv env;
 		IloModel model;
 		IloCplex cplex;
+		
+		/* Other variables */
+		
+		// Is instance solved?
+		bool is_solved;
+		// Amount of boxes
+		int N;
+		// upper bound on the roll's length
+		length L;
+		// roll's width. Fixed value
+		width W;
+		
+		virtual void _init(const gifts& gs) = 0;
 		
 	public:
 		box_solver();
@@ -26,7 +37,7 @@ class box_solver {
 		
 		/* FIND SOLUTION */
 		
-		virtual void init(const gifts& gs, length max_L = -1) = 0;
+		void init(const gifts& gs, length max_L = -1);
 		void solve();
 		virtual void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const = 0;
 		

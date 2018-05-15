@@ -5,6 +5,32 @@ box_solver::~box_solver() {}
 
 /* FIND SOLUTION */
 
+void box_solver::init(const gifts& data, length max_L) {
+	// Initialise CPLEX variables needed to create the model
+	env = IloEnv();
+	model = IloModel(env);
+	cplex = IloCplex(model);
+	
+	if (max_L < 0) {
+		L = inf_t<length>();
+	}
+	else {
+		L = max_L;
+	}
+	
+	N = data.total_boxes;
+	W = data.W;
+	L = min(L, data.get_max_length_s());
+	
+	cout << "N= " << N << endl;
+	cout << "W= " << W << endl;
+	cout << "L= " << L << endl;
+	
+	cout << "----" << endl;
+	
+	_init(data);
+}
+
 void box_solver::solve() {
 	is_solved = cplex.solve();
 }
