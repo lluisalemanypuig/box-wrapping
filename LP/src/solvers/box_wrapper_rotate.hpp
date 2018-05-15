@@ -1,8 +1,5 @@
 #pragma once
 
-// C includes
-#include <assert.h>
-
 // C++ includes
 #include <iostream>
 using namespace std;
@@ -16,14 +13,14 @@ ILOSTLBEGIN
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+#include "box_solver.hpp"
 
-class box_wrapper_rotate {
+class box_wrapper_rotate : public box_solver {
 	protected:
 		// constraints for spanning cells when box is rotable
 		// but it is not rotated
 		void span_cells_non_rot
 		(
-			length L, width W,
 			int b, length i, width j,
 			length b_length, width b_width
 		);
@@ -32,7 +29,6 @@ class box_wrapper_rotate {
 		// and it is rotated
 		void span_cells_rot
 		(
-			length L, width W,
 			int b, length i, width j,
 			length b_length, width b_width
 		);
@@ -40,39 +36,50 @@ class box_wrapper_rotate {
 		// constraints for spanning cells when box is square
 		void span_cells_square
 		(
-			length L, width W,
 			int b, length i, width j,
 			length b_length, width b_width
 		);
 		
 	protected:
-		/*
-		// box_rotated[k] = 0 <-> box k is placed in the way it is indicated
+		// box_rotated[b] = 0 <-> box b is placed in the way it is indicated
 		// 						  in the input (l,w)
-		// box_rotated[k] = 1 <-> box k is rotated (w,l)
-		BoolVarArray box_rotated;
+		// box_rotated[b] = 1 <-> box b is rotated (w,l)
+		IloNumVarArray box_rotated;
 		
-		// box_cell[k][i][j] = 1 <-> cell (i, j) is occupied by box k
-		BoolVarArray box_cell;
+		// box_cell[b][i][j] = 1 <-> cell (i, j) is occupied by box b
+		IloNumVarArray box_cell;
 		
-		// box_corner[k][i][j] = 1 <-> top-left corner of box k
+		// box_corner[b][i][j] = 1 <-> top-left corner of box b
 		// is at cell (i,j) with
-		//     1 <= j <= W - w_k (width)
-		//     1 <= i <= L - l_k (length)
+		//     1 <= j <= W - w_b (width)
+		//     1 <= i <= L - l_b (length)
 		// where
-		//     w_k is the width of box k
-		//     l_k is the length of box k
-		BoolVarArray box_corner;
-		*/
-	
+		//     w_b is the width of box b
+		//     l_b is the length of box b
+		IloNumVarArray box_corner;
+		
 		// upper bound on the roll's length
-		length upper_bound_L;
+		length L;
+		// roll's width. Fixed value
+		width W;
 	
+	protected:
+		IloNumVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
+		IloNumVar C(size_t b, size_t i, size_t j) const { return box_cell[b*W*L + i*W + j]; }
+		IloNumVar R(size_t b) const { return box_rotated[b]; }
+		
+		IloNumVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
+		IloNumVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
+		IloNumVar R(size_t b) { return box_rotated[b]; }
+		
+		virtual void add_objective();
+		
 	public:
-		box_wrapper_rotate(const gifts& gs, length max_L = -1);
-		box_wrapper_rotate(box_wrapper_rotate& bw);
+		box_wrapper_rotate();
+		box_wrapper_rotate(const box_wrapper_rotate& bw);
 		virtual ~box_wrapper_rotate();
 		
-		void to_wrapped_boxes(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
+		void init(const gifts& gs, length max_L = -1);
+		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
 
