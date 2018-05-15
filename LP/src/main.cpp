@@ -135,6 +135,9 @@ int main(int argc, char *argv[]) {
 	else if (rotate) {
 		bs = new box_wrapper_rotate();
 	}
+	else if (optim) {
+		bs = new box_wrapper_optim();
+	}
 	
 	double begin = timing::now();
 	
