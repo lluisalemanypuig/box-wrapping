@@ -23,7 +23,7 @@ ILOSTLBEGIN
 void print_usage() {
 	cout << "BOX WRAPPING PROBLEM - Linear Programming Solver" << endl;
 	cout << endl;
-	cout << "This software uses the library Gecode (tested under version 6.0.0)" << endl;
+	cout << "This software uses the library CPLEX (tested under version 12.7)" << endl;
 	cout << "to solve the Box Wrapping Problem (BWP). It admits several options" << endl;
 	cout << "and are described below. Most of them are optional but it requires" << endl;
 	cout << "the specification of an input file containing the data, the solver" << endl;
@@ -34,6 +34,8 @@ void print_usage() {
 	cout << "    [-i, --input]: specify the input file" << endl;
 	cout << "    [-o, --output]: specify the output file." << endl;
 	cout << "        Only the first solution will be stored." << endl;
+	cout << "    [-v, --verbose]: tell the CPLEX solver to output its progress." << endl;
+	cout << "        Other messages will also be displayed" << endl;
 	cout << endl;
 	cout << "Solvers:" << endl;
 	cout << "    (1) --simple: initial version of a solver in Gecode for the BWP" << endl;
@@ -52,6 +54,7 @@ int main(int argc, char *argv[]) {
 	bool simple = false;
 	bool rotate = false;
 	bool optim = false;
+	bool verbose = false;
 	
 	// process arguments
 	for (int i = 1; i < argc; ++i) {
@@ -78,6 +81,9 @@ int main(int argc, char *argv[]) {
 		}
 		else if (strcmp(argv[i], "--optim") == 0) {
 			optim = true;
+		}
+		else if (strcmp(argv[i], "-v") == 0 or strcmp(argv[i], "--verbose") == 0) {
+			verbose = true;
 		}
 		else {
 			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
@@ -122,20 +128,39 @@ int main(int argc, char *argv[]) {
 	
 	INPUT.fill_fields();
 	
-	
 	box_solver *bs;
 	if (simple) {
 		bs = new box_wrapper_simple();
 	}
+	else if (rotate) {
+		bs = new box_wrapper_rotate();
+	}
+	
+	double begin = timing::now();
 	
 	bs->init(INPUT);
+	bs->set_verbose(verbose);
 	bs->solve();
+	
+	double end = timing::now();
 	
 	if (bs->found_solution()) {
 		wrapped_boxes SOL;
 		bs->solution(INPUT, SOL);
 		
-		cout << SOL << endl;
+		#ifdef BOX_DEBUG
+		string msg;
+		bool sane = SOL.is_sane(msg);
+		if (not sane) {
+			cerr << "Solution is not sane!" << endl;
+			cerr << msg << endl;
+		}
+		#endif
+		
+		if (verbose) {
+			cout << SOL << endl;
+			cout << "In " << timing::elapsed_time(begin, end) << " seconds" << endl;
+		}
 		
 		if (outfile != "none") {
 			ofstream fout;
@@ -149,6 +174,11 @@ int main(int argc, char *argv[]) {
 			
 			SOL.store(fout);
 			fout.close();
+		}
+	}
+	else {
+		if (verbose) {
+			cout << "No solution found" << endl;
 		}
 	}
 	
