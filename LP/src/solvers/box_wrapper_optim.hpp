@@ -20,12 +20,12 @@ ILOSTLBEGIN
 
 class box_wrapper_optim : public box_wrapper_rotate {
 	protected:
-		gifts data;
+		void add_objective();
 		
 	public:
-		box_wrapper_optim(const gifts& gs, length max_L = -1);
-		box_wrapper_optim(box_wrapper_optim& bw);
-		virtual ~box_wrapper_optim();
+		box_wrapper_optim();
+		box_wrapper_optim(const box_wrapper_optim& bw);
+		~box_wrapper_optim();
 		
 };
 

@@ -1,11 +1,18 @@
 #include "box_wrapper_optim.hpp"
 
-box_wrapper_optim::box_wrapper_optim(const gifts& _data, length max_L) : box_wrapper_rotate(_data, max_L) {
-	data = _data;
+/* PROTECTED */
+
+void box_wrapper_optim::add_objective() {
 }
 
-box_wrapper_optim::box_wrapper_optim(box_wrapper_optim& bw) : box_wrapper_rotate(bw) {
-	data = bw.data;
+/* PUBLIC */
+
+box_wrapper_optim::box_wrapper_optim() : box_wrapper_rotate() {
+	
+}
+
+box_wrapper_optim::box_wrapper_optim(const box_wrapper_optim& bw) : box_wrapper_rotate(bw) {
+	
 }
 
 box_wrapper_optim::~box_wrapper_optim() {
