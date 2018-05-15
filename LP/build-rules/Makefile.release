@@ -64,4 +64,4 @@ releaseclean:
 releasedistclean:
 	make -f $(RULES_DIR)/Makefile releaseclean
 	rm -f $(REL_BIN_DIR)/$(EXE_NAME)
-	mkdir --ignore-fail-on-non-empty $(REL_BIN_DIR)
+	rmdir --ignore-fail-on-non-empty $(REL_BIN_DIR)

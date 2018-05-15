@@ -65,4 +65,4 @@ debugclean:
 debugdistclean:
 	make -f $(RULES_DIR)/Makefile debugclean
 	rm -f $(DEB_BIN_DIR)/$(EXE_NAME)
-	mkdir --ignore-fail-on-non-empty $(DEB_BIN_DIR)
+	rmdir --ignore-fail-on-non-empty $(DEB_BIN_DIR)
