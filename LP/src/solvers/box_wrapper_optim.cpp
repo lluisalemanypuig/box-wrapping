@@ -48,7 +48,6 @@ void box_wrapper_optim::objective2(const gifts& data) {
 	);
 }
 
-
 /* PROTECTED */
 
 void box_wrapper_optim::add_objective(const gifts& data) {
