@@ -12,6 +12,7 @@ REL_WRAPPING_BOXES = $(REL_BIN_DIR)/main.o					\
 					 $(REL_BIN_DIR)/parse_string.o			\
 					 $(REL_BIN_DIR)/wrapped_boxes.o			\
 					 $(REL_BIN_DIR)/input_data.o			\
+					 $(REL_BIN_DIR)/box_solver.o			\
 					 $(REL_BIN_DIR)/box_wrapper_simple.o	\
 					 $(REL_BIN_DIR)/box_wrapper_rotate.o	\
 					 $(REL_BIN_DIR)/box_wrapper_optim.o
