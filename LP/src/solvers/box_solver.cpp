@@ -22,12 +22,6 @@ void box_solver::init(const gifts& data, length max_L) {
 	W = data.W;
 	L = min(L, data.get_max_length_s());
 	
-	cout << "N= " << N << endl;
-	cout << "W= " << W << endl;
-	cout << "L= " << L << endl;
-	
-	cout << "----" << endl;
-	
 	_init(data);
 }
 
