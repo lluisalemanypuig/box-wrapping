@@ -19,8 +19,18 @@ ILOSTLBEGIN
 #include "utils/logger.hpp"
 
 class box_wrapper_optim : public box_wrapper_rotate {
+	private:
+		void objective1(const gifts& gs);
+		void objective2(const gifts& gs);
+	
 	protected:
-		void add_objective();
+		// box_lengths[b] = the length chosen for this box
+		IloNumVarArray box_lengths;
+		
+		IloNumVar L(size_t b) const { return box_lengths[b]; }
+		IloNumVar L(size_t b) { return box_lengths[b]; }
+		
+		void add_objective(const gifts& gs);
 		
 	public:
 		box_wrapper_optim();
