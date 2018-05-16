@@ -1,4 +1,4 @@
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage[margin=3cm]{geometry}
 \setlength{\parindent}{0pt}
@@ -36,7 +36,13 @@
 \usepackage{todonotes}
 
 \usepackage{xifthen}	% for optional parameters
-\usepackage{hyperref}	% for hyperlinks
+\usepackage[hidelinks]{hyperref}	% for hyperlinks
+\hypersetup{
+    colorlinks,
+    linkcolor={red!100!black},
+    citecolor={blue!100!black},
+    urlcolor={blue!50!black}
+}
 
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{epsfig}
@@ -47,3 +53,4 @@
 \makeatletter % For spaces in paths
 \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
 \makeatother
+
