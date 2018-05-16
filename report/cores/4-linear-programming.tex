@@ -9,34 +9,66 @@ the problem and helps us solve it without having to implement our own algorithm.
 \hfill
 
 The use of this paradigm has its advantages and disadvantages.
+One of the the advantages is that we can naturally model optimisation problems
+with their own objective function (whose value has to be maximised or minimised).
 One of the disadvantages is that it is not as expressive as the constraint
 programming paradigm. For example, it does not easily allow logical expressions,
-since they are not linear expressions. For example, in order to implement the
+since they are not linear. For example, in order to implement the
 logical or ($a \vee b$) we have to introduce some new variables to help the
-solver satisfy one of the two conditions.
+solver satisfy one of the two conditions. Now follows an explanation on how to
+transform several logical expressions into linear expressions, assuming them
+to be integer-valued for all feasible solution, using simple transformations
+that relate each expression to 0/1 variables. Let $\delta_1$, $\delta_2$ be such
+variables:
 
-\lluis{Give example for OR expression}
-\lluis{Give example for AND expression}
-\lluis{How to implement an implication?}
+\begin{itemize}	
+	\item $(\delta_1 = 1) \vee (\delta_2 = 1)$. Impose $\delta_1 + \delta_2 \ge 1$.
+	
+	\item $(\delta_1 = 0) \vee (\delta_2 = 1)$.	Impose $\delta_1 \le \delta_2$.
+	
+	\item $(\delta_1 = 0) \vee (\delta_2 = 0)$.	Impose $\delta_1 + \delta_2 \le 1$.
+	
+	\item $(\delta_1 = 1) \wedge (\delta_2 = 1)$. Impose $\delta_1 + \delta_2 = 2$.
+	
+	\item $(\delta_1 = 0) \wedge (\delta_2 = 1)$. Impose $1 - \delta_1 + \delta_2 = 2$.	
+	
+	\item $(\delta_1 = 0) \wedge (\delta_2 = 0)$. Impose $\delta_1 + \delta_2 = 0$.
+	
+	\item $(\delta_1 = b_1) \Longrightarrow (\delta_2 = b_1) \equiv (\delta_1 = 1 - b_1) \vee (\delta_2 = b_2)$,
+	for any two values $b_1,b_2 \in \mathbb{B}$.
+	
+	\item $(\delta_1 = b_1) \Longleftrightarrow (\delta_2 = b_2)$. Impose the two logical constraints
+	$(\delta_1 = b_1) \Longrightarrow (\delta_2 = b_2)$ and $(\delta_2 = b_2) \Longrightarrow (\delta_1 = b_1)$,
+	for any two values $b_1,b_2 \in \mathbb{B}$.
+	
+\end{itemize}
 
-\lluis{Advantages: it allows easy optimisation}
+Relating linear expressions through logical operators is slightly more complicated.
+If $a_1^Tx \le b_1$ and $a_2^Tx \le b_2$ are two integer-valued linear expressions
+for all feasible solution $x$, to model the logical expression:
+\[
+(a_1^Tx \le b_1) \;\Box\; (a_2^Tx \le b_2)
+\]
+where $\Box$ is any binary logical operator $\vee,\wedge,\Longrightarrow,\Longleftrightarrow$,
+we have to apply the following procedure: for each of the two linear expressions introduce a 0/1
+variable. Let $\delta_1$ and $\delta_2$ be these variables defined so that:
+\[
+(\delta_1 = 1) \Longleftrightarrow (a_1^Tx \le b_1), \qquad 
+(\delta_2 = 1) \Longleftrightarrow (a_2^Tx \le b_2)
+\]
+It only remains to impose the logical constraint $(\delta_1 = 1) \;\Box\; (\delta_2 = 1)$,
+and use linear expressions for the two double implications:
+\[
+a_i^Tx - b_i \le \mathcal{U}_i(1 - \delta_i), \qquad a_i^Tx - b_i > (\mathcal{L}_i - 1)\delta_i
+\]
+where $\mathcal{U}_i$ and $\mathcal{L}_i$ are upper and lower bounds, respectively, for
+the expression $a_i^Tx - b_i$, for $i\in\{1,2\}$.
 
 \hfill
 
-In spite of this, we do not to reformulate the constraints epxlained in
-section \ref{sec:modelling} because CPLEX does the necessary transformations
-seamlessly.
-
-\lluis{After writing how are the constraints implemented, say that:
-the constraint (3) in the simple solver is not needed, although without
-it the solver assigns invalid values to the variables that model the cells
-of each box.
-
-\hfill
-
-Look at commit\\
-https://github.com/lluisalemanypuig/box-wrapping/commit/9a2c91a2fd8344e3e078649da105cd4d7227da71
-}
+In spite of logical constraints not being linear expressions, we do not to reformulate
+the constraints explained in section \ref{sec:modelling} because CPLEX does the necessary
+transformations automatically.
 
 \subsection{Implementation}
 \label{sec:linear-programming:implementation}
@@ -191,6 +223,76 @@ using the CPLEX library is as follows:
 	\end{itemize}
     
 \end{enumerate}
+
+All the ``linear'' expressions above are the only required according to the
+general modelling of the problem described in section \ref{sec:modelling}. However,
+the linear programming paradigm requires an extra constraint: each box can not
+occupy more cells than its area. This constraint is required for the following
+reason: since is logically true that ``false implies true'' we can have many
+cells $c$ of the roll assigned to some box $b$ even if its top-left corner is not
+assigned to any cell $t$ nearby\footnote{By ``nearby'' we mean ``placed at a cell so that
+according to the box's rotation and its dimensions cell $c$ falls within the
+area that should be occupied by $b$ when its top-left corner is assigned to $t$.''}.
+This way we may encounter an assignation that makes a box have, not only more cells
+than it should, but also cells assigned throughout the completely scattered.
+See figure \ref{fig:invalid-roll} for an illustration of this phenomenon.
+
+\begin{figure}[H]
+\centering
+\begin{BVerbatim}
+   | W              | W              | W              | W              | W       
+ L |  0  1  2     L |  0  1  2     L |  0  1  2     L |  0  1  2     L |  0  1  2
+-------------    -------------    -------------    -------------    -------------
+ 0 | 13 13 12    11 | 11 13  8    22 | 13 13 13    33 | 12  2  1    44 |  7  7 12
+ 1 |  6  6 12    12 | 13 13 13    23 |  1 12 13    34 | 13  2  1    45 |  7 13 10
+ 2 |  6  6 12    13 | 13  5  5    24 |  4  8 13    35 | 11  2 13
+ 3 |  6  6 12    14 | 13  5  5    25 | 11  4 13    36 | 12 13 11
+ 4 |  6  6 12    15 | 12  5  5    26 | 13  4 13    37 | 12 13 11
+ 5 |  8  8 13    16 | 13  5  5    27 | 13 11 13    38 |  3 13 11
+ 6 |  8  8 13    17 | 13 12 13    28 | 13 12  4    39 |  3 11 11
+ 7 |  8  8 11    18 |  7 12 12    29 |  4  4 13    40 |  3 13 11
+ 8 |  8  8 13    19 | 13 13 11    30 |  4  4  4    41 |  7  7  7
+ 9 |  8  8 13    20 | 13 13 13    31 |  4  4  4    42 |  7  7 12
+10 | 12 13  9    21 |  4 13 13    32 |  4  4  1    43 |  7  7 13
+\end{BVerbatim}
+\centeredcaption{Invalid contents of the roll without rotations and optimisation for instance
+\textit{instances/material/bwp\_3\_13\_1.in}}
+\label{fig:invalid-roll}
+\end{figure}
+
+In spite of this, this only affects to the extraction of the solution and yet it 
+is a minor problem: the construction of the solution only requires knowing the
+rotation and the position of the top-left corner of each box. Knowing these two,
+and having access to the input data, we can easily construct the valid roll\footnote{The
+actual solution to the problem, as specified in the statement, is not the roll
+itself but only the top-left and bottom-right corners of each box.}
+(see figure \ref{fig:valid-roll}). Therefore, the constraint is not only superfluous,
+but also its implementation and addition to the model only slows the performance down.
+However, we still need to implement the variables and constraints to avoid boxes
+overlapping.s
+
+\begin{figure}[H]
+\centering
+\begin{BVerbatim}
+   | W             | W             | W             | W             | W          
+ L |  0 1  2     L |  0 1  2     L |  0 1  2     L |  0 1  2     L |  0 1  2    
+------------    ------------    ------------    ------------    ------------    
+ 0 |  . 6  6    11 |  7 7  9    22 |  . .  .    33 |  . . 11    44 | 12 .  .
+ 1 |  . 6  6    12 |  7 7  .    23 |  . .  .    34 |  . . 11    45 |  . .  .
+ 2 |  . 6  6    13 |  7 7  .    24 |  . . 10    35 |  1 . 11
+ 3 |  . 6  6    14 |  7 7  .    25 |  . . 10    36 |  1 . 11
+ 4 |  . .  2    15 |  . .  .    26 |  . . 10    37 |  1 .  .
+ 5 |  . .  2    16 |  . 3  3    27 |  4 4 10    38 |  . .  .
+ 6 |  . .  2    17 |  . 3  3    28 |  4 4 10    39 |  . .  .
+ 7 |  . .  .    18 |  . 3  3    29 |  4 4  .    40 | 12 5  5
+ 8 |  . .  .    19 |  . 3  3    30 |  4 4  .    41 | 12 5  5
+ 9 |  . 8  .    20 |  . .  .    31 |  . .  .    42 | 12 5  5
+10 |  . .  .    21 |  . .  .    32 |  . . 11    43 | 12 5  5
+\end{BVerbatim}
+\centeredcaption{Valid contents of the roll without rotations and optimisation for instance
+\textit{instances/material/bwp\_3\_13\_1.in}}
+\label{fig:valid-roll}
+\end{figure}
 
 \subsection{Finding the optimium solution}
 \label{sec:linear-programming:optimum}
