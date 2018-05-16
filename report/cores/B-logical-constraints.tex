@@ -1,0 +1,101 @@
+\section{Examples logical constraints}
+\label{sec:examples-logical-constraints}
+
+In this section are shown two simple examples on how to transform logical
+constraints that relate Boolean variables into linear expressions.
+
+\subsection{3 or}
+\label{sec:examples-logical-constraints:3-ors}
+
+Assume three Boolean variables $a,b,c$ related as follows:
+\begin{equation}
+\label{eq:B:3-ors}
+(a = 1) \vee (b = 0) \vee (c = 1)
+\end{equation}
+and we want to express the same condition but with a series of
+linear constraints. First, use the associative property of the logical $\vee$
+to obtain: $((a = 1) \vee (b = 0)) \vee (c = 1)$.
+Now, introduce a new Boolean variable $\delta$ so that
+\[
+(\delta = 1) \Longleftrightarrow ((a = 1) \vee (b = 0))
+\;\equiv\;
+(\delta = 1) \Longleftrightarrow (b \le a)
+\]
+Now, using the transformations explained in section \ref{sec:linear-programming}
+we obtain two new linear expressions
+\[
+b - a \le \mathcal{U}(1 - \delta), \quad b - a \ge (\mathcal{L} - 1)\delta + 1
+\]
+Taking $\mathcal{U}=1$ and $\mathcal{L}=-1$ as upper and lower bounds for $b - a$
+we get
+\begin{equation}
+\label{eq:B:expressions-b-lt-a-delta}
+b - a \le 1 - \delta, \quad b - a \ge -2\delta + 1
+\end{equation}
+Our claim is that if the three linear expressions in \ref{eq:B:three-lin-expr}
+are satisfied then the logical constraint in \ref{eq:B:3-ors} will be true.
+\begin{equation}
+\label{eq:B:three-lin-expr}
+\delta + c \ge 1,\qquad b - a \le 1 - \delta,\qquad b - a \ge -2\delta + 1
+\end{equation}
+
+For this, we can test all 8 possible combinations of values for $a,b,c$. For each pair
+of values for $a,b$ the algorithm that solves the linear constraints gives a value to
+variable $\delta$ that satisfies the expressions in \ref{eq:B:expressions-b-lt-a-delta}.
+This value is then used to check that the constraint $\delta + c \ge 1$ is satisfied
+for the given value of $c$. If it is, then the logical constraint in \ref{eq:B:3-ors}
+is satisfied, that is, it is true that either $a=1$, $b=0$, $c=1$.
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{cccccccc}
+	  & a & b & c & $(b - a \le 1 - \delta) \wedge (b - a \ge -2\delta + 1)$                     & $\delta$ & $\delta + c \ge 1$ \\
+	\midrule
+	* & 0 & 0 & 0 & $(0 \le 1 - \delta) \wedge (0 \ge -2\delta + 1) \equiv 1/2 \le \delta \le 1$ &        1 & $\bullet$ \\
+	* & 0 & 0 & 1 &                                                                              &        1 & $\bullet$ \\
+	  & 0 & 1 & 0 & $(1 \le 1 - \delta) \wedge (1 \ge -2\delta + 1) \equiv   0 \le \delta \le 0$ &        0 &           \\
+	* & 0 & 1 & 1 &                                                                              &        0 & $\bullet$ \\
+	* & 1 & 0 & 0 & $(-1 \le 1 - \delta) \wedge (-1 \ge -2\delta + 1) \equiv 1 \le \delta \le 2$ &        1 & $\bullet$ \\
+	* & 1 & 0 & 1 &                                                                              &        1 & $\bullet$ \\
+	* & 1 & 1 & 0 & $(0 \le 1 - \delta) \wedge (0 \ge -2\delta + 1) \equiv 1/2 \le \delta \le 1$ &        1 & $\bullet$ \\
+	* & 1 & 1 & 1 &                                                                              &        1 & $\bullet$ \\
+	\end{tabular}
+\centeredcaption{The cases where the constraint \ref{eq:B:3-ors} is satisfied (marked with ``*'')
+and the cases where the constraints in \ref{eq:B:three-lin-expr} are satisfied (marked with $\bullet$).}
+\label{table:B:3-linear-expressions}
+\end{table}
+
+\subsection{Several and}
+\label{sec:examples-logical-constraints:several-ands}
+
+Transforming a series of logical ``and'' ($\wedge$) operations is fairly trivial.
+Given Boolean variables $x_1,\cdots,x_n$ each equal to some Boolean value $b_1,\cdots,b_n$,
+the logical constraint
+\begin{equation}
+\label{eq:B:several-ands}
+\bigwedge_{i=1}^{n} (x_i = b_i)
+\end{equation}
+is transformed into the following equality:
+\begin{eqnarray}
+\label{eq:B:several-ands:linear}
+\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = n
+\end{eqnarray}
+which in turn is transformed into two inequalities $\ge$,$\le$.
+
+\hfill
+
+The only assignment to the variables $x_1,\cdots,x_n$ that satisfies equation
+\ref{eq:B:several-ands:linear} is $b_1,\cdots,b_n$. The proof is done by contradiction.
+Assume there are $p$ variables that must be $1$ and $z$ variables that must be $0$.
+If the assignment is $b_1,\cdots,b_n$ then:
+\[
+\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p + z = n
+\]
+If $b_i=1$ then let $x_i=0$. In this case we have that:
+\[
+\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p - 1 + z \neq n
+\]
+Conversely, if $b_i=0$ let $x_i=1$. Then, we have
+\[
+\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p + z - 1 \neq n
+\]
