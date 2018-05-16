@@ -6,32 +6,33 @@ paradigm. In particular, we used the library Gecode for C++ (version 6.0.0)
 (see \cite{GecodeWEB}) in order to implement the mathematical model that models
 the problem and helps us solve it without having to implement our own algorithm.
 
-\hfill
+\subsection{Implementation}
+\label{sec:constraint-programming:implementation}
 
-For this, we used 3 arrays of Boolean variables, each of them containing the
-variables described in items \ref{var:box-cell}, \ref{var:box-corner} and
-\ref{var:box-rotated} in section \ref{sec:modelling:variables}. Taking $L$
-as the upper bound on the roll's length calculated with equation
-(\ref{eq:upper-bound-L}), the arrays are initialised as follows:
+In order to implement the variables detailed in section \ref{sec:modelling:variables}
+3 arrays of Boolean variables were used, each of them containing the variables described
+in items \ref{var:box-cell}, \ref{var:box-corner} and \ref{var:box-rotated}. Taking
+$L$ as the upper bound on the roll's length calculated with equation (\ref{eq:upper-bound-L}),
+the arrays are initialised as follows:
 
 \begin{enumerate}
-    \item Array for variables in \ref{var:box-cell}:
+	\item Array for variables in \ref{var:box-cell}:
     
-    {\NOINDENT \begin{lstlisting}
-    box_cell = BoolVarArray(*this, N*W*L, 0, 1);
-    \end{lstlisting}}
+	{\NOINDENT \begin{lstlisting}
+	box_cell = BoolVarArray(*this, N*W*L, 0, 1);
+	\end{lstlisting}}
     
-    \item Array for variables in \ref{var:box-corner}:
+	\item Array for variables in \ref{var:box-corner}:
     
-    {\NOINDENT \begin{lstlisting}
-    box_corner = BoolVarArray(*this, N*W*L, 0, 1);
-    \end{lstlisting}}
+	{\NOINDENT \begin{lstlisting}
+	box_corner = BoolVarArray(*this, N*W*L, 0, 1);
+	\end{lstlisting}}
     
-    \item Array for variables in \ref{var:box-rotated}:
+	\item Array for variables in \ref{var:box-rotated}:
     
-    {\NOINDENT \begin{lstlisting}
-    box_rotated = BoolVarArray(*this, N, 0, 1);
-    \end{lstlisting}}
+	{\NOINDENT \begin{lstlisting}
+	box_rotated = BoolVarArray(*this, N, 0, 1);
+	\end{lstlisting}}
     
 \end{enumerate}
 
@@ -48,12 +49,13 @@ inline BoolVar C(size_t b, size_t x, size_t y) { return box_cell[b*W*L + y*W + x
 inline BoolVar R(size_t b) { return box_rotated[b]; }
 \end{lstlisting}}
 
-the implementation of the constraints using the Gecode library is as follows:
+the implementation of the constraints detailed in section \ref{sec:modelling:constraints}
+using the Gecode library is as follows:
 
 \begin{enumerate}
-    \item All boxes must be in the solution (constraint formalised in
-    \ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
-    also read as ``assign a top-left corner to each box''.
+	\item All boxes must be in the solution (constraint formalised in
+	\ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
+	also read as ``assign a top-left corner to each box''.
     
 	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {
@@ -61,10 +63,10 @@ the implementation of the constraints using the Gecode library is as follows:
 	}
 	\end{lstlisting}}
     
-    \item Boxes cannot overlap (constraint formalised in
-    \ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
+	\item Boxes cannot overlap (constraint formalised in
+	\ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
     
-    {\NOINDENT \begin{lstlisting}
+	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {l
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
@@ -74,9 +76,9 @@ the implementation of the constraints using the Gecode library is as follows:
 	}
 	\end{lstlisting}}
     
-    \item Depending on their rotation, boxes occupy certain cells of the roll
-    (constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$ within
-    bounds for $b$-th box:
+	\item Depending on their rotation, boxes occupy certain cells of the roll
+	(constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$ within
+	bounds for $b$-th box:
 
 	\begin{itemize}
 		\item For square boxes (constraint \ref{eq:span-cells:square-boxes}):
@@ -107,11 +109,11 @@ the implementation of the constraints using the Gecode library is as follows:
 		\end{lstlisting}}
 	\end{itemize}
     
-    \item Depending on their rotation, boxes cannot occupy certain cells of the
-    roll (constraint formalised in \ref{constr:box-forbid}). For those cells $(x,y)$
-    out of bounds for $b$-th box:
+	\item Depending on their rotation, boxes cannot occupy certain cells of the
+	roll (constraint formalised in \ref{constr:box-forbid}). For those cells $(x,y)$
+	out of bounds for $b$-th box:
     
-    \begin{itemize}
+	\begin{itemize}
 		\item For square boxes (constraint \ref{eq:forbid-span-cells:square-boxes}):
 		{\NOINDENT \begin{lstlisting}
 		rel(*this, X(b,x,y) == 0);
@@ -245,9 +247,9 @@ Algorithmically, this can be formalised in algorithm \ref{alg:constraint:program
 
 \begin{algorithm}[H]
 	\label{alg:constraint:programming:generic-heuristic}
-    \DontPrintSemicolon
+	\DontPrintSemicolon
     
-    \caption{Generic heuristic}
+	\caption{Generic heuristic}
     
 	$L := $ \textsc{UpperBoundRollLength}($\mathcal{B}$), using equation \ref{eq:upper-bound-L} \;
 	$\mathcal{B}' :=$ sort boxes in $\mathcal{B}$ increasingly by area \;
