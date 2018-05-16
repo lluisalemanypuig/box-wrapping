@@ -62,13 +62,13 @@ class box_wrapper_rotate : public box_solver {
 		IloNumVarArray box_corner;
 	
 	protected:
-		IloNumVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
-		IloNumVar C(size_t b, size_t i, size_t j) const { return box_cell[b*W*L + i*W + j]; }
-		IloNumVar R(size_t b) const { return box_rotated[b]; }
+		inline IloNumVar X(size_t b, size_t i, size_t j) const { return box_corner[b*W*L + i*W + j]; }
+		inline IloNumVar C(size_t b, size_t i, size_t j) const { return box_cell[b*W*L + i*W + j]; }
+		inline IloNumVar R(size_t b) const { return box_rotated[b]; }
 		
-		IloNumVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
-		IloNumVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
-		IloNumVar R(size_t b) { return box_rotated[b]; }
+		inline IloNumVar X(size_t b, size_t i, size_t j) { return box_corner[b*W*L + i*W + j]; }
+		inline IloNumVar C(size_t b, size_t i, size_t j) { return box_cell[b*W*L + i*W + j]; }
+		inline IloNumVar R(size_t b) { return box_rotated[b]; }
 		
 	public:
 		box_wrapper_rotate();
