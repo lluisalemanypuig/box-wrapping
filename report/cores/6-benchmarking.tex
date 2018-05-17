@@ -27,6 +27,7 @@ similar to the one in figure \ref{fig:benchmark-verbose:optimal}.
 
 \begin{figure}[H]
 \centering
+{\scriptsize
 \begin{BVerbatim}
 Executing solver with input file: ../inputs/material/bwp_11_10_1.in
     Optimal solution reached
@@ -36,6 +37,7 @@ Executing solver with input file: ../inputs/material/bwp_11_10_1.in
         Solved sub-optimally: 15 / 105 ( 14.28% )
         Total time elapsed  : 2095.598 seconds
 \end{BVerbatim}
+}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is optimal.}
 \label{fig:benchmark-verbose:optimal}
@@ -57,6 +59,7 @@ shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
+{\scriptsize
 \begin{BVerbatim}
 Executing solver with input file: ../inputs/material/bwp_11_8_1.in
     Suboptimal solution:
@@ -68,6 +71,7 @@ Executing solver with input file: ../inputs/material/bwp_11_8_1.in
         Solved sub-optimally: 15 / 103 ( 14.56% )
         Total time elapsed  : 2050.956 seconds
 \end{BVerbatim}
+}
 \centeredcaption{Example of the output of the benchmark script for the
 Constraint Programming solver when the solution found is not optimal.}
 \label{fig:benchmark-verbose:suboptimal}
@@ -89,8 +93,7 @@ The parameters used to execute the Constraint Programming solver described in se
 \ref{sec:constraint-programming} are the following:
 \begin{itemize}
 	\item Use the mixed heuristic (described in section \ref{sec:constraint-programming:optimum:heuristics}).
-	\item The solver will stop as soon as it found one solution.
-	\item The solver will stop after 5 seconds of its execution.
+	\item The solver will stop as soon as it finds a solution or 5 seconds of its execution.
 	\item The solver will be executed on randomly permuted data $5$ times (needless to
 	say that the data will also be permuted $5$ times).
 \end{itemize}
@@ -98,8 +101,8 @@ The parameters used to execute the Constraint Programming solver described in se
 With these parameters, the solver has a ``natural'' timeout of \textbf{45} seconds.
 That is, each execution of the solver with the data sorted increasingly by area, by
 width, decreasingly sorted by area, by width, and each of the 5 random permutations
-have a time limit of 5 seconds. With a total of 9 executions that makes $5 \cdot 9 = 45$
-seconds of time limit.
+have a time limit of 5 seconds. With a total of 9 executions that makes
+$5 \text{ seconds/execution} \times 9 \text{ executions} = 45 \text{ seconds}$ of time limit.
 
 \subsubsection{Results}
 \label{sec:benchmarking:constraint-programming:results}
