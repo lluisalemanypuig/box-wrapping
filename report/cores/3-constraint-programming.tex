@@ -10,25 +10,25 @@ the problem and helps us solve it without having to implement our own algorithm.
 \label{sec:constraint-programming:implementation}
 
 In order to implement the variables detailed in section \ref{sec:modelling:variables}
-3 arrays of Boolean variables were used, each of them containing the variables described
+three arrays of Boolean variables were used, each of them containing the variables described
 in items \ref{var:box-cell}, \ref{var:box-corner} and \ref{var:box-rotated}. Taking
 $L$ as the upper bound on the roll's length calculated with equation (\ref{eq:upper-bound-L}),
 the arrays are initialised as follows:
 
 \begin{enumerate}
-	\item Array for variables in \ref{var:box-cell}:
+	\item Array for variables in \ref{var:box-cell} ($C_{b,x,y}$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_cell = BoolVarArray(*this, N*W*L, 0, 1);
 	\end{lstlisting}}
     
-	\item Array for variables in \ref{var:box-corner}:
+	\item Array for variables in \ref{var:box-corner} ($X_{b,x,y}$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_corner = BoolVarArray(*this, N*W*L, 0, 1);
 	\end{lstlisting}}
     
-	\item Array for variables in \ref{var:box-rotated}:
+	\item Array for variables in \ref{var:box-rotated} ($R_b$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_rotated = BoolVarArray(*this, N, 0, 1);
@@ -54,8 +54,7 @@ using the Gecode library is as follows:
 
 \begin{enumerate}
 	\item All boxes must be in the solution (constraint formalised in
-	\ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
-	also read as ``assign a top-left corner to each box''.
+	\ref{constr:box-placed}), also read as ``all boxes must have assigned a top-left corner''.
     
 	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {
@@ -63,8 +62,7 @@ using the Gecode library is as follows:
 	}
 	\end{lstlisting}}
     
-	\item Boxes cannot overlap (constraint formalised in
-	\ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
+	\item Boxes cannot overlap (constraint formalised in \ref{constr:no-overlap}).
     
 	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {l
