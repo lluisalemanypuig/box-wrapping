@@ -14,12 +14,12 @@ with their own objective function (whose value has to be maximised or minimised)
 One of the disadvantages is that it is not as expressive as the constraint
 programming paradigm. For example, it does not easily allow logical expressions,
 since they are not linear. For example, in order to implement the
-logical or ($a \vee b$) we have to introduce some new variables to help the
-solver satisfy one of the two conditions. Now follows an explanation on how to
-transform several logical expressions into linear expressions, assuming them
-to be integer-valued for all feasible solution, using simple transformations
-that relate each expression to 0/1 variables. Let $\delta_1$, $\delta_2$ be such
-variables:
+logical or ($a \vee b$, where $a$ and $b$ are linear expressions) we have to
+introduce some new variables to help the solver satisfy one of the two conditions.
+Now follows an explanation on how to transform several logical expressions into
+linear expressions, assuming them to be integer-valued for all feasible solution,
+using simple transformations that relate each expression to 0/1 variables. Let
+$\delta_1$, $\delta_2$ be such variables:
 
 \begin{itemize}	
 	\item $(\delta_1 = 1) \vee (\delta_2 = 1)$. Impose $\delta_1 + \delta_2 \ge 1$.
@@ -45,7 +45,7 @@ variables:
 
 Relating linear expressions through logical operators is slightly more complicated.
 If $a_1^Tx \le b_1$ and $a_2^Tx \le b_2$ are two integer-valued linear expressions
-for all feasible solution $x$, to model the logical expression:
+for all feasible solution $x$, to model the logical expression
 \[
 (a_1^Tx \le b_1) \;\Box\; (a_2^Tx \le b_2)
 \]
@@ -80,19 +80,19 @@ $L$ as the upper bound on the roll's length calculated with equation (\ref{eq:up
 the arrays are initialised as follows:
 
 \begin{enumerate}
-	\item Array for variables in \ref{var:box-cell}:
+	\item Array for variables in \ref{var:box-cell} ($C_{b,x,y}$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_cell = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
 	\end{lstlisting}}
     
-	\item Array for variables in \ref{var:box-corner}:
+	\item Array for variables in \ref{var:box-corner} ($X_{b,x,y}$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_corner = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);
 	\end{lstlisting}}
     
-	\item Array for variables in \ref{var:box-rotated}:
+	\item Array for variables in \ref{var:box-rotated} ($R_b$):
     
 	{\NOINDENT \begin{lstlisting}
 	box_rotated = IloNumVarArray(env, N, 0, 1, ILOINT);
@@ -179,8 +179,8 @@ using the CPLEX library is as follows:
 		\item For rectangular boxes (constraints \ref{eq:span-cells:rectangular-boxes:0} and
 		\ref{eq:span-cells:rectangular-boxes:1}):
 		{\NOINDENT \begin{lstlisting}
-		for (length i = y; i <= y + b_length - 1; ++i) {
-			for (width j = x; j <= x + b_width - 1; ++j) {
+		for (length ii = i; ii <= i + b_length - 1; ++ii) {
+			for (width jj = j; jj <= j + b_width - 1; ++jj) {
 				model.add(
 					IloIfThen(env, ((R(b) == 0) && (X(b,x,y) == 1)), (C(b,j,i) == 1))
 				);
@@ -188,8 +188,8 @@ using the CPLEX library is as follows:
 		}
 		\end{lstlisting}}
 		{\NOINDENT \begin{lstlisting}
-		for (length i = y; i <= y + b_width - 1; ++i) {
-			for (width j = x; j <= x + b_length - 1; ++j) {
+		for (length ii = i; ii <= i + b_width - 1; ++ii) {
+			for (width jj = j; jj <= j + b_length - 1; ++jj) {
 				model.add(
 					IloIfThen(env, ((R(b) == 1) && (X(b,x,y) == 1)), (C(b,j,i) == 1))
 				);
@@ -224,6 +224,24 @@ using the CPLEX library is as follows:
     
 \end{enumerate}
 
+The implementation for constraint \ref{eq:span-cells:square-boxes} using linear
+expressions can be done in the following way. For non-square boxes, the constraints
+are expressed as follows:
+\[
+(R_b = 0) \wedge (X_{b,x,y} = 1) \Longrightarrow (C_{b,j,i} = 1)
+\]
+This is clearly not a linear expression but it can be transformed into one by noticing
+that the logical constraint is equivalent to
+\[
+(R_b = 1) \vee (X_{b,x,y} = 0) \vee (C_{b,j,i} = 1)
+\]
+From here we can obtain the linear expressions that model this logical constraint.
+The transformation for this particular case is detailed in section
+\ref{sec:examples-logical-constraints:3-ors}.
+
+\subsubsection{Completing the model}
+\label{sec:linear-programming:implementation:completion}
+
 All the ``linear'' expressions above are the only required according to the
 general modelling of the problem described in section \ref{sec:modelling}. However,
 the linear programming paradigm requires an extra constraint: each box can not
@@ -234,61 +252,61 @@ assigned to any cell $t$ nearby\footnote{By ``nearby'' we mean ``placed at a cel
 according to the box's rotation and its dimensions cell $c$ falls within the
 area that should be occupied by $b$ when its top-left corner is assigned to $t$.''}.
 This way we may encounter an assignation that makes a box have, not only more cells
-than it should, but also cells assigned throughout the completely scattered.
+than it should, but also cells assigned throughout the roll completely scattered.
 See figure \ref{fig:invalid-roll} for an illustration of this phenomenon.
 
 \begin{figure}[H]
 \centering
+{\scriptsize
 \begin{BVerbatim}
-   | W              | W              | W              | W              | W       
+   | W              | W              | W              | W              | W           
  L |  0  1  2     L |  0  1  2     L |  0  1  2     L |  0  1  2     L |  0  1  2
 -------------    -------------    -------------    -------------    -------------
- 0 | 13 13 12    11 | 11 13  8    22 | 13 13 13    33 | 12  2  1    44 |  7  7 12
- 1 |  6  6 12    12 | 13 13 13    23 |  1 12 13    34 | 13  2  1    45 |  7 13 10
- 2 |  6  6 12    13 | 13  5  5    24 |  4  8 13    35 | 11  2 13
- 3 |  6  6 12    14 | 13  5  5    25 | 11  4 13    36 | 12 13 11
- 4 |  6  6 12    15 | 12  5  5    26 | 13  4 13    37 | 12 13 11
- 5 |  8  8 13    16 | 13  5  5    27 | 13 11 13    38 |  3 13 11
- 6 |  8  8 13    17 | 13 12 13    28 | 13 12  4    39 |  3 11 11
- 7 |  8  8 11    18 |  7 12 12    29 |  4  4 13    40 |  3 13 11
- 8 |  8  8 13    19 | 13 13 11    30 |  4  4  4    41 |  7  7  7
- 9 |  8  8 13    20 | 13 13 13    31 |  4  4  4    42 |  7  7 12
-10 | 12 13  9    21 |  4 13 13    32 |  4  4  1    43 |  7  7 13
+ 0 | 13 13 12    10 | 12 13  9    20 | 13 13 13    30 |  4  4  4    40 |  3 13 11 
+ 1 |  6  6 12    11 | 11 13  8    21 |  4 13 13    31 |  4  4  4    41 |  7  7  7 
+ 2 |  6  6 12    12 | 13 13 13    22 | 13 13 13    32 |  4  4  1    42 |  7  7 12 
+ 3 |  6  6 12    13 | 13  5  5    23 |  1 12 13    33 | 12  2  1    43 |  7  7 13 
+ 4 |  6  6 12    14 | 13  5  5    24 |  4  8 13    34 | 13  2  1    44 |  7  7 12 
+ 5 |  8  8 13    15 | 12  5  5    25 | 11  4 13    35 | 11  2 13    45 |  7 13 10 
+ 6 |  8  8 13    16 | 13  5  5    26 | 13  4 13    36 | 12 13 11 
+ 7 |  8  8 11    17 | 13 12 13    27 | 13 11 13    37 | 12 13 11 
+ 8 |  8  8 13    18 |  7 12 12    28 | 13 12  4    38 |  3 13 11 
+ 9 |  8  8 13    19 | 13 13 11    29 |  4  4 13    39 |  3 11 11 
 \end{BVerbatim}
+}
 \centeredcaption{Invalid contents of the roll without rotations and optimisation for instance
 \textit{instances/material/bwp\_3\_13\_1.in}}
 \label{fig:invalid-roll}
 \end{figure}
 
-In spite of this, this only affects to the extraction of the solution and yet it 
-is a minor problem: the construction of the solution only requires knowing the
+In spite of this, this only affects the extraction of the solution. Moreover, it 
+is just a minor problem: the construction of the solution only requires knowing the
 rotation and the position of the top-left corner of each box. Knowing these two,
 and having access to the input data, we can easily construct the valid roll\footnote{The
 actual solution to the problem, as specified in the statement, is not the roll
 itself but only the top-left and bottom-right corners of each box.}
 (see figure \ref{fig:valid-roll}). Therefore, the constraint is not only superfluous,
-but also its implementation and addition to the model only slows the performance down.
-However, we still need to implement the variables and constraints to avoid boxes
-overlapping.s
+but also its implementation and addition to the model only slows down its performance.
 
 \begin{figure}[H]
 \centering
+{\scriptsize
 \begin{BVerbatim}
-   | W             | W             | W             | W             | W          
- L |  0 1  2     L |  0 1  2     L |  0 1  2     L |  0 1  2     L |  0 1  2    
-------------    ------------    ------------    ------------    ------------    
- 0 |  . 6  6    11 |  7 7  9    22 |  . .  .    33 |  . . 11    44 | 12 .  .
- 1 |  . 6  6    12 |  7 7  .    23 |  . .  .    34 |  . . 11    45 |  . .  .
- 2 |  . 6  6    13 |  7 7  .    24 |  . . 10    35 |  1 . 11
- 3 |  . 6  6    14 |  7 7  .    25 |  . . 10    36 |  1 . 11
- 4 |  . .  2    15 |  . .  .    26 |  . . 10    37 |  1 .  .
- 5 |  . .  2    16 |  . 3  3    27 |  4 4 10    38 |  . .  .
- 6 |  . .  2    17 |  . 3  3    28 |  4 4 10    39 |  . .  .
- 7 |  . .  .    18 |  . 3  3    29 |  4 4  .    40 | 12 5  5
- 8 |  . .  .    19 |  . 3  3    30 |  4 4  .    41 | 12 5  5
- 9 |  . 8  .    20 |  . .  .    31 |  . .  .    42 | 12 5  5
-10 |  . .  .    21 |  . .  .    32 |  . . 11    43 | 12 5  5
+   | W            | W            | W            | W            | W    
+ L | 0 1  2     L | 0 1  2     L | 0 1  2     L | 0 1  2     L | 0 1  2    
+-----------    -----------    -----------    -----------    -----------
+ 0 | . . 12    10 | . .  9    20 | . .  .    30 | 4 4  .    40 | 3 . 11 
+ 1 | 6 6 12    11 | . .  .    21 | . .  .    31 | 4 4  .    41 | 7 7  . 
+ 2 | 6 6 12    12 | . .  .    22 | . . 13    32 | 4 4  1    42 | 7 7  . 
+ 3 | 6 6 12    13 | . 5  5    23 | . . 13    33 | . 2  1    43 | 7 7  . 
+ 4 | 6 6 12    14 | . 5  5    24 | . . 13    34 | . 2  1    44 | 7 7  . 
+ 5 | . .  .    15 | . 5  5    25 | . . 13    35 | . 2  .    45 | . . 10
+ 6 | 8 8  .    16 | . 5  5    26 | . . 13    36 | . . 11 
+ 7 | 8 8  .    17 | . .  .    27 | . .  .    37 | . . 11 
+ 8 | 8 8  .    18 | . .  .    28 | . .  .    38 | 3 . 11 
+ 9 | 8 8  .    19 | . .  .    29 | 4 4  .    39 | 3 . 11 
 \end{BVerbatim}
+}
 \centeredcaption{Valid contents of the roll without rotations and optimisation for instance
 \textit{instances/material/bwp\_3\_13\_1.in}}
 \label{fig:valid-roll}
