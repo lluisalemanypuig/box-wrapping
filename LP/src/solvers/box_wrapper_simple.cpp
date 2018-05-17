@@ -76,6 +76,7 @@ void box_wrapper_simple::_init(const gifts& data) {
 					IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
 				);
 				
+				span.end();
 			}
 		}
 	}
