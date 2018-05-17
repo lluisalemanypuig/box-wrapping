@@ -87,15 +87,16 @@ which in turn is transformed into two inequalities $\ge$,$\le$.
 The only assignment to the variables $x_1,\cdots,x_n$ that satisfies equation
 \ref{eq:B:several-ands:linear} is $b_1,\cdots,b_n$. The proof is done by contradiction.
 Assume there are $p$ variables that must be $1$ and $z$ variables that must be $0$.
-If the assignment is $b_1,\cdots,b_n$ then:
+If the assignment is $\phi=b_1,\cdots,b_n$ then:
 \[
-\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p + z = n
+\sum_{i : b_i=1} \phi_i + \sum_{i : b_i=0} 1 - \phi_i = p + z = n
 \]
-If $b_i=1$ then let $x_i=0$. In this case we have that:
+Let $\phi'$ the same assignment as $\phi$ but, if $b_i=1$ then $\phi_i'=0$.
+In this case we have that:
 \[
-\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p - 1 + z \neq n
+\sum_{i : b_i=1} \phi_i' + \sum_{i : b_i=0} 1 - \phi_i' = p - 1 + z \neq n
 \]
-Conversely, if $b_i=0$ let $x_i=1$. Then, we have
+Conversely, if $b_i=0$ let $\phi_i'=1$. Then, we have
 \[
-\sum_{i : b_i=1} x_i + \sum_{i : b_i=0} 1 - x_i = p + z - 1 \neq n
+\sum_{i : b_i=1} \phi_i' + \sum_{i : b_i=0} 1 - \phi_i' = p + z - 1 \neq n
 \]
