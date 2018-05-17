@@ -8,15 +8,16 @@ void box_wrapper_rotate::span_cells_non_rot
 	length b_length, width b_width
 )
 {
+	IloExpr span(env);
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			
-			model.add(
-				IloIfThen(env, ((R(b) == 0) && (X(b,i,j) == 1)), (C(b,ii,jj) == 1))
-			);
-			
+			span += C(b,ii,jj);
 		}
 	}
+	model.add(
+		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
+	);
+	span.end();
 }
 
 void box_wrapper_rotate::span_cells_rot
@@ -25,15 +26,16 @@ void box_wrapper_rotate::span_cells_rot
 	length b_length, width b_width
 )
 {
+	IloExpr span(env);
 	for (length ii = i; ii <= i + b_width - 1; ++ii) {
 		for (width jj = j; jj <= j + b_length - 1; ++jj) {
-			
-			model.add(
-				IloIfThen(env, ((R(b) == 1) && (X(b,i,j) == 1)), (C(b,ii,jj) == 1))
-			);
-			
+			span += C(b,ii,jj);
 		}
 	}
+	model.add(
+		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
+	);
+	span.end();
 }
 
 void box_wrapper_rotate::span_cells_square
@@ -42,15 +44,16 @@ void box_wrapper_rotate::span_cells_square
 	length b_length, width b_width
 )
 {
+	IloExpr span(env);
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			
-			model.add(
-				IloIfThen(env, (X(b,i,j) == 1), (C(b,ii,jj) == 1))
-			);
-			
+			span += C(b,ii,jj);
 		}
 	}
+	model.add(
+		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
+	);
+	span.end();
 	
 	model.add(R(b) == 0);
 }
