@@ -2,28 +2,7 @@
 
 /* PRIVATE */
 
-void box_wrapper_optim::objective1(const gifts& data) {
-	/// (1). Minimise the sum of each box's length
-	
-	// initialise arrays
-	box_lengths = IloNumVarArray(env, N, 0, L, ILOINT);
-	
-	// first, what are the lengths?
-	for (size_t b = 0; b < N; ++b) {
-		model.add(
-			IloIfThen(env, (R(b) == 0), (Le(b) == data.all_boxes[b].l))
-		);
-		model.add(
-			IloIfThen(env, (R(b) == 1), (Le(b) == data.all_boxes[b].w))
-		);
-	}
-	
-	model.add(
-		IloMinimize(env, IloSum(box_lengths))
-	);
-}
-
-void box_wrapper_optim::objective2(const gifts& data) {
+void box_wrapper_optim::objective(const gifts& data) {
 	/// (2). Minimise the maximum top-left corner length coordinate
 	
 	// initialise arrays and vars
@@ -51,7 +30,7 @@ void box_wrapper_optim::objective2(const gifts& data) {
 /* PROTECTED */
 
 void box_wrapper_optim::add_objective(const gifts& data) {
-	objective2(data);
+	objective(data);
 }
 
 /* PUBLIC */
