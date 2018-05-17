@@ -8,16 +8,13 @@ void box_wrapper_rotate::span_cells_non_rot
 	length b_length, width b_width
 )
 {
-	IloExpr span(env);
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			span += C(b,ii,jj);
+			model.add(
+				IloIfThen(env, ((R(b) == 0) && (X(b,i,j) == 1)), (C(b,ii,jj) == 1))
+			);
 		}
 	}
-	model.add(
-		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
-	);
-	span.end();
 }
 
 void box_wrapper_rotate::span_cells_rot
@@ -26,16 +23,13 @@ void box_wrapper_rotate::span_cells_rot
 	length b_length, width b_width
 )
 {
-	IloExpr span(env);
 	for (length ii = i; ii <= i + b_width - 1; ++ii) {
 		for (width jj = j; jj <= j + b_length - 1; ++jj) {
-			span += C(b,ii,jj);
+			model.add(
+				IloIfThen(env, ((R(b) == 1) && (X(b,i,j) == 1)), (C(b,ii,jj) == 1))
+			);
 		}
 	}
-	model.add(
-		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
-	);
-	span.end();
 }
 
 void box_wrapper_rotate::span_cells_square
@@ -44,17 +38,13 @@ void box_wrapper_rotate::span_cells_square
 	length b_length, width b_width
 )
 {
-	IloExpr span(env);
 	for (length ii = i; ii <= i + b_length - 1; ++ii) {
 		for (width jj = j; jj <= j + b_width - 1; ++jj) {
-			span += C(b,ii,jj);
+			model.add(
+				IloIfThen(env, (X(b,i,j) == 1), (C(b,ii,jj) == 1))
+			);
 		}
 	}
-	model.add(
-		IloIfThen(env, (X(b,i,j) == 1), (span == b_length*b_width))
-	);
-	span.end();
-	
 	model.add(R(b) == 0);
 }
 
@@ -92,7 +82,7 @@ void box_wrapper_rotate::_init(const gifts& data) {
 		}
 	}
 	
-	/// (4). Placing the top-left corner of a box at (i,j)
+	/// (3). Placing the top-left corner of a box at (i,j)
 	/// makes the box occupy several cells of the roll.
 	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
@@ -130,7 +120,7 @@ void box_wrapper_rotate::_init(const gifts& data) {
 		}
 	}
 	
-	/// (5). Cannot place the top-left corner of a box at
+	/// (4). Cannot place the top-left corner of a box at
 	/// cell (i,j) if it will end up out of bounds
 	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
