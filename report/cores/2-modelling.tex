@@ -2,13 +2,17 @@
 \label{sec:modelling}
 
 In this section we describe the generic mathematical model used to solve the problem.
-First, the variables (see section \ref{sec:modelling:variables}) and then the 
-constraints (see section \ref{sec:modelling:constraints}).
+Although the variables needed depend on the paradigm from which the problem will
+be tackled, in this section are described both the variable selection made (see section
+\ref{sec:modelling:variables}) and the constraints used to model the problem (see section
+\ref{sec:modelling:constraints}). However, their use in the implementation of the algorithms
+may need them to change in some way so that they can be adapted properly to the paradigm.
 
 \subsection{Variables}
 \label{sec:modelling:variables}
 
-Before formulating each of the constraints, we define first the Boolean variables used:
+The variables chosen to formulate the problem are all Boolean variables. They are defined
+as follows:
 
 \begin{enumerate}
     \item \label{var:box-cell} $C_{b,x,y} = 1 \Longleftrightarrow$ cell $(x,y)$ is occupied
@@ -36,17 +40,18 @@ Before formulating each of the constraints, we define first the Boolean variable
     $\forall 1 \le b \le N$.
 \end{enumerate}
 
-Therefore, our model consists of two 3-dimensional matrices, each containing
+Therefore, the model consists of, at least, two 3-dimensional matrices, each containing
 $N \times W \times L$ Boolean variables, and one array of $N$ Boolean variables, giving
-us a total of $N(2WL + 1)$ Boolean variables.
+us a total of $N(2WL + 1)$ Boolean variables. The actual implementation of the solvers
+may require more (or maybe less) variables than the ones presented.
 
 \subsubsection{Determining the sizes of the matrices}
 \label{sec:modelling:variables:value-L}
 
-Notice that this model has a slight drawback: using Boolean variables forces us to define
-two fixed-size matrices for which we need to know the value of $L$. This is only a minor
-issue since we can easily determine an upper bound on the length of the roll used: in the
-worst case we might need to put all boxes ``one next to the other'' in the roll. Therefore,
+Notice that this choice of variables has a slight drawback: using Boolean variables forces us
+to define two fixed-size matrices for which we need to know the value of $L$. This is only a
+minor issue since we can easily determine an upper bound on the length of the roll used: in
+the worst case we might need to put all boxes ``one next to the other'' in the roll. Therefore,
 in order to build the matrices we use the value
 \begin{equation}
 \label{eq:upper-bound-L}
@@ -63,20 +68,28 @@ without rotations this instance does not have a solution).
 \subsection{Constraints}
 \label{sec:modelling:constraints}
 
-The general modelling of this problem requires 4 types of constraints
-appropriate for the variable selection made.
+The general modelling of this problem requires 4 types of constraints appropriate for the
+variable selection made. Each constraint is defined with plain words, and also has some
+mathematical formulation.
 
 \begin{enumerate}
     \item \label{constr:box-placed} Each box must have its top-left corner placed in the
-    roll. This constraint is there to ensure that the placement contains all boxes.
-    
+    roll. This constraint is used to ensure that the placement contains all boxes.
+	A general way of formulating this constraint is by saying that ``among all values $X_{b,x,y}$
+	for a fixed box $b$, there must be exactly one of them that is set to true''.
+	A very common formulation using the Linear Programming paradigm is the one presented
+	in equation \ref{eq:constraint:all-boxes-used}.
+	
     \begin{equation}
     \label{eq:constraint:all-boxes-used}
     \sum_{x=1}^{W} \sum_{y=1}^{L} X_{b,x,y} = 1, \qquad \forall b,\; 1 \le b \le N
     \end{equation}
     
     \item \label{constr:no-overlap} No overlapping, that is, no cell of the roll can have
-    more than one box in it.
+    more than one box in it. Likewise, this constraint can be formulated generally by saying
+    that ``among all values of $C_{b,x,y}$ for a fixed pair of values for $x$ and $y$ there
+    can be at most one of them set to true''. A very common formulation using the Linear
+    Programming paradigm is the one presented in equation \ref{eq:constraint:one-box-cell}.
     
     \begin{equation}
     \label{eq:constraint:one-box-cell}
@@ -136,7 +149,8 @@ appropriate for the variable selection made.
 	corresponding cells occupied by $b$ according to its dimensions are occupied by it:
 	$\forall i,j,\; 0 \le i < w_b, 0 \le j < l_b: X_{b,x,y} = 1 \Longrightarrow C_{b, x + j, y + i} = 1$.
 	The constraints for rectangular boxes are read in a similar fashion but adding ``if the
-	box is not/is rotated'' after the ``for all rectangular boxes''.
+	box is not/is rotated'' after the ``for all rectangular boxes''. Since no
+    square box needs to be rotated then the rotation is fixed to a null value ($R_b = 0$).
 
 	\begin{figure}[H]
 	    \centering
@@ -158,11 +172,11 @@ appropriate for the variable selection made.
     
     \item \label{constr:box-forbid} Forbid the placement of a box in certain cells: it is
     known that, for a given rotation, a box cannot possibly be placed in certain cells of
-    the roll because it would end up out of its bounds. This will stop the solvers from
-    assigning positive values to these cells, that is, assign a box, in the hope that they
-    detect the unfeasibility of an instance as soon as possible. Again, the constraints
-    for square boxes are different from those for rectangular boxes. Moreover, it suffices
-    to forbid the placement of a box's top-left corner in these cells.
+    the roll because it would end up out of its bounds (see figure \ref{fig:box-out-bounds}).
+    This will stop the solvers from assigning positive values to these cells, that is, assign
+    a box, in the hope that they detect the unfeasibility of an instance as soon as possible.
+    Again, the constraints for square boxes are different from those for rectangular boxes.
+    Moreover, it suffices to forbid the placement of a box's top-left corner in these cells.
     
     \begin{itemize}
         \item For square boxes:
@@ -203,9 +217,7 @@ appropriate for the variable selection made.
     
 	The constraints that forbid placing a box at a certain cell are read similarly to those
 	that allow a box to be placed at a certain cell. In this case, we want those cells $(x,y)$
-	that are not valid candidates for the top-left corner for a box.
+	that are not valid candidates for the top-left corner for a box: ``s.t.
+	$(x + w_b > W \vee y + l_b > L)$''.
     
 \end{enumerate}
-
-Notice that the modelling of these constraints may lead to a direct implementation in the
-constraint programming and linear programming paradigms.
