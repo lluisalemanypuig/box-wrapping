@@ -14,7 +14,10 @@ void box_wrapper_optim::objective(const gifts& data) {
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
 				model.add(
-					IloIfThen(env, (X(b,i,j) == 1), (S(b) == i))
+					IloIfThen(env, ((R(b) == 0) && (X(b,i,j) == 1)), (S(b) == i + data.all_boxes[b].l))
+				);
+				model.add(
+					IloIfThen(env, ((R(b) == 1) && (X(b,i,j) == 1)), (S(b) == i + data.all_boxes[b].w))
 				);
 			}
 		}
