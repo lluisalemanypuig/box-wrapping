@@ -161,15 +161,11 @@ int main(int argc, char *argv[]) {
 		bs = new box_wrapper_optim();
 	}
 	
-	double begin = timing::now();
-	
 	bs->set_verbose(verbose);
 	bs->set_time_limit(stop_when);
 	bs->set_n_threads(n_threads);
 	bs->init(INPUT);
 	bs->solve();
-	
-	double end = timing::now();
 	
 	if (bs->found_solution()) {
 		wrapped_boxes SOL;
@@ -186,7 +182,7 @@ int main(int argc, char *argv[]) {
 		
 		if (verbose) {
 			cout << SOL << endl;
-			cout << "In " << timing::elapsed_time(begin, end) << " seconds" << endl;
+			cout << "In " << bs->get_exe_time() << " seconds" << endl;
 		}
 		
 		if (outfile != "none") {
@@ -204,9 +200,8 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	else {
-		if (verbose) {
-			cout << "No solution found" << endl;
-		}
+		cerr << "No solution found" << endl;
+		cerr << "Reason: " << bs->get_status() << endl;
 	}
 	
 	delete bs;

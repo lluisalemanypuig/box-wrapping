@@ -59,5 +59,7 @@ class box_solver {
 		/* GETTERS */
 		
 		bool found_solution() const;
+		double get_exe_time() const;
+		IloCplex::Status get_status() const;
 };
 

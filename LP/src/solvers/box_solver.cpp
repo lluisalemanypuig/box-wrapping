@@ -10,13 +10,11 @@ void box_solver::config_cplex() {
 	paramSet.setParam(IloCplex::Threads, n_threads);
 	cplex.setParameterSet(paramSet);
 	
-	cout << "config_cplex::should I be verbose? " << (verbose ? "yes" : "no") << endl;
 	if (verbose) {
 		cplex.setOut(cout);
 		cplex.setWarning(cerr);
 	}
 	else {
-		cout << "config_cplex::    Don't be verbose then!" << endl;
 		cplex.setOut(env.getNullStream());
 		cplex.setWarning(env.getNullStream());
 	}
@@ -63,7 +61,6 @@ void box_solver::solve() {
 
 void box_solver::set_verbose(bool v) {
 	verbose = v;
-	cout << "set_verbose::should I be verbose? " << (verbose ? "yes" : "no") << endl;
 }
 
 void box_solver::set_time_limit(double s) {
@@ -81,5 +78,13 @@ void box_solver::set_n_threads(int nt) {
 
 bool box_solver::found_solution() const {
 	return is_solved;
+}
+
+double box_solver::get_exe_time() const {
+	return cplex.getTime();
+}
+
+IloCplex::Status box_solver::get_status() const {
+	return cplex.getCplexStatus();
 }
 
