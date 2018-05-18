@@ -237,7 +237,7 @@ that the logical constraint is equivalent to
 \]
 From here we can obtain the linear expressions that model this logical constraint.
 The transformation for this particular case is detailed in section
-\ref{sec:examples-logical-constraints:3-ors}.
+\ref{sec:conv-non-linear:3-ors}.
 
 \subsubsection{Completing the model}
 \label{sec:linear-programming:implementation:completion}
@@ -315,8 +315,54 @@ but also its implementation and addition to the model only slows down its perfor
 \subsection{Finding the optimium solution}
 \label{sec:linear-programming:optimum}
 
-\lluis{
-Explain the new variables introduced and the objective function
+In the linear programming, the solver uses an objective function to find an optimal solution.
+This objective function is simple: it suffices to minimise the maximum length coordinate of
+roll used over all boxes' coordinate length $S_b$. A box's length coordinate is simply the 
+coordinate of its bottom-left (or bottom-right) corner. Therefore, the objective function
+can be formalised as
+\begin{equation}
+\label{eq:linear-programming:objective-func}
+\min \max_{1 \le b \le N} S_b
+\end{equation}
+
+Although the $\max_b$ is not a linear function, CPLEX supports it perfectly. However, it has
+been implemented using linear expressions due to its simplicity. For this, a new variable $M$
+was introduced, defined so that $M \ge S_b$, for all $b \in \{1,\cdots,n\}$. Then, the objective
+function is simply:
+\[
+\min M
+\]
+
+However, $S_b$ still needs to be defined. This is also rather simple. For each box $b$ and for
+each cell of the roll $(x,y)$ impose the following two constraints:
+\[
+(R_b = 0) \wedge (X_{b,x,y} = 1) \Longrightarrow (S_b = y + b_l), \qquad
+(R_b = 1) \wedge (X_{b,x,y} = 1) \Longrightarrow (S_b = y + b_w)
+\]
+This is implemented with the following piece of code:
+{\NOINDENT \begin{lstlisting}
+Sb = IloNumVarArray(env, N, 0, L, ILOINT);
+M = IloNumVar(env, 0, L, ILOINT);
+for (int b = 0; b < N; ++b) {
+	for (length y = 0; y < L; ++y) {
+		for (width x = 0; x < W; ++x) {
+			model.add(
+				IloIfThen(env, ((R(b) == 0) && (X(b,x,y) == 1)), (S(b) == y + b_length))
+			);
+			model.add(
+				IloIfThen(env, ((R(b) == 1) && (X(b,x,y) == 1)), (S(b) == y + b_width))
+			);
+		}
+	}
+	model.add(M >= S(b));
 }
-
-
+model.add(
+	IloMinimize(env, M)
+);
+\end{lstlisting}}
+where the function ``S(b)'' is defined as follows
+Assuming the definition of the two following functions:
+{\NOINDENT \begin{lstlisting}
+IloNumVar S(size_t b) const { return Sb[b]; }
+IloNumVar S(size_t b) { return Sb[b]; }
+\end{lstlisting}}
