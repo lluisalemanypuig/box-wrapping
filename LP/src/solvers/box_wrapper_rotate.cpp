@@ -165,8 +165,6 @@ void box_wrapper_rotate::_init(const gifts& data) {
 	}
 	
 	add_objective(data);
-	
-	cplex = IloCplex(model);
 }
 
 /* PUBLIC */

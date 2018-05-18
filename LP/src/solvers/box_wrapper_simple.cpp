@@ -98,8 +98,6 @@ void box_wrapper_simple::_init(const gifts& data) {
 			}
 		}
 	}
-	
-	cplex = IloCplex(model);
 }
 
 /* PUBLIC */
