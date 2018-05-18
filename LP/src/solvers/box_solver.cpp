@@ -27,12 +27,16 @@ box_solver::box_solver() : is_solved(false) {
 	time_lim = -1;
 	n_threads = 1;
 }
-box_solver::~box_solver() {}
+box_solver::~box_solver() {
+	env.end();
+}
 
 /* FIND SOLUTION */
 
 void box_solver::init(const gifts& data, length max_L) {
 	// Initialise CPLEX variables needed to create the model
+	env.end();
+	
 	env = IloEnv();
 	model = IloModel(env);
 	cplex = IloCplex(model);
