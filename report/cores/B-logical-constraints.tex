@@ -1,11 +1,11 @@
-\section{Examples logical constraints}
-\label{sec:examples-logical-constraints}
+\section{Conversion of non-linear linear expressions}
+\label{sec:conv-non-linear}
 
 In this section are shown two simple examples on how to transform logical
 constraints that relate Boolean variables into linear expressions.
 
 \subsection{3 or}
-\label{sec:examples-logical-constraints:3-ors}
+\label{sec:conv-non-linear:3-ors}
 
 Assume three Boolean variables $a,b,c$ related as follows:
 \begin{equation}
@@ -68,7 +68,7 @@ and the cases where the constraints in \ref{eq:B:three-lin-expr} are satisfied (
 \end{table}
 
 \subsection{Several and}
-\label{sec:examples-logical-constraints:several-ands}
+\label{sec:conv-non-linear:several-ands}
 
 Transforming a series of logical ``and'' ($\wedge$) operations is fairly trivial.
 Given Boolean variables $x_1,\cdots,x_n$ each equal to some Boolean value $b_1,\cdots,b_n$,
@@ -102,3 +102,5 @@ Conversely, if $b_i=0$ let $\phi_i'=1$. Then, we have
 \[
 \sum_{i : b_i=1} \phi_i' + \sum_{i : b_i=0} 1 - \phi_i' = p + z - 1 \neq n
 \]
+
+
