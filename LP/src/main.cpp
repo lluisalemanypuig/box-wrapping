@@ -35,7 +35,13 @@ void print_usage() {
 	cout << "    [-o, --output]: specify the output file." << endl;
 	cout << "        Only the first solution will be stored." << endl;
 	cout << "    [-v, --verbose]: tell the CPLEX solver to output its progress." << endl;
-	cout << "        Other messages will also be displayed" << endl;
+	cout << "        Other messages will also be displayed." << endl;
+	cout << "        Default: do not be verbose" << endl;
+	cout << "    --n-threads: use parallelisation to find solutions." << endl;
+	cout << "        Default: 1 (sequential search)" << endl;
+	cout << "    --stop-when: specify the time limit (in seconds) of the execution." << endl;
+	cout << "        The value must be positive. A negative value is interpreted as 'never stop'." << endl;
+	cout << "        Default: never stop" << endl;
 	cout << endl;
 	cout << "Solvers:" << endl;
 	cout << "    (1) --simple: initial version of a solver in Gecode for the BWP" << endl;
@@ -55,6 +61,9 @@ int main(int argc, char *argv[]) {
 	bool rotate = false;
 	bool optim = false;
 	bool verbose = false;
+	
+	double stop_when = -1;
+	int n_threads = 1;
 	
 	// process arguments
 	for (int i = 1; i < argc; ++i) {
@@ -85,6 +94,19 @@ int main(int argc, char *argv[]) {
 		else if (strcmp(argv[i], "-v") == 0 or strcmp(argv[i], "--verbose") == 0) {
 			verbose = true;
 		}
+		
+		/// TERMINATING OPTIONS
+		else if (strcmp(argv[i], "--stop-when") == 0) {
+			parse::parse_double("parsing max time", argv[i + 1], &stop_when, &fatal_error);
+			++i;
+		}
+		
+		/// EFFICIENCY OPTIONS
+		else if (strcmp(argv[i], "--n-threads") == 0) {
+			parse::parse_long("parsing number of threads", argv[i + 1], &n_threads, &fatal_error);
+			++i;
+		}
+		
 		else {
 			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
 			return 1;
@@ -141,8 +163,10 @@ int main(int argc, char *argv[]) {
 	
 	double begin = timing::now();
 	
-	bs->init(INPUT);
 	bs->set_verbose(verbose);
+	bs->set_time_limit(stop_when);
+	bs->set_n_threads(n_threads);
+	bs->init(INPUT);
 	bs->solve();
 	
 	double end = timing::now();

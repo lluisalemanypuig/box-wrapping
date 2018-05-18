@@ -12,6 +12,8 @@ ILOSTLBEGIN
 
 class box_solver {
 	private:
+		void config_cplex();
+		
 	protected:
 		/* CPLEX variables */
 		IloEnv env;
@@ -29,6 +31,13 @@ class box_solver {
 		// roll's width. Fixed value
 		width W;
 		
+		/* ------ */
+		// Configuration attributes
+		bool verbose;
+		double time_lim; // in seconds
+		int n_threads;
+		
+	protected:
 		virtual void _init(const gifts& gs) = 0;
 		
 	public:
@@ -43,7 +52,9 @@ class box_solver {
 		
 		/* MODIFIERS */
 		
-		void set_verbose(bool v = true);
+		void set_verbose(bool v);
+		void set_time_limit(double s);		// time limit in seconds
+		void set_n_threads(int n_threads);
 		
 		/* GETTERS */
 		
