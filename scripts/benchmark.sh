@@ -80,6 +80,8 @@ n_suboptimal=0
 n_total=0
 # time so far (in milliseconds)
 total_time_ms=0
+# maximum number of threads in the system
+max_threads=$(grep -c ^processor /proc/cpuinfo)
 
 for INFILE in $(ls -v $INPUT_DIR);
 do
@@ -97,47 +99,63 @@ do
 	echo $(date) >> logs/$OUT_LOG_FILE
 	echo $(date) >> logs/$ERR_LOG_FILE
 	
+	echo "Executing $SOLVER_TEC solver with input file: $INPUT_DIR/$INFILE"
+	
 	# execute the exe file
 	if [ "$SOLVER_TEC" == "CP" ]; then
-		
-		echo "Executing solver with input file: $INPUT_DIR/$INFILE"
-		
+	
 		begin=$(date +%s%3N)
-		./$EXE_FILE 							\
-			-i $INPUT_DIR/$INFILE 				\
-			-o $OUTPUT_DIR/$OUTFILE 			\
-			--heuris-mix -v 					\
-			--stop-at 1 --stop-when 5 -Nr 5		\
-			>>  logs/$OUT_LOG_FILE				\
+		./$EXE_FILE 					\
+			-i $INPUT_DIR/$INFILE 		\
+			-o $OUTPUT_DIR/$OUTFILE 	\
+			--heuris-mix -Nr 5 -v 		\
+			--stop-at 1 --stop-when 5	\
+			--n-threads $max_threads	\
+			>>  logs/$OUT_LOG_FILE		\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
 		msecs=$(($end - $begin))
 		
-		n_total=$((n_total + 1))
-		
-		# if file with optimal solution exists check optimality
-		if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
-			opt_length=$(head -n 1 $OPT_OUTPUT_DIR/$OPT_FILE)
-			sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
-			
-			if [ $opt_length == $sol_length ]; then
-				echo -e "    \e[1;32mOptimal solution reached\e[0m"
-				n_optimal=$((n_optimal + 1))
-			elif [ $opt_length -lt $sol_length ]; then
-				echo -e "    \e[1;33mSuboptimal solution:\e[0m"
-				echo -e "        Optimal: \e[1;32m$opt_length\e[0m"
-				echo -e "        CP:      \e[1;31m$sol_length\e[0m"
-				n_suboptimal=$((n_suboptimal + 1))
-			else
-				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
-				echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
-				echo -e "             CP: \e[1;32m$sol_length\e[0m"
-			fi
-		fi
 	elif [ "$SOLVER_TEC" == "LP" ]; then
-		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
+		
+		begin=$(date +%s%3N)
+		./$EXE_FILE 					\
+			-i $INPUT_DIR/$INFILE 		\
+			-o $OUTPUT_DIR/$OUTFILE 	\
+			--optim -v					\
+			--n-threads $max_threads	\
+			--stop-when 45.0			\
+			>>  logs/$OUT_LOG_FILE		\
+			2>> logs/$ERR_LOG_FILE
+		end=$(date +%s%3N)
+		msecs=$(($end - $begin))
+		
 	elif [ "$SOLVER_TEC" == "SAT" ]; then
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
+	fi
+	
+	n_total=$((n_total + 1))
+		
+	# if file with optimal solution exists check optimality
+	if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
+		opt_length=$(head -n 1 $OPT_OUTPUT_DIR/$OPT_FILE)
+		sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
+		
+		if [ $opt_length == $sol_length ]; then
+			echo -e "    \e[1;32mOptimal solution reached\e[0m"
+			n_optimal=$((n_optimal + 1))
+		elif [ $opt_length -lt $sol_length ]; then
+			echo -e "    \e[1;33mSuboptimal solution:\e[0m"
+			echo -e "        Optimal: \e[1;32m$opt_length\e[0m"
+			printf "%+16s: " "$SOLVER_TEC"
+			echo -e "\e[1;32m$sol_length\e[0m"
+			n_suboptimal=$((n_suboptimal + 1))
+		else
+			echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
+			echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
+			printf "%+16s: " "$SOLVER_TEC"
+			echo -e "\e[1;32m$sol_length\e[0m"
+		fi
 	fi
 	
 	solv_time_secs=$(echo "scale=3; $msecs/1000" | bc)
