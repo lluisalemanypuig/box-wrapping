@@ -30,7 +30,14 @@ hand-made then it will output a message similar to the one in figure
 \centering
 {\scriptsize
 \begin{BVerbatim}
-UPDATE
+Optimal solution reached
+In 34.488 seconds
+Current progress:
+            Solved optimally : 90 / 105 ( 85.71\% )
+        Solved sub-optimally : 15 / 105 ( 14.28\% )
+                    Unsolved : 0 / 105 ( 0.00\% )
+                   Remaining : 105 / 108 ( 97.22\% )
+          Total time elapsed : 2136.317 seconds
 \end{BVerbatim}
 }
 \centeredcaption{Example of the output of the benchmark script for the
@@ -42,13 +49,13 @@ The format of the information shown in figure \ref{fig:benchmark-verbose:optimal
 is as follows: it tells whether the optimal solution was reached or not (assuming
 that the corresponding output in the \textit{outputs/hand-made/} directory is indeed
 optimal), the time needed to reach that solution, and finally the progress of the
-script. In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 23 minutes
-to solve a total of 105 inputs, 85 of them optimally and 15 of them suboptimally.
+script. In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 36 minutes
+to solve a total of 105 inputs, 90 of them optimally and 15 of them suboptimally.
 The inputs used to get the message in figure \ref{fig:benchmark-verbose:optimal} were
 all the inputs sorted lexicographically from the ``bwp\_3\_3\_1.in'' to the
-``bwp\_11\_10\_1.in''. The total output for the same CPU can be found
-in the file ``scripts/CP-p4-benchmark-log''\footnote{ In a Unix-like environment use
-the command \textit{less -r} to visualise the contents with colour.}.
+``bwp\_11\_10\_1.in''. None of them remained unsolved. The total output for the
+same CPU can be found in the file ``scripts/CP-p4-1-benchmark-log''\footnote{ In a
+Unix-like environment use the command \textit{less -r} to visualise the contents with colour.}.
 An example of the message output by the script when the solution is not optimal is
 shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
@@ -56,7 +63,17 @@ shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 \centering
 {\scriptsize
 \begin{BVerbatim}
-UPDATE
+Suboptimal solution:
+        Optimal : 12
+             CP : 15
+    In 45.025 seconds
+    Current progress:
+            Solved optimally : 88 / 103 ( 85.43% )
+        Solved sub-optimally : 15 / 103 ( 14.56% )
+                    Unsolved : 0 / 103 ( 14.56% )
+                   Remaining : 103 / 108 ( 95.37% )
+          Total time elapsed : 2091.806 seconds
+
 \end{BVerbatim}
 }
 \centeredcaption{Example of the output of the benchmark script for the
@@ -73,6 +90,13 @@ report. Also, one could use the Box Wrapper user interface used to make the
 optimal outputs for all the inputs in directory \textit{inputs/material/}
 (see section \ref{sec:box-wrapper-gui}).
 
+\hfill
+
+In the following sections are presented the results for each solver, compared
+on two different CPUs, if possible. The CPUs are an Intel Pentium IV 1.8 GHz
+(\textit{p4}), and an Intel i7-6700 HQ 3.5 GHz (\textit{i7}). We also present
+results specific for the \textit{i7} using multiple threads.
+
 \subsection{Constraint Programming}
 \label{sec:benchmarking:constraint-programming}
 
@@ -83,7 +107,6 @@ The parameters used to execute the Constraint Programming solver described in se
 	\item The solver will stop as soon as it finds a solution or 5 seconds of its execution.
 	\item The solver will be executed on randomly permuted data $5$ times (needless to
 	say that the data will also be permuted $5$ times).
-	\item The solver will use as many available threads as there are in the system.
 \end{itemize}
 
 With these parameters, the solver has a ``natural'' timeout of \textbf{45} seconds.
@@ -99,16 +122,18 @@ Needless to say that depending on the machine this software is executed on,
 in spite of having the same time limits, a more powerful computer is more likely
 to find better solutions since it can explore the search tree more exhaustively
 in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-results}.
+The ``(x1)'' and ``(x4) in table \ref{table:CP-results} refer to the number of threads
+used for that CPU.
 
 \begin{table}[H]
 \centering
-	\begin{tabular}{rcc}
-								& Pentium IV 1.8 GHz	& i7-6700 HQ 3.5 GHz (x8) \\
+	\begin{tabular}{rccc}
+								& p4			& i7 (x1)	& i7 (x4) \\
 		\midrule
-		Optimal solutions		& 93 / 108				& x / 108 \\
-		Sub-optimal solutions	& 15 / 108				& x / 108 \\
-		Unsolved instances		&  0 / 108				& x / 108 \\
-		Total time				& 37 mins				& x mins \\
+		Optimal solutions		& 93 / 108	& 97 / 108	& 100 / 108 \\
+		Sub-optimal solutions	& 15 / 108	& 11 / 108	&   8 / 108 \\
+		Unsolved instances		&  0 / 108	&  0 / 108	&   0 / 108 \\
+		Total time				& 37 mins	& 33 mins	& 31 mins \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
@@ -117,30 +142,31 @@ in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-res
 \end{table}
 
 The outputs can be found in the \textit{outputs/} directory, inside folders
-\textit{CP-p4/} and \textit{CP-i7/} respectively. Table \ref{table:CP-results:suboptimalinstances}
-gives the list of instances solved suboptimally for each CPU.
+\textit{CP-p4/} and \textit{CP-i7-1/} and \textit{CP-i7-4/} respectively.
+Table \ref{table:CP-results:suboptimalinstances} gives the list of instances
+solved suboptimally for each CPU.
 
 \begin{table}[H]
 \centering
-	\begin{tabular}{cccccc}
+	\begin{tabular}{ccccccc}
 		\multicolumn{3}{c}{Instance name}
-					& Pentium IV 1.8 GHz	& i7-6700 HQ 3.5 GHz (x8)	& Optimal value \\
+					& P4		& i7 (x1)	& i7 (x4)	& Optimal value \\
 		\midrule
-		 3 &  7 & 1	& 13					&  x						& 12 \\
-		 3 & 11 & 1	& 31					&  x						& 29 \\
-		 3 & 12 & 1	& 16					&  x						& 15 \\
-		 3 & 13 & 1	& 23					&  x						& 22 \\
-		 4 & 11 & 1	& 12					&  x						& 11 \\
-		 5 & 12 & 1	& 27					&  x						& 24 \\
-		 6 & 11 & 1	& 15					&  x						& 13 \\
-		 6 & 13 & 1	& 36					&  x						& 35 \\
-		 7 & 13 & 1	& 15					&  x						& 14 \\
-		 8 & 13 & 1	& 20					&  x						& 17 \\
-		 9 & 11 & 1	& 7						&  x						& 6 \\
-		 9 & 13 & 1	& 16					&  x						& 15 \\
-		10 & 11 & 1	& 6						&  x						& 5 \\
-		10 & 13 & 1	& 15					&  x						& 14 \\
-		11 &  8 & 1	& 15					&  x						& 12 \\
+		 3 &  7 & 1	& 13		&  			&  			& 12 \\
+		 3 & 11 & 1	& 31		&  31		& 30			& 29 \\
+		 3 & 12 & 1	& 16		&  16		&  			& 15 \\
+		 3 & 13 & 1	& 23		&  23		&  			& 22 \\
+		 4 & 11 & 1	& 12		&  12		& 12			& 11 \\
+		 5 & 12 & 1	& 27		&  27		& 27			& 24 \\
+		 6 & 11 & 1	& 15		&  15		&  			& 13 \\
+		 6 & 13 & 1	& 36		&  36		& 36			& 35 \\
+		 7 & 13 & 1	& 15		&  15		& 15			& 14 \\
+		 8 & 13 & 1	& 20		&  20		& 20			& 17 \\
+		 9 & 11 & 1	&  7		&   			&  			&  6 \\
+		 9 & 13 & 1	& 16		&   			&  			& 15 \\
+		10 & 11 & 1	&  6		&   			&  			&  5 \\
+		10 & 13 & 1	& 15		&  15		& 15			& 14 \\
+		11 &  8 & 1	& 15		&  15		& 14			& 12 \\
 	\end{tabular}
 	\centeredcaption{Instances in the \textit{inputs/material/} directory
 	solved suboptimally. An empty cell in the table indicates that the instance
@@ -163,18 +189,17 @@ The parameters used to execute the Linear Programming solver are the following:
 
 The CPLEX library was obtained through an academical-use only license for a 64-bit system.
 For this reason, we can only present results for one CPU only. See table \ref{table:LP-results}
-for a summary on the amount of optimally and suboptimally solved instances with the i7-6700 HQ 3.5 GHz
-CPU.
+for a summary on the amount of optimally and suboptimally solved instances for \textit{i7}.
 
 \begin{table}[H]
 \centering
-	\begin{tabular}{rcc}
-								& i7-6700 HQ 3.5 GHz (x8) \\
+	\begin{tabular}{rccc}
+								& i7 (x1)	& i7 (x4) \\
 		\midrule
-		Optimal solutions		& x / 108 \\
-		Sub-optimal solutions	& x / 108 \\
-		Unsolved instances		& x / 108 \\
-		Total time				& x mins \\
+		Optimal solutions		& x / 108	& x / 108 \\
+		Sub-optimal solutions	& x / 108	& x / 108 \\
+		Unsolved instances		& x / 108	& x / 108 \\
+		Total time				& x mins		& x mins \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution is given for the LP solver.}
@@ -189,23 +214,23 @@ gives the list of unsolved instances and instances solved suboptimally.
 \centering
 	\begin{tabular}{cccccc}
 		\multicolumn{3}{c}{Instance name}
-					& i7-6700 HQ 3.5 GHz (x8)	& Optimal value \\
+					& i7 (x1)	& i7 (x4)	& Optimal value \\
 		\midrule
-		 3 &  7 & 1	& x							& 12 \\
-		 3 & 11 & 1	& x							& 29 \\
-		 3 & 12 & 1	& x							& 15 \\
-		 3 & 13 & 1	& x							& 22 \\
-		 4 & 11 & 1	& x							& 11 \\
-		 5 & 12 & 1	& x							& 24 \\
-		 6 & 11 & 1	& x							& 13 \\
-		 6 & 13 & 1	& x							& 35 \\
-		 7 & 13 & 1	& x							& 14 \\
-		 8 & 13 & 1	& x							& 17 \\
-		 9 & 11 & 1	& x							& 6 \\
-		 9 & 13 & 1	& x							& 15 \\
-		10 & 11 & 1	& x							& 5 \\
-		10 & 13 & 1	& x							& 14 \\
-		11 &  8 & 1	& x							& 12 \\
+		 3 &  7 & 1	& x			& x			& 12 \\
+		 3 & 11 & 1	& x			& x			& 29 \\
+		 3 & 12 & 1	& x			& x			& 15 \\
+		 3 & 13 & 1	& x			& x			& 22 \\
+		 4 & 11 & 1	& x			& x			& 11 \\
+		 5 & 12 & 1	& x			& x			& 24 \\
+		 6 & 11 & 1	& x			& x			& 13 \\
+		 6 & 13 & 1	& x			& x			& 35 \\
+		 7 & 13 & 1	& x			& x			& 14 \\
+		 8 & 13 & 1	& x			& x			& 17 \\
+		 9 & 11 & 1	& x			& x			&  6 \\
+		 9 & 13 & 1	& x			& x			& 15 \\
+		10 & 11 & 1	& x			& x			&  5 \\
+		10 & 13 & 1	& x			& x			& 14 \\
+		11 &  8 & 1	& x			& x			& 12 \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
