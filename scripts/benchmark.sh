@@ -194,7 +194,7 @@ do
 	
 	echo -n "        "
 	printf "%+20s : " "Unsolved"
-	echo "$n_unsolved / $n_processed ( $per_sopt% )"
+	echo "$n_unsolved / $n_processed ( $per_uns% )"
 	
 	echo -n "        "
 	printf "%+20s : " "Remaining"
