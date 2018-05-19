@@ -82,6 +82,9 @@ n_unsolved=0
 n_processed=0
 # total number of instances in directory
 n_total=$(ls -1 $INPUT_DIR | wc -l)
+if [ $n_total -ge 4 ]; then
+	n_total=4
+fi
 # time so far (in milliseconds)
 total_time_ms=0
 # maximum number of threads in the system
