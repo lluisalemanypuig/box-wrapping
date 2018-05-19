@@ -76,8 +76,12 @@ OPT_OUTPUT_DIR=$PROJ_DIR/outputs/hand-made
 n_optimal=0
 # number of instances solved suboptimally
 n_suboptimal=0
-# total number of instances solved
-n_total=0
+# number of unsolved instances
+n_unsolved=0
+# total number of instances process
+n_processed=0
+# total number of instances in directory
+n_total=$(ls -1 $INPUT_DIR | wc -l)
 # time so far (in milliseconds)
 total_time_ms=0
 # maximum number of threads in the system
@@ -124,7 +128,7 @@ do
 			-o $OUTPUT_DIR/$OUTFILE 	\
 			--optim -v					\
 			--n-threads $max_threads	\
-			--stop-when 45.0			\
+			--stop-when 45				\
 			>>  logs/$OUT_LOG_FILE		\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
@@ -134,10 +138,10 @@ do
 		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
 	fi
 	
-	n_total=$((n_total + 1))
+	n_processed=$((n_processed + 1))
 		
 	# if file with optimal solution exists check optimality
-	if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ];
+	if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
 		if [ -f $OUTPUT_DIR/$OUTFILE ]; then
 			opt_length=$(head -n 1 $OPT_OUTPUT_DIR/$OPT_FILE)
 			sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
@@ -147,18 +151,21 @@ do
 				n_optimal=$((n_optimal + 1))
 			elif [ $opt_length -lt $sol_length ]; then
 				echo -e "    \e[1;33mSuboptimal solution:\e[0m"
-				echo -e "        Optimal: \e[1;32m$opt_length\e[0m"
-				printf "%+15s: " "$SOLVER_TEC"
-				echo -e "\e[1;32m$sol_length\e[0m"
+				echo -e "        Optimal : \e[1;32m$opt_length\e[0m"
+				echo -n "        "
+				printf "%+7s : " "$SOLVER_TEC"
+				echo -e "\e[1;31m$sol_length\e[0m"
 				n_suboptimal=$((n_suboptimal + 1))
 			else
 				echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
-				echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
-				printf "%+15s: " "$SOLVER_TEC"
+				echo -e "        Optimal : \e[1;31m$opt_length\e[0m"
+				echo -n "        "
+				printf "%+7s : " "$SOLVER_TEC"
 				echo -e "\e[1;32m$sol_length\e[0m"
 			fi
 		else
-			echo -e "    \e[1;34mNo solution produce by solver $SOLVER_TEC\e[0m"
+			echo -e "    \e[1;34mNo solution produced by $SOLVER_TEC solver\e[0m"
+			n_unsolved=$((n_unsolved + 1))
 		fi
 	fi
 	
@@ -168,10 +175,29 @@ do
 	total_time_ms=$(($total_time_ms + $msecs))
 	total_time_secs=$(echo "scale=3; $total_time_ms/1000" | bc)
 	
-	per_opt=$(echo "scale=2; (100*$n_optimal)/$n_total" | bc)
-	per_sopt=$(echo "scale=2; (100*$n_suboptimal)/$n_total" | bc)
+	per_opt=$(echo "scale=2; (100*$n_optimal)/$n_processed" | bc)
+	per_sopt=$(echo "scale=2; (100*$n_suboptimal)/$n_processed" | bc)
+	per_uns=$(echo "scale=2; (100*$n_unsolved)/$n_processed" | bc)
+	per_proc=$(echo "scale=2; (100*$n_processed)/$n_total" | bc)
 	echo "    Current progress:"
-	echo "        Solved optimally    : $n_optimal / $n_total ( $per_opt% )"
-	echo "        Solved sub-optimally: $n_suboptimal / $n_total ( $per_sopt% )"
-	echo "        Total time elapsed  : $total_time_secs seconds"
+	
+	echo -n "        "
+	printf "%+20s : " "Solved optimally"
+	echo "$n_optimal / $n_processed ( $per_opt% )"
+	
+	echo -n "        "
+	printf "%+20s : " "Solved sub-optimally"
+	echo "$n_suboptimal / $n_processed ( $per_sopt% )"
+	
+	echo -n "        "
+	printf "%+20s : " "Unsolved"
+	echo "$n_unsolved / $n_processed ( $per_sopt% )"
+	
+	echo -n "        "
+	printf "%+20s : " "Remaining"
+	echo "$n_processed / $n_total ( $per_proc% )"
+	
+	echo -n "        "
+	printf "%+20s : " "Total time elapsed"
+	echo "$total_time_secs seconds"
 done
