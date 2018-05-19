@@ -41,7 +41,7 @@ Executing solver with input file: ../inputs/material/bwp_3_6_1.in
 Executing solver with input file: ../inputs/material/bwp_3_7_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m12[0m
-        CP:      [1;31m13[0m
+             CP: [1;31m13[0m
     In 45.018 seconds
     Current progress:
         Solved optimally    : 5 / 6 ( 83.33% )
@@ -71,7 +71,7 @@ Executing solver with input file: ../inputs/material/bwp_3_10_1.in
 Executing solver with input file: ../inputs/material/bwp_3_11_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m29[0m
-        CP:      [1;31m31[0m
+             CP: [1;31m31[0m
     In 45.012 seconds
     Current progress:
         Solved optimally    : 8 / 10 ( 80.00% )
@@ -80,7 +80,7 @@ Executing solver with input file: ../inputs/material/bwp_3_11_1.in
 Executing solver with input file: ../inputs/material/bwp_3_12_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m15[0m
-        CP:      [1;31m16[0m
+             CP: [1;31m16[0m
     In 45.011 seconds
     Current progress:
         Solved optimally    : 8 / 11 ( 72.72% )
@@ -89,7 +89,7 @@ Executing solver with input file: ../inputs/material/bwp_3_12_1.in
 Executing solver with input file: ../inputs/material/bwp_3_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m22[0m
-        CP:      [1;31m23[0m
+             CP: [1;31m23[0m
     In 45.014 seconds
     Current progress:
         Solved optimally    : 8 / 12 ( 66.66% )
@@ -161,7 +161,7 @@ Executing solver with input file: ../inputs/material/bwp_4_10_1.in
 Executing solver with input file: ../inputs/material/bwp_4_11_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m11[0m
-        CP:      [1;31m12[0m
+             CP: [1;31m12[0m
     In 45.013 seconds
     Current progress:
         Solved optimally    : 17 / 22 ( 77.27% )
@@ -254,7 +254,7 @@ Executing solver with input file: ../inputs/material/bwp_5_11_1.in
 Executing solver with input file: ../inputs/material/bwp_5_12_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m24[0m
-        CP:      [1;31m27[0m
+             CP: [1;31m27[0m
     In 45.019 seconds
     Current progress:
         Solved optimally    : 29 / 35 ( 82.85% )
@@ -333,7 +333,7 @@ Executing solver with input file: ../inputs/material/bwp_6_10_1.in
 Executing solver with input file: ../inputs/material/bwp_6_11_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m13[0m
-        CP:      [1;31m15[0m
+             CP: [1;31m15[0m
     In 45.014 seconds
     Current progress:
         Solved optimally    : 39 / 46 ( 84.78% )
@@ -349,7 +349,7 @@ Executing solver with input file: ../inputs/material/bwp_6_12_1.in
 Executing solver with input file: ../inputs/material/bwp_6_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m35[0m
-        CP:      [1;31m36[0m
+             CP: [1;31m36[0m
     In 45.022 seconds
     Current progress:
         Solved optimally    : 40 / 48 ( 83.33% )
@@ -435,7 +435,7 @@ Executing solver with input file: ../inputs/material/bwp_7_12_1.in
 Executing solver with input file: ../inputs/material/bwp_7_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m14[0m
-        CP:      [1;31m15[0m
+             CP: [1;31m15[0m
     In 45.015 seconds
     Current progress:
         Solved optimally    : 51 / 60 ( 85.00% )
@@ -521,7 +521,7 @@ Executing solver with input file: ../inputs/material/bwp_8_12_1.in
 Executing solver with input file: ../inputs/material/bwp_8_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m17[0m
-        CP:      [1;31m20[0m
+             CP: [1;31m20[0m
     In 45.034 seconds
     Current progress:
         Solved optimally    : 62 / 72 ( 86.11% )
@@ -593,7 +593,7 @@ Executing solver with input file: ../inputs/material/bwp_9_10_1.in
 Executing solver with input file: ../inputs/material/bwp_9_11_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m6[0m
-        CP:      [1;31m7[0m
+             CP: [1;31m7[0m
     In 40.955 seconds
     Current progress:
         Solved optimally    : 71 / 82 ( 86.58% )
@@ -609,7 +609,7 @@ Executing solver with input file: ../inputs/material/bwp_9_12_1.in
 Executing solver with input file: ../inputs/material/bwp_9_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m15[0m
-        CP:      [1;31m16[0m
+             CP: [1;31m16[0m
     In 45.030 seconds
     Current progress:
         Solved optimally    : 72 / 84 ( 85.71% )
@@ -681,7 +681,7 @@ Executing solver with input file: ../inputs/material/bwp_10_10_1.in
 Executing solver with input file: ../inputs/material/bwp_10_11_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m5[0m
-        CP:      [1;31m6[0m
+             CP: [1;31m6[0m
     In 45.016 seconds
     Current progress:
         Solved optimally    : 81 / 94 ( 86.17% )
@@ -697,7 +697,7 @@ Executing solver with input file: ../inputs/material/bwp_10_12_1.in
 Executing solver with input file: ../inputs/material/bwp_10_13_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m14[0m
-        CP:      [1;31m15[0m
+             CP: [1;31m15[0m
     In 45.036 seconds
     Current progress:
         Solved optimally    : 82 / 96 ( 85.41% )
@@ -748,7 +748,7 @@ Executing solver with input file: ../inputs/material/bwp_11_7_1.in
 Executing solver with input file: ../inputs/material/bwp_11_8_1.in
     [1;33mSuboptimal solution:[0m
         Optimal: [1;32m12[0m
-        CP:      [1;31m15[0m
+             CP: [1;31m15[0m
     In 45.022 seconds
     Current progress:
         Solved optimally    : 88 / 103 ( 85.43% )
