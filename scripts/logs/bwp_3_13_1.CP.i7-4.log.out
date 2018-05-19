@@ -1,0 +1,626 @@
+Sat 19 May 18:15:37 CEST 2018
+Increasing area preprocessing
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 1 1
+    box 2: 1 1
+    box 3: 1 3
+    box 4: 1 3
+    box 5: 1 3
+    box 6: 1 5
+    box 7: 1 5
+    box 8: 1 5
+    box 9: 2 4
+    box 10: 2 4
+    box 11: 2 4
+    box 12: 2 4
+    box 13: 2 4
+
+1)
+   | W
+ L |  0  1 2 
+------------
+ 0 |  1  2 . 
+ 1 |  3  3 3 
+ 2 |  4  4 4 
+ 3 |  5  5 5 
+ 4 |  6  7 8 
+ 5 |  6  7 8 
+ 6 |  6  7 8 
+ 7 |  6  7 8 
+ 8 |  6  7 8 
+ 9 |  9  9 . 
+10 |  9  9 . 
+11 |  9  9 . 
+12 |  9  9 . 
+13 | 10 10 . 
+14 | 10 10 . 
+15 | 10 10 . 
+16 | 10 10 . 
+17 | 11 11 . 
+18 | 11 11 . 
+19 | 11 11 . 
+20 | 11 11 . 
+21 | 12 12 . 
+22 | 12 12 . 
+23 | 12 12 . 
+24 | 12 12 . 
+25 | 13 13 . 
+26 | 13 13 . 
+27 | 13 13 . 
+28 | 13 13 . 
+29 |  .  . . 
+30 |  .  . . 
+31 |  .  . . 
+32 |  .  . . 
+33 |  .  . . 
+34 |  .  . . 
+35 |  .  . . 
+36 |  .  . . 
+37 |  .  . . 
+38 |  .  . . 
+39 |  .  . . 
+40 |  .  . . 
+41 |  .  . . 
+42 |  .  . . 
+43 |  .  . . 
+44 |  .  . . 
+45 |  .  . . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box  2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box  3 is at 
+        top left     (0,1)
+        bottom right (2,1)
+
+    Box  4 is at 
+        top left     (0,2)
+        bottom right (2,2)
+
+    Box  5 is at 
+        top left     (0,3)
+        bottom right (2,3)
+
+    Box  6 is at 
+        top left     (0,4)
+        bottom right (0,8)
+
+    Box  7 is at 
+        top left     (1,4)
+        bottom right (1,8)
+
+    Box  8 is at 
+        top left     (2,4)
+        bottom right (2,8)
+
+    Box  9 is at 
+        top left     (0,9)
+        bottom right (1,12)
+
+    Box 10 is at 
+        top left     (0,13)
+        bottom right (1,16)
+
+    Box 11 is at 
+        top left     (0,17)
+        bottom right (1,20)
+
+    Box 12 is at 
+        top left     (0,21)
+        bottom right (1,24)
+
+    Box 13 is at 
+        top left     (0,25)
+        bottom right (1,28)
+
+    Roll length used: 29
+
+Increasing width preprocessing
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 1 1
+    box 2: 1 1
+    box 3: 1 3
+    box 4: 1 3
+    box 5: 1 3
+    box 6: 1 5
+    box 7: 1 5
+    box 8: 1 5
+    box 9: 2 4
+    box 10: 2 4
+    box 11: 2 4
+    box 12: 2 4
+    box 13: 2 4
+
+Decreasing area preprocessing
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 2 4
+    box 2: 2 4
+    box 3: 2 4
+    box 4: 2 4
+    box 5: 2 4
+    box 6: 1 5
+    box 7: 1 5
+    box 8: 1 5
+    box 9: 1 3
+    box 10: 1 3
+    box 11: 1 3
+    box 12: 1 1
+    box 13: 1 1
+
+1)
+   | W
+ L |  0  1  2 
+-------------
+ 0 |  1  1  6 
+ 1 |  1  1  6 
+ 2 |  1  1  6 
+ 3 |  1  1  6 
+ 4 |  2  2  6 
+ 5 |  2  2  7 
+ 6 |  2  2  7 
+ 7 |  2  2  7 
+ 8 |  3  3  7 
+ 9 |  3  3  7 
+10 |  3  3  8 
+11 |  3  3  8 
+12 |  4  4  8 
+13 |  4  4  8 
+14 |  4  4  8 
+15 |  4  4 12 
+16 |  5  5 13 
+17 |  5  5  . 
+18 |  5  5  . 
+19 |  5  5  . 
+20 |  9  9  9 
+21 | 10 10 10 
+22 | 11 11 11 
+23 |  .  .  . 
+24 |  .  .  . 
+25 |  .  .  . 
+26 |  .  .  . 
+27 |  .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (1,3)
+
+    Box  2 is at 
+        top left     (0,4)
+        bottom right (1,7)
+
+    Box  3 is at 
+        top left     (0,8)
+        bottom right (1,11)
+
+    Box  4 is at 
+        top left     (0,12)
+        bottom right (1,15)
+
+    Box  5 is at 
+        top left     (0,16)
+        bottom right (1,19)
+
+    Box  6 is at 
+        top left     (2,0)
+        bottom right (2,4)
+
+    Box  7 is at 
+        top left     (2,5)
+        bottom right (2,9)
+
+    Box  8 is at 
+        top left     (2,10)
+        bottom right (2,14)
+
+    Box  9 is at 
+        top left     (0,20)
+        bottom right (2,20)
+
+    Box 10 is at 
+        top left     (0,21)
+        bottom right (2,21)
+
+    Box 11 is at 
+        top left     (0,22)
+        bottom right (2,22)
+
+    Box 12 is at 
+        top left     (2,15)
+        bottom right (2,15)
+
+    Box 13 is at 
+        top left     (2,16)
+        bottom right (2,16)
+
+    Roll length used: 23
+
+2)
+   | W
+ L |  0  1  2 
+-------------
+ 0 |  1  1  6 
+ 1 |  1  1  6 
+ 2 |  1  1  6 
+ 3 |  1  1  6 
+ 4 |  2  2  6 
+ 5 |  2  2  7 
+ 6 |  2  2  7 
+ 7 |  2  2  7 
+ 8 |  3  3  7 
+ 9 |  3  3  7 
+10 |  3  3  8 
+11 |  3  3  8 
+12 |  4  4  8 
+13 |  4  4  8 
+14 |  4  4  8 
+15 |  4  4 11 
+16 |  5  5 11 
+17 |  5  5 11 
+18 |  5  5 12 
+19 |  5  5 13 
+20 |  9  9  9 
+21 | 10 10 10 
+22 |  .  .  . 
+23 |  .  .  . 
+24 |  .  .  . 
+25 |  .  .  . 
+26 |  .  .  . 
+27 |  .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (1,3)
+
+    Box  2 is at 
+        top left     (0,4)
+        bottom right (1,7)
+
+    Box  3 is at 
+        top left     (0,8)
+        bottom right (1,11)
+
+    Box  4 is at 
+        top left     (0,12)
+        bottom right (1,15)
+
+    Box  5 is at 
+        top left     (0,16)
+        bottom right (1,19)
+
+    Box  6 is at 
+        top left     (2,0)
+        bottom right (2,4)
+
+    Box  7 is at 
+        top left     (2,5)
+        bottom right (2,9)
+
+    Box  8 is at 
+        top left     (2,10)
+        bottom right (2,14)
+
+    Box  9 is at 
+        top left     (0,20)
+        bottom right (2,20)
+
+    Box 10 is at 
+        top left     (0,21)
+        bottom right (2,21)
+
+    Box 11 is at 
+        top left     (2,15)
+        bottom right (2,17)
+
+    Box 12 is at 
+        top left     (2,18)
+        bottom right (2,18)
+
+    Box 13 is at 
+        top left     (2,19)
+        bottom right (2,19)
+
+    Roll length used: 22
+
+Decreasing width preprocessing
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 2 4
+    box 2: 2 4
+    box 3: 2 4
+    box 4: 2 4
+    box 5: 2 4
+    box 6: 1 5
+    box 7: 1 5
+    box 8: 1 5
+    box 9: 1 3
+    box 10: 1 3
+    box 11: 1 3
+    box 12: 1 1
+    box 13: 1 1
+
+----------------------------
+Random preprocessing 1)
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 2 4
+    box 2: 1 3
+    box 3: 1 5
+    box 4: 2 4
+    box 5: 1 1
+    box 6: 1 5
+    box 7: 2 4
+    box 8: 2 4
+    box 9: 2 4
+    box 10: 1 3
+    box 11: 1 3
+    box 12: 1 1
+    box 13: 1 5
+
+----------------------------
+Random preprocessing 2)
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 1 1
+    box 2: 1 3
+    box 3: 2 4
+    box 4: 2 4
+    box 5: 1 3
+    box 6: 1 5
+    box 7: 1 5
+    box 8: 1 3
+    box 9: 2 4
+    box 10: 2 4
+    box 11: 1 1
+    box 12: 2 4
+    box 13: 1 5
+
+----------------------------
+Random preprocessing 3)
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 2 4
+    box 2: 1 1
+    box 3: 1 5
+    box 4: 2 4
+    box 5: 2 4
+    box 6: 1 1
+    box 7: 2 4
+    box 8: 1 3
+    box 9: 1 5
+    box 10: 1 3
+    box 11: 1 3
+    box 12: 2 4
+    box 13: 1 5
+
+----------------------------
+Random preprocessing 4)
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 2 4
+    box 2: 1 5
+    box 3: 2 4
+    box 4: 2 4
+    box 5: 2 4
+    box 6: 2 4
+    box 7: 1 1
+    box 8: 1 3
+    box 9: 1 5
+    box 10: 1 3
+    box 11: 1 3
+    box 12: 1 1
+    box 13: 1 5
+
+----------------------------
+Random preprocessing 5)
+    W=3
+    sum lengths=   46
+    sum max sides= 46
+    box 1: 1 5
+    box 2: 2 4
+    box 3: 2 4
+    box 4: 1 1
+    box 5: 1 3
+    box 6: 2 4
+    box 7: 2 4
+    box 8: 1 5
+    box 9: 1 3
+    box 10: 1 5
+    box 11: 1 1
+    box 12: 1 3
+    box 13: 2 4
+
+In 41.9778 seconds (average)
+--------------------
+1)
+   | W
+ L |  0  1  2 
+-------------
+ 0 |  1  1  6 
+ 1 |  1  1  6 
+ 2 |  1  1  6 
+ 3 |  1  1  6 
+ 4 |  2  2  6 
+ 5 |  2  2  7 
+ 6 |  2  2  7 
+ 7 |  2  2  7 
+ 8 |  3  3  7 
+ 9 |  3  3  7 
+10 |  3  3  8 
+11 |  3  3  8 
+12 |  4  4  8 
+13 |  4  4  8 
+14 |  4  4  8 
+15 |  4  4 11 
+16 |  5  5 11 
+17 |  5  5 11 
+18 |  5  5 12 
+19 |  5  5 13 
+20 |  9  9  9 
+21 | 10 10 10 
+22 |  .  .  . 
+23 |  .  .  . 
+24 |  .  .  . 
+25 |  .  .  . 
+26 |  .  .  . 
+27 |  .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (1,3)
+
+    Box  2 is at 
+        top left     (0,4)
+        bottom right (1,7)
+
+    Box  3 is at 
+        top left     (0,8)
+        bottom right (1,11)
+
+    Box  4 is at 
+        top left     (0,12)
+        bottom right (1,15)
+
+    Box  5 is at 
+        top left     (0,16)
+        bottom right (1,19)
+
+    Box  6 is at 
+        top left     (2,0)
+        bottom right (2,4)
+
+    Box  7 is at 
+        top left     (2,5)
+        bottom right (2,9)
+
+    Box  8 is at 
+        top left     (2,10)
+        bottom right (2,14)
+
+    Box  9 is at 
+        top left     (0,20)
+        bottom right (2,20)
+
+    Box 10 is at 
+        top left     (0,21)
+        bottom right (2,21)
+
+    Box 11 is at 
+        top left     (2,15)
+        bottom right (2,17)
+
+    Box 12 is at 
+        top left     (2,18)
+        bottom right (2,18)
+
+    Box 13 is at 
+        top left     (2,19)
+        bottom right (2,19)
+
+    Roll length used: 22
+--------------------
+   | W
+ L |  0  1  2 
+-------------
+ 0 |  1  1  6 
+ 1 |  1  1  6 
+ 2 |  1  1  6 
+ 3 |  1  1  6 
+ 4 |  2  2  6 
+ 5 |  2  2  7 
+ 6 |  2  2  7 
+ 7 |  2  2  7 
+ 8 |  3  3  7 
+ 9 |  3  3  7 
+10 |  3  3  8 
+11 |  3  3  8 
+12 |  4  4  8 
+13 |  4  4  8 
+14 |  4  4  8 
+15 |  4  4 11 
+16 |  5  5 11 
+17 |  5  5 11 
+18 |  5  5 12 
+19 |  5  5 13 
+20 |  9  9  9 
+21 | 10 10 10 
+22 |  .  .  . 
+23 |  .  .  . 
+24 |  .  .  . 
+25 |  .  .  . 
+26 |  .  .  . 
+27 |  .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (0,0)
+        bottom right (1,3)
+
+    Box  2 is at 
+        top left     (0,4)
+        bottom right (1,7)
+
+    Box  3 is at 
+        top left     (0,8)
+        bottom right (1,11)
+
+    Box  4 is at 
+        top left     (0,12)
+        bottom right (1,15)
+
+    Box  5 is at 
+        top left     (0,16)
+        bottom right (1,19)
+
+    Box  6 is at 
+        top left     (2,0)
+        bottom right (2,4)
+
+    Box  7 is at 
+        top left     (2,5)
+        bottom right (2,9)
+
+    Box  8 is at 
+        top left     (2,10)
+        bottom right (2,14)
+
+    Box  9 is at 
+        top left     (0,20)
+        bottom right (2,20)
+
+    Box 10 is at 
+        top left     (0,21)
+        bottom right (2,21)
+
+    Box 11 is at 
+        top left     (2,15)
+        bottom right (2,17)
+
+    Box 12 is at 
+        top left     (2,18)
+        bottom right (2,18)
+
+    Box 13 is at 
+        top left     (2,19)
+        bottom right (2,19)
+
+    Roll length used: 22

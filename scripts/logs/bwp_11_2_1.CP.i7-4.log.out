@@ -1,0 +1,123 @@
+Sat 19 May 18:40:13 CEST 2018
+Increasing area preprocessing
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+1)
+  | W
+L | 0 1 2 3 4 5 6 7 8 9 10 
+----------------------------
+0 | 1 2 . . . . . . . .  . 
+1 | . . . . . . . . . .  . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 1
+
+Increasing width preprocessing
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+Decreasing area preprocessing
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+Decreasing width preprocessing
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+----------------------------
+Random preprocessing 1)
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+----------------------------
+Random preprocessing 2)
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+----------------------------
+Random preprocessing 3)
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+----------------------------
+Random preprocessing 4)
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+----------------------------
+Random preprocessing 5)
+    W=11
+    sum lengths=   2
+    sum max sides= 2
+    box 1: 1 1
+    box 2: 1 1
+
+In 0.0133218 seconds (average)
+--------------------
+1)
+  | W
+L | 0 1 2 3 4 5 6 7 8 9 10 
+----------------------------
+0 | 1 2 . . . . . . . .  . 
+1 | . . . . . . . . . .  . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 1
+--------------------
+  | W
+L | 0 1 2 3 4 5 6 7 8 9 10 
+----------------------------
+0 | 1 2 . . . . . . . .  . 
+1 | . . . . . . . . . .  . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 1
