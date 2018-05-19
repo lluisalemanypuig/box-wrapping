@@ -1,0 +1,423 @@
+Sat 19 May 17:36:05 CEST 2018
+Increasing area preprocessing
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 1 1
+    box 2: 1 1
+    box 3: 1 1
+    box 4: 2 2
+    box 5: 4 5
+    box 6: 4 5
+    box 7: 4 5
+
+1)
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 2 3 4 4 . . . 
+ 1 | . . . 4 4 . . . 
+ 2 | 5 5 5 5 5 . . . 
+ 3 | 5 5 5 5 5 . . . 
+ 4 | 5 5 5 5 5 . . . 
+ 5 | 5 5 5 5 5 . . . 
+ 6 | 6 6 6 6 6 . . . 
+ 7 | 6 6 6 6 6 . . . 
+ 8 | 6 6 6 6 6 . . . 
+ 9 | 6 6 6 6 6 . . . 
+10 | 7 7 7 7 7 . . . 
+11 | 7 7 7 7 7 . . . 
+12 | 7 7 7 7 7 . . . 
+13 | 7 7 7 7 7 . . . 
+14 | . . . . . . . . 
+15 | . . . . . . . . 
+16 | . . . . . . . . 
+17 | . . . . . . . . 
+18 | . . . . . . . . 
+19 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (3,0)
+        bottom right (4,1)
+
+    Box 5 is at 
+        top left     (0,2)
+        bottom right (4,5)
+
+    Box 6 is at 
+        top left     (0,6)
+        bottom right (4,9)
+
+    Box 7 is at 
+        top left     (0,10)
+        bottom right (4,13)
+
+    Roll length used: 14
+
+2)
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 2 3 . . 4 4 . 
+ 1 | 5 5 5 5 5 4 4 . 
+ 2 | 5 5 5 5 5 . . . 
+ 3 | 5 5 5 5 5 . . . 
+ 4 | 5 5 5 5 5 . . . 
+ 5 | 6 6 6 6 6 . . . 
+ 6 | 6 6 6 6 6 . . . 
+ 7 | 6 6 6 6 6 . . . 
+ 8 | 6 6 6 6 6 . . . 
+ 9 | 7 7 7 7 7 . . . 
+10 | 7 7 7 7 7 . . . 
+11 | 7 7 7 7 7 . . . 
+12 | 7 7 7 7 7 . . . 
+13 | . . . . . . . . 
+14 | . . . . . . . . 
+15 | . . . . . . . . 
+16 | . . . . . . . . 
+17 | . . . . . . . . 
+18 | . . . . . . . . 
+19 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (5,0)
+        bottom right (6,1)
+
+    Box 5 is at 
+        top left     (0,1)
+        bottom right (4,4)
+
+    Box 6 is at 
+        top left     (0,5)
+        bottom right (4,8)
+
+    Box 7 is at 
+        top left     (0,9)
+        bottom right (4,12)
+
+    Roll length used: 13
+
+3)
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 2 3 5 5 5 5 5 
+ 1 | 4 4 . 5 5 5 5 5 
+ 2 | 4 4 . 5 5 5 5 5 
+ 3 | . . . 5 5 5 5 5 
+ 4 | 6 6 6 6 6 . . . 
+ 5 | 6 6 6 6 6 . . . 
+ 6 | 6 6 6 6 6 . . . 
+ 7 | 6 6 6 6 6 . . . 
+ 8 | 7 7 7 7 7 . . . 
+ 9 | 7 7 7 7 7 . . . 
+10 | 7 7 7 7 7 . . . 
+11 | 7 7 7 7 7 . . . 
+12 | . . . . . . . . 
+13 | . . . . . . . . 
+14 | . . . . . . . . 
+15 | . . . . . . . . 
+16 | . . . . . . . . 
+17 | . . . . . . . . 
+18 | . . . . . . . . 
+19 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (0,1)
+        bottom right (1,2)
+
+    Box 5 is at 
+        top left     (3,0)
+        bottom right (7,3)
+
+    Box 6 is at 
+        top left     (0,4)
+        bottom right (4,7)
+
+    Box 7 is at 
+        top left     (0,8)
+        bottom right (4,11)
+
+    Roll length used: 12
+
+Increasing width preprocessing
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 1 1
+    box 2: 1 1
+    box 3: 1 1
+    box 4: 2 2
+    box 5: 4 5
+    box 6: 4 5
+    box 7: 4 5
+
+Decreasing area preprocessing
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 4 5
+    box 2: 4 5
+    box 3: 4 5
+    box 4: 2 2
+    box 5: 1 1
+    box 6: 1 1
+    box 7: 1 1
+
+1)
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 1 1 1 1 4 4 5 
+ 1 | 1 1 1 1 1 4 4 6 
+ 2 | 1 1 1 1 1 7 . . 
+ 3 | 1 1 1 1 1 . . . 
+ 4 | 2 2 2 2 3 3 3 3 
+ 5 | 2 2 2 2 3 3 3 3 
+ 6 | 2 2 2 2 3 3 3 3 
+ 7 | 2 2 2 2 3 3 3 3 
+ 8 | 2 2 2 2 3 3 3 3 
+ 9 | . . . . . . . . 
+10 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (4,3)
+
+    Box 2 is at 
+        top left     (0,4)
+        bottom right (3,8)
+
+    Box 3 is at 
+        top left     (4,4)
+        bottom right (7,8)
+
+    Box 4 is at 
+        top left     (5,0)
+        bottom right (6,1)
+
+    Box 5 is at 
+        top left     (7,0)
+        bottom right (7,0)
+
+    Box 6 is at 
+        top left     (7,1)
+        bottom right (7,1)
+
+    Box 7 is at 
+        top left     (5,2)
+        bottom right (5,2)
+
+    Roll length used: 9
+
+Decreasing width preprocessing
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 4 5
+    box 2: 4 5
+    box 3: 4 5
+    box 4: 2 2
+    box 5: 1 1
+    box 6: 1 1
+    box 7: 1 1
+
+----------------------------
+Random preprocessing 1)
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 4 5
+    box 2: 2 2
+    box 3: 1 1
+    box 4: 4 5
+    box 5: 4 5
+    box 6: 1 1
+    box 7: 1 1
+
+----------------------------
+Random preprocessing 2)
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 1 1
+    box 2: 1 1
+    box 3: 4 5
+    box 4: 1 1
+    box 5: 4 5
+    box 6: 4 5
+    box 7: 2 2
+
+----------------------------
+Random preprocessing 3)
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 4 5
+    box 2: 1 1
+    box 3: 2 2
+    box 4: 4 5
+    box 5: 4 5
+    box 6: 1 1
+    box 7: 1 1
+
+----------------------------
+Random preprocessing 4)
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 1 1
+    box 2: 4 5
+    box 3: 4 5
+    box 4: 4 5
+    box 5: 1 1
+    box 6: 1 1
+    box 7: 2 2
+
+----------------------------
+Random preprocessing 5)
+    W=8
+    sum lengths=   20
+    sum max sides= 20
+    box 1: 2 2
+    box 2: 4 5
+    box 3: 1 1
+    box 4: 4 5
+    box 5: 1 1
+    box 6: 4 5
+    box 7: 1 1
+
+In 18.5661 seconds (average)
+--------------------
+1)
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 1 1 1 1 4 4 5 
+ 1 | 1 1 1 1 1 4 4 6 
+ 2 | 1 1 1 1 1 7 . . 
+ 3 | 1 1 1 1 1 . . . 
+ 4 | 2 2 2 2 3 3 3 3 
+ 5 | 2 2 2 2 3 3 3 3 
+ 6 | 2 2 2 2 3 3 3 3 
+ 7 | 2 2 2 2 3 3 3 3 
+ 8 | 2 2 2 2 3 3 3 3 
+ 9 | . . . . . . . . 
+10 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (4,3)
+
+    Box 2 is at 
+        top left     (0,4)
+        bottom right (3,8)
+
+    Box 3 is at 
+        top left     (4,4)
+        bottom right (7,8)
+
+    Box 4 is at 
+        top left     (5,0)
+        bottom right (6,1)
+
+    Box 5 is at 
+        top left     (7,0)
+        bottom right (7,0)
+
+    Box 6 is at 
+        top left     (7,1)
+        bottom right (7,1)
+
+    Box 7 is at 
+        top left     (5,2)
+        bottom right (5,2)
+
+    Roll length used: 9
+--------------------
+   | W
+ L | 0 1 2 3 4 5 6 7 
+--------------------
+ 0 | 1 1 1 1 1 4 4 5 
+ 1 | 1 1 1 1 1 4 4 6 
+ 2 | 1 1 1 1 1 7 . . 
+ 3 | 1 1 1 1 1 . . . 
+ 4 | 2 2 2 2 3 3 3 3 
+ 5 | 2 2 2 2 3 3 3 3 
+ 6 | 2 2 2 2 3 3 3 3 
+ 7 | 2 2 2 2 3 3 3 3 
+ 8 | 2 2 2 2 3 3 3 3 
+ 9 | . . . . . . . . 
+10 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (4,3)
+
+    Box 2 is at 
+        top left     (0,4)
+        bottom right (3,8)
+
+    Box 3 is at 
+        top left     (4,4)
+        bottom right (7,8)
+
+    Box 4 is at 
+        top left     (5,0)
+        bottom right (6,1)
+
+    Box 5 is at 
+        top left     (7,0)
+        bottom right (7,0)
+
+    Box 6 is at 
+        top left     (7,1)
+        bottom right (7,1)
+
+    Box 7 is at 
+        top left     (5,2)
+        bottom right (5,2)
+
+    Roll length used: 9
