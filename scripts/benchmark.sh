@@ -137,7 +137,7 @@ do
 	n_total=$((n_total + 1))
 		
 	# if file with optimal solution exists check optimality
-	if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ]; then
+	if [ -f $OPT_OUTPUT_DIR/$OPT_FILE ] && [ -f $OUTPUT_DIR/$OUTFILE ]; then
 		opt_length=$(head -n 1 $OPT_OUTPUT_DIR/$OPT_FILE)
 		sol_length=$(head -n 1 $OUTPUT_DIR/$OUTFILE)
 		
@@ -147,13 +147,13 @@ do
 		elif [ $opt_length -lt $sol_length ]; then
 			echo -e "    \e[1;33mSuboptimal solution:\e[0m"
 			echo -e "        Optimal: \e[1;32m$opt_length\e[0m"
-			printf "%+16s: " "$SOLVER_TEC"
+			printf "%+15s: " "$SOLVER_TEC"
 			echo -e "\e[1;32m$sol_length\e[0m"
 			n_suboptimal=$((n_suboptimal + 1))
 		else
 			echo -e "    \e[1;34mOoops: hand-made solution is worse than the solver's\e[0m"
 			echo -e "        Optimal: \e[1;31m$opt_length\e[0m"
-			printf "%+16s: " "$SOLVER_TEC"
+			printf "%+15s: " "$SOLVER_TEC"
 			echo -e "\e[1;32m$sol_length\e[0m"
 		fi
 	fi
