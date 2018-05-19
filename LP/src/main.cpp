@@ -150,7 +150,7 @@ int main(int argc, char *argv[]) {
 	
 	INPUT.fill_fields();
 	
-	box_solver *bs;
+	box_solver *bs = nullptr;
 	if (simple) {
 		bs = new box_wrapper_simple();
 	}
