@@ -10,7 +10,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_2_1.in
             Solved optimally : 1 / 1 ( 100.00% )
         Solved sub-optimally : 0 / 1 ( 0% )
                     Unsolved : 0 / 1 ( 0% )
-                   Remaining : 1 / 108 ( .92% )
+                   Processed : 1 / 108 ( .92% )
           Total time elapsed : .468 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_3_1.in
     [1;32mOptimal solution reached[0m
@@ -19,7 +19,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_3_1.in
             Solved optimally : 2 / 2 ( 100.00% )
         Solved sub-optimally : 0 / 2 ( 0% )
                     Unsolved : 0 / 2 ( 0% )
-                   Remaining : 2 / 108 ( 1.85% )
+                   Processed : 2 / 108 ( 1.85% )
           Total time elapsed : .491 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_4_1.in
     [1;32mOptimal solution reached[0m
@@ -28,7 +28,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_4_1.in
             Solved optimally : 3 / 3 ( 100.00% )
         Solved sub-optimally : 0 / 3 ( 0% )
                     Unsolved : 0 / 3 ( 0% )
-                   Remaining : 3 / 108 ( 2.77% )
+                   Processed : 3 / 108 ( 2.77% )
           Total time elapsed : .503 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_5_1.in
     [1;32mOptimal solution reached[0m
@@ -37,7 +37,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_5_1.in
             Solved optimally : 4 / 4 ( 100.00% )
         Solved sub-optimally : 0 / 4 ( 0% )
                     Unsolved : 0 / 4 ( 0% )
-                   Remaining : 4 / 108 ( 3.70% )
+                   Processed : 4 / 108 ( 3.70% )
           Total time elapsed : 2.000 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_6_1.in
     [1;32mOptimal solution reached[0m
@@ -46,7 +46,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_6_1.in
             Solved optimally : 5 / 5 ( 100.00% )
         Solved sub-optimally : 0 / 5 ( 0% )
                     Unsolved : 0 / 5 ( 0% )
-                   Remaining : 5 / 108 ( 4.62% )
+                   Processed : 5 / 108 ( 4.62% )
           Total time elapsed : 25.089 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_7_1.in
     [1;33mSuboptimal solution:[0m
@@ -57,7 +57,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_7_1.in
             Solved optimally : 5 / 6 ( 83.33% )
         Solved sub-optimally : 1 / 6 ( 16.66% )
                     Unsolved : 0 / 6 ( 0% )
-                   Remaining : 6 / 108 ( 5.55% )
+                   Processed : 6 / 108 ( 5.55% )
           Total time elapsed : 70.119 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_8_1.in
     [1;32mOptimal solution reached[0m
@@ -66,7 +66,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_8_1.in
             Solved optimally : 6 / 7 ( 85.71% )
         Solved sub-optimally : 1 / 7 ( 14.28% )
                     Unsolved : 0 / 7 ( 0% )
-                   Remaining : 7 / 108 ( 6.48% )
+                   Processed : 7 / 108 ( 6.48% )
           Total time elapsed : 104.920 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_9_1.in
     [1;32mOptimal solution reached[0m
@@ -75,7 +75,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_9_1.in
             Solved optimally : 7 / 8 ( 87.50% )
         Solved sub-optimally : 1 / 8 ( 12.50% )
                     Unsolved : 0 / 8 ( 0% )
-                   Remaining : 8 / 108 ( 7.40% )
+                   Processed : 8 / 108 ( 7.40% )
           Total time elapsed : 149.939 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_10_1.in
     [1;32mOptimal solution reached[0m
@@ -84,7 +84,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_10_1.in
             Solved optimally : 8 / 9 ( 88.88% )
         Solved sub-optimally : 1 / 9 ( 11.11% )
                     Unsolved : 0 / 9 ( 0% )
-                   Remaining : 9 / 108 ( 8.33% )
+                   Processed : 9 / 108 ( 8.33% )
           Total time elapsed : 194.956 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_11_1.in
     [1;33mSuboptimal solution:[0m
@@ -95,7 +95,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_11_1.in
             Solved optimally : 8 / 10 ( 80.00% )
         Solved sub-optimally : 2 / 10 ( 20.00% )
                     Unsolved : 0 / 10 ( 0% )
-                   Remaining : 10 / 108 ( 9.25% )
+                   Processed : 10 / 108 ( 9.25% )
           Total time elapsed : 239.975 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_12_1.in
     [1;33mSuboptimal solution:[0m
@@ -106,7 +106,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_12_1.in
             Solved optimally : 8 / 11 ( 72.72% )
         Solved sub-optimally : 3 / 11 ( 27.27% )
                     Unsolved : 0 / 11 ( 0% )
-                   Remaining : 11 / 108 ( 10.18% )
+                   Processed : 11 / 108 ( 10.18% )
           Total time elapsed : 284.993 seconds
 Executing CP solver with input file: ../inputs/material/bwp_3_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -117,7 +117,7 @@ Executing CP solver with input file: ../inputs/material/bwp_3_13_1.in
             Solved optimally : 8 / 12 ( 66.66% )
         Solved sub-optimally : 4 / 12 ( 33.33% )
                     Unsolved : 0 / 12 ( 0% )
-                   Remaining : 12 / 108 ( 11.11% )
+                   Processed : 12 / 108 ( 11.11% )
           Total time elapsed : 330.014 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_2_1.in
     [1;32mOptimal solution reached[0m
@@ -126,7 +126,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_2_1.in
             Solved optimally : 9 / 13 ( 69.23% )
         Solved sub-optimally : 4 / 13 ( 30.76% )
                     Unsolved : 0 / 13 ( 0% )
-                   Remaining : 13 / 108 ( 12.03% )
+                   Processed : 13 / 108 ( 12.03% )
           Total time elapsed : 330.024 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_3_1.in
     [1;32mOptimal solution reached[0m
@@ -135,7 +135,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_3_1.in
             Solved optimally : 10 / 14 ( 71.42% )
         Solved sub-optimally : 4 / 14 ( 28.57% )
                     Unsolved : 0 / 14 ( 0% )
-                   Remaining : 14 / 108 ( 12.96% )
+                   Processed : 14 / 108 ( 12.96% )
           Total time elapsed : 330.165 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_4_1.in
     [1;32mOptimal solution reached[0m
@@ -144,7 +144,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_4_1.in
             Solved optimally : 11 / 15 ( 73.33% )
         Solved sub-optimally : 4 / 15 ( 26.66% )
                     Unsolved : 0 / 15 ( 0% )
-                   Remaining : 15 / 108 ( 13.88% )
+                   Processed : 15 / 108 ( 13.88% )
           Total time elapsed : 330.194 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_5_1.in
     [1;32mOptimal solution reached[0m
@@ -153,7 +153,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_5_1.in
             Solved optimally : 12 / 16 ( 75.00% )
         Solved sub-optimally : 4 / 16 ( 25.00% )
                     Unsolved : 0 / 16 ( 0% )
-                   Remaining : 16 / 108 ( 14.81% )
+                   Processed : 16 / 108 ( 14.81% )
           Total time elapsed : 330.214 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_6_1.in
     [1;32mOptimal solution reached[0m
@@ -162,7 +162,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_6_1.in
             Solved optimally : 13 / 17 ( 76.47% )
         Solved sub-optimally : 4 / 17 ( 23.52% )
                     Unsolved : 0 / 17 ( 0% )
-                   Remaining : 17 / 108 ( 15.74% )
+                   Processed : 17 / 108 ( 15.74% )
           Total time elapsed : 333.265 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_7_1.in
     [1;32mOptimal solution reached[0m
@@ -171,7 +171,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_7_1.in
             Solved optimally : 14 / 18 ( 77.77% )
         Solved sub-optimally : 4 / 18 ( 22.22% )
                     Unsolved : 0 / 18 ( 0% )
-                   Remaining : 18 / 108 ( 16.66% )
+                   Processed : 18 / 108 ( 16.66% )
           Total time elapsed : 358.194 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_8_1.in
     [1;32mOptimal solution reached[0m
@@ -180,7 +180,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_8_1.in
             Solved optimally : 15 / 19 ( 78.94% )
         Solved sub-optimally : 4 / 19 ( 21.05% )
                     Unsolved : 0 / 19 ( 0% )
-                   Remaining : 19 / 108 ( 17.59% )
+                   Processed : 19 / 108 ( 17.59% )
           Total time elapsed : 403.225 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_9_1.in
     [1;32mOptimal solution reached[0m
@@ -189,7 +189,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_9_1.in
             Solved optimally : 16 / 20 ( 80.00% )
         Solved sub-optimally : 4 / 20 ( 20.00% )
                     Unsolved : 0 / 20 ( 0% )
-                   Remaining : 20 / 108 ( 18.51% )
+                   Processed : 20 / 108 ( 18.51% )
           Total time elapsed : 430.750 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_10_1.in
     [1;32mOptimal solution reached[0m
@@ -198,7 +198,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_10_1.in
             Solved optimally : 17 / 21 ( 80.95% )
         Solved sub-optimally : 4 / 21 ( 19.04% )
                     Unsolved : 0 / 21 ( 0% )
-                   Remaining : 21 / 108 ( 19.44% )
+                   Processed : 21 / 108 ( 19.44% )
           Total time elapsed : 475.768 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_11_1.in
     [1;33mSuboptimal solution:[0m
@@ -209,7 +209,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_11_1.in
             Solved optimally : 17 / 22 ( 77.27% )
         Solved sub-optimally : 5 / 22 ( 22.72% )
                     Unsolved : 0 / 22 ( 0% )
-                   Remaining : 22 / 108 ( 20.37% )
+                   Processed : 22 / 108 ( 20.37% )
           Total time elapsed : 520.785 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_12_1.in
     [1;32mOptimal solution reached[0m
@@ -218,7 +218,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_12_1.in
             Solved optimally : 18 / 23 ( 78.26% )
         Solved sub-optimally : 5 / 23 ( 21.73% )
                     Unsolved : 0 / 23 ( 0% )
-                   Remaining : 23 / 108 ( 21.29% )
+                   Processed : 23 / 108 ( 21.29% )
           Total time elapsed : 559.700 seconds
 Executing CP solver with input file: ../inputs/material/bwp_4_13_1.in
     [1;32mOptimal solution reached[0m
@@ -227,7 +227,7 @@ Executing CP solver with input file: ../inputs/material/bwp_4_13_1.in
             Solved optimally : 19 / 24 ( 79.16% )
         Solved sub-optimally : 5 / 24 ( 20.83% )
                     Unsolved : 0 / 24 ( 0% )
-                   Remaining : 24 / 108 ( 22.22% )
+                   Processed : 24 / 108 ( 22.22% )
           Total time elapsed : 604.733 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_2_1.in
     [1;32mOptimal solution reached[0m
@@ -236,7 +236,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_2_1.in
             Solved optimally : 20 / 25 ( 80.00% )
         Solved sub-optimally : 5 / 25 ( 20.00% )
                     Unsolved : 0 / 25 ( 0% )
-                   Remaining : 25 / 108 ( 23.14% )
+                   Processed : 25 / 108 ( 23.14% )
           Total time elapsed : 604.763 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_3_1.in
     [1;32mOptimal solution reached[0m
@@ -245,7 +245,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_3_1.in
             Solved optimally : 21 / 26 ( 80.76% )
         Solved sub-optimally : 5 / 26 ( 19.23% )
                     Unsolved : 0 / 26 ( 0% )
-                   Remaining : 26 / 108 ( 24.07% )
+                   Processed : 26 / 108 ( 24.07% )
           Total time elapsed : 604.774 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_4_1.in
     [1;32mOptimal solution reached[0m
@@ -254,7 +254,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_4_1.in
             Solved optimally : 22 / 27 ( 81.48% )
         Solved sub-optimally : 5 / 27 ( 18.51% )
                     Unsolved : 0 / 27 ( 0% )
-                   Remaining : 27 / 108 ( 25.00% )
+                   Processed : 27 / 108 ( 25.00% )
           Total time elapsed : 605.024 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_5_1.in
     [1;32mOptimal solution reached[0m
@@ -263,7 +263,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_5_1.in
             Solved optimally : 23 / 28 ( 82.14% )
         Solved sub-optimally : 5 / 28 ( 17.85% )
                     Unsolved : 0 / 28 ( 0% )
-                   Remaining : 28 / 108 ( 25.92% )
+                   Processed : 28 / 108 ( 25.92% )
           Total time elapsed : 617.834 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_6_1.in
     [1;32mOptimal solution reached[0m
@@ -272,7 +272,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_6_1.in
             Solved optimally : 24 / 29 ( 82.75% )
         Solved sub-optimally : 5 / 29 ( 17.24% )
                     Unsolved : 0 / 29 ( 0% )
-                   Remaining : 29 / 108 ( 26.85% )
+                   Processed : 29 / 108 ( 26.85% )
           Total time elapsed : 618.200 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_7_1.in
     [1;32mOptimal solution reached[0m
@@ -281,7 +281,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_7_1.in
             Solved optimally : 25 / 30 ( 83.33% )
         Solved sub-optimally : 5 / 30 ( 16.66% )
                     Unsolved : 0 / 30 ( 0% )
-                   Remaining : 30 / 108 ( 27.77% )
+                   Processed : 30 / 108 ( 27.77% )
           Total time elapsed : 626.421 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_8_1.in
     [1;32mOptimal solution reached[0m
@@ -290,7 +290,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_8_1.in
             Solved optimally : 26 / 31 ( 83.87% )
         Solved sub-optimally : 5 / 31 ( 16.12% )
                     Unsolved : 0 / 31 ( 0% )
-                   Remaining : 31 / 108 ( 28.70% )
+                   Processed : 31 / 108 ( 28.70% )
           Total time elapsed : 640.643 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_9_1.in
     [1;32mOptimal solution reached[0m
@@ -299,7 +299,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_9_1.in
             Solved optimally : 27 / 32 ( 84.37% )
         Solved sub-optimally : 5 / 32 ( 15.62% )
                     Unsolved : 0 / 32 ( 0% )
-                   Remaining : 32 / 108 ( 29.62% )
+                   Processed : 32 / 108 ( 29.62% )
           Total time elapsed : 671.481 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_10_1.in
     [1;32mOptimal solution reached[0m
@@ -308,7 +308,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_10_1.in
             Solved optimally : 28 / 33 ( 84.84% )
         Solved sub-optimally : 5 / 33 ( 15.15% )
                     Unsolved : 0 / 33 ( 0% )
-                   Remaining : 33 / 108 ( 30.55% )
+                   Processed : 33 / 108 ( 30.55% )
           Total time elapsed : 716.498 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_11_1.in
     [1;32mOptimal solution reached[0m
@@ -317,7 +317,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_11_1.in
             Solved optimally : 29 / 34 ( 85.29% )
         Solved sub-optimally : 5 / 34 ( 14.70% )
                     Unsolved : 0 / 34 ( 0% )
-                   Remaining : 34 / 108 ( 31.48% )
+                   Processed : 34 / 108 ( 31.48% )
           Total time elapsed : 761.527 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_12_1.in
     [1;33mSuboptimal solution:[0m
@@ -328,7 +328,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_12_1.in
             Solved optimally : 29 / 35 ( 82.85% )
         Solved sub-optimally : 6 / 35 ( 17.14% )
                     Unsolved : 0 / 35 ( 0% )
-                   Remaining : 35 / 108 ( 32.40% )
+                   Processed : 35 / 108 ( 32.40% )
           Total time elapsed : 806.553 seconds
 Executing CP solver with input file: ../inputs/material/bwp_5_13_1.in
     [1;32mOptimal solution reached[0m
@@ -337,7 +337,7 @@ Executing CP solver with input file: ../inputs/material/bwp_5_13_1.in
             Solved optimally : 30 / 36 ( 83.33% )
         Solved sub-optimally : 6 / 36 ( 16.66% )
                     Unsolved : 0 / 36 ( 0% )
-                   Remaining : 36 / 108 ( 33.33% )
+                   Processed : 36 / 108 ( 33.33% )
           Total time elapsed : 846.637 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_2_1.in
     [1;32mOptimal solution reached[0m
@@ -346,7 +346,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_2_1.in
             Solved optimally : 31 / 37 ( 83.78% )
         Solved sub-optimally : 6 / 37 ( 16.21% )
                     Unsolved : 0 / 37 ( 0% )
-                   Remaining : 37 / 108 ( 34.25% )
+                   Processed : 37 / 108 ( 34.25% )
           Total time elapsed : 846.647 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_3_1.in
     [1;32mOptimal solution reached[0m
@@ -355,7 +355,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_3_1.in
             Solved optimally : 32 / 38 ( 84.21% )
         Solved sub-optimally : 6 / 38 ( 15.78% )
                     Unsolved : 0 / 38 ( 0% )
-                   Remaining : 38 / 108 ( 35.18% )
+                   Processed : 38 / 108 ( 35.18% )
           Total time elapsed : 846.688 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_4_1.in
     [1;32mOptimal solution reached[0m
@@ -364,7 +364,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_4_1.in
             Solved optimally : 33 / 39 ( 84.61% )
         Solved sub-optimally : 6 / 39 ( 15.38% )
                     Unsolved : 0 / 39 ( 0% )
-                   Remaining : 39 / 108 ( 36.11% )
+                   Processed : 39 / 108 ( 36.11% )
           Total time elapsed : 846.699 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_5_1.in
     [1;32mOptimal solution reached[0m
@@ -373,7 +373,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_5_1.in
             Solved optimally : 34 / 40 ( 85.00% )
         Solved sub-optimally : 6 / 40 ( 15.00% )
                     Unsolved : 0 / 40 ( 0% )
-                   Remaining : 40 / 108 ( 37.03% )
+                   Processed : 40 / 108 ( 37.03% )
           Total time elapsed : 846.710 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_6_1.in
     [1;32mOptimal solution reached[0m
@@ -382,7 +382,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_6_1.in
             Solved optimally : 35 / 41 ( 85.36% )
         Solved sub-optimally : 6 / 41 ( 14.63% )
                     Unsolved : 0 / 41 ( 0% )
-                   Remaining : 41 / 108 ( 37.96% )
+                   Processed : 41 / 108 ( 37.96% )
           Total time elapsed : 847.398 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_7_1.in
     [1;32mOptimal solution reached[0m
@@ -391,7 +391,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_7_1.in
             Solved optimally : 36 / 42 ( 85.71% )
         Solved sub-optimally : 6 / 42 ( 14.28% )
                     Unsolved : 0 / 42 ( 0% )
-                   Remaining : 42 / 108 ( 38.88% )
+                   Processed : 42 / 108 ( 38.88% )
           Total time elapsed : 847.473 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_8_1.in
     [1;32mOptimal solution reached[0m
@@ -400,7 +400,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_8_1.in
             Solved optimally : 37 / 43 ( 86.04% )
         Solved sub-optimally : 6 / 43 ( 13.95% )
                     Unsolved : 0 / 43 ( 0% )
-                   Remaining : 43 / 108 ( 39.81% )
+                   Processed : 43 / 108 ( 39.81% )
           Total time elapsed : 868.017 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_9_1.in
     [1;32mOptimal solution reached[0m
@@ -409,7 +409,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_9_1.in
             Solved optimally : 38 / 44 ( 86.36% )
         Solved sub-optimally : 6 / 44 ( 13.63% )
                     Unsolved : 0 / 44 ( 0% )
-                   Remaining : 44 / 108 ( 40.74% )
+                   Processed : 44 / 108 ( 40.74% )
           Total time elapsed : 885.136 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_10_1.in
     [1;32mOptimal solution reached[0m
@@ -418,7 +418,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_10_1.in
             Solved optimally : 39 / 45 ( 86.66% )
         Solved sub-optimally : 6 / 45 ( 13.33% )
                     Unsolved : 0 / 45 ( 0% )
-                   Remaining : 45 / 108 ( 41.66% )
+                   Processed : 45 / 108 ( 41.66% )
           Total time elapsed : 912.796 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_11_1.in
     [1;33mSuboptimal solution:[0m
@@ -429,7 +429,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_11_1.in
             Solved optimally : 39 / 46 ( 84.78% )
         Solved sub-optimally : 7 / 46 ( 15.21% )
                     Unsolved : 0 / 46 ( 0% )
-                   Remaining : 46 / 108 ( 42.59% )
+                   Processed : 46 / 108 ( 42.59% )
           Total time elapsed : 957.817 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_12_1.in
     [1;32mOptimal solution reached[0m
@@ -438,7 +438,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_12_1.in
             Solved optimally : 40 / 47 ( 85.10% )
         Solved sub-optimally : 7 / 47 ( 14.89% )
                     Unsolved : 0 / 47 ( 0% )
-                   Remaining : 47 / 108 ( 43.51% )
+                   Processed : 47 / 108 ( 43.51% )
           Total time elapsed : 997.943 seconds
 Executing CP solver with input file: ../inputs/material/bwp_6_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -449,7 +449,7 @@ Executing CP solver with input file: ../inputs/material/bwp_6_13_1.in
             Solved optimally : 40 / 48 ( 83.33% )
         Solved sub-optimally : 8 / 48 ( 16.66% )
                     Unsolved : 0 / 48 ( 0% )
-                   Remaining : 48 / 108 ( 44.44% )
+                   Processed : 48 / 108 ( 44.44% )
           Total time elapsed : 1042.974 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_2_1.in
     [1;32mOptimal solution reached[0m
@@ -458,7 +458,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_2_1.in
             Solved optimally : 41 / 49 ( 83.67% )
         Solved sub-optimally : 8 / 49 ( 16.32% )
                     Unsolved : 0 / 49 ( 0% )
-                   Remaining : 49 / 108 ( 45.37% )
+                   Processed : 49 / 108 ( 45.37% )
           Total time elapsed : 1042.984 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_3_1.in
     [1;32mOptimal solution reached[0m
@@ -467,7 +467,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_3_1.in
             Solved optimally : 42 / 50 ( 84.00% )
         Solved sub-optimally : 8 / 50 ( 16.00% )
                     Unsolved : 0 / 50 ( 0% )
-                   Remaining : 50 / 108 ( 46.29% )
+                   Processed : 50 / 108 ( 46.29% )
           Total time elapsed : 1042.998 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_4_1.in
     [1;32mOptimal solution reached[0m
@@ -476,7 +476,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_4_1.in
             Solved optimally : 43 / 51 ( 84.31% )
         Solved sub-optimally : 8 / 51 ( 15.68% )
                     Unsolved : 0 / 51 ( 0% )
-                   Remaining : 51 / 108 ( 47.22% )
+                   Processed : 51 / 108 ( 47.22% )
           Total time elapsed : 1043.017 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_5_1.in
     [1;32mOptimal solution reached[0m
@@ -485,7 +485,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_5_1.in
             Solved optimally : 44 / 52 ( 84.61% )
         Solved sub-optimally : 8 / 52 ( 15.38% )
                     Unsolved : 0 / 52 ( 0% )
-                   Remaining : 52 / 108 ( 48.14% )
+                   Processed : 52 / 108 ( 48.14% )
           Total time elapsed : 1043.813 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_6_1.in
     [1;32mOptimal solution reached[0m
@@ -494,7 +494,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_6_1.in
             Solved optimally : 45 / 53 ( 84.90% )
         Solved sub-optimally : 8 / 53 ( 15.09% )
                     Unsolved : 0 / 53 ( 0% )
-                   Remaining : 53 / 108 ( 49.07% )
+                   Processed : 53 / 108 ( 49.07% )
           Total time elapsed : 1043.829 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_7_1.in
     [1;32mOptimal solution reached[0m
@@ -503,7 +503,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_7_1.in
             Solved optimally : 46 / 54 ( 85.18% )
         Solved sub-optimally : 8 / 54 ( 14.81% )
                     Unsolved : 0 / 54 ( 0% )
-                   Remaining : 54 / 108 ( 50.00% )
+                   Processed : 54 / 108 ( 50.00% )
           Total time elapsed : 1043.852 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_8_1.in
     [1;32mOptimal solution reached[0m
@@ -512,7 +512,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_8_1.in
             Solved optimally : 47 / 55 ( 85.45% )
         Solved sub-optimally : 8 / 55 ( 14.54% )
                     Unsolved : 0 / 55 ( 0% )
-                   Remaining : 55 / 108 ( 50.92% )
+                   Processed : 55 / 108 ( 50.92% )
           Total time elapsed : 1079.069 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_9_1.in
     [1;32mOptimal solution reached[0m
@@ -521,7 +521,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_9_1.in
             Solved optimally : 48 / 56 ( 85.71% )
         Solved sub-optimally : 8 / 56 ( 14.28% )
                     Unsolved : 0 / 56 ( 0% )
-                   Remaining : 56 / 108 ( 51.85% )
+                   Processed : 56 / 108 ( 51.85% )
           Total time elapsed : 1124.087 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_10_1.in
     [1;32mOptimal solution reached[0m
@@ -530,7 +530,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_10_1.in
             Solved optimally : 49 / 57 ( 85.96% )
         Solved sub-optimally : 8 / 57 ( 14.03% )
                     Unsolved : 0 / 57 ( 0% )
-                   Remaining : 57 / 108 ( 52.77% )
+                   Processed : 57 / 108 ( 52.77% )
           Total time elapsed : 1164.578 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_11_1.in
     [1;32mOptimal solution reached[0m
@@ -539,7 +539,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_11_1.in
             Solved optimally : 50 / 58 ( 86.20% )
         Solved sub-optimally : 8 / 58 ( 13.79% )
                     Unsolved : 0 / 58 ( 0% )
-                   Remaining : 58 / 108 ( 53.70% )
+                   Processed : 58 / 108 ( 53.70% )
           Total time elapsed : 1209.595 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_12_1.in
     [1;32mOptimal solution reached[0m
@@ -548,7 +548,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_12_1.in
             Solved optimally : 51 / 59 ( 86.44% )
         Solved sub-optimally : 8 / 59 ( 13.55% )
                     Unsolved : 0 / 59 ( 0% )
-                   Remaining : 59 / 108 ( 54.62% )
+                   Processed : 59 / 108 ( 54.62% )
           Total time elapsed : 1254.613 seconds
 Executing CP solver with input file: ../inputs/material/bwp_7_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -559,7 +559,7 @@ Executing CP solver with input file: ../inputs/material/bwp_7_13_1.in
             Solved optimally : 51 / 60 ( 85.00% )
         Solved sub-optimally : 9 / 60 ( 15.00% )
                     Unsolved : 0 / 60 ( 0% )
-                   Remaining : 60 / 108 ( 55.55% )
+                   Processed : 60 / 108 ( 55.55% )
           Total time elapsed : 1299.635 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_2_1.in
     [1;32mOptimal solution reached[0m
@@ -568,7 +568,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_2_1.in
             Solved optimally : 52 / 61 ( 85.24% )
         Solved sub-optimally : 9 / 61 ( 14.75% )
                     Unsolved : 0 / 61 ( 0% )
-                   Remaining : 61 / 108 ( 56.48% )
+                   Processed : 61 / 108 ( 56.48% )
           Total time elapsed : 1299.645 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_3_1.in
     [1;32mOptimal solution reached[0m
@@ -577,7 +577,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_3_1.in
             Solved optimally : 53 / 62 ( 85.48% )
         Solved sub-optimally : 9 / 62 ( 14.51% )
                     Unsolved : 0 / 62 ( 0% )
-                   Remaining : 62 / 108 ( 57.40% )
+                   Processed : 62 / 108 ( 57.40% )
           Total time elapsed : 1299.657 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_4_1.in
     [1;32mOptimal solution reached[0m
@@ -586,7 +586,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_4_1.in
             Solved optimally : 54 / 63 ( 85.71% )
         Solved sub-optimally : 9 / 63 ( 14.28% )
                     Unsolved : 0 / 63 ( 0% )
-                   Remaining : 63 / 108 ( 58.33% )
+                   Processed : 63 / 108 ( 58.33% )
           Total time elapsed : 1299.671 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_5_1.in
     [1;32mOptimal solution reached[0m
@@ -595,7 +595,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_5_1.in
             Solved optimally : 55 / 64 ( 85.93% )
         Solved sub-optimally : 9 / 64 ( 14.06% )
                     Unsolved : 0 / 64 ( 0% )
-                   Remaining : 64 / 108 ( 59.25% )
+                   Processed : 64 / 108 ( 59.25% )
           Total time elapsed : 1344.687 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_6_1.in
     [1;32mOptimal solution reached[0m
@@ -604,7 +604,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_6_1.in
             Solved optimally : 56 / 65 ( 86.15% )
         Solved sub-optimally : 9 / 65 ( 13.84% )
                     Unsolved : 0 / 65 ( 0% )
-                   Remaining : 65 / 108 ( 60.18% )
+                   Processed : 65 / 108 ( 60.18% )
           Total time elapsed : 1350.479 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_7_1.in
     [1;32mOptimal solution reached[0m
@@ -613,7 +613,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_7_1.in
             Solved optimally : 57 / 66 ( 86.36% )
         Solved sub-optimally : 9 / 66 ( 13.63% )
                     Unsolved : 0 / 66 ( 0% )
-                   Remaining : 66 / 108 ( 61.11% )
+                   Processed : 66 / 108 ( 61.11% )
           Total time elapsed : 1377.268 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_8_1.in
     [1;32mOptimal solution reached[0m
@@ -622,7 +622,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_8_1.in
             Solved optimally : 58 / 67 ( 86.56% )
         Solved sub-optimally : 9 / 67 ( 13.43% )
                     Unsolved : 0 / 67 ( 0% )
-                   Remaining : 67 / 108 ( 62.03% )
+                   Processed : 67 / 108 ( 62.03% )
           Total time elapsed : 1377.648 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_9_1.in
     [1;32mOptimal solution reached[0m
@@ -631,7 +631,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_9_1.in
             Solved optimally : 59 / 68 ( 86.76% )
         Solved sub-optimally : 9 / 68 ( 13.23% )
                     Unsolved : 0 / 68 ( 0% )
-                   Remaining : 68 / 108 ( 62.96% )
+                   Processed : 68 / 108 ( 62.96% )
           Total time elapsed : 1422.668 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_10_1.in
     [1;32mOptimal solution reached[0m
@@ -640,7 +640,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_10_1.in
             Solved optimally : 60 / 69 ( 86.95% )
         Solved sub-optimally : 9 / 69 ( 13.04% )
                     Unsolved : 0 / 69 ( 0% )
-                   Remaining : 69 / 108 ( 63.88% )
+                   Processed : 69 / 108 ( 63.88% )
           Total time elapsed : 1467.690 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_11_1.in
     [1;32mOptimal solution reached[0m
@@ -649,7 +649,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_11_1.in
             Solved optimally : 61 / 70 ( 87.14% )
         Solved sub-optimally : 9 / 70 ( 12.85% )
                     Unsolved : 0 / 70 ( 0% )
-                   Remaining : 70 / 108 ( 64.81% )
+                   Processed : 70 / 108 ( 64.81% )
           Total time elapsed : 1504.988 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_12_1.in
     [1;32mOptimal solution reached[0m
@@ -658,7 +658,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_12_1.in
             Solved optimally : 62 / 71 ( 87.32% )
         Solved sub-optimally : 9 / 71 ( 12.67% )
                     Unsolved : 0 / 71 ( 0% )
-                   Remaining : 71 / 108 ( 65.74% )
+                   Processed : 71 / 108 ( 65.74% )
           Total time elapsed : 1550.007 seconds
 Executing CP solver with input file: ../inputs/material/bwp_8_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -669,7 +669,7 @@ Executing CP solver with input file: ../inputs/material/bwp_8_13_1.in
             Solved optimally : 62 / 72 ( 86.11% )
         Solved sub-optimally : 10 / 72 ( 13.88% )
                     Unsolved : 0 / 72 ( 0% )
-                   Remaining : 72 / 108 ( 66.66% )
+                   Processed : 72 / 108 ( 66.66% )
           Total time elapsed : 1595.045 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_2_1.in
     [1;32mOptimal solution reached[0m
@@ -678,7 +678,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_2_1.in
             Solved optimally : 63 / 73 ( 86.30% )
         Solved sub-optimally : 10 / 73 ( 13.69% )
                     Unsolved : 0 / 73 ( 0% )
-                   Remaining : 73 / 108 ( 67.59% )
+                   Processed : 73 / 108 ( 67.59% )
           Total time elapsed : 1595.073 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_3_1.in
     [1;32mOptimal solution reached[0m
@@ -687,7 +687,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_3_1.in
             Solved optimally : 64 / 74 ( 86.48% )
         Solved sub-optimally : 10 / 74 ( 13.51% )
                     Unsolved : 0 / 74 ( 0% )
-                   Remaining : 74 / 108 ( 68.51% )
+                   Processed : 74 / 108 ( 68.51% )
           Total time elapsed : 1595.102 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_4_1.in
     [1;32mOptimal solution reached[0m
@@ -696,7 +696,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_4_1.in
             Solved optimally : 65 / 75 ( 86.66% )
         Solved sub-optimally : 10 / 75 ( 13.33% )
                     Unsolved : 0 / 75 ( 0% )
-                   Remaining : 75 / 108 ( 69.44% )
+                   Processed : 75 / 108 ( 69.44% )
           Total time elapsed : 1595.126 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_5_1.in
     [1;32mOptimal solution reached[0m
@@ -705,7 +705,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_5_1.in
             Solved optimally : 66 / 76 ( 86.84% )
         Solved sub-optimally : 10 / 76 ( 13.15% )
                     Unsolved : 0 / 76 ( 0% )
-                   Remaining : 76 / 108 ( 70.37% )
+                   Processed : 76 / 108 ( 70.37% )
           Total time elapsed : 1595.154 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_6_1.in
     [1;32mOptimal solution reached[0m
@@ -714,7 +714,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_6_1.in
             Solved optimally : 67 / 77 ( 87.01% )
         Solved sub-optimally : 10 / 77 ( 12.98% )
                     Unsolved : 0 / 77 ( 0% )
-                   Remaining : 77 / 108 ( 71.29% )
+                   Processed : 77 / 108 ( 71.29% )
           Total time elapsed : 1606.659 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_7_1.in
     [1;32mOptimal solution reached[0m
@@ -723,7 +723,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_7_1.in
             Solved optimally : 68 / 78 ( 87.17% )
         Solved sub-optimally : 10 / 78 ( 12.82% )
                     Unsolved : 0 / 78 ( 0% )
-                   Remaining : 78 / 108 ( 72.22% )
+                   Processed : 78 / 108 ( 72.22% )
           Total time elapsed : 1615.187 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_8_1.in
     [1;32mOptimal solution reached[0m
@@ -732,7 +732,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_8_1.in
             Solved optimally : 69 / 79 ( 87.34% )
         Solved sub-optimally : 10 / 79 ( 12.65% )
                     Unsolved : 0 / 79 ( 0% )
-                   Remaining : 79 / 108 ( 73.14% )
+                   Processed : 79 / 108 ( 73.14% )
           Total time elapsed : 1615.264 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_9_1.in
     [1;32mOptimal solution reached[0m
@@ -741,7 +741,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_9_1.in
             Solved optimally : 70 / 80 ( 87.50% )
         Solved sub-optimally : 10 / 80 ( 12.50% )
                     Unsolved : 0 / 80 ( 0% )
-                   Remaining : 80 / 108 ( 74.07% )
+                   Processed : 80 / 108 ( 74.07% )
           Total time elapsed : 1641.986 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_10_1.in
     [1;32mOptimal solution reached[0m
@@ -750,7 +750,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_10_1.in
             Solved optimally : 71 / 81 ( 87.65% )
         Solved sub-optimally : 10 / 81 ( 12.34% )
                     Unsolved : 0 / 81 ( 0% )
-                   Remaining : 81 / 108 ( 75.00% )
+                   Processed : 81 / 108 ( 75.00% )
           Total time elapsed : 1683.597 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_11_1.in
     [1;33mSuboptimal solution:[0m
@@ -761,7 +761,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_11_1.in
             Solved optimally : 71 / 82 ( 86.58% )
         Solved sub-optimally : 11 / 82 ( 13.41% )
                     Unsolved : 0 / 82 ( 0% )
-                   Remaining : 82 / 108 ( 75.92% )
+                   Processed : 82 / 108 ( 75.92% )
           Total time elapsed : 1724.458 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_12_1.in
     [1;32mOptimal solution reached[0m
@@ -770,7 +770,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_12_1.in
             Solved optimally : 72 / 83 ( 86.74% )
         Solved sub-optimally : 11 / 83 ( 13.25% )
                     Unsolved : 0 / 83 ( 0% )
-                   Remaining : 83 / 108 ( 76.85% )
+                   Processed : 83 / 108 ( 76.85% )
           Total time elapsed : 1769.476 seconds
 Executing CP solver with input file: ../inputs/material/bwp_9_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -781,7 +781,7 @@ Executing CP solver with input file: ../inputs/material/bwp_9_13_1.in
             Solved optimally : 72 / 84 ( 85.71% )
         Solved sub-optimally : 12 / 84 ( 14.28% )
                     Unsolved : 0 / 84 ( 0% )
-                   Remaining : 84 / 108 ( 77.77% )
+                   Processed : 84 / 108 ( 77.77% )
           Total time elapsed : 1814.502 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_2_1.in
     [1;32mOptimal solution reached[0m
@@ -790,7 +790,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_2_1.in
             Solved optimally : 73 / 85 ( 85.88% )
         Solved sub-optimally : 12 / 85 ( 14.11% )
                     Unsolved : 0 / 85 ( 0% )
-                   Remaining : 85 / 108 ( 78.70% )
+                   Processed : 85 / 108 ( 78.70% )
           Total time elapsed : 1814.530 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_3_1.in
     [1;32mOptimal solution reached[0m
@@ -799,7 +799,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_3_1.in
             Solved optimally : 74 / 86 ( 86.04% )
         Solved sub-optimally : 12 / 86 ( 13.95% )
                     Unsolved : 0 / 86 ( 0% )
-                   Remaining : 86 / 108 ( 79.62% )
+                   Processed : 86 / 108 ( 79.62% )
           Total time elapsed : 1814.547 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_4_1.in
     [1;32mOptimal solution reached[0m
@@ -808,7 +808,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_4_1.in
             Solved optimally : 75 / 87 ( 86.20% )
         Solved sub-optimally : 12 / 87 ( 13.79% )
                     Unsolved : 0 / 87 ( 0% )
-                   Remaining : 87 / 108 ( 80.55% )
+                   Processed : 87 / 108 ( 80.55% )
           Total time elapsed : 1814.572 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_5_1.in
     [1;32mOptimal solution reached[0m
@@ -817,7 +817,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_5_1.in
             Solved optimally : 76 / 88 ( 86.36% )
         Solved sub-optimally : 12 / 88 ( 13.63% )
                     Unsolved : 0 / 88 ( 0% )
-                   Remaining : 88 / 108 ( 81.48% )
+                   Processed : 88 / 108 ( 81.48% )
           Total time elapsed : 1814.628 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_6_1.in
     [1;32mOptimal solution reached[0m
@@ -826,7 +826,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_6_1.in
             Solved optimally : 77 / 89 ( 86.51% )
         Solved sub-optimally : 12 / 89 ( 13.48% )
                     Unsolved : 0 / 89 ( 0% )
-                   Remaining : 89 / 108 ( 82.40% )
+                   Processed : 89 / 108 ( 82.40% )
           Total time elapsed : 1814.944 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_7_1.in
     [1;32mOptimal solution reached[0m
@@ -835,7 +835,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_7_1.in
             Solved optimally : 78 / 90 ( 86.66% )
         Solved sub-optimally : 12 / 90 ( 13.33% )
                     Unsolved : 0 / 90 ( 0% )
-                   Remaining : 90 / 108 ( 83.33% )
+                   Processed : 90 / 108 ( 83.33% )
           Total time elapsed : 1814.972 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_8_1.in
     [1;32mOptimal solution reached[0m
@@ -844,7 +844,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_8_1.in
             Solved optimally : 79 / 91 ( 86.81% )
         Solved sub-optimally : 12 / 91 ( 13.18% )
                     Unsolved : 0 / 91 ( 0% )
-                   Remaining : 91 / 108 ( 84.25% )
+                   Processed : 91 / 108 ( 84.25% )
           Total time elapsed : 1815.810 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_9_1.in
     [1;32mOptimal solution reached[0m
@@ -853,7 +853,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_9_1.in
             Solved optimally : 80 / 92 ( 86.95% )
         Solved sub-optimally : 12 / 92 ( 13.04% )
                     Unsolved : 0 / 92 ( 0% )
-                   Remaining : 92 / 108 ( 85.18% )
+                   Processed : 92 / 108 ( 85.18% )
           Total time elapsed : 1860.829 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_10_1.in
     [1;32mOptimal solution reached[0m
@@ -862,7 +862,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_10_1.in
             Solved optimally : 81 / 93 ( 87.09% )
         Solved sub-optimally : 12 / 93 ( 12.90% )
                     Unsolved : 0 / 93 ( 0% )
-                   Remaining : 93 / 108 ( 86.11% )
+                   Processed : 93 / 108 ( 86.11% )
           Total time elapsed : 1896.193 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_11_1.in
     [1;33mSuboptimal solution:[0m
@@ -873,7 +873,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_11_1.in
             Solved optimally : 81 / 94 ( 86.17% )
         Solved sub-optimally : 13 / 94 ( 13.82% )
                     Unsolved : 0 / 94 ( 0% )
-                   Remaining : 94 / 108 ( 87.03% )
+                   Processed : 94 / 108 ( 87.03% )
           Total time elapsed : 1941.214 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_12_1.in
     [1;32mOptimal solution reached[0m
@@ -882,7 +882,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_12_1.in
             Solved optimally : 82 / 95 ( 86.31% )
         Solved sub-optimally : 13 / 95 ( 13.68% )
                     Unsolved : 0 / 95 ( 0% )
-                   Remaining : 95 / 108 ( 87.96% )
+                   Processed : 95 / 108 ( 87.96% )
           Total time elapsed : 1986.232 seconds
 Executing CP solver with input file: ../inputs/material/bwp_10_13_1.in
     [1;33mSuboptimal solution:[0m
@@ -893,7 +893,7 @@ Executing CP solver with input file: ../inputs/material/bwp_10_13_1.in
             Solved optimally : 82 / 96 ( 85.41% )
         Solved sub-optimally : 14 / 96 ( 14.58% )
                     Unsolved : 0 / 96 ( 0% )
-                   Remaining : 96 / 108 ( 88.88% )
+                   Processed : 96 / 108 ( 88.88% )
           Total time elapsed : 2031.277 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_2_1.in
     [1;32mOptimal solution reached[0m
@@ -902,7 +902,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_2_1.in
             Solved optimally : 83 / 97 ( 85.56% )
         Solved sub-optimally : 14 / 97 ( 14.43% )
                     Unsolved : 0 / 97 ( 0% )
-                   Remaining : 97 / 108 ( 89.81% )
+                   Processed : 97 / 108 ( 89.81% )
           Total time elapsed : 2031.287 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_3_1.in
     [1;32mOptimal solution reached[0m
@@ -911,7 +911,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_3_1.in
             Solved optimally : 84 / 98 ( 85.71% )
         Solved sub-optimally : 14 / 98 ( 14.28% )
                     Unsolved : 0 / 98 ( 0% )
-                   Remaining : 98 / 108 ( 90.74% )
+                   Processed : 98 / 108 ( 90.74% )
           Total time elapsed : 2031.298 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_4_1.in
     [1;32mOptimal solution reached[0m
@@ -920,7 +920,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_4_1.in
             Solved optimally : 85 / 99 ( 85.85% )
         Solved sub-optimally : 14 / 99 ( 14.14% )
                     Unsolved : 0 / 99 ( 0% )
-                   Remaining : 99 / 108 ( 91.66% )
+                   Processed : 99 / 108 ( 91.66% )
           Total time elapsed : 2031.322 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_5_1.in
     [1;32mOptimal solution reached[0m
@@ -929,7 +929,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_5_1.in
             Solved optimally : 86 / 100 ( 86.00% )
         Solved sub-optimally : 14 / 100 ( 14.00% )
                     Unsolved : 0 / 100 ( 0% )
-                   Remaining : 100 / 108 ( 92.59% )
+                   Processed : 100 / 108 ( 92.59% )
           Total time elapsed : 2033.265 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_6_1.in
     [1;32mOptimal solution reached[0m
@@ -938,7 +938,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_6_1.in
             Solved optimally : 87 / 101 ( 86.13% )
         Solved sub-optimally : 14 / 101 ( 13.86% )
                     Unsolved : 0 / 101 ( 0% )
-                   Remaining : 101 / 108 ( 93.51% )
+                   Processed : 101 / 108 ( 93.51% )
           Total time elapsed : 2046.419 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_7_1.in
     [1;32mOptimal solution reached[0m
@@ -947,7 +947,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_7_1.in
             Solved optimally : 88 / 102 ( 86.27% )
         Solved sub-optimally : 14 / 102 ( 13.72% )
                     Unsolved : 0 / 102 ( 0% )
-                   Remaining : 102 / 108 ( 94.44% )
+                   Processed : 102 / 108 ( 94.44% )
           Total time elapsed : 2046.781 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_8_1.in
     [1;33mSuboptimal solution:[0m
@@ -958,7 +958,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_8_1.in
             Solved optimally : 88 / 103 ( 85.43% )
         Solved sub-optimally : 15 / 103 ( 14.56% )
                     Unsolved : 0 / 103 ( 0% )
-                   Remaining : 103 / 108 ( 95.37% )
+                   Processed : 103 / 108 ( 95.37% )
           Total time elapsed : 2091.806 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_9_1.in
     [1;32mOptimal solution reached[0m
@@ -967,7 +967,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_9_1.in
             Solved optimally : 89 / 104 ( 85.57% )
         Solved sub-optimally : 15 / 104 ( 14.42% )
                     Unsolved : 0 / 104 ( 0% )
-                   Remaining : 104 / 108 ( 96.29% )
+                   Processed : 104 / 108 ( 96.29% )
           Total time elapsed : 2101.829 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_10_1.in
     [1;32mOptimal solution reached[0m
@@ -976,7 +976,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_10_1.in
             Solved optimally : 90 / 105 ( 85.71% )
         Solved sub-optimally : 15 / 105 ( 14.28% )
                     Unsolved : 0 / 105 ( 0% )
-                   Remaining : 105 / 108 ( 97.22% )
+                   Processed : 105 / 108 ( 97.22% )
           Total time elapsed : 2136.317 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_11_1.in
     [1;32mOptimal solution reached[0m
@@ -985,7 +985,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_11_1.in
             Solved optimally : 91 / 106 ( 85.84% )
         Solved sub-optimally : 15 / 106 ( 14.15% )
                     Unsolved : 0 / 106 ( 0% )
-                   Remaining : 106 / 108 ( 98.14% )
+                   Processed : 106 / 108 ( 98.14% )
           Total time elapsed : 2136.414 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_12_1.in
     [1;32mOptimal solution reached[0m
@@ -994,7 +994,7 @@ Executing CP solver with input file: ../inputs/material/bwp_11_12_1.in
             Solved optimally : 92 / 107 ( 85.98% )
         Solved sub-optimally : 15 / 107 ( 14.01% )
                     Unsolved : 0 / 107 ( 0% )
-                   Remaining : 107 / 108 ( 99.07% )
+                   Processed : 107 / 108 ( 99.07% )
           Total time elapsed : 2181.434 seconds
 Executing CP solver with input file: ../inputs/material/bwp_11_13_1.in
     [1;32mOptimal solution reached[0m
@@ -1003,5 +1003,5 @@ Executing CP solver with input file: ../inputs/material/bwp_11_13_1.in
             Solved optimally : 93 / 108 ( 86.11% )
         Solved sub-optimally : 15 / 108 ( 13.88% )
                     Unsolved : 0 / 108 ( 0% )
-                   Remaining : 108 / 108 ( 100.00% )
+                   Processed : 108 / 108 ( 100.00% )
           Total time elapsed : 2226.455 seconds
