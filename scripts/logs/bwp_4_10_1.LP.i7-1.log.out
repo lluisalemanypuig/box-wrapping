@@ -1,0 +1,184 @@
+Sat 19 May 19:13:38 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 2446 rows and 1968 columns.
+MIP Presolve modified 1404 coefficients.
+Aggregator did 2504 substitutions.
+Reduced MIP has 4773 rows, 4555 columns, and 12104 nonzeros.
+Reduced MIP has 4028 binaries, 11 generals, 0 SOSs, and 862 indicators.
+Presolve time = 0.03 sec. (50.80 ticks)
+Probing time = 0.11 sec. (86.94 ticks)
+Cover probing fixed 0 vars, tightened 6 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 30 coefficients.
+Aggregator did 2227 substitutions.
+Reduced MIP has 2546 rows, 2328 columns, and 7650 nonzeros.
+Reduced MIP has 1801 binaries, 527 generals, 0 SOSs, and 862 indicators.
+Presolve time = 0.01 sec. (15.66 ticks)
+Probing time = 0.04 sec. (33.39 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 2546 rows, 2328 columns, and 7650 nonzeros.
+Reduced MIP has 1801 binaries, 527 generals, 0 SOSs, and 862 indicators.
+Presolve time = 0.01 sec. (7.27 ticks)
+Probing time = 0.00 sec. (3.84 ticks)
+Clique table members: 34929.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.01 sec. (9.82 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        2.0000  1176                      2.0000      181         
+      0     0        2.0000  1199                Cliques: 736      343         
+      0     0        2.0000  1091                Cliques: 736      473         
+      0     0        2.0000   925                Cliques: 736      721         
+      0     0        2.0000   817                Cliques: 736      849         
+      0     0        2.0000   563                Cliques: 736     1144         
+      0     0        2.0000   318                   Cuts: 143     1440         
+      0     0        2.0000   468                    Cuts: 54     1767         
+      0     2        2.0000   294                      2.0000     1767         
+Elapsed time = 2.65 sec. (3567.38 ticks, tree = 0.01 MB, solutions = 0)
+*    50+   47                           17.0000        2.0000            88.24%
+     58    57        3.0000    37       17.0000        2.0000     3403   88.24%
+*   100+   97                           16.0000        2.0000            87.50%
+    104    97        2.0000    29       16.0000        2.0000     5290   87.50%
+*   120+  107                           14.0000        2.0000            85.71%
+    120   109        2.0000   232       14.0000        2.0000     6372   85.71%
+*   150+  135                           13.0000        2.0000            84.62%
+*   160+  137                           12.0000        2.0000            83.33%
+    170   143        2.0000   183       12.0000        2.0000     7766   83.33%
+*   200+  159                           11.0000        2.0000            81.82%
+    209   168        2.0000    34       11.0000        2.0000     9394   81.82%
+*   248   152      integral     0       10.0000        2.0000     9787   80.00%
+*   260+  139                            9.0000        2.0000            77.78%
+    280   132        4.0000   203        9.0000        2.0000    11052   77.78%
+*   320   107      integral     0        8.0000        2.0000    12404   75.00%
+    325   107        4.0000   277        8.0000        3.0000    13758   62.50%
+    351   105    infeasible              8.0000        4.0000    15628   50.00%
+    374   102        4.0000   180        8.0000        4.0000    17607   50.00%
+    441   103        7.0000    86        8.0000        4.0000    25095   50.00%
+Elapsed time = 5.17 sec. (6879.95 ticks, tree = 2.29 MB, solutions = 9)
+    523   128        7.0000    65        8.0000        4.0000    31675   50.00%
+    677   183    infeasible              8.0000        4.0000    37068   50.00%
+    829   241        5.0000   253        8.0000        5.0000    42902   37.50%
+    938   290        5.0000   105        8.0000        5.0000    48374   37.50%
+    988   314        5.0000   279        8.0000        5.0000    51550   37.50%
+   1036    32        6.0000   192        8.0000        6.0000    56292   25.00%
+   1073    20        6.0000   146        8.0000        6.0000    59580   25.00%
+   1187    58        6.0909   188        8.0000        6.0000    68378   25.00%
+   1379   111        7.0000   190        8.0000        6.1667    80371   22.92%
+   1594    86        7.0000    70        8.0000        7.0000    93690   12.50%
+Elapsed time = 12.14 sec. (16598.37 ticks, tree = 0.07 MB, solutions = 9)
+   1793    43        7.0000   106        8.0000        7.0000   107885   12.50%
+   1987    26        7.0000   125        8.0000        7.0000   121224   12.50%
+   2168    23        7.0000   181        8.0000        7.0000   134778   12.50%
+   2334    33        7.0000   111        8.0000        7.0000   146596   12.50%
+   2472    47        7.0000    75        8.0000        7.0000   157832   12.50%
+   2622    57        7.0000    78        8.0000        7.0000   172010   12.50%
+   2722    57        7.0000   128        8.0000        7.0000   184746   12.50%
+   2847    70        7.0000    47        8.0000        7.0000   196899   12.50%
+   2970    86        7.0000    72        8.0000        7.0000   208374   12.50%
+   3096    88        7.0000   122        8.0000        7.0000   219746   12.50%
+Elapsed time = 19.77 sec. (26243.52 ticks, tree = 0.17 MB, solutions = 9)
+   3225    74    infeasible              8.0000        7.0000   231882   12.50%
+   3345    68        7.0000   117        8.0000        7.0000   243931   12.50%
+   3429    62    infeasible              8.0000        7.0000   254847   12.50%
+   3601    60    infeasible              8.0000        7.0000   268949   12.50%
+   3730    50        7.0000    88        8.0000        7.0000   282921   12.50%
+   3908    45    infeasible              8.0000        7.0000   296418   12.50%
+   4082    23    infeasible              8.0000        7.0000   309927   12.50%
+   4213    10        7.0000   151        8.0000        7.0000   323517   12.50%
+   4375    10        7.0000    97        8.0000        7.0000   336378   12.50%
+   4520    15        7.0000   146        8.0000        7.0000   348824   12.50%
+Elapsed time = 27.41 sec. (35854.63 ticks, tree = 0.04 MB, solutions = 9)
+   4703    37        7.0000    61        8.0000        7.0000   361754   12.50%
+   4855    21        7.0000    89        8.0000        7.0000   376678   12.50%
+   5002     6        7.0000   131        8.0000        7.0000   392027   12.50%
+   5152     7    infeasible              8.0000        7.0000   408250   12.50%
+   5280     9    infeasible              8.0000        7.0000   423594   12.50%
+   5404    25        7.0000    87        8.0000        7.0000   437261   12.50%
+
+GUB cover cuts applied:  5
+Clique cuts applied:  560
+Cover cuts applied:  4
+Implied bound cuts applied:  116
+Mixed integer rounding cuts applied:  10
+Zero-half cuts applied:  97
+Gomory fractional cuts applied:  21
+
+Root node processing (before b&c):
+  Real time             =    2.63 sec. (3557.83 ticks)
+Sequential b&c:
+  Real time             =   29.94 sec. (38776.13 ticks)
+                          ------------
+Total (root+branch&cut) =   32.58 sec. (42333.96 ticks)
+   | W
+ L | 0 1 2  3 
+-------------
+ 0 | 2 2 5  5 
+ 1 | 2 2 5  5 
+ 2 | . 3 3 10 
+ 3 | 7 3 3 10 
+ 4 | 7 1 8  8 
+ 5 | 9 9 .  . 
+ 6 | 4 4 6  6 
+ 7 | 4 4 6  6 
+ 8 | . . .  . 
+ 9 | . . .  . 
+10 | . . .  . 
+11 | . . .  . 
+12 | . . .  . 
+13 | . . .  . 
+14 | . . .  . 
+15 | . . .  . 
+16 | . . .  . 
+17 | . . .  . 
+18 | . . .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (1,4)
+        bottom right (1,4)
+
+    Box  2 is at 
+        top left     (0,0)
+        bottom right (1,1)
+
+    Box  3 is at 
+        top left     (1,2)
+        bottom right (2,3)
+
+    Box  4 is at 
+        top left     (0,6)
+        bottom right (1,7)
+
+    Box  5 is at 
+        top left     (2,0)
+        bottom right (3,1)
+
+    Box  6 is at 
+        top left     (2,6)
+        bottom right (3,7)
+
+    Box  7 is at 
+        top left     (0,3)
+        bottom right (0,4)
+
+    Box  8 is at 
+        top left     (2,4)
+        bottom right (3,4)
+
+    Box  9 is at 
+        top left     (0,5)
+        bottom right (1,5)
+
+    Box 10 is at 
+        top left     (3,2)
+        bottom right (3,3)
+
+    Roll length used: 8
+In 32.6 seconds

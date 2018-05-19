@@ -1,0 +1,67 @@
+Sat 19 May 19:18:25 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 72 rows and 74 columns.
+Aggregator did 48 substitutions.
+Reduced MIP has 76 rows, 75 columns, and 172 nonzeros.
+Reduced MIP has 72 binaries, 3 generals, 0 SOSs, and 12 indicators.
+Presolve time = 0.00 sec. (0.33 ticks)
+Found incumbent of value 2.000000 after 0.00 sec. (0.67 ticks)
+Probing time = 0.00 sec. (0.15 ticks)
+Cover probing fixed 0 vars, tightened 3 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 24 coefficients.
+Aggregator did 36 substitutions.
+Reduced MIP has 52 rows, 39 columns, and 124 nonzeros.
+Reduced MIP has 36 binaries, 3 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.20 ticks)
+Probing time = 0.00 sec. (0.06 ticks)
+Tried aggregator 2 times.
+Aggregator did 12 substitutions.
+Reduced MIP has 40 rows, 27 columns, and 100 nonzeros.
+Reduced MIP has 24 binaries, 3 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.11 ticks)
+Probing time = 0.00 sec. (0.03 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 40 rows, 27 columns, and 100 nonzeros.
+Reduced MIP has 24 binaries, 3 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.08 ticks)
+Probing time = 0.00 sec. (0.03 ticks)
+Clique table members: 14.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (0.05 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            2.0000        1.0000            50.00%
+*     0     0      integral     0        1.0000        1.0000       13    0.00%
+Elapsed time = 0.00 sec. (1.54 ticks, tree = 0.00 MB, solutions = 2)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (1.55 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (1.55 ticks)
+  | W
+L | 0 1 2 3 4 5 
+----------------
+0 | 1 2 . . . . 
+1 | . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Roll length used: 1
+In 0 seconds

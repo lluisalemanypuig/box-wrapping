@@ -1,0 +1,81 @@
+Sat 19 May 19:29:30 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 5 times.
+MIP Presolve eliminated 1565 rows and 970 columns.
+MIP Presolve modified 445 coefficients.
+Aggregator did 820 substitutions.
+Reduced MIP has 1639 rows, 1566 columns, and 4577 nonzeros.
+Reduced MIP has 1417 binaries, 5 generals, 0 SOSs, and 283 indicators.
+Presolve time = 0.02 sec. (16.31 ticks)
+Found incumbent of value 9.000000 after 0.03 sec. (28.38 ticks)
+Probing time = 0.03 sec. (24.31 ticks)
+Cover probing fixed 0 vars, tightened 4 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 46 coefficients.
+Aggregator did 772 substitutions.
+Reduced MIP has 890 rows, 794 columns, and 3079 nonzeros.
+Reduced MIP has 645 binaries, 149 generals, 0 SOSs, and 260 indicators.
+Presolve time = 0.00 sec. (5.96 ticks)
+Probing time = 0.01 sec. (10.52 ticks)
+Tried aggregator 2 times.
+Aggregator did 23 substitutions.
+Reduced MIP has 867 rows, 771 columns, and 3033 nonzeros.
+Reduced MIP has 622 binaries, 149 generals, 0 SOSs, and 260 indicators.
+Presolve time = 0.00 sec. (3.91 ticks)
+Probing time = 0.00 sec. (3.51 ticks)
+Clique table members: 9224.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (3.19 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            9.0000        3.0000            66.67%
+      0     0        3.0000   267        9.0000        3.0000      105   66.67%
+*     0+    0                            4.0000        3.0000            25.00%
+*     0+    0                            3.0000        3.0000             0.00%
+      0     0        cutoff              3.0000        3.0000      105    0.00%
+Elapsed time = 0.18 sec. (186.66 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.18 sec. (186.79 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.18 sec. (186.79 ticks)
+  | W
+L | 0 1 2 3 4 5 6 7 8 
+----------------------
+0 | 1 . . 3 3 3 4 4 4 
+1 | 1 . 2 3 3 3 4 4 4 
+2 | . . . 3 3 3 4 4 4 
+3 | . . . . . . . . . 
+4 | . . . . . . . . . 
+5 | . . . . . . . . . 
+6 | . . . . . . . . . 
+7 | . . . . . . . . . 
+8 | . . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,1)
+
+    Box 2 is at 
+        top left     (2,1)
+        bottom right (2,1)
+
+    Box 3 is at 
+        top left     (3,0)
+        bottom right (5,2)
+
+    Box 4 is at 
+        top left     (6,0)
+        bottom right (8,2)
+
+    Roll length used: 3
+In 0.18 seconds

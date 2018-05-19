@@ -1,0 +1,118 @@
+Sat 19 May 19:29:30 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 4 times.
+MIP Presolve eliminated 640 rows and 621 columns.
+MIP Presolve modified 802 coefficients.
+Aggregator did 1572 substitutions.
+Reduced MIP has 1982 rows, 1339 columns, and 4218 nonzeros.
+Reduced MIP has 1297 binaries, 4 generals, 0 SOSs, and 135 indicators.
+Presolve time = 0.01 sec. (17.16 ticks)
+Found incumbent of value 7.000000 after 0.02 sec. (25.55 ticks)
+Probing time = 0.01 sec. (9.92 ticks)
+Cover probing fixed 0 vars, tightened 3 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 36 coefficients.
+Aggregator did 934 substitutions.
+Reduced MIP has 1066 rows, 405 columns, and 2386 nonzeros.
+Reduced MIP has 363 binaries, 42 generals, 0 SOSs, and 117 indicators.
+Presolve time = 0.00 sec. (4.41 ticks)
+Probing time = 0.00 sec. (4.87 ticks)
+Tried aggregator 2 times.
+Aggregator did 18 substitutions.
+Reduced MIP has 1048 rows, 387 columns, and 2350 nonzeros.
+Reduced MIP has 345 binaries, 42 generals, 0 SOSs, and 117 indicators.
+Presolve time = 0.00 sec. (2.83 ticks)
+Probing time = 0.00 sec. (2.92 ticks)
+Clique table members: 1841.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (3.81 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            7.0000        1.0000            85.71%
+      0     0        1.0000   134        7.0000        1.0000       92   85.71%
+*     0+    0                            5.0000        1.0000            80.00%
+
+Repeating presolve.
+Tried aggregator 3 times.
+MIP Presolve eliminated 815 rows and 181 columns.
+MIP Presolve modified 43 coefficients.
+Aggregator did 2 substitutions.
+Reduced MIP has 254 rows, 188 columns, and 617 nonzeros.
+Reduced MIP has 179 binaries, 9 generals, 0 SOSs, and 36 indicators.
+Presolve time = 0.00 sec. (1.64 ticks)
+Probing fixed 12 vars, tightened 0 bounds.
+Probing time = 0.00 sec. (1.06 ticks)
+Cover probing fixed 2 vars, tightened 0 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 105 rows and 35 columns.
+MIP Presolve modified 24 coefficients.
+Aggregator did 32 substitutions.
+Reduced MIP has 117 rows, 121 columns, and 379 nonzeros.
+Reduced MIP has 119 binaries, 2 generals, 0 SOSs, and 32 indicators.
+Presolve time = 0.00 sec. (0.82 ticks)
+Probing time = 0.00 sec. (0.50 ticks)
+Tried aggregator 2 times.
+Aggregator did 16 substitutions.
+Reduced MIP has 101 rows, 105 columns, and 347 nonzeros.
+Reduced MIP has 103 binaries, 2 generals, 0 SOSs, and 32 indicators.
+Presolve time = 0.00 sec. (0.47 ticks)
+Probing time = 0.00 sec. (0.41 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 101 rows, 105 columns, and 347 nonzeros.
+Reduced MIP has 103 binaries, 2 generals, 0 SOSs, and 32 indicators.
+Presolve time = 0.00 sec. (0.41 ticks)
+Represolve time = 0.01 sec. (6.11 ticks)
+Probing time = 0.00 sec. (0.40 ticks)
+Clique table members: 271.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (0.16 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            5.0000        4.0000            20.00%
+      0     0        4.0000    32        5.0000        4.0000      149   20.00%
+*     0+    0                            4.0000        4.0000             0.00%
+      0     0        cutoff              4.0000        4.0000      149    0.00%
+Elapsed time = 0.09 sec. (90.77 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.09 sec. (90.90 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.09 sec. (90.90 ticks)
+  | W
+L | 0 1 2 3 4 5 6 7 8 
+----------------------
+0 | 1 1 1 1 1 . . . . 
+1 | 1 1 1 1 1 3 2 . . 
+2 | 1 1 1 1 1 . . . . 
+3 | 1 1 1 1 1 . . . . 
+4 | . . . . . . . . . 
+5 | . . . . . . . . . 
+6 | . . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (4,3)
+
+    Box 2 is at 
+        top left     (6,1)
+        bottom right (6,1)
+
+    Box 3 is at 
+        top left     (5,1)
+        bottom right (5,1)
+
+    Roll length used: 4
+In 0.1 seconds

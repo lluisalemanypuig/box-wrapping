@@ -1,0 +1,50 @@
+Sat 19 May 19:34:04 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 3253 rows and 2645 columns.
+MIP Presolve modified 15378 coefficients.
+Aggregator did 26504 substitutions.
+Reduced MIP has 43209 rows, 32566 columns, and 96008 nonzeros.
+Reduced MIP has 28505 binaries, 11 generals, 0 SOSs, and 4275 indicators.
+Presolve time = 0.61 sec. (1944.36 ticks)
+Probing time = 0.38 sec. (166.63 ticks)
+Tried aggregator 3 times.
+Aggregator did 19444 substitutions.
+Reduced MIP has 23765 rows, 13122 columns, and 57120 nonzeros.
+Reduced MIP has 9061 binaries, 4061 generals, 0 SOSs, and 4275 indicators.
+Presolve time = 0.11 sec. (157.06 ticks)
+Probing time = 0.17 sec. (122.17 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 23765 rows, 13122 columns, and 57120 nonzeros.
+Reduced MIP has 9061 binaries, 4061 generals, 0 SOSs, and 4275 indicators.
+Presolve time = 0.05 sec. (52.56 ticks)
+Probing time = 0.02 sec. (9.23 ticks)
+Clique table members: 863059.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.12 sec. (196.65 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        0.0000  7193                      0.0000     1938         
+      0     0        0.0000  3888               Cliques: 6041     6157         
+      0     0        0.0000  3681               Cliques: 6041     6443         
+      0     0        0.0000  4178                   Cuts: 418     7122         
+      0     0        0.0000  3619                   Cuts: 295     8448         
+      0     0        0.0000  4117                   Cuts: 139     8640         
+
+Clique cuts applied:  3057
+Implied bound cuts applied:  431
+Zero-half cuts applied:  113
+Gomory fractional cuts applied:  7
+
+Root node processing (before b&c):
+  Real time             =   44.42 sec. (61053.16 ticks)
+Sequential b&c:
+  Real time             =    0.58 sec. (471.03 ticks)
+                          ------------
+Total (root+branch&cut) =   45.00 sec. (61524.19 ticks)

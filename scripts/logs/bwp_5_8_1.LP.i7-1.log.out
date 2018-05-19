@@ -1,0 +1,152 @@
+Sat 19 May 19:16:06 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 1968 rows and 1640 columns.
+MIP Presolve modified 224 coefficients.
+Aggregator did 698 substitutions.
+Reduced MIP has 1142 rows, 1455 columns, and 3508 nonzeros.
+Reduced MIP has 1446 binaries, 9 generals, 0 SOSs, and 416 indicators.
+Presolve time = 0.01 sec. (8.74 ticks)
+Probing time = 0.02 sec. (16.11 ticks)
+Cover probing fixed 0 vars, tightened 9 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 72 coefficients.
+Aggregator did 650 substitutions.
+Reduced MIP has 492 rows, 805 columns, and 2208 nonzeros.
+Reduced MIP has 796 binaries, 9 generals, 0 SOSs, and 416 indicators.
+Presolve time = 0.00 sec. (5.41 ticks)
+Probing time = 0.01 sec. (6.10 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 492 rows, 805 columns, and 2208 nonzeros.
+Reduced MIP has 796 binaries, 9 generals, 0 SOSs, and 416 indicators.
+Presolve time = 0.00 sec. (2.82 ticks)
+Probing time = 0.00 sec. (2.58 ticks)
+Clique table members: 8784.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (1.01 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        2.0000   362                      2.0000       34         
+      0     0        2.0000   263                Cliques: 223      169         
+      0     0        2.0000   220                Cliques: 223      267         
+      0     0        2.0000   171                Cliques: 223      360         
+      0     0        2.0000   110                Cliques: 223      505         
+      0     0        2.0000    39                Cliques: 223      638         
+      0     0        2.0000    48                    Cuts: 49      898         
+      0     0        2.0000    16                Impl Bds: 18      903         
+      0     0        2.0000     9                Impl Bds: 29      961         
+*     0+    0                           11.0000        2.0000            81.82%
+*     0+    0                            7.0000        2.0000            71.43%
+*     0+    0                            6.0000        2.0000            66.67%
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 287 rows and 468 columns.
+Reduced MIP has 277 rows, 337 columns, and 1008 nonzeros.
+Reduced MIP has 328 binaries, 9 generals, 0 SOSs, and 92 indicators.
+Presolve time = 0.00 sec. (0.78 ticks)
+Probing time = 0.00 sec. (1.15 ticks)
+Tried aggregator 2 times.
+Aggregator did 72 substitutions.
+Reduced MIP has 205 rows, 265 columns, and 864 nonzeros.
+Reduced MIP has 256 binaries, 9 generals, 0 SOSs, and 92 indicators.
+Presolve time = 0.00 sec. (1.01 ticks)
+Probing time = 0.00 sec. (0.91 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 205 rows, 265 columns, and 864 nonzeros.
+Reduced MIP has 256 binaries, 9 generals, 0 SOSs, and 92 indicators.
+Presolve time = 0.00 sec. (0.99 ticks)
+Represolve time = 0.02 sec. (18.16 ticks)
+Probing time = 0.00 sec. (0.91 ticks)
+Clique table members: 549.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (1.05 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            6.0000        2.0000            66.67%
+      0     0        2.0000    67        6.0000        2.0000     1037   66.67%
+      0     0        2.0000    50        6.0000     Cuts: 151     1149   66.67%
+      0     0        2.0000    44        6.0000     Cuts: 151     1242   66.67%
+      0     0        2.0000    37        6.0000     Cuts: 151     1368   66.67%
+      0     0        2.1176    83        6.0000     Cuts: 147     1458   64.71%
+      0     0        2.2000    70        6.0000     Cuts: 151     1499   63.33%
+      0     0        2.2308    74        6.0000      Cuts: 62     1548   62.82%
+      0     0        2.2500    67        6.0000     Cuts: 151     1602   62.50%
+      0     0        2.2500    70        6.0000     Cuts: 151     1633   62.50%
+      0     0        2.2500    65        6.0000      Cuts: 62     1671   62.50%
+*     0+    0                            5.0000        2.2500            55.00%
+      0     2        2.2500    58        5.0000        2.2500     1671   55.00%
+Elapsed time = 0.38 sec. (412.70 ticks, tree = 0.01 MB, solutions = 4)
+*    17     3      integral     0        4.0000        3.0000     1918   25.00%
+
+Clique cuts applied:  113
+Implied bound cuts applied:  80
+Zero-half cuts applied:  10
+
+Root node processing (before b&c):
+  Real time             =    0.38 sec. (412.88 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (5.52 ticks)
+                          ------------
+Total (root+branch&cut) =    0.38 sec. (418.41 ticks)
+   | W
+ L | 0 1 2 3 4 
+--------------
+ 0 | 1 7 7 6 6 
+ 1 | 4 7 7 6 6 
+ 2 | 2 8 8 5 5 
+ 3 | 3 8 8 5 5 
+ 4 | . . . . . 
+ 5 | . . . . . 
+ 6 | . . . . . 
+ 7 | . . . . . 
+ 8 | . . . . . 
+ 9 | . . . . . 
+10 | . . . . . 
+11 | . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (0,2)
+
+    Box 3 is at 
+        top left     (0,3)
+        bottom right (0,3)
+
+    Box 4 is at 
+        top left     (0,1)
+        bottom right (0,1)
+
+    Box 5 is at 
+        top left     (3,2)
+        bottom right (4,3)
+
+    Box 6 is at 
+        top left     (3,0)
+        bottom right (4,1)
+
+    Box 7 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 8 is at 
+        top left     (1,2)
+        bottom right (2,3)
+
+    Roll length used: 4
+In 0.39 seconds

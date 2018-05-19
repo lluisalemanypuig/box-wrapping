@@ -1,0 +1,44 @@
+Sat 19 May 19:26:39 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 6 times.
+MIP Presolve eliminated 5717 rows and 5404 columns.
+MIP Presolve modified 18521 coefficients.
+Aggregator did 32061 substitutions.
+Reduced MIP has 43414 rows, 28347 columns, and 92998 nonzeros.
+Reduced MIP has 26560 binaries, 11 generals, 0 SOSs, and 2637 indicators.
+Presolve time = 0.80 sec. (2388.27 ticks)
+Probing time = 0.23 sec. (164.49 ticks)
+Tried aggregator 3 times.
+Aggregator did 20744 substitutions.
+Reduced MIP has 22670 rows, 7603 columns, and 51510 nonzeros.
+Reduced MIP has 5816 binaries, 1787 generals, 0 SOSs, and 2637 indicators.
+Presolve time = 0.09 sec. (110.28 ticks)
+Probing time = 0.10 sec. (119.13 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 22670 rows, 7603 columns, and 51510 nonzeros.
+Reduced MIP has 5816 binaries, 1787 generals, 0 SOSs, and 2637 indicators.
+Presolve time = 0.04 sec. (44.14 ticks)
+Probing time = 0.01 sec. (7.47 ticks)
+Clique table members: 316449.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.16 sec. (248.34 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        0.0000  3947                      0.0000     2683         
+      0     0        0.0000  3564               Cliques: 5767     3187         
+      0     0        0.0000  3353               Cliques: 5767     3431         
+
+Clique cuts applied:  11531
+
+Root node processing (before b&c):
+  Real time             =   45.01 sec. (57246.59 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =   45.01 sec. (57246.59 ticks)

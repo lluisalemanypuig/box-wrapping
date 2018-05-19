@@ -1,0 +1,107 @@
+Sat 19 May 19:12:03 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 1420 rows and 1228 columns.
+MIP Presolve modified 414 coefficients.
+Aggregator did 590 substitutions.
+Reduced MIP has 1113 rows, 1137 columns, and 3148 nonzeros.
+Reduced MIP has 1075 binaries, 8 generals, 0 SOSs, and 222 indicators.
+Presolve time = 0.01 sec. (10.03 ticks)
+Found incumbent of value 15.000000 after 0.02 sec. (17.38 ticks)
+Probing time = 0.01 sec. (10.27 ticks)
+Cover probing fixed 0 vars, tightened 7 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 24 coefficients.
+Aggregator did 606 substitutions.
+Reduced MIP has 507 rows, 531 columns, and 1936 nonzeros.
+Reduced MIP has 469 binaries, 62 generals, 0 SOSs, and 222 indicators.
+Presolve time = 0.00 sec. (3.91 ticks)
+Probing time = 0.01 sec. (4.76 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 507 rows, 531 columns, and 1936 nonzeros.
+Reduced MIP has 469 binaries, 62 generals, 0 SOSs, and 222 indicators.
+Presolve time = 0.00 sec. (1.92 ticks)
+Probing time = 0.00 sec. (2.37 ticks)
+Clique table members: 2542.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (2.49 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           15.0000        2.0000            86.67%
+      0     0        2.0000   227       15.0000        2.0000      175   86.67%
+      0     0        2.0000   148       15.0000  Cliques: 226      253   86.67%
+      0     0        2.0000    14       15.0000  Cliques: 226      411   86.67%
+      0     0        2.0000     6       15.0000  Impl Bds: 21      563   86.67%
+      0     0        2.0000    14       15.0000  Impl Bds: 21      583   86.67%
+      0     0        2.0000    65       15.0000      Cuts: 97      632   86.67%
+*     0+    0                           13.0000        2.0000            84.62%
+      0     2        2.0000    65       13.0000        2.0000      633   84.62%
+Elapsed time = 0.13 sec. (137.18 ticks, tree = 0.01 MB, solutions = 2)
+*    24     9      integral     0       12.0000        4.0000      943   66.67%
+
+Clique cuts applied:  147
+Implied bound cuts applied:  48
+Zero-half cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.13 sec. (137.28 ticks)
+Sequential b&c:
+  Real time             =    0.01 sec. (12.03 ticks)
+                          ------------
+Total (root+branch&cut) =    0.14 sec. (149.31 ticks)
+   | W
+ L | 0 1 2 
+----------
+ 0 | . 4 4 
+ 1 | . 4 4 
+ 2 | 2 2 . 
+ 3 | 2 2 7 
+ 4 | 6 6 7 
+ 5 | 6 6 7 
+ 6 | . 5 5 
+ 7 | . 5 5 
+ 8 | 1 1 . 
+ 9 | 1 1 . 
+10 | . 3 3 
+11 | . 3 3 
+12 | . . . 
+13 | . . . 
+14 | . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,8)
+        bottom right (1,9)
+
+    Box 2 is at 
+        top left     (0,2)
+        bottom right (1,3)
+
+    Box 3 is at 
+        top left     (1,10)
+        bottom right (2,11)
+
+    Box 4 is at 
+        top left     (1,0)
+        bottom right (2,1)
+
+    Box 5 is at 
+        top left     (1,6)
+        bottom right (2,7)
+
+    Box 6 is at 
+        top left     (0,4)
+        bottom right (1,5)
+
+    Box 7 is at 
+        top left     (2,3)
+        bottom right (2,5)
+
+    Roll length used: 12
+In 0.15 seconds

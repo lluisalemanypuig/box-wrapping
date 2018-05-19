@@ -1,0 +1,999 @@
+[1;4mRead[0m inputs from '../inputs/material'
+[1;4mStore[0m outputs in '../outputs/LP-i7-1'
+Exe file used: ../LP/build-release/wrapping-boxes
+[1;32mSolver for[0m [1;4;32mLP[0m [1;32mexists. Proceed to benchmarking...[0m
+
+Executing LP solver with input file: ../inputs/material/bwp_3_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .027 seconds
+    Current progress:
+            Solved optimally : 1 / 1 ( 100.00% )
+        Solved sub-optimally : 0 / 1 ( 0% )
+                    Unsolved : 0 / 1 ( 0% )
+                   Remaining : 1 / 108 ( .92% )
+          Total time elapsed : .027 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .009 seconds
+    Current progress:
+            Solved optimally : 2 / 2 ( 100.00% )
+        Solved sub-optimally : 0 / 2 ( 0% )
+                    Unsolved : 0 / 2 ( 0% )
+                   Remaining : 2 / 108 ( 1.85% )
+          Total time elapsed : .036 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .011 seconds
+    Current progress:
+            Solved optimally : 3 / 3 ( 100.00% )
+        Solved sub-optimally : 0 / 3 ( 0% )
+                    Unsolved : 0 / 3 ( 0% )
+                   Remaining : 3 / 108 ( 2.77% )
+          Total time elapsed : .047 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .104 seconds
+    Current progress:
+            Solved optimally : 4 / 4 ( 100.00% )
+        Solved sub-optimally : 0 / 4 ( 0% )
+                    Unsolved : 0 / 4 ( 0% )
+                   Remaining : 4 / 108 ( 3.70% )
+          Total time elapsed : .151 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .182 seconds
+    Current progress:
+            Solved optimally : 5 / 5 ( 100.00% )
+        Solved sub-optimally : 0 / 5 ( 0% )
+                    Unsolved : 0 / 5 ( 0% )
+                   Remaining : 5 / 108 ( 4.62% )
+          Total time elapsed : .333 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .163 seconds
+    Current progress:
+            Solved optimally : 6 / 6 ( 100.00% )
+        Solved sub-optimally : 0 / 6 ( 0% )
+                    Unsolved : 0 / 6 ( 0% )
+                   Remaining : 6 / 108 ( 5.55% )
+          Total time elapsed : .496 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 8.924 seconds
+    Current progress:
+            Solved optimally : 7 / 7 ( 100.00% )
+        Solved sub-optimally : 0 / 7 ( 0% )
+                    Unsolved : 0 / 7 ( 0% )
+                   Remaining : 7 / 108 ( 6.48% )
+          Total time elapsed : 9.420 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 8.996 seconds
+    Current progress:
+            Solved optimally : 8 / 8 ( 100.00% )
+        Solved sub-optimally : 0 / 8 ( 0% )
+                    Unsolved : 0 / 8 ( 0% )
+                   Remaining : 8 / 108 ( 7.40% )
+          Total time elapsed : 18.416 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.490 seconds
+    Current progress:
+            Solved optimally : 9 / 9 ( 100.00% )
+        Solved sub-optimally : 0 / 9 ( 0% )
+                    Unsolved : 0 / 9 ( 0% )
+                   Remaining : 9 / 108 ( 8.33% )
+          Total time elapsed : 19.906 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 10.798 seconds
+    Current progress:
+            Solved optimally : 10 / 10 ( 100.00% )
+        Solved sub-optimally : 0 / 10 ( 0% )
+                    Unsolved : 0 / 10 ( 0% )
+                   Remaining : 10 / 108 ( 9.25% )
+          Total time elapsed : 30.704 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 6.289 seconds
+    Current progress:
+            Solved optimally : 11 / 11 ( 100.00% )
+        Solved sub-optimally : 0 / 11 ( 0% )
+                    Unsolved : 0 / 11 ( 0% )
+                   Remaining : 11 / 108 ( 10.18% )
+          Total time elapsed : 36.993 seconds
+Executing LP solver with input file: ../inputs/material/bwp_3_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 45.394 seconds
+    Current progress:
+            Solved optimally : 12 / 12 ( 100.00% )
+        Solved sub-optimally : 0 / 12 ( 0% )
+                    Unsolved : 0 / 12 ( 0% )
+                   Remaining : 12 / 108 ( 11.11% )
+          Total time elapsed : 82.387 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .026 seconds
+    Current progress:
+            Solved optimally : 13 / 13 ( 100.00% )
+        Solved sub-optimally : 0 / 13 ( 0% )
+                    Unsolved : 0 / 13 ( 0% )
+                   Remaining : 13 / 108 ( 12.03% )
+          Total time elapsed : 82.413 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .072 seconds
+    Current progress:
+            Solved optimally : 14 / 14 ( 100.00% )
+        Solved sub-optimally : 0 / 14 ( 0% )
+                    Unsolved : 0 / 14 ( 0% )
+                   Remaining : 14 / 108 ( 12.96% )
+          Total time elapsed : 82.485 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .027 seconds
+    Current progress:
+            Solved optimally : 15 / 15 ( 100.00% )
+        Solved sub-optimally : 0 / 15 ( 0% )
+                    Unsolved : 0 / 15 ( 0% )
+                   Remaining : 15 / 108 ( 13.88% )
+          Total time elapsed : 82.512 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .069 seconds
+    Current progress:
+            Solved optimally : 16 / 16 ( 100.00% )
+        Solved sub-optimally : 0 / 16 ( 0% )
+                    Unsolved : 0 / 16 ( 0% )
+                   Remaining : 16 / 108 ( 14.81% )
+          Total time elapsed : 82.581 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .648 seconds
+    Current progress:
+            Solved optimally : 17 / 17 ( 100.00% )
+        Solved sub-optimally : 0 / 17 ( 0% )
+                    Unsolved : 0 / 17 ( 0% )
+                   Remaining : 17 / 108 ( 15.74% )
+          Total time elapsed : 83.229 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.452 seconds
+    Current progress:
+            Solved optimally : 18 / 18 ( 100.00% )
+        Solved sub-optimally : 0 / 18 ( 0% )
+                    Unsolved : 0 / 18 ( 0% )
+                   Remaining : 18 / 108 ( 16.66% )
+          Total time elapsed : 86.681 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 7.626 seconds
+    Current progress:
+            Solved optimally : 19 / 19 ( 100.00% )
+        Solved sub-optimally : 0 / 19 ( 0% )
+                    Unsolved : 0 / 19 ( 0% )
+                   Remaining : 19 / 108 ( 17.59% )
+          Total time elapsed : 94.307 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.027 seconds
+    Current progress:
+            Solved optimally : 20 / 20 ( 100.00% )
+        Solved sub-optimally : 0 / 20 ( 0% )
+                    Unsolved : 0 / 20 ( 0% )
+                   Remaining : 20 / 108 ( 18.51% )
+          Total time elapsed : 95.334 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 32.631 seconds
+    Current progress:
+            Solved optimally : 21 / 21 ( 100.00% )
+        Solved sub-optimally : 0 / 21 ( 0% )
+                    Unsolved : 0 / 21 ( 0% )
+                   Remaining : 21 / 108 ( 19.44% )
+          Total time elapsed : 127.965 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 45.164 seconds
+    Current progress:
+            Solved optimally : 22 / 22 ( 100.00% )
+        Solved sub-optimally : 0 / 22 ( 0% )
+                    Unsolved : 0 / 22 ( 0% )
+                   Remaining : 22 / 108 ( 20.37% )
+          Total time elapsed : 173.129 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.493 seconds
+    Current progress:
+            Solved optimally : 23 / 23 ( 100.00% )
+        Solved sub-optimally : 0 / 23 ( 0% )
+                    Unsolved : 0 / 23 ( 0% )
+                   Remaining : 23 / 108 ( 21.29% )
+          Total time elapsed : 178.622 seconds
+Executing LP solver with input file: ../inputs/material/bwp_4_13_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m13[0m
+             LP : [1;31m37[0m
+    In 45.350 seconds
+    Current progress:
+            Solved optimally : 23 / 24 ( 95.83% )
+        Solved sub-optimally : 1 / 24 ( 4.16% )
+                    Unsolved : 0 / 24 ( 0% )
+                   Remaining : 24 / 108 ( 22.22% )
+          Total time elapsed : 223.972 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .009 seconds
+    Current progress:
+            Solved optimally : 24 / 25 ( 96.00% )
+        Solved sub-optimally : 1 / 25 ( 4.00% )
+                    Unsolved : 0 / 25 ( 0% )
+                   Remaining : 25 / 108 ( 23.14% )
+          Total time elapsed : 223.981 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .011 seconds
+    Current progress:
+            Solved optimally : 25 / 26 ( 96.15% )
+        Solved sub-optimally : 1 / 26 ( 3.84% )
+                    Unsolved : 0 / 26 ( 0% )
+                   Remaining : 26 / 108 ( 24.07% )
+          Total time elapsed : 223.992 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .563 seconds
+    Current progress:
+            Solved optimally : 26 / 27 ( 96.29% )
+        Solved sub-optimally : 1 / 27 ( 3.70% )
+                    Unsolved : 0 / 27 ( 0% )
+                   Remaining : 27 / 108 ( 25.00% )
+          Total time elapsed : 224.555 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_5_1.in
+    [1;32mOptimal solution reached[0m
+    In 17.017 seconds
+    Current progress:
+            Solved optimally : 27 / 28 ( 96.42% )
+        Solved sub-optimally : 1 / 28 ( 3.57% )
+                    Unsolved : 0 / 28 ( 0% )
+                   Remaining : 28 / 108 ( 25.92% )
+          Total time elapsed : 241.572 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.076 seconds
+    Current progress:
+            Solved optimally : 28 / 29 ( 96.55% )
+        Solved sub-optimally : 1 / 29 ( 3.44% )
+                    Unsolved : 0 / 29 ( 0% )
+                   Remaining : 29 / 108 ( 26.85% )
+          Total time elapsed : 242.648 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .171 seconds
+    Current progress:
+            Solved optimally : 29 / 30 ( 96.66% )
+        Solved sub-optimally : 1 / 30 ( 3.33% )
+                    Unsolved : 0 / 30 ( 0% )
+                   Remaining : 30 / 108 ( 27.77% )
+          Total time elapsed : 242.819 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_8_1.in
+    [1;32mOptimal solution reached[0m
+    In .403 seconds
+    Current progress:
+            Solved optimally : 30 / 31 ( 96.77% )
+        Solved sub-optimally : 1 / 31 ( 3.22% )
+                    Unsolved : 0 / 31 ( 0% )
+                   Remaining : 31 / 108 ( 28.70% )
+          Total time elapsed : 243.222 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_9_1.in
+    [1;32mOptimal solution reached[0m
+    In .712 seconds
+    Current progress:
+            Solved optimally : 31 / 32 ( 96.87% )
+        Solved sub-optimally : 1 / 32 ( 3.12% )
+                    Unsolved : 0 / 32 ( 0% )
+                   Remaining : 32 / 108 ( 29.62% )
+          Total time elapsed : 243.934 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_10_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m14[0m
+             LP : [1;31m16[0m
+    In 45.264 seconds
+    Current progress:
+            Solved optimally : 31 / 33 ( 93.93% )
+        Solved sub-optimally : 2 / 33 ( 6.06% )
+                    Unsolved : 0 / 33 ( 0% )
+                   Remaining : 33 / 108 ( 30.55% )
+          Total time elapsed : 289.198 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 16.106 seconds
+    Current progress:
+            Solved optimally : 32 / 34 ( 94.11% )
+        Solved sub-optimally : 2 / 34 ( 5.88% )
+                    Unsolved : 0 / 34 ( 0% )
+                   Remaining : 34 / 108 ( 31.48% )
+          Total time elapsed : 305.304 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 31.333 seconds
+    Current progress:
+            Solved optimally : 33 / 35 ( 94.28% )
+        Solved sub-optimally : 2 / 35 ( 5.71% )
+                    Unsolved : 0 / 35 ( 0% )
+                   Remaining : 35 / 108 ( 32.40% )
+          Total time elapsed : 336.637 seconds
+Executing LP solver with input file: ../inputs/material/bwp_5_13_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m6[0m
+             LP : [1;31m11[0m
+    In 45.261 seconds
+    Current progress:
+            Solved optimally : 33 / 36 ( 91.66% )
+        Solved sub-optimally : 3 / 36 ( 8.33% )
+                    Unsolved : 0 / 36 ( 0% )
+                   Remaining : 36 / 108 ( 33.33% )
+          Total time elapsed : 381.898 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .009 seconds
+    Current progress:
+            Solved optimally : 34 / 37 ( 91.89% )
+        Solved sub-optimally : 3 / 37 ( 8.10% )
+                    Unsolved : 0 / 37 ( 0% )
+                   Remaining : 37 / 108 ( 34.25% )
+          Total time elapsed : 381.907 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .342 seconds
+    Current progress:
+            Solved optimally : 35 / 38 ( 92.10% )
+        Solved sub-optimally : 3 / 38 ( 7.89% )
+                    Unsolved : 0 / 38 ( 0% )
+                   Remaining : 38 / 108 ( 35.18% )
+          Total time elapsed : 382.249 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .019 seconds
+    Current progress:
+            Solved optimally : 36 / 39 ( 92.30% )
+        Solved sub-optimally : 3 / 39 ( 7.69% )
+                    Unsolved : 0 / 39 ( 0% )
+                   Remaining : 39 / 108 ( 36.11% )
+          Total time elapsed : 382.268 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .034 seconds
+    Current progress:
+            Solved optimally : 37 / 40 ( 92.50% )
+        Solved sub-optimally : 3 / 40 ( 7.50% )
+                    Unsolved : 0 / 40 ( 0% )
+                   Remaining : 40 / 108 ( 37.03% )
+          Total time elapsed : 382.302 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .234 seconds
+    Current progress:
+            Solved optimally : 38 / 41 ( 92.68% )
+        Solved sub-optimally : 3 / 41 ( 7.31% )
+                    Unsolved : 0 / 41 ( 0% )
+                   Remaining : 41 / 108 ( 37.96% )
+          Total time elapsed : 382.536 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.071 seconds
+    Current progress:
+            Solved optimally : 39 / 42 ( 92.85% )
+        Solved sub-optimally : 3 / 42 ( 7.14% )
+                    Unsolved : 0 / 42 ( 0% )
+                   Remaining : 42 / 108 ( 38.88% )
+          Total time elapsed : 383.607 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 6.969 seconds
+    Current progress:
+            Solved optimally : 40 / 43 ( 93.02% )
+        Solved sub-optimally : 3 / 43 ( 6.97% )
+                    Unsolved : 0 / 43 ( 0% )
+                   Remaining : 43 / 108 ( 39.81% )
+          Total time elapsed : 390.576 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.705 seconds
+    Current progress:
+            Solved optimally : 41 / 44 ( 93.18% )
+        Solved sub-optimally : 3 / 44 ( 6.81% )
+                    Unsolved : 0 / 44 ( 0% )
+                   Remaining : 44 / 108 ( 40.74% )
+          Total time elapsed : 392.281 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.465 seconds
+    Current progress:
+            Solved optimally : 42 / 45 ( 93.33% )
+        Solved sub-optimally : 3 / 45 ( 6.66% )
+                    Unsolved : 0 / 45 ( 0% )
+                   Remaining : 45 / 108 ( 41.66% )
+          Total time elapsed : 394.746 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_11_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m13[0m
+             LP : [1;31m27[0m
+    In 45.393 seconds
+    Current progress:
+            Solved optimally : 42 / 46 ( 91.30% )
+        Solved sub-optimally : 4 / 46 ( 8.69% )
+                    Unsolved : 0 / 46 ( 0% )
+                   Remaining : 46 / 108 ( 42.59% )
+          Total time elapsed : 440.139 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_12_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m8[0m
+             LP : [1;31m23[0m
+    In 45.283 seconds
+    Current progress:
+            Solved optimally : 42 / 47 ( 89.36% )
+        Solved sub-optimally : 5 / 47 ( 10.63% )
+                    Unsolved : 0 / 47 ( 0% )
+                   Remaining : 47 / 108 ( 43.51% )
+          Total time elapsed : 485.422 seconds
+Executing LP solver with input file: ../inputs/material/bwp_6_13_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 61.938 seconds
+    Current progress:
+            Solved optimally : 42 / 48 ( 87.50% )
+        Solved sub-optimally : 5 / 48 ( 10.41% )
+                    Unsolved : 1 / 48 ( 2.08% )
+                   Remaining : 48 / 108 ( 44.44% )
+          Total time elapsed : 547.360 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .011 seconds
+    Current progress:
+            Solved optimally : 43 / 49 ( 87.75% )
+        Solved sub-optimally : 5 / 49 ( 10.20% )
+                    Unsolved : 1 / 49 ( 2.04% )
+                   Remaining : 49 / 108 ( 45.37% )
+          Total time elapsed : 547.371 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .123 seconds
+    Current progress:
+            Solved optimally : 44 / 50 ( 88.00% )
+        Solved sub-optimally : 5 / 50 ( 10.00% )
+                    Unsolved : 1 / 50 ( 2.00% )
+                   Remaining : 50 / 108 ( 46.29% )
+          Total time elapsed : 547.494 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .067 seconds
+    Current progress:
+            Solved optimally : 45 / 51 ( 88.23% )
+        Solved sub-optimally : 5 / 51 ( 9.80% )
+                    Unsolved : 1 / 51 ( 1.96% )
+                   Remaining : 51 / 108 ( 47.22% )
+          Total time elapsed : 547.561 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .118 seconds
+    Current progress:
+            Solved optimally : 46 / 52 ( 88.46% )
+        Solved sub-optimally : 5 / 52 ( 9.61% )
+                    Unsolved : 1 / 52 ( 1.92% )
+                   Remaining : 52 / 108 ( 48.14% )
+          Total time elapsed : 547.679 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .092 seconds
+    Current progress:
+            Solved optimally : 47 / 53 ( 88.67% )
+        Solved sub-optimally : 5 / 53 ( 9.43% )
+                    Unsolved : 1 / 53 ( 1.88% )
+                   Remaining : 53 / 108 ( 49.07% )
+          Total time elapsed : 547.771 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .356 seconds
+    Current progress:
+            Solved optimally : 48 / 54 ( 88.88% )
+        Solved sub-optimally : 5 / 54 ( 9.25% )
+                    Unsolved : 1 / 54 ( 1.85% )
+                   Remaining : 54 / 108 ( 50.00% )
+          Total time elapsed : 548.127 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 9.329 seconds
+    Current progress:
+            Solved optimally : 49 / 55 ( 89.09% )
+        Solved sub-optimally : 5 / 55 ( 9.09% )
+                    Unsolved : 1 / 55 ( 1.81% )
+                   Remaining : 55 / 108 ( 50.92% )
+          Total time elapsed : 557.456 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 45.283 seconds
+    Current progress:
+            Solved optimally : 50 / 56 ( 89.28% )
+        Solved sub-optimally : 5 / 56 ( 8.92% )
+                    Unsolved : 1 / 56 ( 1.78% )
+                   Remaining : 56 / 108 ( 51.85% )
+          Total time elapsed : 602.739 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 24.166 seconds
+    Current progress:
+            Solved optimally : 51 / 57 ( 89.47% )
+        Solved sub-optimally : 5 / 57 ( 8.77% )
+                    Unsolved : 1 / 57 ( 1.75% )
+                   Remaining : 57 / 108 ( 52.77% )
+          Total time elapsed : 626.905 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 44.305 seconds
+    Current progress:
+            Solved optimally : 52 / 58 ( 89.65% )
+        Solved sub-optimally : 5 / 58 ( 8.62% )
+                    Unsolved : 1 / 58 ( 1.72% )
+                   Remaining : 58 / 108 ( 53.70% )
+          Total time elapsed : 671.210 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 45.428 seconds
+    Current progress:
+            Solved optimally : 53 / 59 ( 89.83% )
+        Solved sub-optimally : 5 / 59 ( 8.47% )
+                    Unsolved : 1 / 59 ( 1.69% )
+                   Remaining : 59 / 108 ( 54.62% )
+          Total time elapsed : 716.638 seconds
+Executing LP solver with input file: ../inputs/material/bwp_7_13_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m14[0m
+             LP : [1;31m36[0m
+    In 45.839 seconds
+    Current progress:
+            Solved optimally : 53 / 60 ( 88.33% )
+        Solved sub-optimally : 6 / 60 ( 10.00% )
+                    Unsolved : 1 / 60 ( 1.66% )
+                   Remaining : 60 / 108 ( 55.55% )
+          Total time elapsed : 762.477 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .011 seconds
+    Current progress:
+            Solved optimally : 54 / 61 ( 88.52% )
+        Solved sub-optimally : 6 / 61 ( 9.83% )
+                    Unsolved : 1 / 61 ( 1.63% )
+                   Remaining : 61 / 108 ( 56.48% )
+          Total time elapsed : 762.488 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .039 seconds
+    Current progress:
+            Solved optimally : 55 / 62 ( 88.70% )
+        Solved sub-optimally : 6 / 62 ( 9.67% )
+                    Unsolved : 1 / 62 ( 1.61% )
+                   Remaining : 62 / 108 ( 57.40% )
+          Total time elapsed : 762.527 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .039 seconds
+    Current progress:
+            Solved optimally : 56 / 63 ( 88.88% )
+        Solved sub-optimally : 6 / 63 ( 9.52% )
+                    Unsolved : 1 / 63 ( 1.58% )
+                   Remaining : 63 / 108 ( 58.33% )
+          Total time elapsed : 762.566 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .640 seconds
+    Current progress:
+            Solved optimally : 57 / 64 ( 89.06% )
+        Solved sub-optimally : 6 / 64 ( 9.37% )
+                    Unsolved : 1 / 64 ( 1.56% )
+                   Remaining : 64 / 108 ( 59.25% )
+          Total time elapsed : 763.206 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 20.756 seconds
+    Current progress:
+            Solved optimally : 58 / 65 ( 89.23% )
+        Solved sub-optimally : 6 / 65 ( 9.23% )
+                    Unsolved : 1 / 65 ( 1.53% )
+                   Remaining : 65 / 108 ( 60.18% )
+          Total time elapsed : 783.962 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_7_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m9[0m
+             LP : [1;31m13[0m
+    In 45.309 seconds
+    Current progress:
+            Solved optimally : 58 / 66 ( 87.87% )
+        Solved sub-optimally : 7 / 66 ( 10.60% )
+                    Unsolved : 1 / 66 ( 1.51% )
+                   Remaining : 66 / 108 ( 61.11% )
+          Total time elapsed : 829.271 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_8_1.in
+    [1;32mOptimal solution reached[0m
+    In .969 seconds
+    Current progress:
+            Solved optimally : 59 / 67 ( 88.05% )
+        Solved sub-optimally : 7 / 67 ( 10.44% )
+                    Unsolved : 1 / 67 ( 1.49% )
+                   Remaining : 67 / 108 ( 62.03% )
+          Total time elapsed : 830.240 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_9_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m7[0m
+             LP : [1;31m25[0m
+    In 45.559 seconds
+    Current progress:
+            Solved optimally : 59 / 68 ( 86.76% )
+        Solved sub-optimally : 8 / 68 ( 11.76% )
+                    Unsolved : 1 / 68 ( 1.47% )
+                   Remaining : 68 / 108 ( 62.96% )
+          Total time elapsed : 875.799 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_10_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.930 seconds
+    Current progress:
+            Solved optimally : 59 / 69 ( 85.50% )
+        Solved sub-optimally : 8 / 69 ( 11.59% )
+                    Unsolved : 2 / 69 ( 2.89% )
+                   Remaining : 69 / 108 ( 63.88% )
+          Total time elapsed : 921.729 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 23.256 seconds
+    Current progress:
+            Solved optimally : 60 / 70 ( 85.71% )
+        Solved sub-optimally : 8 / 70 ( 11.42% )
+                    Unsolved : 2 / 70 ( 2.85% )
+                   Remaining : 70 / 108 ( 64.81% )
+          Total time elapsed : 944.985 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_12_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 46.746 seconds
+    Current progress:
+            Solved optimally : 60 / 71 ( 84.50% )
+        Solved sub-optimally : 8 / 71 ( 11.26% )
+                    Unsolved : 3 / 71 ( 4.22% )
+                   Remaining : 71 / 108 ( 65.74% )
+          Total time elapsed : 991.731 seconds
+Executing LP solver with input file: ../inputs/material/bwp_8_13_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 54.871 seconds
+    Current progress:
+            Solved optimally : 60 / 72 ( 83.33% )
+        Solved sub-optimally : 8 / 72 ( 11.11% )
+                    Unsolved : 4 / 72 ( 5.55% )
+                   Remaining : 72 / 108 ( 66.66% )
+          Total time elapsed : 1046.602 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .011 seconds
+    Current progress:
+            Solved optimally : 61 / 73 ( 83.56% )
+        Solved sub-optimally : 8 / 73 ( 10.95% )
+                    Unsolved : 4 / 73 ( 5.47% )
+                   Remaining : 73 / 108 ( 67.59% )
+          Total time elapsed : 1046.613 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .111 seconds
+    Current progress:
+            Solved optimally : 62 / 74 ( 83.78% )
+        Solved sub-optimally : 8 / 74 ( 10.81% )
+                    Unsolved : 4 / 74 ( 5.40% )
+                   Remaining : 74 / 108 ( 68.51% )
+          Total time elapsed : 1046.724 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .204 seconds
+    Current progress:
+            Solved optimally : 63 / 75 ( 84.00% )
+        Solved sub-optimally : 8 / 75 ( 10.66% )
+                    Unsolved : 4 / 75 ( 5.33% )
+                   Remaining : 75 / 108 ( 69.44% )
+          Total time elapsed : 1046.928 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .060 seconds
+    Current progress:
+            Solved optimally : 64 / 76 ( 84.21% )
+        Solved sub-optimally : 8 / 76 ( 10.52% )
+                    Unsolved : 4 / 76 ( 5.26% )
+                   Remaining : 76 / 108 ( 70.37% )
+          Total time elapsed : 1046.988 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.836 seconds
+    Current progress:
+            Solved optimally : 65 / 77 ( 84.41% )
+        Solved sub-optimally : 8 / 77 ( 10.38% )
+                    Unsolved : 4 / 77 ( 5.19% )
+                   Remaining : 77 / 108 ( 71.29% )
+          Total time elapsed : 1050.824 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 17.037 seconds
+    Current progress:
+            Solved optimally : 66 / 78 ( 84.61% )
+        Solved sub-optimally : 8 / 78 ( 10.25% )
+                    Unsolved : 4 / 78 ( 5.12% )
+                   Remaining : 78 / 108 ( 72.22% )
+          Total time elapsed : 1067.861 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.384 seconds
+    Current progress:
+            Solved optimally : 67 / 79 ( 84.81% )
+        Solved sub-optimally : 8 / 79 ( 10.12% )
+                    Unsolved : 4 / 79 ( 5.06% )
+                   Remaining : 79 / 108 ( 73.14% )
+          Total time elapsed : 1073.245 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 9.740 seconds
+    Current progress:
+            Solved optimally : 68 / 80 ( 85.00% )
+        Solved sub-optimally : 8 / 80 ( 10.00% )
+                    Unsolved : 4 / 80 ( 5.00% )
+                   Remaining : 80 / 108 ( 74.07% )
+          Total time elapsed : 1082.985 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 43.642 seconds
+    Current progress:
+            Solved optimally : 69 / 81 ( 85.18% )
+        Solved sub-optimally : 8 / 81 ( 9.87% )
+                    Unsolved : 4 / 81 ( 4.93% )
+                   Remaining : 81 / 108 ( 75.00% )
+          Total time elapsed : 1126.627 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_11_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.986 seconds
+    Current progress:
+            Solved optimally : 69 / 82 ( 84.14% )
+        Solved sub-optimally : 8 / 82 ( 9.75% )
+                    Unsolved : 5 / 82 ( 6.09% )
+                   Remaining : 82 / 108 ( 75.92% )
+          Total time elapsed : 1172.613 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_12_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.309 seconds
+    Current progress:
+            Solved optimally : 69 / 83 ( 83.13% )
+        Solved sub-optimally : 8 / 83 ( 9.63% )
+                    Unsolved : 6 / 83 ( 7.22% )
+                   Remaining : 83 / 108 ( 76.85% )
+          Total time elapsed : 1217.922 seconds
+Executing LP solver with input file: ../inputs/material/bwp_9_13_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 46.127 seconds
+    Current progress:
+            Solved optimally : 69 / 84 ( 82.14% )
+        Solved sub-optimally : 8 / 84 ( 9.52% )
+                    Unsolved : 7 / 84 ( 8.33% )
+                   Remaining : 84 / 108 ( 77.77% )
+          Total time elapsed : 1264.049 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .078 seconds
+    Current progress:
+            Solved optimally : 70 / 85 ( 82.35% )
+        Solved sub-optimally : 8 / 85 ( 9.41% )
+                    Unsolved : 7 / 85 ( 8.23% )
+                   Remaining : 85 / 108 ( 78.70% )
+          Total time elapsed : 1264.127 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .196 seconds
+    Current progress:
+            Solved optimally : 71 / 86 ( 82.55% )
+        Solved sub-optimally : 8 / 86 ( 9.30% )
+                    Unsolved : 7 / 86 ( 8.13% )
+                   Remaining : 86 / 108 ( 79.62% )
+          Total time elapsed : 1264.323 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .174 seconds
+    Current progress:
+            Solved optimally : 72 / 87 ( 82.75% )
+        Solved sub-optimally : 8 / 87 ( 9.19% )
+                    Unsolved : 7 / 87 ( 8.04% )
+                   Remaining : 87 / 108 ( 80.55% )
+          Total time elapsed : 1264.497 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_5_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.252 seconds
+    Current progress:
+            Solved optimally : 73 / 88 ( 82.95% )
+        Solved sub-optimally : 8 / 88 ( 9.09% )
+                    Unsolved : 7 / 88 ( 7.95% )
+                   Remaining : 88 / 108 ( 81.48% )
+          Total time elapsed : 1265.749 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.491 seconds
+    Current progress:
+            Solved optimally : 74 / 89 ( 83.14% )
+        Solved sub-optimally : 8 / 89 ( 8.98% )
+                    Unsolved : 7 / 89 ( 7.86% )
+                   Remaining : 89 / 108 ( 82.40% )
+          Total time elapsed : 1267.240 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.042 seconds
+    Current progress:
+            Solved optimally : 75 / 90 ( 83.33% )
+        Solved sub-optimally : 8 / 90 ( 8.88% )
+                    Unsolved : 7 / 90 ( 7.77% )
+                   Remaining : 90 / 108 ( 83.33% )
+          Total time elapsed : 1268.282 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 6.100 seconds
+    Current progress:
+            Solved optimally : 76 / 91 ( 83.51% )
+        Solved sub-optimally : 8 / 91 ( 8.79% )
+                    Unsolved : 7 / 91 ( 7.69% )
+                   Remaining : 91 / 108 ( 84.25% )
+          Total time elapsed : 1274.382 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_9_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m6[0m
+             LP : [1;31m22[0m
+    In 45.989 seconds
+    Current progress:
+            Solved optimally : 76 / 92 ( 82.60% )
+        Solved sub-optimally : 9 / 92 ( 9.78% )
+                    Unsolved : 7 / 92 ( 7.60% )
+                   Remaining : 92 / 108 ( 85.18% )
+          Total time elapsed : 1320.371 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_10_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.784 seconds
+    Current progress:
+            Solved optimally : 76 / 93 ( 81.72% )
+        Solved sub-optimally : 9 / 93 ( 9.67% )
+                    Unsolved : 8 / 93 ( 8.60% )
+                   Remaining : 93 / 108 ( 86.11% )
+          Total time elapsed : 1366.155 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_11_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m5[0m
+             LP : [1;31m19[0m
+    In 48.655 seconds
+    Current progress:
+            Solved optimally : 76 / 94 ( 80.85% )
+        Solved sub-optimally : 10 / 94 ( 10.63% )
+                    Unsolved : 8 / 94 ( 8.51% )
+                   Remaining : 94 / 108 ( 87.03% )
+          Total time elapsed : 1414.810 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_12_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.707 seconds
+    Current progress:
+            Solved optimally : 76 / 95 ( 80.00% )
+        Solved sub-optimally : 10 / 95 ( 10.52% )
+                    Unsolved : 9 / 95 ( 9.47% )
+                   Remaining : 95 / 108 ( 87.96% )
+          Total time elapsed : 1460.517 seconds
+Executing LP solver with input file: ../inputs/material/bwp_10_13_1.in
+    [1;33mSuboptimal solution:[0m
+        Optimal : [1;32m14[0m
+             LP : [1;31m47[0m
+    In 256.033 seconds
+    Current progress:
+            Solved optimally : 76 / 96 ( 79.16% )
+        Solved sub-optimally : 11 / 96 ( 11.45% )
+                    Unsolved : 9 / 96 ( 9.37% )
+                   Remaining : 96 / 108 ( 88.88% )
+          Total time elapsed : 1716.550 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .012 seconds
+    Current progress:
+            Solved optimally : 77 / 97 ( 79.38% )
+        Solved sub-optimally : 11 / 97 ( 11.34% )
+                    Unsolved : 9 / 97 ( 9.27% )
+                   Remaining : 97 / 108 ( 89.81% )
+          Total time elapsed : 1716.562 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .024 seconds
+    Current progress:
+            Solved optimally : 78 / 98 ( 79.59% )
+        Solved sub-optimally : 11 / 98 ( 11.22% )
+                    Unsolved : 9 / 98 ( 9.18% )
+                   Remaining : 98 / 108 ( 90.74% )
+          Total time elapsed : 1716.586 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .714 seconds
+    Current progress:
+            Solved optimally : 79 / 99 ( 79.79% )
+        Solved sub-optimally : 11 / 99 ( 11.11% )
+                    Unsolved : 9 / 99 ( 9.09% )
+                   Remaining : 99 / 108 ( 91.66% )
+          Total time elapsed : 1717.300 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_5_1.in
+    [1;32mOptimal solution reached[0m
+    In 30.750 seconds
+    Current progress:
+            Solved optimally : 80 / 100 ( 80.00% )
+        Solved sub-optimally : 11 / 100 ( 11.00% )
+                    Unsolved : 9 / 100 ( 9.00% )
+                   Remaining : 100 / 108 ( 92.59% )
+          Total time elapsed : 1748.050 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 36.914 seconds
+    Current progress:
+            Solved optimally : 81 / 101 ( 80.19% )
+        Solved sub-optimally : 11 / 101 ( 10.89% )
+                    Unsolved : 9 / 101 ( 8.91% )
+                   Remaining : 101 / 108 ( 93.51% )
+          Total time elapsed : 1784.964 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.693 seconds
+    Current progress:
+            Solved optimally : 82 / 102 ( 80.39% )
+        Solved sub-optimally : 11 / 102 ( 10.78% )
+                    Unsolved : 9 / 102 ( 8.82% )
+                   Remaining : 102 / 108 ( 94.44% )
+          Total time elapsed : 1790.657 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_8_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 52.945 seconds
+    Current progress:
+            Solved optimally : 82 / 103 ( 79.61% )
+        Solved sub-optimally : 11 / 103 ( 10.67% )
+                    Unsolved : 10 / 103 ( 9.70% )
+                   Remaining : 103 / 108 ( 95.37% )
+          Total time elapsed : 1843.602 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 4.305 seconds
+    Current progress:
+            Solved optimally : 83 / 104 ( 79.80% )
+        Solved sub-optimally : 11 / 104 ( 10.57% )
+                    Unsolved : 10 / 104 ( 9.61% )
+                   Remaining : 104 / 108 ( 96.29% )
+          Total time elapsed : 1847.907 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 46.368 seconds
+    Current progress:
+            Solved optimally : 84 / 105 ( 80.00% )
+        Solved sub-optimally : 11 / 105 ( 10.47% )
+                    Unsolved : 10 / 105 ( 9.52% )
+                   Remaining : 105 / 108 ( 97.22% )
+          Total time elapsed : 1894.275 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_11_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 46.648 seconds
+    Current progress:
+            Solved optimally : 84 / 106 ( 79.24% )
+        Solved sub-optimally : 11 / 106 ( 10.37% )
+                    Unsolved : 11 / 106 ( 10.37% )
+                   Remaining : 106 / 108 ( 98.14% )
+          Total time elapsed : 1940.923 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_12_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 50.040 seconds
+    Current progress:
+            Solved optimally : 84 / 107 ( 78.50% )
+        Solved sub-optimally : 11 / 107 ( 10.28% )
+                    Unsolved : 12 / 107 ( 11.21% )
+                   Remaining : 107 / 108 ( 99.07% )
+          Total time elapsed : 1990.963 seconds
+Executing LP solver with input file: ../inputs/material/bwp_11_13_1.in
+    [1;34mNo solution produced by LP solver[0m
+    In 45.776 seconds
+    Current progress:
+            Solved optimally : 84 / 108 ( 77.77% )
+        Solved sub-optimally : 11 / 108 ( 10.18% )
+                    Unsolved : 13 / 108 ( 12.03% )
+                   Remaining : 108 / 108 ( 100.00% )
+          Total time elapsed : 2036.739 seconds

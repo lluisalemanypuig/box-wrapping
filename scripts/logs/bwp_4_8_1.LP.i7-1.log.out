@@ -1,0 +1,162 @@
+Sat 19 May 19:13:29 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 10440 rows and 9270 columns.
+MIP Presolve modified 16381 coefficients.
+Aggregator did 34102 substitutions.
+Reduced MIP has 33120 rows, 19883 columns, and 70852 nonzeros.
+Reduced MIP has 19374 binaries, 9 generals, 0 SOSs, and 842 indicators.
+Presolve time = 0.62 sec. (1859.90 ticks)
+Probing time = 0.13 sec. (150.54 ticks)
+Tried aggregator 3 times.
+MIP Presolve eliminated 14320 rows and 500 columns.
+MIP Presolve modified 1160 coefficients.
+Aggregator did 16554 substitutions.
+Reduced MIP has 2246 rows, 2829 columns, and 22924 nonzeros.
+Reduced MIP has 2820 binaries, 9 generals, 0 SOSs, and 842 indicators.
+Presolve time = 0.07 sec. (96.99 ticks)
+Probing time = 0.07 sec. (60.85 ticks)
+Tried aggregator 3 times.
+MIP Presolve eliminated 181 rows and 0 columns.
+Aggregator did 1152 substitutions.
+Reduced MIP has 913 rows, 1677 columns, and 8472 nonzeros.
+Reduced MIP has 1668 binaries, 9 generals, 0 SOSs, and 842 indicators.
+Presolve time = 0.02 sec. (23.63 ticks)
+Probing time = 0.05 sec. (37.15 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 913 rows, 1677 columns, and 8472 nonzeros.
+Reduced MIP has 1668 binaries, 9 generals, 0 SOSs, and 842 indicators.
+Presolve time = 0.01 sec. (9.82 ticks)
+Probing time = 0.00 sec. (3.22 ticks)
+Clique table members: 23557.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.00 sec. (3.94 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        3.6875   876                      3.6875      124         
+      0     0        3.6875   768                Cliques: 328      355         
+      0     0        3.6875   658                Cliques: 328      548         
+      0     0        3.6875   554                Cliques: 328      740         
+      0     0        3.6875   458                Cliques: 328     1077         
+      0     0        3.6875   360                Cliques: 328     1356         
+      0     0        3.6875   268                Cliques: 328     1691         
+      0     0        3.6875   167                Cliques: 328     1908         
+      0     0        3.6875    77                Cliques: 328     2279         
+      0     0        3.6875    75                Cliques: 328     2649         
+      0     0        3.6875    74                Cliques: 328     2968         
+*     0+    0                           59.0000        3.6875            93.75%
+      0     0        cutoff             59.0000        3.6875     2983   93.75%
+Elapsed time = 6.74 sec. (7481.58 ticks, tree = 0.01 MB, solutions = 1)
+
+Clique cuts applied:  362
+
+Root node processing (before b&c):
+  Real time             =    6.75 sec. (7483.44 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    6.75 sec. (7483.44 ticks)
+   | W
+ L | 0 1 2 3 
+------------
+ 0 | 1 1 1 . 
+ 1 | 1 1 1 . 
+ 2 | 1 1 1 . 
+ 3 | 2 2 2 . 
+ 4 | 2 2 2 . 
+ 5 | 2 2 2 . 
+ 6 | 3 3 3 . 
+ 7 | 3 3 3 . 
+ 8 | 3 3 3 . 
+ 9 | 4 4 4 . 
+10 | 4 4 4 . 
+11 | 4 4 4 . 
+12 | 4 4 4 . 
+13 | 4 4 4 . 
+14 | 4 4 4 . 
+15 | 4 4 4 . 
+16 | 4 4 4 . 
+17 | 4 4 4 . 
+18 | 4 4 4 . 
+19 | 5 5 5 . 
+20 | 5 5 5 . 
+21 | 5 5 5 . 
+22 | 5 5 5 . 
+23 | 5 5 5 . 
+24 | 5 5 5 . 
+25 | 5 5 5 . 
+26 | 5 5 5 . 
+27 | 5 5 5 . 
+28 | 5 5 5 . 
+29 | 6 6 6 . 
+30 | 6 6 6 . 
+31 | 6 6 6 . 
+32 | 6 6 6 . 
+33 | 6 6 6 . 
+34 | 6 6 6 . 
+35 | 6 6 6 . 
+36 | 6 6 6 . 
+37 | 6 6 6 . 
+38 | 6 6 6 . 
+39 | 7 7 7 . 
+40 | 7 7 7 . 
+41 | 7 7 7 . 
+42 | 7 7 7 . 
+43 | 7 7 7 . 
+44 | 7 7 7 . 
+45 | 7 7 7 . 
+46 | 7 7 7 . 
+47 | 7 7 7 . 
+48 | 7 7 7 . 
+49 | 8 8 8 . 
+50 | 8 8 8 . 
+51 | 8 8 8 . 
+52 | 8 8 8 . 
+53 | 8 8 8 . 
+54 | 8 8 8 . 
+55 | 8 8 8 . 
+56 | 8 8 8 . 
+57 | 8 8 8 . 
+58 | 8 8 8 . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (2,2)
+
+    Box 2 is at 
+        top left     (0,3)
+        bottom right (2,5)
+
+    Box 3 is at 
+        top left     (0,6)
+        bottom right (2,8)
+
+    Box 4 is at 
+        top left     (0,9)
+        bottom right (2,18)
+
+    Box 5 is at 
+        top left     (0,19)
+        bottom right (2,28)
+
+    Box 6 is at 
+        top left     (0,29)
+        bottom right (2,38)
+
+    Box 7 is at 
+        top left     (0,39)
+        bottom right (2,48)
+
+    Box 8 is at 
+        top left     (0,49)
+        bottom right (2,58)
+
+    Roll length used: 59
+In 7.52 seconds

@@ -1,0 +1,41 @@
+Sat 19 May 19:28:35 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Aggregator has done 61472 substitutions...
+Tried aggregator 6 times.
+MIP Presolve eliminated 14625 rows and 11228 columns.
+MIP Presolve modified 44713 coefficients.
+Aggregator did 72925 substitutions.
+Reduced MIP has 101823 rows, 65313 columns, and 219875 nonzeros.
+Reduced MIP has 61074 binaries, 14 generals, 0 SOSs, and 5353 indicators.
+Presolve time = 3.21 sec. (11582.22 ticks)
+Probing time = 0.55 sec. (232.59 ticks)
+Tried aggregator 5 times.
+Aggregator did 49194 substitutions.
+Reduced MIP has 52629 rows, 16119 columns, and 121487 nonzeros.
+Reduced MIP has 11880 binaries, 4239 generals, 0 SOSs, and 5353 indicators.
+Presolve time = 0.29 sec. (387.47 ticks)
+Probing time = 0.18 sec. (130.74 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 52629 rows, 16119 columns, and 121487 nonzeros.
+Reduced MIP has 11880 binaries, 4239 generals, 0 SOSs, and 5353 indicators.
+Presolve time = 0.10 sec. (98.29 ticks)
+Probing time = 0.02 sec. (11.38 ticks)
+Clique table members: 1098569.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time = 0.25 sec. (339.55 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        0.0000  9465                      0.0000     3890         
+
+Root node processing (before b&c):
+  Real time             =   51.08 sec. (72098.16 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =   51.08 sec. (72098.16 ticks)
