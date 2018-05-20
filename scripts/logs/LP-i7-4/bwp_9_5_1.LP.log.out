@@ -1,0 +1,65 @@
+Sun 20 May 09:31:23 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 675 rows and 680 columns.
+Aggregator did 450 substitutions.
+Reduced MIP has 550 rows, 681 columns, and 1450 nonzeros.
+Reduced MIP has 675 binaries, 6 generals, 0 SOSs, and 180 indicators.
+Presolve time = 0.00 sec. (2.96 ticks)
+Probing time = 0.01 sec. (5.32 ticks)
+Cover probing fixed 0 vars, tightened 6 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 90 coefficients.
+Aggregator did 270 substitutions.
+Reduced MIP has 325 rows, 411 columns, and 1000 nonzeros.
+Reduced MIP has 405 binaries, 6 generals, 0 SOSs, and 135 indicators.
+Presolve time = 0.00 sec. (2.45 ticks)
+Probing time = 0.00 sec. (2.22 ticks)
+Tried aggregator 2 times.
+Aggregator did 45 substitutions.
+Reduced MIP has 280 rows, 366 columns, and 910 nonzeros.
+Reduced MIP has 360 binaries, 6 generals, 0 SOSs, and 135 indicators.
+Presolve time = 0.00 sec. (4.23 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.04 sec. (25.22 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.04 sec. (25.22 ticks)
+  | W
+L | 0 1 2 3 4 5 6 7 8 
+----------------------
+0 | 1 2 3 4 5 . . . . 
+1 | . . . . . . . . . 
+2 | . . . . . . . . . 
+3 | . . . . . . . . . 
+4 | . . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 5 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Roll length used: 1
+In 0.04 seconds

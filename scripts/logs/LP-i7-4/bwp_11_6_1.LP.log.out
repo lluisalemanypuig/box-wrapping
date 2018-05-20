@@ -1,0 +1,102 @@
+Sun 20 May 09:49:48 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 2688 rows and 2637 columns.
+MIP Presolve modified 14914 coefficients.
+Aggregator did 25615 substitutions.
+Reduced MIP has 35829 rows, 23376 columns, and 76205 nonzeros.
+Reduced MIP has 21521 binaries, 7 generals, 0 SOSs, and 2101 indicators.
+Presolve time = 0.52 sec. (1516.06 ticks)
+Found incumbent of value 23.000000 after 0.63 sec. (1606.73 ticks)
+Probing time = 0.51 sec. (161.08 ticks)
+Tried aggregator 3 times.
+Aggregator did 16808 substitutions.
+Reduced MIP has 19021 rows, 6568 columns, and 42589 nonzeros.
+Reduced MIP has 4713 binaries, 1855 generals, 0 SOSs, and 2101 indicators.
+Presolve time = 0.08 sec. (81.79 ticks)
+Probing time = 0.19 sec. (117.70 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 19021 rows, 6568 columns, and 42589 nonzeros.
+Reduced MIP has 4713 binaries, 1855 generals, 0 SOSs, and 2101 indicators.
+Presolve time = 0.04 sec. (35.43 ticks)
+Probing time = 0.01 sec. (7.79 ticks)
+Clique table members: 343954.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.14 sec. (179.47 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           23.0000        0.0000           100.00%
+      0     0        0.0000  3377       23.0000        0.0000        0  100.00%
+*     0+    0                            5.0000        0.0000           100.00%
+      0     0        0.0000  3399        5.0000 Cliques: 4855      775   80.00%
+
+Clique cuts applied:  4855
+
+Root node processing (before b&c):
+  Real time             =   60.13 sec. (33080.91 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   60.13 sec. (33080.91 ticks)
+   | W
+ L | 0 1 2 3 4 5 6 7 8 9 10 
+----------------------------
+ 0 | 1 1 6 . . 4 4 3 3 5  5 
+ 1 | . . . . . 4 4 3 3 5  5 
+ 2 | . . . . . 4 4 3 3 5  5 
+ 3 | 2 2 2 2 2 4 4 3 3 5  5 
+ 4 | 2 2 2 2 2 4 4 3 3 5  5 
+ 5 | . . . . . . . . . .  . 
+ 6 | . . . . . . . . . .  . 
+ 7 | . . . . . . . . . .  . 
+ 8 | . . . . . . . . . .  . 
+ 9 | . . . . . . . . . .  . 
+10 | . . . . . . . . . .  . 
+11 | . . . . . . . . . .  . 
+12 | . . . . . . . . . .  . 
+13 | . . . . . . . . . .  . 
+14 | . . . . . . . . . .  . 
+15 | . . . . . . . . . .  . 
+16 | . . . . . . . . . .  . 
+17 | . . . . . . . . . .  . 
+18 | . . . . . . . . . .  . 
+19 | . . . . . . . . . .  . 
+20 | . . . . . . . . . .  . 
+21 | . . . . . . . . . .  . 
+22 | . . . . . . . . . .  . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (1,0)
+
+    Box 2 is at 
+        top left     (0,3)
+        bottom right (4,4)
+
+    Box 3 is at 
+        top left     (7,0)
+        bottom right (8,4)
+
+    Box 4 is at 
+        top left     (5,0)
+        bottom right (6,4)
+
+    Box 5 is at 
+        top left     (9,0)
+        bottom right (10,4)
+
+    Box 6 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Roll length used: 5
+In 217.67 seconds

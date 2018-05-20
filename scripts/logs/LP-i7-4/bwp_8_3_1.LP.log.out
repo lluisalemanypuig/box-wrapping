@@ -1,0 +1,77 @@
+Sun 20 May 09:23:00 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 226 rows and 223 columns.
+MIP Presolve modified 107 coefficients.
+Aggregator did 336 substitutions.
+Reduced MIP has 559 rows, 516 columns, and 1303 nonzeros.
+Reduced MIP has 460 binaries, 4 generals, 0 SOSs, and 85 indicators.
+Presolve time = 0.01 sec. (3.11 ticks)
+Found incumbent of value 4.000000 after 0.01 sec. (5.99 ticks)
+Probing time = 0.01 sec. (3.02 ticks)
+Cover probing fixed 0 vars, tightened 3 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 32 coefficients.
+Aggregator did 228 substitutions.
+Reduced MIP has 347 rows, 288 columns, and 879 nonzeros.
+Reduced MIP has 232 binaries, 56 generals, 0 SOSs, and 69 indicators.
+Presolve time = 0.00 sec. (1.48 ticks)
+Probing time = 0.00 sec. (1.41 ticks)
+Tried aggregator 2 times.
+Aggregator did 16 substitutions.
+Reduced MIP has 331 rows, 272 columns, and 847 nonzeros.
+Reduced MIP has 216 binaries, 56 generals, 0 SOSs, and 69 indicators.
+Presolve time = 0.00 sec. (1.08 ticks)
+Probing time = 0.00 sec. (1.33 ticks)
+Clique table members: 697.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.00 sec. (0.79 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            4.0000        1.0000            75.00%
+      0     0        1.0000    62        4.0000        1.0000       38   75.00%
+      0     0        1.0000    85        4.0000  Cliques: 182       91   75.00%
+*     0+    0                            2.0000        1.0000            50.00%
+*     0+    0                            1.0000        1.0000             0.00%
+      0     0        cutoff              1.0000        1.0000      114    0.00%
+Elapsed time = 0.04 sec. (23.62 ticks, tree = 0.01 MB, solutions = 3)
+
+Clique cuts applied:  182
+
+Root node processing (before b&c):
+  Real time             =    0.04 sec. (23.67 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.04 sec. (23.67 ticks)
+  | W
+L | 0 1 2 3 4 5 6 7 
+--------------------
+0 | . 1 3 3 2 . . . 
+1 | . . . . . . . . 
+2 | . . . . . . . . 
+3 | . . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 2 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (3,0)
+
+    Roll length used: 1
+In 0.05 seconds

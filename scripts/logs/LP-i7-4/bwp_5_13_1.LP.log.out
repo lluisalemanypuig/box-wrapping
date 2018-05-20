@@ -1,0 +1,210 @@
+Sun 20 May 09:09:46 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 3 times.
+MIP Presolve eliminated 3232 rows and 2874 columns.
+MIP Presolve modified 3078 coefficients.
+Aggregator did 6879 substitutions.
+Reduced MIP has 11670 rows, 10738 columns, and 28084 nonzeros.
+Reduced MIP has 9338 binaries, 14 generals, 0 SOSs, and 2024 indicators.
+Presolve time = 0.10 sec. (204.87 ticks)
+Probing time = 0.26 sec. (92.58 ticks)
+Tried aggregator 3 times.
+Aggregator did 5093 substitutions.
+Reduced MIP has 6577 rows, 5645 columns, and 17898 nonzeros.
+Reduced MIP has 4245 binaries, 1400 generals, 0 SOSs, and 2024 indicators.
+Presolve time = 0.04 sec. (43.86 ticks)
+Probing time = 0.07 sec. (32.72 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 6577 rows, 5645 columns, and 17898 nonzeros.
+Reduced MIP has 4245 binaries, 1400 generals, 0 SOSs, and 2024 indicators.
+Presolve time = 0.02 sec. (17.31 ticks)
+Probing time = 0.01 sec. (5.46 ticks)
+Clique table members: 146004.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.02 sec. (26.66 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0        0.0000  2720                      0.0000      321         
+*     0+    0                           21.0000        0.0000           100.00%
+      0     0        0.0000  2363       21.0000 Cliques: 1744      696  100.00%
+*     0+    0                           20.0000        0.0000           100.00%
+      0     0        0.0000  2101       20.0000 Cliques: 1744     1129  100.00%
+*     0+    0                           12.0000        0.0000           100.00%
+      0     0        0.0000  1933       12.0000 Cliques: 1744     1488  100.00%
+      0     0        0.0000  1651       12.0000 Cliques: 1744     1997  100.00%
+
+Repeating presolve.
+Tried aggregator 3 times.
+MIP Presolve eliminated 3496 rows and 2415 columns.
+MIP Presolve modified 4 coefficients.
+Aggregator did 11 substitutions.
+Reduced MIP has 3070 rows, 2703 columns, and 8349 nonzeros.
+Reduced MIP has 2047 binaries, 656 generals, 0 SOSs, and 944 indicators.
+Presolve time = 0.02 sec. (26.00 ticks)
+Probing time = 0.04 sec. (30.82 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 2 rows and 2 columns.
+Reduced MIP has 3068 rows, 2701 columns, and 8345 nonzeros.
+Reduced MIP has 2045 binaries, 656 generals, 0 SOSs, and 944 indicators.
+Presolve time = 0.01 sec. (8.31 ticks)
+Represolve time = 0.25 sec. (477.76 ticks)
+Probing time = 0.00 sec. (3.55 ticks)
+Clique table members: 29975.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.17 sec. (150.99 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           12.0000        0.0000           100.00%
+      0     0        0.0000   764       12.0000        0.0000     3931  100.00%
+      0     2        0.0000   436       12.0000        0.0000     3931  100.00%
+Elapsed time = 18.59 sec. (15035.78 ticks, tree = 0.01 MB, solutions = 3)
+*    16+    2                           10.0000        0.0000           100.00%
+     53    52        0.0000   440       10.0000        0.0000     5326  100.00%
+*    75+   60                            9.0000        0.0000           100.00%
+     76    29        0.0000   599        9.0000        0.0000     6434  100.00%
+    127    86        0.0000   166        9.0000        0.0000    14078  100.00%
+    184   130    infeasible              9.0000        0.0000    16794  100.00%
+*   225+  132                            8.0000        0.0000           100.00%
+*   240   150      integral     0        7.0000        0.0000    17863  100.00%
+    245   160        0.0000   185        7.0000        0.0000    18685  100.00%
+    307   201        3.0000   146        7.0000        0.0000    21484  100.00%
+*   363+  228                            6.0000        0.0000           100.00%
+    378   181        0.0000   452        6.0000        0.0000    23839  100.00%
+    442   225        0.0000   280        6.0000        0.0000    27024  100.00%
+    456   239        4.0000   219        6.0000        0.0000    30720  100.00%
+    596   276    infeasible              6.0000        0.0000    47252  100.00%
+Elapsed time = 22.35 sec. (18227.57 ticks, tree = 10.18 MB, solutions = 10)
+    715   306        5.0000   168        6.0000        1.0000    64052   83.33%
+    894   359        2.0000   198        6.0000        1.0000    87425   83.33%
+   1058   375        4.0000   175        6.0000        1.0000   109170   83.33%
+   1231   414        5.0000   203        6.0000        1.0000   130972   83.33%
+   1449   462    infeasible              6.0000        1.0000   160011   83.33%
+   1676   519        1.7778   287        6.0000        1.0000   185410   83.33%
+   1952   583        4.0000   161        6.0000        1.0000   214759   83.33%
+   2205   678        5.0000   129        6.0000        1.0000   250715   83.33%
+   2440   779    infeasible              6.0000        1.0000   273857   83.33%
+   2668   856        5.0000   260        6.0000        1.0000   302921   83.33%
+Elapsed time = 33.37 sec. (27800.75 ticks, tree = 13.62 MB, solutions = 10)
+   2927   916    infeasible              6.0000        1.0000   327590   83.33%
+   3131   984    infeasible              6.0000        1.0000   351616   83.33%
+   3391  1060        2.0000   216        6.0000        1.0000   380993   83.33%
+   3630  1126        4.0000   125        6.0000        1.0000   402968   83.33%
+   3638  1169        2.0000   328        6.0000        2.0000   417416   66.67%
+   3765    71        5.0000   134        6.0000        2.0000   425971   66.67%
+   3940   123    infeasible              6.0000        2.0000   442753   66.67%
+   4162   243        5.0000   150        6.0000        2.0000   461277   66.67%
+   4347   293        3.5000   161        6.0000        2.0000   485768   66.67%
+   4538   285    infeasible              6.0000        3.0000   512981   50.00%
+Elapsed time = 43.15 sec. (37424.82 ticks, tree = 1.77 MB, solutions = 10)
+   4734   282        4.0000   141        6.0000        3.0000   539744   50.00%
+
+GUB cover cuts applied:  16
+Clique cuts applied:  2402
+Cover cuts applied:  35
+Implied bound cuts applied:  177
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  31
+Zero-half cuts applied:  141
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  29
+
+Root node processing (before b&c):
+  Real time             =   18.58 sec. (15033.81 ticks)
+Parallel b&c, 4 threads:
+  Real time             =   26.42 sec. (24233.20 ticks)
+  Sync time (average)   =    2.17 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   45.00 sec. (39267.02 ticks)
+   | W
+ L | 0  1  2  3  4 
+------------------
+ 0 | 6  6 12 12 12 
+ 1 | 7 11 12 12 12 
+ 2 | 7 11 12 12 12 
+ 3 | 8 10 13 13 13 
+ 4 | 8 10  9  .  1 
+ 5 | 3  4  9  2  5 
+ 6 | .  .  .  .  . 
+ 7 | .  .  .  .  . 
+ 8 | .  .  .  .  . 
+ 9 | .  .  .  .  . 
+10 | .  .  .  .  . 
+11 | .  .  .  .  . 
+12 | .  .  .  .  . 
+13 | .  .  .  .  . 
+14 | .  .  .  .  . 
+15 | .  .  .  .  . 
+16 | .  .  .  .  . 
+17 | .  .  .  .  . 
+18 | .  .  .  .  . 
+19 | .  .  .  .  . 
+20 | .  .  .  .  . 
+21 | .  .  .  .  . 
+22 | .  .  .  .  . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (4,4)
+        bottom right (4,4)
+
+    Box  2 is at 
+        top left     (3,5)
+        bottom right (3,5)
+
+    Box  3 is at 
+        top left     (0,5)
+        bottom right (0,5)
+
+    Box  4 is at 
+        top left     (1,5)
+        bottom right (1,5)
+
+    Box  5 is at 
+        top left     (4,5)
+        bottom right (4,5)
+
+    Box  6 is at 
+        top left     (0,0)
+        bottom right (1,0)
+
+    Box  7 is at 
+        top left     (0,1)
+        bottom right (0,2)
+
+    Box  8 is at 
+        top left     (0,3)
+        bottom right (0,4)
+
+    Box  9 is at 
+        top left     (2,4)
+        bottom right (2,5)
+
+    Box 10 is at 
+        top left     (1,3)
+        bottom right (1,4)
+
+    Box 11 is at 
+        top left     (1,1)
+        bottom right (1,2)
+
+    Box 12 is at 
+        top left     (2,0)
+        bottom right (4,2)
+
+    Box 13 is at 
+        top left     (2,3)
+        bottom right (4,3)
+
+    Roll length used: 6
+In 158.98 seconds

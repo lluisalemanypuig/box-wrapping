@@ -1,0 +1,157 @@
+Sun 20 May 09:43:26 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Presolve has eliminated 530 rows and 1060 columns...
+Aggregator has done 102187 substitutions...
+Tried aggregator 3 times.
+MIP Presolve eliminated 9013 rows and 9302 columns.
+MIP Presolve modified 87123 coefficients.
+Aggregator did 146336 substitutions.
+Reduced MIP has 203964 rows, 129385 columns, and 430741 nonzeros.
+Reduced MIP has 119074 binaries, 14 generals, 0 SOSs, and 10297 indicators.
+Presolve time = 10.04 sec. (42033.26 ticks)
+Found incumbent of value 47.000000 after 11.02 sec. (42681.77 ticks)
+Probing time = 1.94 sec. (413.57 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 150 rows and 150 columns.
+Aggregator did 96443 substitutions.
+Reduced MIP has 107371 rows, 32792 columns, and 237555 nonzeros.
+Reduced MIP has 22631 binaries, 10161 generals, 0 SOSs, and 10147 indicators.
+Presolve time = 0.57 sec. (726.59 ticks)
+Probing time = 0.39 sec. (171.27 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 107371 rows, 32792 columns, and 237555 nonzeros.
+Reduced MIP has 22631 binaries, 10161 generals, 0 SOSs, and 10147 indicators.
+Presolve time = 0.22 sec. (193.29 ticks)
+Probing time = 0.05 sec. (20.54 ticks)
+Clique table members: 3771720.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.65 sec. (736.52 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           47.0000        0.0000           100.00%
+      0     0        0.0000 19390       47.0000        0.0000        0  100.00%
+
+Root node processing (before b&c):
+  Real time             =  256.53 sec. (261018.07 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =  256.53 sec. (261018.07 ticks)
+   | W
+ L |  0 1  2 3 4  5  6  7  8 9 
+-------------------------------
+ 0 |  . .  . . .  .  .  .  . . 
+ 1 |  . .  . . .  .  6  6  6 . 
+ 2 |  . .  . . .  .  6  6  6 . 
+ 3 |  . .  . . .  .  6  6  6 . 
+ 4 |  . . 13 . .  .  6  6  6 . 
+ 5 |  . . 13 . .  .  6  6  6 . 
+ 6 |  . .  . . .  .  6  6  6 . 
+ 7 |  . .  . . .  .  .  .  . . 
+ 8 |  . .  . . .  .  .  .  . . 
+ 9 |  . .  . . .  .  .  .  . . 
+10 |  . .  . . .  .  .  .  . . 
+11 |  . .  . . .  .  .  .  . . 
+12 |  . .  . . .  .  .  .  . . 
+13 |  . .  . . .  9  9  9  3 3 
+14 |  . .  . . .  9  9  9  3 3 
+15 |  . .  . . .  9  9  9  3 3 
+16 |  . .  . . .  9  9  9  1 1 
+17 |  . .  . . .  9  9  9  1 1 
+18 |  . .  . . .  9  9  9  1 1 
+19 |  . .  . . .  .  .  .  . . 
+20 |  . .  . . .  .  .  .  . . 
+21 |  . .  . . .  .  .  . 12 . 
+22 |  . .  . . .  8  8  8 12 . 
+23 |  . .  . . .  8  8  8  . . 
+24 |  . .  . . .  8  8  8  . . 
+25 |  . .  . . .  8  8  8  . . 
+26 |  . .  . . .  8  8  8  5 5 
+27 |  . .  . . .  8  8  8  5 5 
+28 |  . .  . . .  .  .  .  5 5 
+29 |  . .  . . .  7  7  7  . . 
+30 |  . .  . . .  7  7  7  . . 
+31 |  . .  . . .  7  7  7  . . 
+32 |  . .  . . .  7  7  7  . . 
+33 |  . .  . . .  7  7  7  4 4 
+34 |  . .  . . .  7  7  7  4 4 
+35 |  . .  . . .  .  .  .  4 4 
+36 |  . .  . . . 10 10 10  . . 
+37 |  . .  . . . 10 10 10  . . 
+38 |  . .  . . . 10 10 10  . . 
+39 |  . .  . . . 10 10 10  . . 
+40 |  . .  . . . 10 10 10  . . 
+41 |  . .  . . . 10 10 10  . . 
+42 |  . .  . . .  .  .  .  . . 
+43 | 11 .  . . .  .  .  .  . . 
+44 | 11 .  . . .  .  .  .  2 2 
+45 |  . .  . . .  .  .  .  2 2 
+46 |  . .  . . .  .  .  .  2 2 
+47 |  . .  . . .  .  .  .  . . 
+48 |  . .  . . .  .  .  .  . . 
+49 |  . .  . . .  .  .  .  . . 
+50 |  . .  . . .  .  .  .  . . 
+
+Boxes' corners:       (w,l)
+    Box  1 is at 
+        top left     (8,16)
+        bottom right (9,18)
+
+    Box  2 is at 
+        top left     (8,44)
+        bottom right (9,46)
+
+    Box  3 is at 
+        top left     (8,13)
+        bottom right (9,15)
+
+    Box  4 is at 
+        top left     (8,33)
+        bottom right (9,35)
+
+    Box  5 is at 
+        top left     (8,26)
+        bottom right (9,28)
+
+    Box  6 is at 
+        top left     (6,1)
+        bottom right (8,6)
+
+    Box  7 is at 
+        top left     (5,29)
+        bottom right (7,34)
+
+    Box  8 is at 
+        top left     (5,22)
+        bottom right (7,27)
+
+    Box  9 is at 
+        top left     (5,13)
+        bottom right (7,18)
+
+    Box 10 is at 
+        top left     (5,36)
+        bottom right (7,41)
+
+    Box 11 is at 
+        top left     (0,43)
+        bottom right (0,44)
+
+    Box 12 is at 
+        top left     (8,21)
+        bottom right (8,22)
+
+    Box 13 is at 
+        top left     (2,4)
+        bottom right (2,5)
+
+    Roll length used: 47
+In 315.74 seconds

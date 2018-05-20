@@ -1,0 +1,65 @@
+Sun 20 May 09:11:32 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 450 rows and 455 columns.
+Aggregator did 300 substitutions.
+Reduced MIP has 370 rows, 456 columns, and 970 nonzeros.
+Reduced MIP has 450 binaries, 6 generals, 0 SOSs, and 120 indicators.
+Presolve time = 0.00 sec. (1.83 ticks)
+Probing time = 0.00 sec. (2.47 ticks)
+Cover probing fixed 0 vars, tightened 6 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 60 coefficients.
+Aggregator did 180 substitutions.
+Reduced MIP has 220 rows, 276 columns, and 670 nonzeros.
+Reduced MIP has 270 binaries, 6 generals, 0 SOSs, and 90 indicators.
+Presolve time = 0.00 sec. (1.43 ticks)
+Probing time = 0.00 sec. (1.04 ticks)
+Tried aggregator 2 times.
+Aggregator did 30 substitutions.
+Reduced MIP has 190 rows, 246 columns, and 610 nonzeros.
+Reduced MIP has 240 binaries, 6 generals, 0 SOSs, and 90 indicators.
+Presolve time = 0.00 sec. (2.09 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.02 sec. (13.96 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.02 sec. (13.96 ticks)
+  | W
+L | 0 1 2 3 4 5 
+----------------
+0 | 1 2 3 4 5 . 
+1 | . . . . . . 
+2 | . . . . . . 
+3 | . . . . . . 
+4 | . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 5 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Roll length used: 1
+In 0.03 seconds

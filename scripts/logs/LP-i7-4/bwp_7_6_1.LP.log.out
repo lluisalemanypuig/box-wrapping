@@ -1,0 +1,72 @@
+Sun 20 May 09:17:28 CEST 2018
+CPXPARAM_TimeLimit                               45
+CPXPARAM_Threads                                 4
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 990 rows and 927 columns.
+MIP Presolve modified 45 coefficients.
+Aggregator did 550 substitutions.
+Reduced MIP has 689 rows, 875 columns, and 1938 nonzeros.
+Reduced MIP has 868 binaries, 7 generals, 0 SOSs, and 240 indicators.
+Presolve time = 0.01 sec. (4.43 ticks)
+Probing time = 0.01 sec. (8.12 ticks)
+Cover probing fixed 0 vars, tightened 7 bounds.
+Tried aggregator 3 times.
+MIP Presolve modified 82 coefficients.
+Aggregator did 347 substitutions.
+Reduced MIP has 383 rows, 528 columns, and 1326 nonzeros.
+Reduced MIP has 521 binaries, 7 generals, 0 SOSs, and 199 indicators.
+Presolve time = 0.00 sec. (3.23 ticks)
+Probing time = 0.00 sec. (3.18 ticks)
+Tried aggregator 2 times.
+Aggregator did 41 substitutions.
+Reduced MIP has 342 rows, 487 columns, and 1244 nonzeros.
+Reduced MIP has 480 binaries, 7 generals, 0 SOSs, and 199 indicators.
+Presolve time = 0.00 sec. (2.46 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.04 sec. (32.45 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.04 sec. (32.45 ticks)
+  | W
+L | 0 1 2 3 4 5 6 
+------------------
+0 | 1 2 3 4 5 6 6 
+1 | . . . . . 6 6 
+2 | . . . . . . . 
+3 | . . . . . . . 
+4 | . . . . . . . 
+5 | . . . . . . . 
+6 | . . . . . . . 
+
+Boxes' corners:      (w,l)
+    Box 1 is at 
+        top left     (0,0)
+        bottom right (0,0)
+
+    Box 2 is at 
+        top left     (1,0)
+        bottom right (1,0)
+
+    Box 3 is at 
+        top left     (2,0)
+        bottom right (2,0)
+
+    Box 4 is at 
+        top left     (3,0)
+        bottom right (3,0)
+
+    Box 5 is at 
+        top left     (4,0)
+        bottom right (4,0)
+
+    Box 6 is at 
+        top left     (5,0)
+        bottom right (6,1)
+
+    Roll length used: 2
+In 0.06 seconds
