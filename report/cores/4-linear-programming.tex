@@ -366,3 +366,44 @@ Assuming the definition of the two following functions:
 IloNumVar S(size_t b) const { return Sb[b]; }
 IloNumVar S(size_t b) { return Sb[b]; }
 \end{lstlisting}}
+
+\subsection{Compilation and execution}
+\label{sec:linear-programming:compilation-execution}
+
+In order to compile this part of the project, while assuming that we are at the
+root directory of the project, one should issue the following commands:
+\begin{lstlisting}[language=bash]
+~/box-wrapping$ cd LP/build-rules
+~/box-wrapping/LP/build-rules$ make -f Makefile release
+~/box-wrapping/LP/build-rules$ cd ..
+~/box-wrapping/LP$ cd build-release
+\end{lstlisting}
+
+Once the compilation has finished we can execute the binary file generated\footnote{ There
+is no need to create the directory \textit{build-release/} prior to compiling.}. The
+complete usage can be seen by issuing the command:
+\begin{lstlisting}[language=bash]
+$ ./wrapping-boxes --help
+\end{lstlisting}
+
+The solver accepts few parameters. One of them is mandatory: the input file
+containing the instance to be solved passed with ``-i''. The file to store
+the output is optional and is passed with ``-o''. In order to obtain a solution
+that minimises the roll length used, use ``--optim''. Two extra options can
+be passed to affect the way the solver is executed: determine the number of
+threads with ``--n-threads'' and use ``--stop-when'' to indicate a timeout.
+An example can be seen in figure \ref{fig:linear-programming:example-usage}.
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[language=bash,basicstyle=\centering]
+$ ./wrapping-boxes --optim -i bwp_3_3_1.in -o bwp_3_3_1.out --n-threads 8
+\end{lstlisting}
+\centeredcaption{An example of how to use the Linear Programming solver.}
+\label{fig:linear-programming:example-usage}
+\end{figure}
+
+
+
+
+
