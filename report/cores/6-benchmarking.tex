@@ -1,12 +1,12 @@
 \section{Benchmarking}
 \label{sec:benchmarking}
 
-A quick shortcut for the execution of any solver on all files, describing
-an input each, inside a directory can be found in the script ``benchmark.sh''
-in the ``scripts/'' directory. Its usage is very simple: each solver is
+A quick shortcut for the execution of any solver on all files inside a directory,
+describing an input each, can be found in the script ``benchmark.sh''
+in the \textit{scripts/} directory. Its usage is very simple: each solver is
 called with the parameters that should make it behave at its best. Therefore,
 we only have to indicate the solver we want to execute, the directory with
-all the inputs and where to store the output found for each input. An example
+all the inputs, and where to store the output found for each input. An example
 can be found in figure \ref{fig:benchmark-example}.
 
 \begin{figure}[H]
@@ -19,12 +19,13 @@ Constraint Programming on the inputs in the \textit{inputs/material} directory.}
 \label{fig:benchmark-example}
 \end{figure}
 
-The other solvers available are $LP$. This script will, for every input in the
+All the other solvers available are $CP$ and $LP$. This script will, for every input in the
 directory, invoke the specified solver and check the quality of the solution
 found with a ``hand-made'' solution of that same instance, that can be found in
 the directory \textit{outputs/hand-made/}. If the solution is as good as the
 hand-made then it will output a message similar to the one in figure
-\ref{fig:benchmark-verbose:optimal}.
+\ref{fig:benchmark-verbose:optimal}. If it is worse, a message similar to the
+one in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
@@ -53,11 +54,9 @@ script. In a Pentium IV CPU, 1.8 GHz, with a single core, it took around 36 minu
 to solve a total of 105 inputs, 90 of them optimally and 15 of them suboptimally.
 The inputs used to get the message in figure \ref{fig:benchmark-verbose:optimal} were
 all the inputs sorted lexicographically from the ``bwp\_3\_3\_1.in'' to the
-``bwp\_11\_10\_1.in''. None of them remained unsolved. The total output for the
+``bwp\_11\_10\_1.in''. None of them were left unsolved. The total output for the
 same CPU can be found in the file ``scripts/CP-p4-1-benchmark-log''\footnote{ In a
 Unix-like environment use the command \textit{less -r} to visualise the contents with colour.}.
-An example of the message output by the script when the solution is not optimal is
-shown in figure \ref{fig:benchmark-verbose:suboptimal}.
 
 \begin{figure}[H]
 \centering
@@ -81,21 +80,30 @@ Constraint Programming solver when the solution found is not optimal.}
 \label{fig:benchmark-verbose:suboptimal}
 \end{figure}
 
-\hfill
-
 One can design their own inputs and allow the benchmark script to compare
 the solution found by any solver to the optimal solution found by hand by
-making a file containing the output following the format specified in the
-report. Also, one could use the Box Wrapper user interface used to make the
-optimal outputs for all the inputs in directory \textit{inputs/material/}
-(see section \ref{sec:box-wrapper-gui}).
+making a file containing the optimal output. Obviously, the output must
+be in the format specified in the statement. Using the Box Wrapper user
+interface could be of help (see section \ref{sec:box-wrapper-gui}).
+This simple GUI was used to make the optimal outputs for all the inputs
+in directory \textit{inputs/material/}.
 
 \hfill
 
 In the following sections are presented the results for each solver, compared
 on two different CPUs, if possible. The CPUs are an Intel Pentium IV 1.8 GHz
 (\textit{p4}), and an Intel i7-6700 HQ 3.5 GHz (\textit{i7}). We also present
-results specific for the \textit{i7} using multiple threads.
+results specific for the \textit{i7} using multiple threads. Since the tables
+will contain what instances were solved optimally, and which suboptimally, 
+it is worth mentioning that this is known for two reasons. One, because the solver
+terminated of its own accord, that is, at some point it either decided that
+it found the optimal solution (the case for the Linear Programming solver) or
+that no better solutions can possibly be found using applying the same algorithm
+(the case for the Constraint Programming solver). The other, although the solver
+was timeout-terminated, the solution's optimality is known because an optimal
+solution is known (the ``hand-made'' solutions). In case this ``hand-made''
+solution did not exist, the optimality of the solver's solution could not be
+determined. In this case, the amount of solutions is indicated in \textcolor{red}{red}.
 
 \subsection{Constraint Programming}
 \label{sec:benchmarking:constraint-programming}
@@ -118,19 +126,20 @@ $5 \text{ seconds/execution} \times 9 \text{ executions} = 45 \text{ seconds}$ o
 \subsubsection{Results}
 \label{sec:benchmarking:constraint-programming:results}
 
-Needless to say that depending on the machine this software is executed on,
-in spite of having the same time limits, a more powerful computer is more likely
-to find better solutions since it can explore the search tree more exhaustively
+Needless to say that, in spite of having the same time limits, a more powerful computer
+is more likely to find better solutions since it can explore the search tree more exhaustively
 in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-results}.
-The ``(x1)'' and ``(x4) in table \ref{table:CP-results} refer to the number of threads
-used for that CPU.
+The ``(x1)'' and ``(x4)'' refer to the number of threads used for that CPU. However,
+the improvement is not as good as one could expect.
 
 \begin{table}[H]
 \centering
 	\begin{tabular}{rccc}
 								& p4			& i7 (x1)	& i7 (x4) \\
 		\midrule
-		Optimal solutions		& 93 / 108	& 97 / 108	& 100 / 108 \\
+		Optimal solutions		& 93 \textcolor{red}{(19)} / 108
+											& 97 \textcolor{red}{(13)} / 108
+														& 100 \textcolor{red}{(12)} / 108 \\
 		Sub-optimal solutions	& 15 / 108	& 11 / 108	&   8 / 108 \\
 		Unsolved instances		&  0 / 108	&  0 / 108	&   0 / 108 \\
 		Total time				& 37 mins	& 33 mins	& 31 mins \\
@@ -142,7 +151,7 @@ used for that CPU.
 \end{table}
 
 The outputs can be found in the \textit{outputs/} directory, inside folders
-\textit{CP-p4/} and \textit{CP-i7-1/} and \textit{CP-i7-4/} respectively.
+\textit{CP-p4/}, \textit{CP-i7-1/} and \textit{CP-i7-4/} respectively.
 Table \ref{table:CP-results:suboptimalinstances} gives the list of instances
 solved suboptimally for each CPU.
 
@@ -174,6 +183,10 @@ solved suboptimally for each CPU.
 	\label{table:CP-results:suboptimalinstances}
 \end{table}
 
+For further details, see the output of the ``benchmark'' script in the files
+``scripts/CP-p4-benchmark-log'', ``scripts/CP-i7-1-benchmark-log'' and
+``scripts/CP-i7-4-benchmark-log'', respectively.
+
 \subsection{Linear Programming}
 \label{sec:benchmarking:linear-programming}
 
@@ -183,6 +196,12 @@ The parameters used to execute the Linear Programming solver are the following:
 	later than \textbf{45} seconds have passed since the start of its execution.
 	\item The solver will use as many available threads as there are in the system.
 \end{itemize}
+
+Although the solver was executed on Ubuntu 16.04 its timeout was not applied using
+the ``time'' command because the class IloCplex uses an internal clock for it. In
+spite of using this timeout, whether executed using 1 or 4 threads, the solver's
+execution sometimes took more time: usually around 15 seconds, with one single
+exception where the solver took around 200 seconds more (lasting up to ~260 seconds).
 
 \subsubsection{Results}
 \label{sec:benchmarking:linear-programming:results}
@@ -196,18 +215,18 @@ for a summary on the amount of optimally and suboptimally solved instances for \
 	\begin{tabular}{rccc}
 								& i7 (x1)	& i7 (x4) \\
 		\midrule
-		Optimal solutions		& x / 108	& x / 108 \\
-		Sub-optimal solutions	& x / 108	& x / 108 \\
-		Unsolved instances		& x / 108	& x / 108 \\
-		Total time				& x mins		& x mins \\
+		Optimal solutions		& 84 / 108	& 88 / 108 \\
+		Sub-optimal solutions	& 11 / 108	& 17 / 108 \\
+		Unsolved instances		& 13 / 108	& 3 / 108 \\
+		Total time				& 34 mins	& 34 mins \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution is given for the LP solver.}
 	\label{table:LP-results}
 \end{table}
 
-The outputs can be found in the \textit{outputs/} directory, inside folder
-\textit{LP-i7/}. Table \ref{table:LP-results:suboptimalinstances}
+The outputs can be found in the \textit{outputs/} directory, inside folders
+\textit{LP-i7-1/} and \textit{LP-i7-4/}. Table \ref{table:LP-results:suboptimalinstances}
 gives the list of unsolved instances and instances solved suboptimally.
 
 \begin{table}[H]
@@ -216,25 +235,49 @@ gives the list of unsolved instances and instances solved suboptimally.
 		\multicolumn{3}{c}{Instance name}
 					& i7 (x1)	& i7 (x4)	& Optimal value \\
 		\midrule
-		 3 &  7 & 1	& x			& x			& 12 \\
-		 3 & 11 & 1	& x			& x			& 29 \\
-		 3 & 12 & 1	& x			& x			& 15 \\
-		 3 & 13 & 1	& x			& x			& 22 \\
-		 4 & 11 & 1	& x			& x			& 11 \\
-		 5 & 12 & 1	& x			& x			& 24 \\
-		 6 & 11 & 1	& x			& x			& 13 \\
-		 6 & 13 & 1	& x			& x			& 35 \\
-		 7 & 13 & 1	& x			& x			& 14 \\
-		 8 & 13 & 1	& x			& x			& 17 \\
-		 9 & 11 & 1	& x			& x			&  6 \\
-		 9 & 13 & 1	& x			& x			& 15 \\
-		10 & 11 & 1	& x			& x			&  5 \\
-		10 & 13 & 1	& x			& x			& 14 \\
-		11 &  8 & 1	& x			& x			& 12 \\
+		 4 & 13 & 1	& 37			& 			& 13 \\
+		 5 & 10 & 1	& 16			& 			& 14 \\
+		 5 & 13 & 1	& 11			& 			&  6 \\
+		 6 & 11 & 1	& 27			& 14			& 13 \\
+		 6 & 12 & 1	& 23			& 			&  8 \\
+		 6 & 13 & 1	& $x$		& $x$		& 35 \\
+		 7 & 12 & 1	& 			& 11			&  5 \\
+		 7 & 13 & 1	& 36			& 36			& 14 \\
+		 8 &  7 & 1	& 13			& 			&  9 \\
+		 8 &  9 & 1	& 25			& 			&  7 \\
+		 8 & 10 & 1	& $x$		& 28			&  9 \\
+		 8 & 12 & 1	& $x$		& 11			&  7 \\
+		 8 & 13 & 1	& $x$		& $x$		& 17 \\
+		 9 & 11 & 1	& $x$		& $x$		&  6 \\
+		 9 & 12 & 1	& $x$		& 10			&  3 \\
+		 9 & 13 & 1	& $x$		& 34			& 15 \\
+		10 &  9 & 1	& 22			& 24			&  6 \\
+		10 & 10 & 1	& $x$		& 25			&  4 \\
+		10 & 11 & 1	& 19			&  9			&  5 \\
+		10 & 12 & 1	& $x$		& 16			&  5 \\
+		10 & 13 & 1	& 47			& 47			& 14 \\
+		11 &  6 & 1	& 			&  5			&  4 \\
+		11 &  8 & 1	& $x$		& 32			& 12 \\
+		11 & 10 & 1	&  			& 30			&  5 \\
+		11 & 11 & 1	& $x$		& 			&  3 \\
+		11 & 12 & 1	& $x$		& 28			&  6 \\
+		11 & 13 & 1	& $x$		& 24			&  4 \\
 	\end{tabular}
-	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
-	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
-	directory. Also, the total execution is given for the LP solver in two different CPUs.}
+	\centeredcaption{Instances in the \textit{inputs/material/} directory
+	solved suboptimally. An empty cell in the table indicates that the instance
+	was solved optimally, and an $x$ that no solution was produced.}
 	\label{table:LP-results:suboptimalinstances}
 \end{table}
+
+In table \ref{table:LP-results:suboptimalinstances} we can see that using more
+computation power helps, but some odd behaviour can be spotted. For example,
+instances $(7,12,1)$, $(10,9,1)$, $(11,6,1)$ and $(11,10,1)$  where using four
+threads led to a worse solution. However, this is a minor issue since these are
+outnumbered by those instances not solved when using one thread but solved,
+although with a bad-quality solution, when using four threads.
+
+\hfill
+
+For further details, see the output of the ``benchmark'' script in the files
+``scripts/LP-i7-1-benchmark-log'' and ``scripts/LP-i7-4-benchmark-log'', respectively.
 
