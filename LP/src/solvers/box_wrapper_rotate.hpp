@@ -40,7 +40,7 @@ class box_wrapper_rotate : public box_solver {
 			length b_length, width b_width
 		);
 		
-		virtual void add_objective(const gifts& gs);
+		void add_objective(const gifts& gs);
 		void _init(const gifts& gs);
 		
 	protected:

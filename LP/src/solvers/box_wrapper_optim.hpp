@@ -19,9 +19,6 @@ ILOSTLBEGIN
 #include "utils/logger.hpp"
 
 class box_wrapper_optim : public box_wrapper_rotate {
-	private:
-		void objective(const gifts& gs);
-	
 	protected:
 		IloNumVarArray box_coordinates;
 		IloNumVar max_length;

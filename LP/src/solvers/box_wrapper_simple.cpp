@@ -2,6 +2,9 @@
 
 /* PROTECTED */
 
+void box_wrapper_simple::add_objective(const gifts& gs) {
+}
+
 void box_wrapper_simple::_init(const gifts& data) {
 	// initialise arrays
 	box_cell = IloNumVarArray(env, N*W*L, 0, 1, ILOINT);

@@ -38,6 +38,7 @@ class box_solver {
 		int n_threads;
 		
 	protected:
+		virtual void add_objective(const gifts& gs) = 0;
 		virtual void _init(const gifts& gs) = 0;
 		
 	public:

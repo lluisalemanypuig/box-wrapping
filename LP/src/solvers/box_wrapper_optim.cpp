@@ -1,10 +1,8 @@
 #include "box_wrapper_optim.hpp"
 
-/* PRIVATE */
+/* PROTECTED */
 
-void box_wrapper_optim::objective(const gifts& data) {
-	/// (2). Minimise the maximum top-left corner length coordinate
-	
+void box_wrapper_optim::add_objective(const gifts& data) {
 	// initialise arrays and vars
 	box_coordinates = IloNumVarArray(env, N, 0, L, ILOINT);
 	max_length = IloNumVar(env, 0, L, ILOINT);
@@ -28,12 +26,6 @@ void box_wrapper_optim::objective(const gifts& data) {
 	model.add(
 		IloMinimize(env, max_length)
 	);
-}
-
-/* PROTECTED */
-
-void box_wrapper_optim::add_objective(const gifts& data) {
-	objective(data);
 }
 
 /* PUBLIC */
