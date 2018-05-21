@@ -379,6 +379,16 @@ root directory of the project, one should issue the following commands:
 ~/box-wrapping/LP$ cd build-release
 \end{lstlisting}
 
+However, the ``Makefile.ibm'' file in the \textit{build-rules/} directory may have
+to be modified. In particular, the variables that contain the paths containing the
+headers used in the include path for the compiler:
+\begin{lstlisting}[language=bash]
+SYSTEM		= x86-64_linux
+LIB_FORMAT	= static_pic
+CPLEX_DIR	= /opt/ibm/ILOG/CPLEX_Studio1271/cplex
+CONCERT_DIR	= /opt/ibm/ILOG/CPLEX_Studio1271/concert
+\end{lstlisting}
+
 Once the compilation has finished we can execute the binary file generated\footnote{ There
 is no need to create the directory \textit{build-release/} prior to compiling.}. The
 complete usage can be seen by issuing the command:
