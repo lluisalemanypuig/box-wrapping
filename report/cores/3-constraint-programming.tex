@@ -66,9 +66,9 @@ using the Gecode library is as follows:
     
 	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {l
-		for (length i = 0; i < L; ++i) {
-			for (width j = 0; j < W; ++j) {
-				rel(*this, sum(box_cell.slice(b*W*L + i*W + j, W*L, N)) <= 1);
+		for (length y = 0; y < L; ++y) {
+			for (width x = 0; x < W; ++x) {
+				rel(*this, sum(box_cell.slice(b*W*L + y*W + x, W*L, N)) <= 1);
 			}
 		}
 	}
@@ -152,8 +152,8 @@ can help the solver find better solutions.
 The function \textit{constrain} (see figure \ref{fig:constrain-header}) is
 simple to understand: it receives a single parameter of type \textit{Space},
 which can be cast to the same type as our solver, and contains the current
-best solution. Using this object, we can access its arrays of variables and
-their value(s) and impose new constraints to force Gecode find better solutions.
+best solution. We can access its arrays of variables and their value(s)
+and impose new constraints to force Gecode find better solutions.
 
 \hfill
 
@@ -199,8 +199,8 @@ optimal solution: each solution found using that method will have strictly short
 roll length than the previous. Therefore, eventually, Gecode will find a solution
 with a series of constraints (limiting the roll length used) that will make the
 instance infeasible. The solution found before that point is the optimal. However,
-that will only happen ``given enough time'', that is, even though Gecode is rather
-efficient this might mean several hours. In order to tackle this issue, we
+this only happens when ``given enough time'', that is, however efficient Gecode
+might be it might take several hours. In order to tackle this issue, we
 implemented a number of heuristics that should make Gecode stop as soon as possible.
 
 \hfill
@@ -269,9 +269,9 @@ Algorithmically, this can be formalised in algorithm \ref{alg:constraint:program
 
 where $\text{length}(S_i)$ is the roll's length used in solution $S_i$, and $n$ is
 the limit on the amount of heuristics concatenated. Needless to say that, if $S_i$
-is an optimal solution, the solver should not take much time in concluding that
-it can not possible find a solution at step $i+1$, basically due to not being enough
-variables. Each call to \textsc{Solve} executes the solver once.
+is an optimal solution then the solver should not take much time in concluding that
+it can not possibly find a solution at step $i+1$. Each call to \textsc{Solve}
+executes the solver once.
 
 \hfill
 
@@ -317,7 +317,7 @@ $ ./wrapping-boxes -i $INPUT_FILE -o $OUTPUT_FILE --stop-at n --enumerate --rota
 	Storing the best solution is indicated by specifying an output file with ``-o''.
 	The option ``enumerate'' will print on standard output all $n$ solutions found.
 	The solver used is ``rotate'', which will not try to find an optimal solution.
-	The ``stop-at'' option indicates the solver to stop when $n$ solutions were
+	The ``stop-at'' option indicates the solver to stop when $n$ solutions are
 	found.
 	
 	\item If one wants to find the best solution to an instance, use the ``optim'' solver

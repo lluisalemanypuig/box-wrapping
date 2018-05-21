@@ -34,7 +34,7 @@ $\delta_1$, $\delta_2$ be such variables:
 	
 	\item $(\delta_1 = 0) \wedge (\delta_2 = 0)$. Impose $\delta_1 + \delta_2 = 0$.
 	
-	\item $(\delta_1 = b_1) \Longrightarrow (\delta_2 = b_1) \equiv (\delta_1 = 1 - b_1) \vee (\delta_2 = b_2)$,
+	\item $(\delta_1 = b_1) \Longrightarrow (\delta_2 = b_2) \equiv (\delta_1 = 1 - b_1) \vee (\delta_2 = b_2)$,
 	for any two values $b_1,b_2 \in \mathbb{B}$.
 	
 	\item $(\delta_1 = b_1) \Longleftrightarrow (\delta_2 = b_2)$. Impose the two logical constraints
@@ -44,8 +44,8 @@ $\delta_1$, $\delta_2$ be such variables:
 \end{itemize}
 
 Relating linear expressions through logical operators is slightly more complicated.
-If $a_1^Tx \le b_1$ and $a_2^Tx \le b_2$ are two integer-valued linear expressions
-for all feasible solution $x$, to model the logical expression
+In general, given two integer-valued linear expressions $a_1^Tx \le b_1$ and
+$a_2^Tx \le b_2$ are for all feasible solution $x$, to model the logical expression
 \[
 (a_1^Tx \le b_1) \;\Box\; (a_2^Tx \le b_2)
 \]
@@ -66,7 +66,7 @@ the expression $a_i^Tx - b_i$, for $i\in\{1,2\}$.
 
 \hfill
 
-In spite of logical constraints not being linear expressions, we do not to reformulate
+In spite of logical constraints not being linear expressions, we do not need to reformulate
 the constraints explained in section \ref{sec:modelling} because CPLEX does the necessary
 transformations automatically.
 
@@ -133,9 +133,9 @@ using the CPLEX library is as follows:
 	{\NOINDENT \begin{lstlisting}
 	for (int b = 0; b < N; ++b) {
 		IloExpr exa_X(env);
-		for (length i = 0; i < L; ++i) {
-			for (width j = 0; j < W; ++j) {
-				exa_X += X(b,i,j);
+		for (length y = 0; y < L; ++y) {
+			for (width x = 0; x < W; ++x) {
+				exa_X += X(b,y,x);
 			}
 		}
 		model.add(exa_X == 1);
@@ -147,11 +147,11 @@ using the CPLEX library is as follows:
 	\ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
     
 	{\NOINDENT \begin{lstlisting}
-	for (length i = 0; i < L; ++i) {
-		for (width j = 0; j < W; ++j) {
+	for (length y = 0; y < L; ++y) {
+		for (width x = 0; x < W; ++x) {
 			IloExpr amo_C(env);
 			for (int b = 0; b < N; ++b) {
-				amo_C += C(b,i,j);
+				amo_C += C(b,x,y);
 			}
 			model.add(amo_C <= 1);
 			amo_C.end();
@@ -179,8 +179,8 @@ using the CPLEX library is as follows:
 		\item For rectangular boxes (constraints \ref{eq:span-cells:rectangular-boxes:0} and
 		\ref{eq:span-cells:rectangular-boxes:1}):
 		{\NOINDENT \begin{lstlisting}
-		for (length ii = i; ii <= i + b_length - 1; ++ii) {
-			for (width jj = j; jj <= j + b_width - 1; ++jj) {
+		for (length i = y; ii <= y + b_length - 1; ++i) {
+			for (width j = x; j <= x + b_width - 1; ++j) {
 				model.add(
 					IloIfThen(env, ((R(b) == 0) && (X(b,x,y) == 1)), (C(b,j,i) == 1))
 				);
@@ -188,8 +188,8 @@ using the CPLEX library is as follows:
 		}
 		\end{lstlisting}}
 		{\NOINDENT \begin{lstlisting}
-		for (length ii = i; ii <= i + b_width - 1; ++ii) {
-			for (width jj = j; jj <= j + b_length - 1; ++jj) {
+		for (length i = y; i <= y + b_width - 1; ++i) {
+			for (width j = x; j <= x + b_length - 1; ++j) {
 				model.add(
 					IloIfThen(env, ((R(b) == 1) && (X(b,x,y) == 1)), (C(b,j,i) == 1))
 				);
@@ -315,11 +315,11 @@ but also its implementation and addition to the model only slows down its perfor
 \subsection{Finding the optimium solution}
 \label{sec:linear-programming:optimum}
 
-In the linear programming, the solver uses an objective function to find an optimal solution.
-This objective function is simple: it suffices to minimise the maximum length coordinate of
-roll used over all boxes' coordinate length $S_b$. A box's length coordinate is simply the 
-coordinate of its bottom-left (or bottom-right) corner. Therefore, the objective function
-can be formalised as
+In the Linear Programming paradigm, the solver uses an objective function to find an optimal
+solution. This objective function is simple: it suffices to minimise the maximum length
+coordinate of roll used over all boxes' coordinate length $S_b$. A box's length coordinate
+is simply the  coordinate of its bottom-left (or bottom-right) corner. Therefore, the
+objective function can be formalised as
 \begin{equation}
 \label{eq:linear-programming:objective-func}
 \min \max_{1 \le b \le N} S_b

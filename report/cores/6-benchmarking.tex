@@ -15,7 +15,7 @@ can be found in figure \ref{fig:benchmark-example}.
 $ ./benchmark.sh --solver=CP -i=../inputs/material -o=../outputs/CP
 \end{lstlisting}
 \centeredcaption{How to use the benchmarking script to execute the solver for
-Constraint Programming on the inputs in the \textit{inputs/material} directory.}
+Constraint Programming on the inputs in the \textit{inputs/material/} directory.}
 \label{fig:benchmark-example}
 \end{figure}
 
@@ -90,7 +90,7 @@ in directory \textit{inputs/material/}.
 
 \hfill
 
-In the following sections are presented the results for each solver, compared
+In the following sections are presented the results for each solver,
 on two different CPUs, if possible. The CPUs are an Intel Pentium IV 1.8 GHz
 (\textit{p4}), and an Intel i7-6700 HQ 3.5 GHz (\textit{i7}). We also present
 results specific for the \textit{i7} using multiple threads. Since the tables
@@ -101,7 +101,7 @@ it found the optimal solution (the case for the Linear Programming solver) or
 that no better solutions can possibly be found using applying the same algorithm
 (the case for the Constraint Programming solver). The other, although the solver
 was timeout-terminated, the solution's optimality is known because an optimal
-solution is known (the ``hand-made'' solutions). In case this ``hand-made''
+solution is known (the ``hand-made'' solutions). In the case this ``hand-made''
 solution did not exist, the optimality of the solver's solution could not be
 determined. In this case, the amount of solutions is indicated in \textcolor{red}{red}.
 
@@ -123,8 +123,7 @@ width, decreasingly sorted by area, by width, and each of the 5 random permutati
 have a time limit of 5 seconds. With a total of 9 executions that makes
 $5 \text{ seconds/execution} \times 9 \text{ executions} = 45 \text{ seconds}$ of time limit.
 
-\subsubsection{Results}
-\label{sec:benchmarking:constraint-programming:results}
+\hfill
 
 Needless to say that, in spite of having the same time limits, a more powerful computer
 is more likely to find better solutions since it can explore the search tree more exhaustively
@@ -146,7 +145,7 @@ the improvement is not as good as one could expect.
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
-	directory. Also, the total execution is given for the CP solver in two different CPUs.}
+	directory. Also, the total execution time is given for the CP solver in two different CPUs.}
 	\label{table:CP-results}
 \end{table}
 
@@ -178,12 +177,12 @@ solved suboptimally for each CPU.
 		11 &  8 & 1	& 15		&  15		& 14			& 12 \\
 	\end{tabular}
 	\centeredcaption{Instances in the \textit{inputs/material/} directory
-	solved suboptimally. An empty cell in the table indicates that the instance
-	was solved optimally.}
+	solved suboptimally and the roll's length found. An empty cell in the
+	table indicates that the instance was solved optimally.}
 	\label{table:CP-results:suboptimalinstances}
 \end{table}
 
-For further details, see the output of the ``benchmark'' script in the files
+For further details, see the output of the ``benchmark.sh'' script in the files
 ``scripts/CP-p4-benchmark-log'', ``scripts/CP-i7-1-benchmark-log'' and
 ``scripts/CP-i7-4-benchmark-log'', respectively.
 
@@ -200,11 +199,10 @@ The parameters used to execute the Linear Programming solver are the following:
 Although the solver was executed on Ubuntu 16.04 its timeout was not applied using
 the ``time'' command because the class IloCplex uses an internal clock for it. In
 spite of using this timeout, whether executed using 1 or 4 threads, the solver's
-execution sometimes took more time: usually around 15 seconds, with one single
+execution sometimes took more time: usually around 15 extra seconds, with one single
 exception where the solver took around 200 seconds more (lasting up to ~260 seconds).
 
-\subsubsection{Results}
-\label{sec:benchmarking:linear-programming:results}
+\hfill
 
 The CPLEX library was obtained through an academical-use only license for a 64-bit system.
 For this reason, we can only present results for one CPU only. See table \ref{table:LP-results}
@@ -215,13 +213,14 @@ for a summary on the amount of optimally and suboptimally solved instances for \
 	\begin{tabular}{rccc}
 								& i7 (x1)	& i7 (x4) \\
 		\midrule
-		Optimal solutions		& 84 / 108	& 88 / 108 \\
+		Optimal solutions		& 84 \textcolor{red}{(6)} / 108
+											& 88 \textcolor{red}{(8)} / 108 \\
 		Sub-optimal solutions	& 11 / 108	& 17 / 108 \\
 		Unsolved instances		& 13 / 108	& 3 / 108 \\
 		Total time				& 34 mins	& 34 mins \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
-	instances, and unsolved instances. Also, the total execution is given for the LP solver.}
+	instances, and unsolved instances. Also, the total execution time is given for the LP solver.}
 	\label{table:LP-results}
 \end{table}
 
@@ -264,8 +263,9 @@ gives the list of unsolved instances and instances solved suboptimally.
 		11 & 13 & 1	& $x$		& 24			&  4 \\
 	\end{tabular}
 	\centeredcaption{Instances in the \textit{inputs/material/} directory
-	solved suboptimally. An empty cell in the table indicates that the instance
-	was solved optimally, and an $x$ that no solution was produced.}
+	solved suboptimally and the roll's length found. An empty cell in the
+	table indicates that the instance was solved optimally, and an $x$
+	that no solution was produced.}
 	\label{table:LP-results:suboptimalinstances}
 \end{table}
 
@@ -278,6 +278,6 @@ although with a bad-quality solution, when using four threads.
 
 \hfill
 
-For further details, see the output of the ``benchmark'' script in the files
+For further details, see the output of the ``benchmark.sh'' script in the files
 ``scripts/LP-i7-1-benchmark-log'' and ``scripts/LP-i7-4-benchmark-log'', respectively.
 
