@@ -367,6 +367,17 @@ IloNumVar S(size_t b) const { return Sb[b]; }
 IloNumVar S(size_t b) { return Sb[b]; }
 \end{lstlisting}}
 
+Despite the existence of an explicit objective function one could still perform
+some basic transformations on the input data, similar to the ones described in
+section \ref{sec:constraint-programming:optimum:heuristics}, hoping that it can
+help the solver find better solutions faster. However, a few basic experiments
+show that this is not the case. In fact, the short execution time the solver is
+allowed\footnote{ Since we want to apply several heuristics, it is important not
+to let the solver for too long, or it might take more than 120 seconds which the
+time limit imposed in the statement.} does not let it find solutions that are
+as good as the ones found when the solver is allowed to run for 45 seconds straight
+without any kind of transformation.
+
 \subsection{Compilation and execution}
 \label{sec:linear-programming:compilation-execution}
 
