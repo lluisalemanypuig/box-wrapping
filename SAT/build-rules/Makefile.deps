@@ -1,0 +1,24 @@
+# |--------------|
+# | DEPENDENCIES |
+# |--------------|
+
+# -----
+# UTILS
+
+GLOB_INF_DPS	= $(UTILS_DIR)/global_info.hpp
+LOGGER_DPS		= $(UTILS_DIR)/logger.hpp
+TIME_DPS		= $(UTILS_DIR)/time.hpp
+DEFINITIONS_DPS	= $(UTILS_DIR)/definitions.hpp
+WRAPPED_BOXES	= $(UTILS_DIR)/wrapped_boxes.hpp
+INPUT_DATA_DPS	= $(UTILS_DIR)/input_data.hpp $(DEFINITIONS_DPS)
+PARSE_DPS		= $(UTILS_DIR)/parse_string.hpp $(DEFINITIONS_DPS)
+
+# ------
+# SOLVER
+
+CLAUSE_DPS		= $(SOLVER_DIR)/clause.hpp
+CLAUSE_ENC_DPS	= $(SOLVER_DIR)/clause_encoder.hpp $(CLAUSE_DPS) $(GLOB_INF_DPS)
+QUAD_ENC_DPS	= $(SOLVER_DIR)/quadratic_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS)
+LOG_ENC_DPS		= $(SOLVER_DIR)/logarithmic_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS)
+HEULE_ENC_DPS	= $(SOLVER_DIR)/heule_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS)
+

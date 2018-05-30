@@ -1,0 +1,86 @@
+
+#############
+# DEBUG FLAGS
+
+DEB_FLAGS = $(BASE_FLAGS) -DBOX_DEBUG
+
+###############
+# DEBUG OBJECTS
+
+SOLVER_OBJECTS		= $(DEB_BIN_DIR)/clause.o				\
+					  $(DEB_BIN_DIR)/clause_encoder.o		\
+					  $(DEB_BIN_DIR)/quadratic_encoder.o	\
+					  $(DEB_BIN_DIR)/logarithmic_encoder.o	\
+					  $(DEB_BIN_DIR)/heule_encoder.o
+					  
+
+UTILS_OBJECTS		= $(DEB_BIN_DIR)/global_info.o			\
+					  $(DEB_BIN_DIR)/input_data.o			\
+					  $(DEB_BIN_DIR)/parse_string.o			\
+					  $(DEB_BIN_DIR)/time.o					\
+					  $(DEB_BIN_DIR)/wrapped_boxes.o
+
+DEB_WRAPPING_BOXES	= $(SOLVER_OBJECTS)	$(UTILS_OBJECTS)
+
+
+###########
+# DIRECTORY
+
+debugdirectory: $(DEB_BIN_DIR)
+$(DEB_BIN_DIR):
+	mkdir -p $(DEB_BIN_DIR)
+
+######################
+# EXECUTABLE
+
+$(DEB_BIN_DIR)/$(EXE_NAME): $(DEB_WRAPPING_BOXES)
+	g++ $(DEB_FLAGS) -o $@ $(DEB_WRAPPING_BOXES) $(LIBS)
+
+$(DEB_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# --------------
+# SOLVER OBJECTS
+
+$(DEB_BIN_DIR)/clause.o: $(SOLVER_DIR)/clause.cpp $(CLAUSE_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/clause_encoder.o: $(SOLVER_DIR)/clause_encoder.cpp $(CLAUSE_ENC_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/quadratic_encoder.o: $(SOLVER_DIR)/quadratic_encoder.cpp $(QUAD_ENC_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/logarithmic_encoder.o: $(SOLVER_DIR)/logarithmic_encoder.cpp $(LOG_ENC_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/heule_encoder.o: $(SOLVER_DIR)/heule_encoder.cpp $(HEULE_ENC_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# --------------
+# UTILS OBJECTS
+
+$(DEB_BIN_DIR)/global_info.o: $(UTILS_DIR)/global_info.cpp $(GLOB_INF_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/parse_string.o: $(UTILS_DIR)/parse_string.cpp $(PARSE_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+############
+
+debugclean:
+	rm -f $(DEB_WRAPPING_BOXES)
+
+debugdistclean:
+	make -f $(RULES_DIR)/Makefile debugclean
+	rm -f $(DEB_BIN_DIR)/$(EXE_NAME)
+	rmdir --ignore-fail-on-non-empty $(DEB_BIN_DIR)
