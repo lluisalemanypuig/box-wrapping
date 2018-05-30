@@ -7,20 +7,26 @@ DEB_FLAGS = $(BASE_FLAGS) -DBOX_DEBUG
 ###############
 # DEBUG OBJECTS
 
-DEB_WRAPPING_BOXES = $(DEB_BIN_DIR)/main.o					\
-					 $(DEB_BIN_DIR)/time.o					\
-					 $(DEB_BIN_DIR)/parse_string.o			\
-					 $(DEB_BIN_DIR)/wrapped_boxes.o			\
-					 $(DEB_BIN_DIR)/input_data.o			\
-					 $(DEB_BIN_DIR)/box_wrapper_simple.o	\
-					 $(DEB_BIN_DIR)/box_wrapper_rotate.o	\
-					 $(DEB_BIN_DIR)/box_wrapper_optim.o		\
-					 $(DEB_BIN_DIR)/heuristic_private.o		\
-					 $(DEB_BIN_DIR)/heuristic_chooser.o		\
-					 $(DEB_BIN_DIR)/heuristics_inc.o		\
-					 $(DEB_BIN_DIR)/heuristics_dec.o		\
-					 $(DEB_BIN_DIR)/heuristics_rand.o		\
-					 $(DEB_BIN_DIR)/heuristics_mix.o
+DEB_UTILS_OBJECTS	= $(DEB_BIN_DIR)/time.o					\
+					  $(DEB_BIN_DIR)/parse_string.o			\
+					  $(DEB_BIN_DIR)/wrapped_boxes.o		\
+					  $(DEB_BIN_DIR)/input_data.o
+
+DEB_CONSTR_SOLVER	= $(DEB_BIN_DIR)/box_wrapper_simple.o	\
+					  $(DEB_BIN_DIR)/box_wrapper_rotate.o	\
+					  $(DEB_BIN_DIR)/box_wrapper_optim.o
+
+DEB_HEURISTICS		= $(DEB_BIN_DIR)/heuristic_private.o	\
+					  $(DEB_BIN_DIR)/heuristic_chooser.o	\
+					  $(DEB_BIN_DIR)/heuristics_inc.o		\
+					  $(DEB_BIN_DIR)/heuristics_dec.o		\
+					  $(DEB_BIN_DIR)/heuristics_rand.o		\
+					  $(DEB_BIN_DIR)/heuristics_mix.o
+
+DEB_WRAPPING_BOXES	= $(DEB_BIN_DIR)/main.o					\
+					  $(DEB_UTILS_OBJECTS)					\
+					  $(DEB_CONSTR_SOLVER)					\
+					  $(DEB_HEURISTICS)
 
 ###########
 # DIRECTORY
@@ -38,6 +44,9 @@ $(DEB_BIN_DIR)/$(EXE_NAME): $(DEB_WRAPPING_BOXES)
 $(DEB_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+# -------------
+# UTILS OBJECTS
+
 $(DEB_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
@@ -50,6 +59,9 @@ $(DEB_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 $(DEB_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+# --------------------------
+# COSNTRAINT SOLVERS OBJECTS
+
 $(DEB_BIN_DIR)/box_wrapper_simple.o: $(SOLV_DIR)/box_wrapper_simple.cpp $(BOX_WRAPPER_SIMPLE_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
@@ -58,6 +70,9 @@ $(DEB_BIN_DIR)/box_wrapper_rotate.o: $(SOLV_DIR)/box_wrapper_rotate.cpp $(BOX_WR
 
 $(DEB_BIN_DIR)/box_wrapper_optim.o: $(SOLV_DIR)/box_wrapper_optim.cpp $(BOX_WRAPPER_OPTIM_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# ------------------
+# HEURISTICS OBJECTS
 
 $(DEB_BIN_DIR)/heuristic_private.o: $(HEUR_DIR)/heuristic_private.cpp $(HEURISTICS_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)

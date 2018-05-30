@@ -1,26 +1,32 @@
 
-#############
-# RELUG FLAGS
+###############
+# RELEASE FLAGS
 
 REL_FLAGS = $(BASE_FLAGS) -O3 -DNDEBUG
 
-###############
-# RELUG OBJECTS
+#################
+# RELEASE OBJECTS
 
-REL_WRAPPING_BOXES = $(REL_BIN_DIR)/main.o					\
-					 $(REL_BIN_DIR)/time.o					\
-					 $(REL_BIN_DIR)/parse_string.o			\
-					 $(REL_BIN_DIR)/wrapped_boxes.o			\
-					 $(REL_BIN_DIR)/input_data.o			\
-					 $(REL_BIN_DIR)/box_wrapper_simple.o	\
-					 $(REL_BIN_DIR)/box_wrapper_rotate.o	\
-					 $(REL_BIN_DIR)/box_wrapper_optim.o		\
-					 $(REL_BIN_DIR)/heuristic_private.o		\
-					 $(REL_BIN_DIR)/heuristic_chooser.o		\
-					 $(REL_BIN_DIR)/heuristics_inc.o		\
-					 $(REL_BIN_DIR)/heuristics_dec.o		\
-					 $(REL_BIN_DIR)/heuristics_rand.o		\
-					 $(REL_BIN_DIR)/heuristics_mix.o
+REL_UTILS_OBJECTS	= $(REL_BIN_DIR)/time.o					\
+					  $(REL_BIN_DIR)/parse_string.o			\
+					  $(REL_BIN_DIR)/wrapped_boxes.o		\
+					  $(REL_BIN_DIR)/input_data.o
+
+REL_CONSTR_SOLVER	= $(REL_BIN_DIR)/box_wrapper_simple.o	\
+					  $(REL_BIN_DIR)/box_wrapper_rotate.o	\
+					  $(REL_BIN_DIR)/box_wrapper_optim.o
+
+REL_HEURISTICS		= $(REL_BIN_DIR)/heuristic_private.o	\
+					  $(REL_BIN_DIR)/heuristic_chooser.o	\
+					  $(REL_BIN_DIR)/heuristics_inc.o		\
+					  $(REL_BIN_DIR)/heuristics_dec.o		\
+					  $(REL_BIN_DIR)/heuristics_rand.o		\
+					  $(REL_BIN_DIR)/heuristics_mix.o
+
+REL_WRAPPING_BOXES	= $(REL_BIN_DIR)/main.o					\
+					  $(REL_UTILS_OBJECTS)					\
+					  $(REL_CONSTR_SOLVER)					\
+					  $(REL_HEURISTICS)
 
 ###########
 # DIRECTORY
@@ -38,6 +44,9 @@ $(REL_BIN_DIR)/$(EXE_NAME): $(REL_WRAPPING_BOXES)
 $(REL_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+# -------------
+# UTILS OBJECTS
+
 $(REL_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
@@ -50,6 +59,9 @@ $(REL_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 $(REL_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+# --------------------------
+# COSNTRAINT SOLVERS OBJECTS
+
 $(REL_BIN_DIR)/box_wrapper_simple.o: $(SOLV_DIR)/box_wrapper_simple.cpp $(BOX_WRAPPER_SIMPLE_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
@@ -58,6 +70,9 @@ $(REL_BIN_DIR)/box_wrapper_rotate.o: $(SOLV_DIR)/box_wrapper_rotate.cpp $(BOX_WR
 
 $(REL_BIN_DIR)/box_wrapper_optim.o: $(SOLV_DIR)/box_wrapper_optim.cpp $(BOX_WRAPPER_OPTIM_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# ------------------
+# HEURISTICS OBJECTS
 
 $(REL_BIN_DIR)/heuristic_private.o: $(HEUR_DIR)/heuristic_private.cpp $(HEURISTICS_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)

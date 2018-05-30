@@ -1,21 +1,25 @@
 
-#############
-# RELUG FLAGS
-
-REL_FLAGS = $(BASE_FLAGS) -O3 -DNDEBUG
-
 ###############
-# RELUG OBJECTS
+# RELEASE FLAGS
 
-REL_WRAPPING_BOXES = $(REL_BIN_DIR)/main.o					\
-					 $(REL_BIN_DIR)/time.o					\
-					 $(REL_BIN_DIR)/parse_string.o			\
-					 $(REL_BIN_DIR)/wrapped_boxes.o			\
-					 $(REL_BIN_DIR)/input_data.o			\
-					 $(REL_BIN_DIR)/box_solver.o			\
-					 $(REL_BIN_DIR)/box_wrapper_simple.o	\
-					 $(REL_BIN_DIR)/box_wrapper_rotate.o	\
-					 $(REL_BIN_DIR)/box_wrapper_optim.o
+REL_FLAGS = $(BASE_FLAGS) -DBOX_RELUG
+
+#################
+# RELEASE OBJECTS
+
+REL_UTILS_OBJECTS	= $(REL_BIN_DIR)/time.o					\
+					  $(REL_BIN_DIR)/parse_string.o			\
+					  $(REL_BIN_DIR)/wrapped_boxes.o		\
+					  $(REL_BIN_DIR)/input_data.o
+
+REL_CONSTR_SOLVER	= $(REL_BIN_DIR)/box_solver.o			\
+					  $(REL_BIN_DIR)/box_wrapper_simple.o	\
+					  $(REL_BIN_DIR)/box_wrapper_rotate.o	\
+					  $(REL_BIN_DIR)/box_wrapper_optim.o
+
+REL_WRAPPING_BOXES	= $(REL_BIN_DIR)/main.o					\
+					  $(REL_CONSTR_SOLVER)					\
+					  $(REL_UTILS_OBJECTS)
 
 ###########
 # DIRECTORY
@@ -33,6 +37,9 @@ $(REL_BIN_DIR)/$(EXE_NAME): $(REL_WRAPPING_BOXES)
 $(REL_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
+# -------------
+# UTILS OBJECTS
+
 $(REL_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
@@ -44,6 +51,9 @@ $(REL_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 
 $(REL_BIN_DIR)/input_data.o: $(UTILS_DIR)/input_data.cpp $(INPUT_DATA_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# ----------------------------------
+# LINEAR PROGRAMMING SOLVERS OBJECTS
 
 $(REL_BIN_DIR)/box_solver.o: $(SOLV_DIR)/box_solver.cpp $(BOX_SOLVER_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
