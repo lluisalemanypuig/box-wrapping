@@ -12,6 +12,8 @@ using namespace std;
 // Custom includes
 #include "definitions.hpp"
 
+namespace utils {
+
 class wrapped_boxes {
 	private:
 		width W;
@@ -76,4 +78,6 @@ class wrapped_boxes {
 		// spceified in the project's statement
 		void store(ofstream& fout) const;
 };
+
+} // -- namespace utils
 

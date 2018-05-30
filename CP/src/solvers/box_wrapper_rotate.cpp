@@ -1,5 +1,7 @@
 #include "box_wrapper_rotate.hpp"
 
+namespace solver {
+
 /* PRIVATE */
 
 void box_wrapper_rotate::span_cells_non_rot
@@ -232,4 +234,6 @@ void box_wrapper_rotate::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 		}
 	}
 }
+
+} // -- namespace solver
 

@@ -14,6 +14,8 @@ using namespace std;
 // Custom includes
 #include "definitions.hpp"
 
+namespace utils {
+
 /* BOX CLASS */
 class box {
 	private:
@@ -121,4 +123,6 @@ class gifts {
 		length get_max_length_ro() const;
 		
 };
+
+} // -- namespace utils
 

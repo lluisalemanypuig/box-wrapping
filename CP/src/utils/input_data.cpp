@@ -1,5 +1,7 @@
 #include "input_data.hpp"
 
+namespace utils {
+
 /* BOX class */
 box::box() : w(0), l(0) { }
 box::box(width _w, length _l) : w(_w), l(_l) { }
@@ -90,4 +92,6 @@ length gifts::get_max_length_s() const {
 length gifts::get_max_length_ro() const {
 	return sum_max_sides;
 }
+
+} // -- namespace utils
 

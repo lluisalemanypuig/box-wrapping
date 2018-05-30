@@ -18,7 +18,10 @@ using namespace Gecode;
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+using namespace utils;
 
+namespace solver {
+	
 class box_wrapper_rotate : public Space {
 	protected:
 		// constraints for spanning cells when box is rotable
@@ -85,4 +88,6 @@ class box_wrapper_rotate : public Space {
 		
 		void to_wrapped_boxes(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
+
+} // -- namespace solver
 

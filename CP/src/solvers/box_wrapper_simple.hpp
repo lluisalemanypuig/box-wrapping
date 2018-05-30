@@ -15,6 +15,9 @@ using namespace Gecode;
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+using namespace utils;
+
+namespace solver {
 
 class box_wrapper_simple : public Space {
 	protected:
@@ -50,4 +53,6 @@ class box_wrapper_simple : public Space {
 		
 		void to_wrapped_boxes(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
+
+} // -- namespace solver
 

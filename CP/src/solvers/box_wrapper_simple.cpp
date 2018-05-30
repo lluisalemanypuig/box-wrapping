@@ -1,5 +1,7 @@
 #include "box_wrapper_simple.hpp"
 
+namespace solver {
+	
 /* PUBLIC */
 
 box_wrapper_simple::box_wrapper_simple(const gifts& data, length max_L) {
@@ -136,4 +138,6 @@ void box_wrapper_simple::to_wrapped_boxes(const gifts& data, wrapped_boxes& wb) 
 		);
 	}
 }
+
+} // -- namespace solver
 

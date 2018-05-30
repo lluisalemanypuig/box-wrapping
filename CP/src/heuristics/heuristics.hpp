@@ -18,6 +18,8 @@ using namespace Search;
 #include "utils/wrapped_boxes.hpp"
 #include "utils/input_data.hpp"
 #include "utils/definitions.hpp"
+using namespace utils;
+using namespace solver;
 
 namespace heuristics {
 	

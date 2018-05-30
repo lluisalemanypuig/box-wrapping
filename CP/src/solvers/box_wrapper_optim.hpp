@@ -19,6 +19,9 @@ using namespace Gecode;
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+using namespace utils;
+
+namespace solver {
 
 class box_wrapper_optim : public box_wrapper_rotate {
 	protected:
@@ -34,4 +37,6 @@ class box_wrapper_optim : public box_wrapper_rotate {
 		// imposes that the length of roll used is as small as possible
 		virtual void constrain(const Space& _b);
 };
+
+} // -- namespace solver
 
