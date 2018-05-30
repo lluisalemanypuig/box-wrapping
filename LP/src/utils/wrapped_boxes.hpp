@@ -12,6 +12,8 @@ using namespace std;
 // Custom includes
 #include "definitions.hpp"
 
+namespace utils {
+
 class wrapped_boxes {
 	private:
 		width W;
@@ -70,10 +72,12 @@ class wrapped_boxes {
 		// returns the roll's length used
 		length get_roll_length() const;
 		
-		/* I/O */
+		/// I/O
 		
 		// stores in a file following the format
 		// spceified in the project's statement
 		void store(ofstream& fout) const;
 };
+
+} // -- namespace utils
 

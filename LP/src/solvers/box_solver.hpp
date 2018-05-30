@@ -9,6 +9,9 @@ ILOSTLBEGIN
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+using namespace utils;
+
+namespace solver {
 
 class box_solver {
 	private:
@@ -63,4 +66,6 @@ class box_solver {
 		double get_exe_time() const;
 		IloCplex::Status get_status() const;
 };
+
+} // -- namespace solver
 

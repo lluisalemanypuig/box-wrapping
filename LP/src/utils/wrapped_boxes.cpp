@@ -1,5 +1,7 @@
 #include "wrapped_boxes.hpp"
 
+namespace utils {
+
 /* PRIVATE */
 
 length wrapped_boxes::box_length(int b) const {
@@ -100,7 +102,7 @@ void wrapped_boxes::init(int _N, length _L, width _W) {
 	br_corner = vector<corner>(N);
 }
 
-/* OPERATORS */
+/// OPERATORS
 
 wrapped_boxes& wrapped_boxes::operator= (const wrapped_boxes& wb) {
 	W = wb.W;
@@ -244,4 +246,6 @@ void wrapped_boxes::store(ofstream& fout) const {
 		fout << endl;
 	}
 }
+
+} // -- namespace utils
 

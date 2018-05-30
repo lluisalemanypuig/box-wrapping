@@ -1,5 +1,7 @@
 #include "box_wrapper_simple.hpp"
 
+namespace solver {
+
 /* PROTECTED */
 
 void box_wrapper_simple::add_objective(const gifts& gs) {
@@ -152,4 +154,6 @@ void box_wrapper_simple::solution(const gifts& data, wrapped_boxes& wb) const {
 		);
 	}
 }
+
+} // -- namespace solver
 

@@ -17,6 +17,9 @@ ILOSTLBEGIN
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
+using namespace utils;
+
+namespace solver {
 
 class box_wrapper_optim : public box_wrapper_rotate {
 	protected:
@@ -33,4 +36,6 @@ class box_wrapper_optim : public box_wrapper_rotate {
 		~box_wrapper_optim();
 		
 };
+
+} // -- namespace solver
 

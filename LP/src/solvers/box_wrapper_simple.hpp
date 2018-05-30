@@ -14,6 +14,9 @@ ILOSTLBEGIN
 #include "utils/input_data.hpp"
 #include "utils/logger.hpp"
 #include "box_solver.hpp"
+using namespace utils;
+
+namespace solver {
 
 class box_wrapper_simple : public box_solver {
 	protected:
@@ -46,4 +49,6 @@ class box_wrapper_simple : public box_solver {
 		
 		void solution(const gifts& boxes_to_wrap, wrapped_boxes& wb) const;
 };
+
+} // -- namespace solver
 

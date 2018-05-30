@@ -1,5 +1,7 @@
 #include "box_solver.hpp"
 
+namespace solver {
+
 /* PRIVATE */
 
 void box_solver::config_cplex() {
@@ -91,4 +93,6 @@ double box_solver::get_exe_time() const {
 IloCplex::Status box_solver::get_status() const {
 	return cplex.getCplexStatus();
 }
+
+} // -- namespace solver
 

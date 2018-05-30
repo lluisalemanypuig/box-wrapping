@@ -19,6 +19,8 @@ ILOSTLBEGIN
 #include "solvers/box_wrapper_simple.hpp"
 #include "solvers/box_wrapper_rotate.hpp"
 #include "solvers/box_wrapper_optim.hpp"
+using namespace utils;
+using namespace solver;
 
 void print_usage() {
 	cout << "BOX WRAPPING PROBLEM - Linear Programming Solver" << endl;
