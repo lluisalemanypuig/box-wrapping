@@ -22,3 +22,8 @@ QUAD_ENC_DPS	= $(SOLVER_DIR)/quadratic_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_
 LOG_ENC_DPS		= $(SOLVER_DIR)/logarithmic_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS)
 HEULE_ENC_DPS	= $(SOLVER_DIR)/heule_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS)
 
+# ----------------
+# CLAUSE GENERATOR
+
+CLS_GEN_DPS		= $(PARSE_DPS) $(WRAPPED_BOXES) $(INPUT_DATA_DPS)		\
+				  $(TIME_DPS)

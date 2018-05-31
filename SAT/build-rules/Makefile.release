@@ -2,41 +2,40 @@
 #############
 # RELEASE FLAGS
 
-REL_FLAGS = $(BASE_FLAGS) -O3 - DNRELUG
+REL_FLAGS = $(BASE_FLAGS) -O3 -DNDEBUG
 
 ###############
 # RELEASE OBJECTS
 
-SOLVER_OBJECTS		= $(REL_BIN_DIR)/clause.o				\
+REL_SOLVER_OBJECTS	= $(REL_BIN_DIR)/clause.o				\
 					  $(REL_BIN_DIR)/clause_encoder.o		\
 					  $(REL_BIN_DIR)/quadratic_encoder.o	\
 					  $(REL_BIN_DIR)/logarithmic_encoder.o	\
 					  $(REL_BIN_DIR)/heule_encoder.o
-					  
 
-UTILS_OBJECTS		= $(REL_BIN_DIR)/global_info.o			\
+REL_UTILS_OBJECTS	= $(REL_BIN_DIR)/global_info.o			\
 					  $(REL_BIN_DIR)/input_data.o			\
 					  $(REL_BIN_DIR)/parse_string.o			\
 					  $(REL_BIN_DIR)/time.o					\
 					  $(REL_BIN_DIR)/wrapped_boxes.o
 
-REL_WRAPPING_BOXES	= $(SOLVER_OBJECTS)	$(UTILS_OBJECTS)
-
+REL_CLS_GEN_OBJECTS	= $(REL_BIN_DIR)/gen_clauses.o			\
+					  $(REL_SOLVER_OBJECTS) $(REL_UTILS_OBJECTS)
 
 ###########
 # DIRECTORY
 
-debugdirectory: $(REL_BIN_DIR)
+releasedirectory: $(REL_BIN_DIR)
 $(REL_BIN_DIR):
 	mkdir -p $(REL_BIN_DIR)
 
-######################
-# EXECUTABLE
+#############
+# EXECUTABLES
 
-$(REL_BIN_DIR)/$(EXE_NAME): $(REL_WRAPPING_BOXES)
-	g++ $(REL_FLAGS) -o $@ $(REL_WRAPPING_BOXES) $(LIBS)
+$(REL_BIN_DIR)/$(CLAUSE_GEN_EXE): $(REL_CLS_GEN_OBJECTS)
+	g++ $(REL_FLAGS) -o $@ $(REL_CLS_GEN_OBJECTS) $(LIBS)
 
-$(REL_BIN_DIR)/main.o: $(SRC_DIR)/main.cpp $(MAIN_DPS)
+$(REL_BIN_DIR)/gen_clauses.o: $(SRC_DIR)/gen_clauses.cpp $(CLS_GEN_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
 # --------------
@@ -75,12 +74,13 @@ $(REL_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 $(REL_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
-############
+#############
+# CLEAN RULES
 
 releaseclean:
-	rm -f $(REL_WRAPPING_BOXES)
+	rm -f $(REL_CLS_GEN_OBJECTS)
 
 releasedistclean:
 	make -f $(RULES_DIR)/Makefile releaseclean
-	rm -f $(REL_BIN_DIR)/$(EXE_NAME)
+	rm -f $(REL_BIN_DIR)/$(CLAUSE_GEN_EXE)
 	rmdir --ignore-fail-on-non-empty $(REL_BIN_DIR)
