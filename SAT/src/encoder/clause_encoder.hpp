@@ -7,6 +7,7 @@ using namespace std;
 // Custom includes
 #include "utils/global_info.hpp"
 #include "clause.hpp"
+using namespace utils;
 
 namespace encoder {
 

@@ -6,7 +6,9 @@ using namespace std;
 
 // Custom includes
 #include "utils/global_info.hpp"
+#include "quadratic_encoder.hpp"
 #include "clause_encoder.hpp"
+using namespace utils;
 
 namespace encoder {
 
