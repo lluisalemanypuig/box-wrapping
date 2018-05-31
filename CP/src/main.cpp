@@ -1,17 +1,17 @@
-/// C includes
+// C includes
 #include <string.h>
 
-/// C++ includes
+// C++ includes
 #include <iostream>
 #include <fstream>
 using namespace std;
 
-/// Gecode
+// Gecode
 #include <gecode/search.hh>
 using namespace Gecode;
 using namespace Search;
 
-/// Custom includes
+// Custom includes
 #include "utils/wrapped_boxes.hpp"
 #include "utils/parse_string.hpp"
 #include "utils/input_data.hpp"

@@ -1,16 +1,16 @@
-/// C includes
+// C includes
 #include <string.h>
 
-/// C++ includes
+// C++ includes
 #include <iostream>
 #include <fstream>
 using namespace std;
 
-/// CPLEX
+// CPLEX
 #include <ilcplex/ilocplex.h>
 ILOSTLBEGIN
 
-/// Custom includes
+// Custom includes
 #include "utils/wrapped_boxes.hpp"
 #include "utils/parse_string.hpp"
 #include "utils/input_data.hpp"
@@ -25,8 +25,8 @@ using namespace solver;
 void print_usage() {
 	cout << "BOX WRAPPING PROBLEM - Linear Programming Solver" << endl;
 	cout << endl;
-	cout << "This software uses the library CPLEX (tested under version 12.7)" << endl;
-	cout << "to solve the Box Wrapping Problem (BWP). It admits several options" << endl;
+	cout << "This software uses the library CPLEX (academic license, tested under version" << endl;
+	cout << "12.7) to solve the Box Wrapping Problem (BWP). It admits several options" << endl;
 	cout << "and are described below. Most of them are optional but it requires" << endl;
 	cout << "the specification of an input file containing the data, the solver" << endl;
 	cout << "that will be used, and its mode of execution, in case it has any." << endl;
