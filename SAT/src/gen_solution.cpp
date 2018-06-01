@@ -1,7 +1,212 @@
+// C includes
+#include <string.h>
+
+// C++ includes
 #include <iostream>
 using namespace std;
 
+// Custom includes
+#include "utils/wrapped_boxes.hpp"
+#include "utils/definitions.hpp"
+#include "utils/input_data.hpp"
+#include "encoder/clause.hpp"
+using namespace utils;
+using namespace encoder;
+
+void print_usage() {
+	cout << "BOX WRAPPING PROBLEM - Satisfiability (CNF) Solution builder" << endl;
+	cout << endl;
+	cout << "This software takes as input the processed output of a SAT solver" << endl;
+	cout << "that consists of a list of Boolean variables, either set to true" << endl;
+	cout << "(positive integer) or to false (negative integer). Each variable" << endl;
+	cout << "is part of an instance of the Box Wrapping Problem (BWP) which must" << endl;
+	cout << "the input file of this builder. All these variables are read from" << endl;
+	cout << "the __standard input__" << endl;
+	cout << endl;
+	cout << "Parameters:" << endl;
+	cout << "    [-h, --help]: show the usage" << endl;
+	cout << "    --boxes: specify file with BWP instance" << endl;
+	cout << "    --variables: specify file with the Boolean assignment" << endl;
+	cout << "    [-o, --output]: specify where to store the clauses in CNF" << endl;
+	cout << "    [-v, --verbose]: output the solution read on standard output" << endl;
+	cout << "Solvers:" << endl;
+	cout << "    --solver: choose solver. Possible values are" << endl;
+	cout << "        simple: do not consider rotations for boxes" << endl;
+	cout << "        rotate: allow rotations for boxes" << endl;
+	cout << endl;
+}
+
 int main(int argc, char *argv[]) {
+	string bwp_file = "none";
+	string vars_file = "none";
+	string outfile = "none";
+	solver S = solver::none;
+	bool verbose = false;
 	
+	// process arguments
+	for (int i = 1; i < argc; ++i) {
+		if (strcmp(argv[i], "-h") == 0 or strcmp(argv[i], "--help") == 0) {
+			print_usage();
+			return 0;
+		}
+		else if (strcmp(argv[i], "--boxes") == 0) {
+			bwp_file = string(argv[i + 1]);
+			++i;
+		}
+		else if (strcmp(argv[i], "--variables") == 0) {
+			vars_file = string(argv[i + 1]);
+			++i;
+		}
+		else if (strcmp(argv[i], "-o") == 0 or strcmp(argv[i], "--output") == 0) {
+			outfile = string(argv[i + 1]);
+			++i;
+		}
+		else if (strcmp(argv[i], "--solver") == 0) {
+			string sol = string(argv[i + 1]);
+			if (sol == "simple") {
+				S = solver::simple;
+			}
+			else if (sol == "rotate") {
+				S = solver::rotate;
+			}
+			else {
+				cerr << "Error: invalid value for option --solver: '" << sol << "'" << endl;
+				return 1;
+			}
+			++i;
+		}
+		else if (strcmp(argv[i], "-v") == 0 or strcmp(argv[i], "--verbose") == 0) {
+			verbose = true;
+		}
+		else {
+			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
+			return 1;
+		}
+	}
+	
+	// <error control>
+	if (bwp_file == "none") {
+		cerr << "Error: input file not specified." << endl;
+		cerr << "    Use [-h, --help] to see the usage for details." << endl;
+		return 1;
+	}
+	if (outfile == "none") {
+		cerr << "Error: output file not specified." << endl;
+		cerr << "    Use [-h, --help] to see the usage for details." << endl;
+		return 1;
+	}
+	if (vars_file == "none") {
+		cerr << "Error: file with the variables not specified." << endl;
+		cerr << "    Use [-h, --help] to see the usage for details." << endl;
+		return 1;
+	}
+	if (S == solver::none) {
+		cerr << "Error: solver not specified." << endl;
+		cerr << "    Use [-h, --help] to see the usage for details." << endl;
+		return 1;
+	}
+	
+	// <read input data>
+	ifstream fin;
+	fin.open(bwp_file.c_str());
+	if (not fin.is_open()) {
+		cerr << "Error: could not open BWP instance file '" << bwp_file << "'" << endl;
+		return 1;
+	}
+	gifts INPUT;
+	fin >> INPUT;
+	fin.close();
+	
+	fin.open(vars_file.c_str());
+	if (not fin.is_open()) {
+		cerr << "Error: could not open variables file '" << vars_file << "'" << endl;
+		return 1;
+	}
+	
+	// number of variables
+	int nXvars;	// for corners
+	int nCvars;	// for cells
+	int nRvars;	// for rotations
+
+	size_t N = INPUT.total_boxes;	// number of boxes
+	width W = INPUT.W;	// roll's width
+	length L;
+	
+	if (S == solver::simple) {
+		L = INPUT.get_max_length_s();
+		
+		nXvars = N*W*L;
+		nCvars = N*W*L;
+		nRvars = 0;
+	}
+	else if (S == solver::rotate) {
+		L = INPUT.get_max_length_ro();
+		
+		nXvars = N*W*L;
+		nCvars = N*W*L;
+		nRvars = N;
+	}
+	
+	cout << "N= " << N << endl;
+	cout << "W= " << W << endl;
+	cout << "L= " << L << endl;
+	
+	wrapped_boxes solution(N,L,W);
+	
+	if (S == solver::simple) {
+		for (int c = 0; c < nXvars; ++c) {
+			literal lit;
+			fin >> lit;
+			
+			var k = get_var(lit) - 1;
+			
+			int b = k/(W*L);
+			int kp = k - b*W*L;
+			int i = kp/W;
+			int j = kp%W;
+			
+			cout << "variable: " << k << endl;
+			cout << "    b= " << b << endl;
+			cout << "    i= " << i << endl;
+			cout << "    j= " << j << endl;
+			
+			length b_length = INPUT.all_boxes[b].l;
+			length b_width = INPUT.all_boxes[b].w;
+			
+			if (lit > 0) {
+				cout << "        1" << endl;
+				solution.set_tl_box_corner(b, cell(i,j));
+				cout << "        2" << endl;
+				solution.set_br_box_corner(b, cell(i + b_length - 1, j + b_width - 1));
+				cout << "        3" << endl;
+				
+				for (length ii = i; ii < i + b_length; ++ii) {
+					for (width jj = j; jj < j + b_width; ++jj) {
+						cout << "        ii= " << ii << endl;
+						cout << "        jj= " << jj << endl;
+						solution.set_box_cell(b + 1, cell(ii,jj));
+					}
+				}
+			}
+		}
+	}
+	
+	if (verbose) {
+		cout << solution << endl;
+		string msg;
+		if (not solution.is_sane(msg)) {
+			cout << "Solution is not sane!" << endl;
+			cout << "    " << msg << endl;
+		}
+	}
+	
+	ofstream fout;
+	fout.open(outfile.c_str());
+	if (not fout.is_open()) {
+		cerr << "Error: could not open output file '" << outfile << "'" << endl;
+		return 1;
+	}
+	solution.store(fout);
+	fout.close();
 }
 
