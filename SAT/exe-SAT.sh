@@ -2,12 +2,19 @@
 
 # ----------------------------
 # MODIFY ONLY THESE VARIABLES
-LINGELING=~/Documents/software/lingeling
+LINGELING=~/Documents/software/lingeling/lingeling
 OUT_DIR=/tmp
 # ----------------------------
 
-CLAUSE_GEN=build-release/clause-generator
-SOL_GEN=build-release/solution-generator
+mode=debug
+
+cd build-rules
+make -f Makefile $mode
+cd ..
+
+CLAUSE_GEN=build-$mode/clause-generator
+SOL_GEN=build-$mode/solution-generator
+CHECKER=../checker/checker
 
 SOLVER=""
 ENCODER=""
@@ -55,24 +62,9 @@ if [ -z $BOXES_SOLUTION ]; then
 	exit
 fi
 
-# check clause generator exists
-if [ ! -f $CLAUSE_GEN ]; then
-	# if not, compile it
-	cd build-rules
-	make -f Makefile release
-	cd ..
-fi
-# check solution generator exists
-if [ ! -f $SOL_GEN ]; then
-	# if not, compile it
-	cd build-rules
-	make -f Makefile release
-	cd ..
-fi
-
 # execute clause generator and store clauses
 CLAUSE_FILE=$OUT_DIR/box-wrapping.cnf
-$CLAUSE_GEN -i $IN_FILE --solver $SOLVER --amo-encoder $ENCODER -o $CLAUSE_FILE.rev
+$CLAUSE_GEN -i $IN_FILE -o $CLAUSE_FILE.rev --solver $SOLVER --amo-encoder $ENCODER
 
 if [ $? -eq 1 ]; then
 	echo -e "    \e[1;31mError: clause generator failed\e[0m"
@@ -88,4 +80,6 @@ $LINGELING $CLAUSE_FILE > $SOLUTION_FILE
 cat $SOLUTION_FILE | grep -v -E "^c" | tail --lines=+2 | cut --delimiter=' ' --field=1 --complement > $SOLUTION_VARS
 
 # obtain solution in the roll
-$SOL_GEN --boxes $IN_FILE --vars $SOLUTION_VARS -o $BOXES_SOLUTION 
+$SOL_GEN --boxes $IN_FILE --variables $SOLUTION_VARS -o $BOXES_SOLUTION --solver $SOLVER -v
+
+
