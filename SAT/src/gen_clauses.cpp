@@ -7,6 +7,7 @@
 using namespace std;
 
 // Custom includes
+#include "utils/parse_string.hpp"
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
 #include "encoder/clause.hpp"
@@ -68,7 +69,6 @@ clause_encoder& make_encoder(const encoder_type& et) {
 }
 
 void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
-	
 	global_info& gI = global_info::get_info();
 	
 	// (1). one corner per box
@@ -137,7 +137,140 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 			}
 		}
 	}
+}
+
+void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
+	global_info& gI = global_info::get_info();
 	
+	// (1). one corner per box
+	for (size_t b = 0; b < N; ++b) {
+		clause cl;
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				cl += X(b,i,j);
+			}
+		}
+		CE.exactly_one(cl, out);
+	}
+	
+	// (2). at most one box per cell
+	for (length i = 0; i < L; ++i) {
+		for (width j = 0; j < W; ++j) {
+			
+			clause cl;
+			for (size_t b = 0; b < N; ++b) {
+				cl += C(b,i,j);
+			}
+			CE.amo(cl, out);
+			
+		}
+	}
+	
+	// (3). if box is placed somewhere then the 'spanning' cells are occupied
+	for (size_t b = 0; b < N; ++b) {
+		const box& BOX = data.all_boxes[b];
+		length b_length = BOX.l;
+		width b_width = BOX.w;
+		
+		// for each cell to be occupied by box 'b' (without rotation)
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				
+				if (BOX.is_square()) {
+					// when the box is square the constraints are simpler
+					
+					// consider only the cases where the whole box is within bounds
+					bool within = (i + b_length - 1 < L) and (j + b_width - 1 < W);
+					if (within) {
+						
+						for (length ii = i; ii <= i + b_length - 1; ++ii) {
+							for (width jj = j; jj <= j + b_width - 1; ++jj) {
+								
+								out << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
+								gI.add_clauses(1);
+							}
+						}
+						
+						out << -R(b) << " 0" << endl;
+						gI.add_clauses(1);
+					}
+				}
+				else {
+					// rotate only if the box is not square
+					
+					// consider only the cases where the whole box is within bounds
+					bool within1 = (i + b_length - 1 < L) and (j + b_width - 1 < W);
+					if (within1) {
+						// span cells non rot: R(b) = 0
+						
+						for (length ii = i; ii <= i + b_length - 1; ++ii) {
+							for (width jj = j; jj <= j + b_width - 1; ++jj) {
+								
+								out << R(b) << " " << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
+								gI.add_clauses(1);
+							}
+						}
+					}
+					
+					bool within2 = (i + b_width - 1 < L) and (j + b_length - 1 < W);
+					if (within2) {
+						// span cells non rot: R(b) = 1
+						
+						for (length ii = i; ii <= i + b_width - 1; ++ii) {
+							for (width jj = j; jj <= j + b_length - 1; ++jj) {
+								
+								out << -R(b) << " " << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
+								gI.add_clauses(1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// (4). Cannot place the top-left corner of a box at cell (i,j) if
+	// it will end up out of bounds
+	for (size_t b = 0; b < N; ++b) {
+		const box& BOX = data.all_boxes[b];
+		length b_length = BOX.l;
+		width b_width = BOX.w;
+		
+		// for each cell to be occupied by box 'b' (without rotation)
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				
+				if (BOX.is_square()) {
+					// when the box is square the constraints are simpler
+					
+					// if the box is WITHIN limits then ignore
+					bool within = (i + b_length - 1 <= L - 1) and (j + b_width - 1 <= W - 1);
+					if (not within) {
+						out << -X(b,i,j) << " 0" << endl;
+						gI.add_clauses(1);
+					}
+				}
+				else {
+					
+					// if the box is WITHIN limits then ignore
+					// the box is within bounds if:
+					// i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1
+					
+					bool within1 = (i + b_length - 1 <= L - 1) and (j + b_width - 1 <= W - 1);
+					if (not within1) {
+						out << R(b) << " " << -X(b,i,j) << " 0" << endl;
+						gI.add_clauses(1); 
+					}
+					
+					bool within2 = (i + b_width - 1 <= L - 1) and (j + b_length - 1 <= W - 1);
+					if (not within2) {
+						out << -R(b) << " " << -X(b,i,j) << " 0" << endl;
+						gI.add_clauses(1); 
+					}
+				}
+			}
+		}
+	}
 }
 
 void print_usage() {
@@ -158,6 +291,7 @@ void print_usage() {
 	cout << "    [-h, --help]: show the usage" << endl;
 	cout << "    [-i, --input]: specify the input file" << endl;
 	cout << "    [-o, --output]: specify where to store the clauses in CNF" << endl;
+	cout << "    --max-L: give an upper bound on the roll's length" << endl;
 	cout << "Solvers:" << endl;
 	cout << "    --solver: choose solver. Possible values are" << endl;
 	cout << "        simple: do not consider rotations for boxes" << endl;
@@ -175,6 +309,7 @@ int main(int argc, char *argv[]) {
 	string outfile = "none";
 	solver S = solver::none;
 	encoder_type E = encoder_type::quadratic;
+	length max_L = inf_t<length>();
 	
 	// process arguments
 	for (int i = 1; i < argc; ++i) {
@@ -221,6 +356,15 @@ int main(int argc, char *argv[]) {
 			}
 			++i;
 		}
+		else if (strcmp(argv[i], "--max-L") == 0) {
+			char fatal = 0;
+			parse::parse_long("parsing length upper bound", argv[i + 1], &max_L, &fatal);
+			++i;
+			
+			if (fatal) {
+				return 1;
+			}
+		}
 		else {
 			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
 			return 1;
@@ -262,8 +406,16 @@ int main(int argc, char *argv[]) {
 	INPUT.fill_fields();
 	
 	N = INPUT.total_boxes;
-	L = INPUT.get_max_length_s();
 	W = INPUT.W;
+	
+	if (S == solver::simple) {
+		L = INPUT.get_max_length_s();
+	}
+	else if (S == solver::rotate) {
+		L = INPUT.get_max_length_ro();
+	}
+	
+	L = min(L, max_L);
 	
 	nXvars = N*W*L;
 	nCvars = N*W*L;
@@ -272,6 +424,9 @@ int main(int argc, char *argv[]) {
 	global_info& gI = global_info::get_info();
 	if (S == solver::simple) {
 		gI.set_model_vars(nXvars + nCvars);
+	}
+	else if (S == solver::rotate) {
+		gI.set_model_vars(nXvars + nCvars + nRvars);
 	}
 	
 	clause_encoder& ce = make_encoder(E);
@@ -285,6 +440,9 @@ int main(int argc, char *argv[]) {
 	
 	if (S == solver::simple) {
 		simple_solver(INPUT, out, ce);
+	}
+	else if (S == solver::rotate) {
+		rotate_solver(INPUT, out, ce);
 	}
 	
 	// last line
