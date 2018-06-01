@@ -9,10 +9,10 @@ heule_encoder::~heule_encoder() { }
 
 /* PUBLIC */
 
-void heule_encoder::amo(const clause& C) const {
+void heule_encoder::amo(const clause& C, ostream& out) const {
 	if (C.size() <= 3) {
 		quadratic_encoder& qe = quadratic_encoder::get_encoder();
-		qe.amo(C);
+		qe.amo(C, out);
 		return;
 	}
 	
@@ -23,8 +23,8 @@ void heule_encoder::amo(const clause& C) const {
 	
 	var new_var = gI.get_new_var();
 	
-	c1 +=  new_var; amo(c1);
-	c2 += -new_var; amo(c2);
+	c1 +=  new_var; amo(c1, out);
+	c2 += -new_var; amo(c2, out);
 }
 
 } // -- namespace encoder

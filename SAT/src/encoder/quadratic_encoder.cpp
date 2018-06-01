@@ -9,13 +9,13 @@ quadratic_encoder::~quadratic_encoder() { }
 		
 /* PUBLIC */
 
-void quadratic_encoder::amo(const clause& C) const {
+void quadratic_encoder::amo(const clause& C, ostream& out) const {
 	const int k = C.size();
 	int nC = 0;
 	
 	for (int i = 0; i < k; ++i) {
 		for (int j = i + 1; j < k; ++j) {
-			cout << -C[i] << " " << -C[j] << " 0" << endl;
+			out << -C[i] << " " << -C[j] << " 0" << endl;
 			
 			++nC;
 		}

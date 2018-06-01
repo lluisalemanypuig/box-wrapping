@@ -5,6 +5,7 @@
 
 // C++ includes
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <cmath>
 using namespace std;
@@ -38,7 +39,7 @@ class logarithmic_encoder : public clause_encoder {
 			return ec;
 		}
 		
-		void amo(const clause& C) const;
+		void amo(const clause& C, ostream& out) const;
 };
 
 } // -- namespace encoder

@@ -37,7 +37,7 @@ void logarithmic_encoder::make_binaries() {
 	mpz_clear(binary);
 }
 
-void logarithmic_encoder::amo(const clause& C) const {
+void logarithmic_encoder::amo(const clause& C, ostream& out) const {
 	global_info& gI = global_info::get_info();
 	int vars_so_far = gI.get_total_vars();
 	
@@ -47,12 +47,12 @@ void logarithmic_encoder::amo(const clause& C) const {
 		for (int b = 0; b < n_bits; ++b) {
 			
 			if (binary[n_bits - 1 - b] == '0') {
-				cout << -lit << " " << -(vars_so_far + b + 1);
+				out << -lit << " " << -(vars_so_far + b + 1);
 			}
 			else {
-				cout << -lit << " " <<   vars_so_far + b + 1;
+				out << -lit << " " <<   vars_so_far + b + 1;
 			}
-			cout << " 0" << endl;
+			out << " 0" << endl;
 		}
 	}
 	

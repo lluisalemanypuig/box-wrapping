@@ -2,6 +2,7 @@
 
 // C++ includes
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // Custom includes
@@ -22,7 +23,7 @@ class quadratic_encoder : public clause_encoder {
 			return ec;
 		}
 		
-		void amo(const clause& C) const;
+		void amo(const clause& C, ostream& out) const;
 };
 
 } // -- namespace encoder
