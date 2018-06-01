@@ -12,7 +12,7 @@ SOL_GEN=build-release/solution-generator
 SOLVER=""
 ENCODER=""
 IN_FILE=""
-BOXES_SOLUTON=""
+BOXES_SOLUTION=""
 
 for i in "$@"; do
 	case $i in
@@ -23,7 +23,7 @@ for i in "$@"; do
 		;;
 		
 		-o=*|--output=*)
-		BOXES_SOLUTON="${i#*=}"
+		BOXES_SOLUTION="${i#*=}"
 		shift
 		;;
 		
@@ -32,7 +32,7 @@ for i in "$@"; do
 		shift
 		;;
 		
-		--encoder=*)
+		--amo-encoder=*)
 		ENCODER="${i#*=}"
 		shift
 		;;
@@ -43,8 +43,14 @@ for i in "$@"; do
 	esac
 done
 
-if [ -z $BOXES_SOLUTON ]; then
-	echo -e "    \e[1;31mError: output that should contain the solution to the\e[0m"
+if [ -z $IN_FILE ]; then
+	echo -e "    \e[1;31mError: input file containing the description of the\e[0m"
+	echo -e "    \e[1;31mbox wrapping problem instance was not specified\e[0m"
+	exit
+fi
+
+if [ -z $BOXES_SOLUTION ]; then
+	echo -e "    \e[1;31mError: output file that should contain the solution to the\e[0m"
 	echo -e "    \e[1;31mbox wrapping problem was not specified\e[0m"
 	exit
 fi
@@ -66,10 +72,10 @@ fi
 
 # execute clause generator and store clauses
 CLAUSE_FILE=$OUT_DIR/box-wrapping.cnf
-$CLAUSE_GEN -i $IN_FILE --solver $SOLVER --encoder $ENCODER -o $CLAUSE_FILE.rev
+$CLAUSE_GEN -i $IN_FILE --solver $SOLVER --amo-encoder $ENCODER -o $CLAUSE_FILE.rev
 
 if [ $? -eq 1 ]; then
-	# stop execution of script on failure
+	echo -e "    \e[1;31mError: clause generator failed\e[0m"
 	exit
 fi
 
@@ -82,4 +88,4 @@ $LINGELING $CLAUSE_FILE > $SOLUTION_FILE
 cat $SOLUTION_FILE | grep -v -E "^c" | tail --lines=+2 | cut --delimiter=' ' --field=1 --complement > $SOLUTION_VARS
 
 # obtain solution in the roll
-$SOL_GEN --boxes $IN_FILE --vars $SOLUTION_VARS -o $BOXES_SOLUTON 
+$SOL_GEN --boxes $IN_FILE --vars $SOLUTION_VARS -o $BOXES_SOLUTION 
