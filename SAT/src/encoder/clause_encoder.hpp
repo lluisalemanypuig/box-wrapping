@@ -11,6 +11,10 @@ using namespace utils;
 
 namespace encoder {
 
+enum encoder_type {
+	none, quadratic, logarithmic, heule
+};
+
 class clause_encoder {
 	protected:
 		clause_encoder();
