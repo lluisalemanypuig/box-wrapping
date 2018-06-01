@@ -8,16 +8,17 @@ OUT_DIR=/tmp
 
 mode=debug
 
+# generator compilation and selection
 cd build-rules
 make -f Makefile $mode
 cd ..
-
 CLAUSE_GEN=build-$mode/clause-generator
 SOL_GEN=build-$mode/solution-generator
 CHECKER=../checker/checker
 
+# argument parsing
 SOLVER=""
-ENCODER=""
+ENCODER="quadratic"
 IN_FILE=""
 BOXES_SOLUTION=""
 
