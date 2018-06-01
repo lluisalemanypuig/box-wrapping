@@ -20,7 +20,10 @@ DEB_UTILS_OBJECTS	= $(DEB_BIN_DIR)/global_info.o			\
 					  $(DEB_BIN_DIR)/wrapped_boxes.o
 
 DEB_CLS_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_clauses.o			\
-					  $(DEB_SOLVER_OBJECTS) $(DEB_UTILS_OBJECTS)
+					  $(DEB_SOLVER_OBJECTS)					\
+					  $(DEB_UTILS_OBJECTS)
+
+DEB_SOL_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_solution.o
 
 ###########
 # DIRECTORY
@@ -32,11 +35,26 @@ $(DEB_BIN_DIR):
 #############
 # EXECUTABLES
 
+# ----------------
+# CLAUSE GENERATOR
+
 $(DEB_BIN_DIR)/$(CLAUSE_GEN_EXE): $(DEB_CLS_GEN_OBJECTS)
-	g++ $(DEB_FLAGS) -o $@ $(DEB_CLS_GEN_OBJECTS) $(LIBS)
+	g++ $(DEB_FLAGS) -o $@ $(DEB_CLS_GEN_OBJECTS) $(CLS_GEN_LIBS)
 
 $(DEB_BIN_DIR)/gen_clauses.o: $(SRC_DIR)/gen_clauses.cpp $(CLS_GEN_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+# ------------------
+# SOLUTION GENERATOR
+
+$(DEB_BIN_DIR)/$(SOL_GEN_EXE): $(DEB_SOL_GEN_OBJECTS)
+	g++ $(DEB_FLAGS) -o $@ $(DEB_SOL_GEN_OBJECTS) $(SOL_GEN_LIBS)
+
+$(DEB_BIN_DIR)/gen_solution.o: $(SRC_DIR)/gen_solution.cpp $(SOL_GEN_DPS)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+#########
+# OBJECTS
 
 # --------------
 # SOLVER OBJECTS
@@ -79,8 +97,10 @@ $(DEB_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
 
 debugclean:
 	rm -f $(DEB_CLS_GEN_OBJECTS)
+	rm -f $(DEB_SOL_GEN_OBJECTS)
 
 debugdistclean:
 	make -f $(RULES_DIR)/Makefile debugclean
 	rm -f $(DEB_BIN_DIR)/$(CLAUSE_GEN_EXE)
+	rm -f $(DEB_BIN_DIR)/$(SOL_GEN_EXE)
 	rmdir --ignore-fail-on-non-empty $(DEB_BIN_DIR)

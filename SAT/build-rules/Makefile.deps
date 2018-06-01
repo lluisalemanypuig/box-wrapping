@@ -27,3 +27,8 @@ HEULE_ENC_DPS	= $(SOLVER_DIR)/heule_encoder.hpp $(CLAUSE_ENC_DPS) $(GLOB_INF_DPS
 
 CLS_GEN_DPS		= $(PARSE_DPS) $(WRAPPED_BOXES) $(INPUT_DATA_DPS)		\
 				  $(TIME_DPS)
+
+# ----------------
+# CLAUSE GENERATOR
+
+SOL_GEN_DPS		= 
