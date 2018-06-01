@@ -23,7 +23,10 @@ DEB_CLS_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_clauses.o			\
 					  $(DEB_SOLVER_OBJECTS)					\
 					  $(DEB_UTILS_OBJECTS)
 
-DEB_SOL_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_solution.o
+DEB_SOL_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_solution.o			\
+					  $(DEB_BIN_DIR)/clause.o				\
+					  $(DEB_BIN_DIR)/input_data.o			\
+					  $(DEB_BIN_DIR)/wrapped_boxes.o
 
 ###########
 # DIRECTORY

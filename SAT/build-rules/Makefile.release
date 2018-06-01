@@ -23,7 +23,10 @@ REL_CLS_GEN_OBJECTS	= $(REL_BIN_DIR)/gen_clauses.o			\
 					  $(REL_SOLVER_OBJECTS)					\
 					  $(REL_UTILS_OBJECTS)
 
-REL_SOL_GEN_OBJECTS	= $(REL_BIN_DIR)/gen_solution.o
+REL_SOL_GEN_OBJECTS	= $(REL_BIN_DIR)/gen_solution.o			\
+					  $(REL_BIN_DIR)/clause.o				\
+					  $(REL_BIN_DIR)/input_data.o			\
+					  $(REL_BIN_DIR)/wrapped_boxes.o
 
 ###########
 # DIRECTORY
