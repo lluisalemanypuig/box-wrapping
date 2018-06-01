@@ -6,6 +6,7 @@
 using namespace std;
 
 // Custom includes
+#include "utils/parse_string.hpp"
 #include "utils/wrapped_boxes.hpp"
 #include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
@@ -29,6 +30,7 @@ void print_usage() {
 	cout << "    --variables: specify file with the Boolean assignment" << endl;
 	cout << "    [-o, --output]: specify where to store the clauses in CNF" << endl;
 	cout << "    [-v, --verbose]: output the solution read on standard output" << endl;
+	cout << "    --max-L: give an upper bound on the roll's length" << endl;
 	cout << "Solvers:" << endl;
 	cout << "    --solver: choose solver. Possible values are" << endl;
 	cout << "        simple: do not consider rotations for boxes" << endl;
@@ -42,6 +44,7 @@ int main(int argc, char *argv[]) {
 	string outfile = "none";
 	solver S = solver::none;
 	bool verbose = false;
+	length max_L = inf_t<length>();
 	
 	// process arguments
 	for (int i = 1; i < argc; ++i) {
@@ -77,6 +80,15 @@ int main(int argc, char *argv[]) {
 		}
 		else if (strcmp(argv[i], "-v") == 0 or strcmp(argv[i], "--verbose") == 0) {
 			verbose = true;
+		}
+		else if (strcmp(argv[i], "--max-L") == 0) {
+			char fatal = 0;
+			parse::parse_long("parsing length upper bound", argv[i + 1], &max_L, &fatal);
+			++i;
+			
+			if (fatal) {
+				return 1;
+			}
 		}
 		else {
 			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
@@ -134,14 +146,19 @@ int main(int argc, char *argv[]) {
 	
 	if (S == solver::simple) {
 		L = INPUT.get_max_length_s();
-		
+	}
+	else if (S == solver::rotate) {
+		L = INPUT.get_max_length_ro();
+	}
+	
+	L = min(L, max_L);
+	
+	if (S == solver::simple) {
 		nXvars = N*W*L;
 		nCvars = N*W*L;
 		nRvars = 0;
 	}
 	else if (S == solver::rotate) {
-		L = INPUT.get_max_length_ro();
-		
 		nXvars = N*W*L;
 		nCvars = N*W*L;
 		nRvars = N;
@@ -150,21 +167,75 @@ int main(int argc, char *argv[]) {
 	wrapped_boxes solution(N,L,W);
 	
 	if (S == solver::simple) {
+		// we only need to read the top-left corner variables
 		for (int c = 0; c < nXvars; ++c) {
-			literal lit;
-			fin >> lit;
+			literal litX;
+			fin >> litX;
 			
-			var k = get_var(lit) - 1;
+			if (litX > 0) {
+				var k = get_var(litX) - 1;
 			
-			int b = k/(W*L);
-			int kp = k - b*W*L;
-			int i = kp/W;
-			int j = kp%W;
+				int b = k/(W*L);
+				int kp = k - b*W*L;
+				int i = kp/W;
+				int j = kp%W;
+				
+				length b_length = INPUT.all_boxes[b].l;
+				length b_width = INPUT.all_boxes[b].w;
+				
+				solution.set_tl_box_corner(b, corner(i,j));
+				solution.set_br_box_corner(b,
+					corner(
+						i + b_length - 1,
+						j + b_width - 1
+					)
+				);
+				
+				for (length ii = i; ii < i + b_length; ++ii) {
+					for (width jj = j; jj < j + b_width; ++jj) {
+						solution.set_box_cell(b + 1, cell(ii,jj));
+					}
+				}
+			}
+		}
+	}
+	else if (S == solver::rotate) {
+		// read all variables to have access to the rotation variables
+		vector<literal> all_lits(nXvars + nCvars + nRvars);
+		size_t i = 0;
+		literal lit;
+		while (fin >> lit and lit != 0) {
+			all_lits[i++] = lit;
+		}
+		
+		cout << "i= " << i << endl;
+		cout << "all_lits.size()= " << all_lits.size() << endl;
+		
+		assert(i == all_lits.size());
+		
+		// for each top-left corner variable
+		for (int c = 0; c < nXvars; ++c) {
+			literal litX = all_lits[c];
 			
-			length b_length = INPUT.all_boxes[b].l;
-			length b_width = INPUT.all_boxes[b].w;
-			
-			if (lit > 0) {
+			if (litX > 0) {
+				var k = get_var(litX) - 1;
+				
+				int b = k/(W*L);
+				int kp = k - b*W*L;
+				int i = kp/W;
+				int j = kp%W;
+				
+				// if the box is rotated
+				cout << "b= " << b << endl;
+				
+				bool is_rotated = (all_lits[nXvars + nCvars + b] > 0);
+				length b_length = INPUT.all_boxes[b].l;
+				length b_width = INPUT.all_boxes[b].w;
+				
+				if (is_rotated) {
+					swap(b_length, b_width);
+				}
+				
 				solution.set_tl_box_corner(b, corner(i,j));
 				solution.set_br_box_corner(b,
 					corner(
