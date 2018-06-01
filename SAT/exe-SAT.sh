@@ -10,14 +10,14 @@ mode=debug
 
 # generator compilation and selection
 cd build-rules
-make -f Makefile $mode
+make -f Makefile $mode > /dev/null
 cd ..
 CLAUSE_GEN=build-$mode/clause-generator
 SOL_GEN=build-$mode/solution-generator
 CHECKER=../checker/checker
 
 # argument parsing
-SOLVER=""
+SOLVER="rotate"
 ENCODER="quadratic"
 IN_FILE=""
 BOXES_SOLUTION=""
@@ -80,7 +80,13 @@ SOLUTION_VARS=$OUT_DIR/box-wrapping.vars
 $LINGELING $CLAUSE_FILE > $SOLUTION_FILE
 cat $SOLUTION_FILE | grep -v -E "^c" | tail --lines=+2 | cut --delimiter=' ' --field=1 --complement > $SOLUTION_VARS
 
-# obtain solution in the roll
-$SOL_GEN --boxes $IN_FILE --variables $SOLUTION_VARS -o $BOXES_SOLUTION --solver $SOLVER -v
+N_LINES=$(cat $SOLUTION_VARS | wc -l)
+if [ $N_LINES -eq 0 ]; then
+	echo -e "    \e[1;31mUNSATISFIABLE!\e[0m"
+else 
+	# if CNF not unsatisfiable then obtain solution in the roll
+	$SOL_GEN --boxes $IN_FILE --variables $SOLUTION_VARS -o $BOXES_SOLUTION --solver $SOLVER -v
+fi
+
 
 
