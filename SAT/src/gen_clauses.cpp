@@ -7,10 +7,9 @@
 using namespace std;
 
 // Custom includes
-#include "utils/wrapped_boxes.hpp"
-#include "utils/parse_string.hpp"
+#include "utils/definitions.hpp"
 #include "utils/input_data.hpp"
-#include "utils/time.hpp"
+#include "encoder/clause.hpp"
 #include "encoder/clause_encoder.hpp"
 #include "encoder/quadratic_encoder.hpp"
 #include "encoder/logarithmic_encoder.hpp"
@@ -45,10 +44,6 @@ size_t N;	// number of boxes
 width W;	// roll's width
 length L;	// maximum length
 
-enum solver {
-	none, simple, rotate
-};
-
 int X(int b, int i, int j) {
 	return b*W*L + i*W + j + 1;
 }
@@ -73,6 +68,8 @@ clause_encoder& make_encoder(const encoder_type& et) {
 }
 
 void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
+	
+	global_info& gI = global_info::get_info();
 	
 	// (1). one corner per box
 	for (size_t b = 0; b < N; ++b) {
@@ -115,17 +112,16 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 					for (width jj = j; jj <= j + b_width - 1; ++jj) {
 						
 						out << -X(b,i,j) << " " << C(b,i,j) << " 0" << endl;
-						
+						gI.add_clauses(1);
 					}
 				}
-				
 			}
 		}
 	}
 	
-	// (5). Cannot place the top-left corner of a box at cell (i,j) if
+	// (4). Cannot place the top-left corner of a box at cell (i,j) if
 	// it will end up out of bounds
-	for (int b = 0; b < N; ++b) {
+	for (size_t b = 0; b < N; ++b) {
 		length b_length = data.all_boxes[b].l;
 		width b_width = data.all_boxes[b].w;
 		
@@ -137,6 +133,7 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) continue;
 				
 				out << -X(b,i,j) << " 0" << endl;
+				gI.add_clauses(1);
 			}
 		}
 	}
@@ -273,7 +270,9 @@ int main(int argc, char *argv[]) {
 	nRvars = N;
 	
 	global_info& gI = global_info::get_info();
-	gI.set_model_vars(nXvars + nCvars + nRvars);
+	if (S == solver::simple) {
+		gI.set_model_vars(nXvars + nCvars);
+	}
 	
 	clause_encoder& ce = make_encoder(E);
 	
@@ -284,7 +283,9 @@ int main(int argc, char *argv[]) {
 	
 	// write clauses
 	
-	
+	if (S == solver::simple) {
+		simple_solver(INPUT, out, ce);
+	}
 	
 	// last line
 	out << "p cnf " << gI.get_total_vars() << " " << gI.get_total_clauses() << endl;
