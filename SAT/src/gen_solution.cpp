@@ -24,6 +24,11 @@ void print_usage() {
 	cout << "the input file of this builder. All these variables are read from" << endl;
 	cout << "the __standard input__" << endl;
 	cout << endl;
+	cout << "Note: this program does not follow the standard for return values" << endl;
+	cout << "(0 success, 1 error, 2 misuse of shell builtins). Instead, the value 0" << endl;
+	cout << "is reinterpreted as general error, and any other positive value as the" << endl;
+	cout << "roll's length of the solution." << endl;
+	cout << endl;
 	cout << "Parameters:" << endl;
 	cout << "    [-h, --help]: show the usage" << endl;
 	cout << "    --boxes: specify file with BWP instance" << endl;
@@ -92,7 +97,7 @@ int main(int argc, char *argv[]) {
 		}
 		else {
 			cerr << "Error: option '" << string(argv[i]) << "' not recognised" << endl;
-			return 1;
+			return 0;
 		}
 	}
 	
@@ -100,22 +105,22 @@ int main(int argc, char *argv[]) {
 	if (bwp_file == "none") {
 		cerr << "Error: input file not specified." << endl;
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
-		return 1;
+		return 0;
 	}
 	if (outfile == "none") {
 		cerr << "Error: output file not specified." << endl;
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
-		return 1;
+		return 0;
 	}
 	if (vars_file == "none") {
 		cerr << "Error: file with the variables not specified." << endl;
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
-		return 1;
+		return 0;
 	}
 	if (S == solver::none) {
 		cerr << "Error: solver not specified." << endl;
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
-		return 1;
+		return 0;
 	}
 	
 	// <read input data>
@@ -123,7 +128,7 @@ int main(int argc, char *argv[]) {
 	fin.open(bwp_file.c_str());
 	if (not fin.is_open()) {
 		cerr << "Error: could not open BWP instance file '" << bwp_file << "'" << endl;
-		return 1;
+		return 0;
 	}
 	gifts INPUT;
 	fin >> INPUT;
@@ -132,7 +137,7 @@ int main(int argc, char *argv[]) {
 	fin.open(vars_file.c_str());
 	if (not fin.is_open()) {
 		cerr << "Error: could not open variables file '" << vars_file << "'" << endl;
-		return 1;
+		return 0;
 	}
 	
 	// number of variables
@@ -208,9 +213,6 @@ int main(int argc, char *argv[]) {
 			all_lits[i++] = lit;
 		}
 		
-		cout << "i= " << i << endl;
-		cout << "all_lits.size()= " << all_lits.size() << endl;
-		
 		assert(i == all_lits.size());
 		
 		// for each top-left corner variable
@@ -226,8 +228,6 @@ int main(int argc, char *argv[]) {
 				int j = kp%W;
 				
 				// if the box is rotated
-				cout << "b= " << b << endl;
-				
 				bool is_rotated = (all_lits[nXvars + nCvars + b] > 0);
 				length b_length = INPUT.all_boxes[b].l;
 				length b_width = INPUT.all_boxes[b].w;
@@ -259,6 +259,7 @@ int main(int argc, char *argv[]) {
 		if (not solution.is_sane(msg)) {
 			cout << "Solution is not sane!" << endl;
 			cout << "    " << msg << endl;
+			return 0;
 		}
 	}
 	
@@ -266,9 +267,11 @@ int main(int argc, char *argv[]) {
 	fout.open(outfile.c_str());
 	if (not fout.is_open()) {
 		cerr << "Error: could not open output file '" << outfile << "'" << endl;
-		return 1;
+		return 0;
 	}
 	solution.store(fout);
 	fout.close();
+	
+	return solution.get_roll_length();
 }
 
