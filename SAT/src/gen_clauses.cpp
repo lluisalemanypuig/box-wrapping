@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
 				E = encoder_type::heule;
 			}
 			else {
-				cerr << "Error: invalid value for option --encoder: '" << enc << "'" << endl;
+				cerr << "Error: invalid value for option --amo-encoder: '" << enc << "'" << endl;
 				return 1;
 			}
 			++i;
