@@ -174,16 +174,16 @@ int main(int argc, char *argv[]) {
 			length b_width = INPUT.all_boxes[b].w;
 			
 			if (lit > 0) {
-				cout << "        1" << endl;
-				solution.set_tl_box_corner(b, cell(i,j));
-				cout << "        2" << endl;
-				solution.set_br_box_corner(b, cell(i + b_length - 1, j + b_width - 1));
-				cout << "        3" << endl;
+				solution.set_tl_box_corner(b, corner(i,j));
+				solution.set_br_box_corner(b,
+					corner(
+						i + b_length - 1,
+						j + b_width - 1
+					)
+				);
 				
 				for (length ii = i; ii < i + b_length; ++ii) {
 					for (width jj = j; jj < j + b_width; ++jj) {
-						cout << "        ii= " << ii << endl;
-						cout << "        jj= " << jj << endl;
 						solution.set_box_cell(b + 1, cell(ii,jj));
 					}
 				}
