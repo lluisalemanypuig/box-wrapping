@@ -147,10 +147,6 @@ int main(int argc, char *argv[]) {
 		nRvars = N;
 	}
 	
-	cout << "N= " << N << endl;
-	cout << "W= " << W << endl;
-	cout << "L= " << L << endl;
-	
 	wrapped_boxes solution(N,L,W);
 	
 	if (S == solver::simple) {
@@ -164,11 +160,6 @@ int main(int argc, char *argv[]) {
 			int kp = k - b*W*L;
 			int i = kp/W;
 			int j = kp%W;
-			
-			cout << "variable: " << k << endl;
-			cout << "    b= " << b << endl;
-			cout << "    i= " << i << endl;
-			cout << "    j= " << j << endl;
 			
 			length b_length = INPUT.all_boxes[b].l;
 			length b_width = INPUT.all_boxes[b].w;
