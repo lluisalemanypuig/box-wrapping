@@ -108,7 +108,10 @@ while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
 			echo -e "    \e[1;31mlingeling was timeout-terminated\e[0m"
 		else
 			# lingeling terminated: is the CNF formula satisfiable?
-			cat $SOLUTION_FILE | grep -v -E "^c" | tail --lines=+2 | cut --delimiter=' ' --field=1 --complement > $SOLUTION_VARS
+			cat $SOLUTION_FILE |\
+				grep -v -E "^c" |\
+				tail --lines=+2 |\
+				cut --delimiter=' ' --field=1 --complement > $SOLUTION_VARS
 			
 			N_LINES=$(cat $SOLUTION_VARS | wc -l)
 			if [ $N_LINES -eq 0 ]; then
@@ -117,8 +120,17 @@ while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
 				echo -e "    \e[1;31mCan't obtain a solution with length \e[0m $maxL"
 			else
 				# the formula is satisfiable: obtain solution in the roll
-				$SOL_GEN --boxes $IN_FILE --variables $SOLUTION_VARS -o $BOXES_SOLUTION --solver $SOLVER -v --max-L $maxL
+				
+				output=$($SOL_GEN				\
+					--boxes $IN_FILE			\
+					--variables $SOLUTION_VARS	\
+					-o $BOXES_SOLUTION			\
+					--solver $SOLVER			\
+					-v --max-L $maxL)
+				
 				outL=$?
+				
+				echo "$output" | sed 's/^/    /'
 				
 				# leave a blank line
 				echo ""
