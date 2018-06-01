@@ -45,15 +45,15 @@ width W;	// roll's width
 length L;	// maximum length
 
 int X(int b, int i, int j) {
-	return b*W*L + i*W + j + 1;
+	return 1 + b*W*L + i*W + j;
 }
 
 int C(int b, int i, int j) {
-	return nXvars + b*W*L + i*W + j + 1;
+	return nXvars + 1 + b*W*L + i*W + j;
 }
 
 int R(int b) {
-	return nXvars + nCvars + b + 1;
+	return nXvars + nCvars + 1 + b;
 }
 
 clause_encoder& make_encoder(const encoder_type& et) {
@@ -111,7 +111,7 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 				for (length ii = i; ii <= i + b_length - 1; ++ii) {
 					for (width jj = j; jj <= j + b_width - 1; ++jj) {
 						
-						out << -X(b,i,j) << " " << C(b,i,j) << " 0" << endl;
+						out << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
 						gI.add_clauses(1);
 					}
 				}
