@@ -18,9 +18,130 @@ using namespace std;
 using namespace encoder;
 using namespace utils;
 
+// -----------------------------
+// HELPER FUNCTIONS
+void open_stream(const string& output_file, ofstream& of, streambuf **buf) {
+	if (output_file != "none") {
+		of.open(output_file, ios_base::app);
+		*buf = of.rdbuf();
+
+		ifstream temp_fin;
+		temp_fin.open(output_file.c_str());
+		temp_fin.close();
+	}
+	else {
+		*buf = cout.rdbuf();
+	}
+}
+// -- HELPER FUNCTIONS
+// -----------------------------
+
+// number of variables
+int nXvars;	// for corners
+int nCvars;	// for cells
+int nRvars;	// for rotations
+
+size_t N;	// number of boxes
+width W;	// roll's width
+length L;	// maximum length
+
 enum solver {
 	none, simple, rotate
 };
+
+int X(int b, int i, int j) {
+	return b*W*L + i*W + j + 1;
+}
+
+int C(int b, int i, int j) {
+	return nXvars + b*W*L + i*W + j + 1;
+}
+
+int R(int b) {
+	return nXvars + nCvars + b + 1;
+}
+
+clause_encoder& make_encoder(const encoder_type& et) {
+	switch (et) {
+		case encoder_type::logarithmic:
+			return logarithmic_encoder::get_encoder();
+		case encoder_type::heule:
+			return heule_encoder::get_encoder();
+		default:
+			return quadratic_encoder::get_encoder();
+	}
+}
+
+void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
+	
+	// (1). one corner per box
+	for (size_t b = 0; b < N; ++b) {
+		clause cl;
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				cl += X(b,i,j);
+			}
+		}
+		CE.exactly_one(cl, out);
+	}
+	
+	// (2). at most one box per cell
+	for (length i = 0; i < L; ++i) {
+		for (width j = 0; j < W; ++j) {
+			
+			clause cl;
+			for (size_t b = 0; b < N; ++b) {
+				cl += C(b,i,j);
+			}
+			CE.amo(cl, out);
+			
+		}
+	}
+	
+	// (3). if box is placed somewhere then the 'spanning' cells are occupied
+	for (size_t b = 0; b < N; ++b) {
+		length b_length = data.all_boxes[b].l;
+		width b_width = data.all_boxes[b].w;
+		
+		// for each cell to be occupied by box 'b' (without rotation)
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				
+				// ignore the cases where part of the box is out of bounds
+				if (i + b_length - 1 >= L) continue;
+				if (j + b_width - 1 >= W) continue;
+				
+				for (length ii = i; ii <= i + b_length - 1; ++ii) {
+					for (width jj = j; jj <= j + b_width - 1; ++jj) {
+						
+						out << -X(b,i,j) << " " << C(b,i,j) << " 0" << endl;
+						
+					}
+				}
+				
+			}
+		}
+	}
+	
+	// (5). Cannot place the top-left corner of a box at cell (i,j) if
+	// it will end up out of bounds
+	for (int b = 0; b < N; ++b) {
+		length b_length = data.all_boxes[b].l;
+		width b_width = data.all_boxes[b].w;
+		
+		// for each cell to be occupied by box 'b' (without rotation)
+		for (length i = 0; i < L; ++i) {
+			for (width j = 0; j < W; ++j) {
+				
+				// if the box is WITHIN limits then ignore
+				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) continue;
+				
+				out << -X(b,i,j) << " 0" << endl;
+			}
+		}
+	}
+	
+}
 
 void print_usage() {
 	cout << "BOX WRAPPING PROBLEM - Satisfiability (CNF) Solver" << endl;
@@ -115,11 +236,6 @@ int main(int argc, char *argv[]) {
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
 		return 1;
 	}
-	if (outfile == "none") {
-		cerr << "Error: output file not specified." << endl;
-		cerr << "    Use [-h, --help] to see the usage for details." << endl;
-		return 1;
-	}
 	if (S == solver::none) {
 		cerr << "Error: solver not specified." << endl;
 		cerr << "    Use [-h, --help] to see the usage for details." << endl;
@@ -145,12 +261,33 @@ int main(int argc, char *argv[]) {
 	fin >> INPUT;
 	fin.close();
 	
+	// initialise variables
 	INPUT.fill_fields();
+	
+	N = INPUT.total_boxes;
+	L = INPUT.get_max_length_s();
+	W = INPUT.W;
+	
+	nXvars = N*W*L;
+	nCvars = N*W*L;
+	nRvars = N;
+	
+	global_info& gI = global_info::get_info();
+	gI.set_model_vars(nXvars + nCvars + nRvars);
+	
+	clause_encoder& ce = make_encoder(E);
+	
+	ofstream of;
+	streambuf *buf;
+	open_stream(outfile, of, &buf);
+	ostream out(buf);
 	
 	// write clauses
 	
 	
 	
+	// last line
+	out << "p cnf " << gI.get_total_vars() << " " << gI.get_total_clauses() << endl;
 	return 0;
 }
 
