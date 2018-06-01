@@ -88,8 +88,8 @@ void box_wrapper_rotate::_init(const gifts& data) {
 	/// makes the box occupy several cells of the roll.
 	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
-		length b_length = data.all_boxes[b].l;
-		width b_width = data.all_boxes[b].w;
+		length b_length = BOX.l;
+		width b_width = BOX.w;
 		
 		// for each cell to be occupied by box 'b' (without rotation)
 		for (length i = 0; i < L; ++i) {
@@ -126,8 +126,8 @@ void box_wrapper_rotate::_init(const gifts& data) {
 	/// cell (i,j) if it will end up out of bounds
 	for (int b = 0; b < N; ++b) {
 		const box& BOX = data.all_boxes[b];
-		length b_length = data.all_boxes[b].l;
-		width b_width = data.all_boxes[b].w;
+		length b_length = BOX.l;
+		width b_width = BOX.w;
 		
 		// for each cell to be occupied by box 'b' (without rotation)
 		for (length i = 0; i < L; ++i) {
