@@ -16,5 +16,9 @@ typedef pair<int, int> cell;
 
 template<typename T> T inf_t() { return numeric_limits<T>::max(); }
 
+enum solver {
+	none, simple, rotate
+};
+
 } // -- namespace utils
 
