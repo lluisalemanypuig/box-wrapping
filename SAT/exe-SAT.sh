@@ -21,7 +21,8 @@ SOLVER="rotate"
 ENCODER="quadratic"
 IN_FILE=""
 BOXES_SOLUTION=""
-TIME_LIMIT=5.0
+SOLVER_TIME=5.0
+SCRIPT_TIME=120.0
 MAX_ITER=100
 
 for i in "$@"; do
@@ -47,8 +48,13 @@ for i in "$@"; do
 		shift
 		;;
 		
-		--timeout=*)
-		TIME_LIMIT="${i#*=}"
+		--solver-timeout=*)
+		SOLVER_TIME="${i#*=}"
+		shift
+		;;
+		
+		--script-timeout=*)
+		SCRIPT_TIME="${i#*=}"
 		shift
 		;;
 		
@@ -72,15 +78,26 @@ fi
 maxL=999999
 UNSAT=0
 TERMINATE=0
-TIMEOUT=0
+SOLVER_TIMEOUT=0
+SCRIPT_TIMEOUT=0
 ITER=0
+msecs=0
+SCRIPT_TIME=$((1000*$SCRIPT_TIME))
 
 # keep iterating until:
 #    the limit on iterations has been reached (unlikely)
 #    the solver found an unsatisfiable formula (optimality)
+#    the solver was timeout terminated
 #    the script had to terminate due to errors on the generation of the
 #        clauses or of the solution
-while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
+#    the script reached its time limit
+while
+	[ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] &&
+	[ $SOLVER_TIMEOUT -eq 0 ] && [ $SCRIPT_TIMEOUT -eq 0 ] &&
+	[ $ITER -le $MAX_ITER ];
+do
+	begin=$(date +%s%3N)
+	
 	echo -e "    \e[1;34mTry max length:\e[0m $maxL"
 	echo -e "    \e[1;34m    At iteration:\e[0m $ITER"
 	
@@ -99,7 +116,9 @@ while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
 		SOLUTION_VARS=$OUT_DIR/box-wrapping.vars
 		
 		rm -f $SOLUTION_FILE
-		/usr/bin/time --output=/dev/null timeout $TIME_LIMIT $LINGELING $CLAUSE_FILE > $SOLUTION_FILE
+		/usr/bin/time --output=/dev/null 				\
+			timeout $SOLVER_TIME						\
+			$LINGELING $CLAUSE_FILE > $SOLUTION_FILE
 		
 		TIMEOUT_FILE=$OUT_DIR/lingeling-timeout
 		cat $SOLUTION_FILE | grep SIGNAL > $TIMEOUT_FILE
@@ -113,8 +132,7 @@ while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
 			# lingeling was timeout-terminated.
 			# The script must terminate because no lower values of maxL
 			# will generate solvable CNFs in $TIME_LIMIT
-			TERMINATE=1
-			TIMEOUT=1
+			SOLVER_TIMEOUT=1
 			echo -e "        \e[3;31mlingeling was timeout-terminated\e[0m"
 		elif [ $(cat $UNSAT_FILE | wc -l) -gt 0 ]; then
 			# lingeling determined unsatisfiablity
@@ -158,15 +176,26 @@ while [ $UNSAT -eq 0 ] && [ $TERMINATE -eq 0 ] && [ $ITER -le $MAX_ITER ]; do
 			fi
 		fi
 	fi
-	
 	ITER=$(($ITER + 1))
+	
+	end=$(date +%s%3N)
+	msecs=$(($msecs + $end - $begin))
+	
+	if [ $msecs -gt $SCRIPT_TIME ]; then
+		# the script reached its time limit
+		SCRIPT_TIMEOUT=1
+	fi
 done
 
-if [ $UNSAT -eq 1 ]; then
-	echo -e "        \e[1;32mOptimality reached!\e[0m"
-fi
-if [ $TIMEOUT -eq 1 ]; then
-	echo "        However, it is likely that this happened"
-	echo "        trying to determine unsatisfiablity"
+if [ $SCRIPT_TIMEOUT -eq 0 ]; then
+	if [ $UNSAT -eq 1 ]; then
+		echo -e "        \e[1;32mOptimality reached!\e[0m"
+	fi
+	if [ $SOLVER_TIMEOUT -eq 1 ]; then
+		echo "        However, it is likely that this happened"
+		echo "        trying to determine unsatisfiablity"
+	fi
+else
+	echo -e "        \e[1;31mScript reached time limit\e[0m"
 fi
 
