@@ -1,6 +1,17 @@
 #!/bin/bash
 
 cd report
-rm -f *.toc *.out *.synctex.gz *.run.xml *.log *.bcf *.aux
-rm -f *.bbl *.blg
+
+rm -f *.aux
+rm -f *.bcf
+rm -f *.log
+rm -f *.xml
+rm -f *.gz
+rm -f *.toc
+rm -f *.out
+rm -f *.pyg
+rm -f *.bbl
+rm -f *.blg
+rm -f *.pdf
+
 cd ..
