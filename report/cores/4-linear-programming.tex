@@ -113,6 +113,7 @@ Assuming the implementation of the following functions to facilitate
 access to the arrays of variables:
 
 {\NOINDENT \begin{lstlisting}
+// 0 <= b < N, 0 <= x < W, 0 <= y < L
 inline IloNumVar X(size_t b, size_t x, size_t y) const { return box_corner[b*W*L + y*W + x]; }
 inline IloNumVar C(size_t b, size_t x, size_t y) const { return box_cell[b*W*L + y*W + x]; }
 inline IloNumVar R(size_t b) const { return box_rotated[b]; }
