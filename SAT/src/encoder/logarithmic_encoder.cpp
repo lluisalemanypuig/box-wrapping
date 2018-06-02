@@ -21,7 +21,7 @@ void logarithmic_encoder::make_binaries() {
 	mpz_init(binary);
 	binaries = vector<string>(n_vars);
 	
-	for (int i = 0; i < n_bits; ++i) {
+	for (int i = 0; i < n_vars; ++i) {
 		mpz_set_ui(binary, i);
 		char *buf = nullptr;
 		buf = mpz_get_str(buf, 2, binary);
