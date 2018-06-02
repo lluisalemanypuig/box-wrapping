@@ -6,8 +6,7 @@ satisfiability paradigm, that is, construct a Boolean formula
 in Conjunctive Normal Form (CNF) using a number of Boolean
 variables and solve it. The solution is a truth assignment to
 the variables. The way this solution is obtained is by means
-of a SAT solver. In this project, lingeling \cite{lingeling},
-developed by Biere, is the solver that will be used.
+of a SAT solver.
 
 \hfill
 
@@ -29,24 +28,220 @@ the constraint \ref{constr:box-placed} formalised in section
 \ref{sec:modelling:constraints}. This was implemented in
 sections \ref{sec:constraint-programming} and \ref{sec:linear-programming}
 following equation \ref{eq:constraint:all-boxes-used} literally.
-This time we can not do that. This constraint formalised the idea
-that each box has to have its top-left corner assigned to exactly
-one cell. In Boolean satisfiability this can be seen as ``given $n$
+This constraint formalised the idea that each box has to have its
+top-left corner assigned to exactly one cell, and, given the
+Boolean variables detailed in \ref{var:box-corner} for each cell
+on the roll for a certain box, we only had to add up all the
+variables and impose that the sum be equal to 1. This time we can
+not do that. In Boolean satisfiability this can be seen as ``given $n$
 Boolean variables, exactly one of the $n$ variables $x_1,\cdots,x_n$ has
-to be true''.
+to be true''. Implementing this constraint requires two types
+of constraints: ``at least one'' and ``at most one''. If we
+manage to implement them using two Boolean expressions in CNF
+each, the conjunction of the two will give us the ``exactly one''
+constraint.
+\begin{itemize}
+	\item At least one: given variables $x_1,\cdots,x_n$ at least
+	one of them must be true. This is straightforward, we only need
+	to add the following clause to the Boolean formula:
+	\begin{equation}
+	\label{eq:cnf:at-least-one}
+	x_1 \vee x_2 \vee \cdots \vee x_n
+	\end{equation}
+	Since all clauses of the formula have to evaluate to true to make
+	it satisfiable then one of the variables $x_i$ must be set to true.
+	
+	\item At most one: given variables $x_1,\cdots,x_n$ at most
+	one of them must be true. This is the most difficult constraint
+	to implement using a Boolean formula in CNF. To begin with, there
+	are different ways to encode this constraint. Here are listed
+	three of them:
+	\begin{enumerate}
+		\item Quadratic encoding ($\mathcal{Q}$): the simplest of the
+		encodings, we only have to add the clauses
+		\begin{equation}
+		\label{eq:cnf:at-most-one:quad}
+		\mathcal{Q}(x_1,\cdots, x_n) =
+		\bigvee_{1 \le i < j \le n} (\overline{x_i}\vee\overline{x_j})
+		\end{equation}
+		which will produce $\binom{n}{2} = O(n^2)$ clauses.
+		
+		\item Logarithmic encoding ($\mathcal{L}$): this encoding uses
+		$m = \lceil \log{n} \rceil$ extra variables to encode the
+		intended meaning. Given $n$ variables, introduce variables
+		$y_0,\cdots,y_{m-1}$ and add the following clauses:
+		\begin{equation}
+		\label{eq:cnf:at-most-one:log}
+		\mathcal{L}(x_1,\cdots, x_n) = 
+		\bigwedge_{i=1}^n
+		\left(\bigwedge_{j} (\overline{x_i} \vee y_j) \right)
+		\wedge
+		\left(\bigwedge_{k} (\overline{x_i} \vee \overline{y_k}) \right)
+		\end{equation}
+		for the bits $j$ set to 1 in the binary representation of $i$ and
+		for the bits $k$ set to 0 in the binary representation of $i$, respectively.
+		Since for each variable $O(\log{n})$ clauses are added, the logarithmic
+		encoding produces in total $O(n\log{n})$ clauses.
+		
+		\item Heule encoding ($\mathcal{H}$): this encoding is based on
+		the quadratic encoding. The set of clauses produced $\mathcal{H}(x_1,\cdots, x_n)$
+		is defined with the following recurrence:
+		\begin{equation}
+		\label{eq:cnf:at-most-one:heule}
+		\mathcal{H}(x_1,\cdots, x_n) =
+		\left\{
+		\begin{array}{l l}
+		\mathcal{Q}(x_1,\cdots, x_n) & \text{ if } n \le 3 \\
+		\mathcal{Q}(x_1,x_2,y) \wedge \mathcal{H}(x_3,\cdots, x_n, \overline{y}) & \text{ otherwise}
+		\end{array}
+		\right.
+		\end{equation}
+		where $y$ denotes a new variable that was not used before.
+	\end{enumerate}
+\end{itemize}
 
-
-
-This type of constraint
-can be interpreted as ``of the $n$ variables $x_1,\cdots,x_n$ exactly
-one of them''. Implementing this
-constraint requires two types of constraints: ``at least one''
-and ``at most one''. If we manage to implement them using two
-Boolean expressions in CNF each, the conjunction of the two
-will give use the ``exactly one'' constraint. The former is
-extremely easy: given $n$ variables $x_1,\cdots,x_n$, the
-``at least one'' constraint ($x_1+\cdots+x_n\le 1$) is obtained
-from the disjunction of all of the positive literals $l_1,\cdots,l_n$.
+The performance of the SAT solver will depend largely on the
+encoding chosen for constraints of type ``at most one''.
 
 \subsection{Implementation}
+\label{sec:satisfiability:implementation}
 
+This time we did not need to implement any array of variables, since
+we only have to output the clauses into a file that will be used by a
+SAT solver. However, each variable needs an identifier (starting at 1).
+Generating these identifiers is done via the following functions:
+
+\begin{enumerate}
+	\item Variables in \ref{var:box-cell} ($C_{b,x,y}$):
+    
+	{\NOINDENT \begin{lstlisting}
+	// 0 <= b < N, 0 <= x < W, 0 <= y < L
+	int C(int b, int x, int y) {
+		return nXvars + 1 + b*W*L + y*W + x;
+	}
+	\end{lstlisting}}
+    
+	\item Variables in \ref{var:box-corner} ($X_{b,x,y}$):
+    
+	{\NOINDENT \begin{lstlisting}
+	// 0 <= b < N, 0 <= x < W, 0 <= y < L
+	int X(int b, int x, int y) {
+		return 1 + b*W*L + y*W + x;
+	}
+	\end{lstlisting}}
+    
+	\item Variables in \ref{var:box-rotated} ($R_b$):
+    
+	{\NOINDENT \begin{lstlisting}
+	// 0 <= b < N
+	int R(int b) {
+		return nXvars + nCvars + 1 + b;
+	}
+	\end{lstlisting}}
+\end{enumerate}
+
+The variables $nXVars$, $nCvars$ and $nRvars$ store the amount of
+variables for $X_{b,i,j}$, $C_{b,i,j}$ and $R_b$ respectively. The
+amounts of each type of variables is given at the end of section
+\ref{sec:modelling:variables}. Variables $W$ and $L$ store the
+roll's width and length, respectively.
+
+\hfill
+
+While keeping in mind the implementation of these functions, and
+assuming the existence of a class $clause$ which represents a list
+of literals, and the existence of an object $CE$ which is capable
+of encodign the ``at least/most one'' constraints in the three
+different ways detailed above ($\mathcal{Q}$, $\mathcal{L}$, and
+$\mathcal{L}$) , the constraints in section \ref{sec:modelling:constraints}
+have been implemented as follows:
+
+\begin{enumerate}
+	\item All boxes must be in the solution (constraint formalised in
+	\ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
+	also read as ``assign a top-left corner to each box''.
+    
+	{\NOINDENT \begin{lstlisting}
+	for (size_t b = 0; b < N; ++b) {
+		clause cl;
+		for (length y = 0; y < L; ++y) {
+			for (width x = 0; x < W; ++x) {
+				cl += X(b,x,y);
+			}
+		}
+		CE.exactly_one(cl, out);
+	}
+	\end{lstlisting}}
+    
+	\item Boxes cannot overlap (constraint formalised in
+	\ref{constr:no-overlap}, constraint \ref{eq:constraint:one-box-cell}).
+    
+	{\NOINDENT \begin{lstlisting}
+	for (length y = 0; y < L; ++y) {
+		for (width x = 0; x < W; ++x) {
+			clause cl;
+			for (size_t b = 0; b < N; ++b) {
+				cl += C(b,x,y);
+			}
+			CE.amo(cl, out);
+		}
+	}
+	\end{lstlisting}}
+    
+	\item Depending on their rotation, boxes occupy certain cells of the roll
+	(constraint formalised in \ref{constr:box-rot-span}). For those cells $(x,y)$ within
+	bounds for $b$-th box:
+
+	\begin{itemize}
+		\item For square boxes (constraint \ref{eq:span-cells:square-boxes}):
+		{\NOINDENT \begin{lstlisting}
+		for (length i = y; i <= y + b_length - 1; ++i) {
+			for (width j = x; j <= x + b_width - 1; ++j) {
+				out << -X(b,x,y) << " " << C(b,j,i) << " 0" << endl;
+			}
+		}
+		out << -R(b) << " 0" << endl;
+		\end{lstlisting}}
+		
+		\item For rectangular boxes (constraints \ref{eq:span-cells:rectangular-boxes:0} and
+		\ref{eq:span-cells:rectangular-boxes:1}):
+		{\NOINDENT \begin{lstlisting}
+		for (length i = y; i <= y + b_length - 1; ++i) {
+			for (width j = x; j <= x + b_width - 1; ++j) {
+				out << R(b) << " " << -X(b,x,y) << " " << C(b,j,i) << " 0" << endl;
+			}
+		}
+		\end{lstlisting}}
+		{\NOINDENT \begin{lstlisting}
+		for (length i = y; i <= y + b_width - 1; ++i) {
+			for (width j = x; j <= x + b_length - 1; ++j) {
+				out << -R(b) << " " << -X(b,x,y) << " " << C(b,j,i) << " 0" << endl;
+			}
+		}
+		\end{lstlisting}}
+	\end{itemize}
+    
+	\item Depending on their rotation, boxes cannot occupy certain cells of the
+	roll (constraint formalised in \ref{constr:box-forbid}). For those cells $(x,y)$
+	out of bounds for $b$-th box:
+    
+	\begin{itemize}
+		\item For square boxes (constraint \ref{eq:forbid-span-cells:square-boxes}):
+		{\NOINDENT \begin{lstlisting}
+		out << -X(b,x,y) << " 0" << endl;
+		\end{lstlisting}}
+		
+		\item For rectangular boxes (constraints \ref{eq:forbid-span-cells:rectangular-boxes:0}
+		and \ref{eq:forbid-span-cells:rectangular-boxes:1}):
+		{\NOINDENT \begin{lstlisting}
+		out << R(b) << " " << -X(b,x,y) << " 0" << endl;
+		\end{lstlisting}}
+		{\NOINDENT \begin{lstlisting}
+		out << -R(b) << " " << -X(b,x,y) << " 0" << endl;
+		\end{lstlisting}}
+	\end{itemize}
+    
+\end{enumerate}
+
+\subsection{Finding the optimum solution}
+\label{sec:satisfiability:optimum}
