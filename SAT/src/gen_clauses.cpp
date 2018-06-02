@@ -130,7 +130,9 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 			for (width j = 0; j < W; ++j) {
 				
 				// if the box is WITHIN limits then ignore
-				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) continue;
+				if (i + b_length - 1 <= L - 1 and j + b_width - 1 <= W - 1) {
+					continue;
+				}
 				
 				out << -X(b,i,j) << " 0" << endl;
 				gI.add_clauses(1);
@@ -206,7 +208,11 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 						for (length ii = i; ii <= i + b_length - 1; ++ii) {
 							for (width jj = j; jj <= j + b_width - 1; ++jj) {
 								
-								out << R(b) << " " << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
+								out << R(b) << " "
+									<< -X(b,i,j) << " "
+									<< C(b,ii,jj) << " 0"
+									<< endl;
+									
 								gI.add_clauses(1);
 							}
 						}
@@ -219,7 +225,11 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 						for (length ii = i; ii <= i + b_width - 1; ++ii) {
 							for (width jj = j; jj <= j + b_length - 1; ++jj) {
 								
-								out << -R(b) << " " << -X(b,i,j) << " " << C(b,ii,jj) << " 0" << endl;
+								out << -R(b) << " "
+									<< -X(b,i,j) << " "
+									<< C(b,ii,jj) << " 0"
+									<< endl;
+								
 								gI.add_clauses(1);
 							}
 						}
@@ -302,6 +312,35 @@ void print_usage() {
 	cout << "        logarithmic" << endl;
 	cout << "        heule" << endl;
 	cout << endl;
+}
+
+void output_comments(const string& infile, const solver& S, const encoder_type& E, ostream& out) {
+	out << "c     set of clauses using the ";
+	if (S == solver::simple) {
+		out << "'simple'";
+	}
+	else if (S == solver::rotate) {
+		out << "'rotate'";
+	}
+	out << " solver" << endl;
+	out << "c     set of clauses using the ";
+	if (E == encoder_type::quadratic) {
+		out << "'quadratic'";
+	}
+	else if (E == encoder_type::logarithmic) {
+		out << "'logarithmic'";
+	}
+	else if (E == encoder_type::heule) {
+		out << "'heule'";
+	}
+	out << " encoder" << endl;
+	
+	string short_infile;
+	int i = infile.size() - 1;
+	while (i >= 0 and infile[i] != '/') --i;
+	short_infile = infile.substr(i + 1, infile.size() - i - 1);
+	
+	out << "c from the input '" << short_infile << "':" << endl;
 }
 
 int main(int argc, char *argv[]) {
@@ -417,17 +456,19 @@ int main(int argc, char *argv[]) {
 	
 	L = min(L, max_L);
 	
-	nXvars = N*W*L;
-	nCvars = N*W*L;
-	nRvars = N;
-	
-	global_info& gI = global_info::get_info();
 	if (S == solver::simple) {
-		gI.set_model_vars(nXvars + nCvars);
+		nXvars = N*W*L;
+		nCvars = N*W*L;
+		nRvars = 0;
 	}
 	else if (S == solver::rotate) {
-		gI.set_model_vars(nXvars + nCvars + nRvars);
+		nXvars = N*W*L;
+		nCvars = N*W*L;
+		nRvars = N;
 	}
+	
+	global_info& gI = global_info::get_info();
+	gI.set_model_vars(nXvars + nCvars + nRvars);
 	
 	clause_encoder& ce = make_encoder(E);
 	
@@ -436,17 +477,28 @@ int main(int argc, char *argv[]) {
 	open_stream(outfile, of, &buf);
 	ostream out(buf);
 	
-	// write clauses
-	
-	if (S == solver::simple) {
-		simple_solver(INPUT, out, ce);
+	if (L == 0) {
+		// output an unsatisfiable Boolean formula
+		out << "1  0" << endl;
+		out << "-1 0" << endl;
+		out << "p cnf " << 1 << " 2" << endl;
+		output_comments(infile, S, E, out);
 	}
-	else if (S == solver::rotate) {
-		rotate_solver(INPUT, out, ce);
+	else {
+		// write clauses
+		
+		if (S == solver::simple) {
+			simple_solver(INPUT, out, ce);
+		}
+		else if (S == solver::rotate) {
+			rotate_solver(INPUT, out, ce);
+		}
+		
+		// last line
+		out << "p cnf " << gI.get_total_vars() << " " << gI.get_total_clauses() << endl;
+		output_comments(infile, S, E, out);
 	}
 	
-	// last line
-	out << "p cnf " << gI.get_total_vars() << " " << gI.get_total_clauses() << endl;
 	return 0;
 }
 
