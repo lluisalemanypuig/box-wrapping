@@ -209,11 +209,12 @@ int main(int argc, char *argv[]) {
 		vector<literal> all_lits(nXvars + nCvars + nRvars);
 		size_t i = 0;
 		literal lit;
-		while (fin >> lit and lit != 0) {
-			all_lits[i++] = lit;
+		while (i < all_lits.size() and fin >> lit and lit != 0) {
+			all_lits[i] = lit;
+			++i;
 		}
 		
-		assert(i == all_lits.size());
+		assert(i >= all_lits.size());
 		
 		// for each top-left corner variable
 		for (int c = 0; c < nXvars; ++c) {
@@ -257,8 +258,9 @@ int main(int argc, char *argv[]) {
 		cout << solution << endl;
 		string msg;
 		if (not solution.is_sane(msg)) {
-			cout << "Solution is not sane!" << endl;
-			cout << "    " << msg << endl;
+			cerr << endl;
+			cerr << "Solution is not sane!" << endl;
+			cerr << "    " << msg << endl;
 			return 0;
 		}
 	}
