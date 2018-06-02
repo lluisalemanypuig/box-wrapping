@@ -1,2 +1,52 @@
 \section{Satisfiability}
 \label{sec:satisfiability}
+
+This part of the project is aimed at solving the BWP using the
+satisfiability paradigm, that is, construct a Boolean formula
+in Conjunctive Normal Form (CNF) using a number of Boolean
+variables and solve it. The solution is a truth assignment to
+the variables. The way this solution is obtained is by means
+of a SAT solver. In this project, lingeling \cite{lingeling},
+developed by Biere, is the solver that will be used.
+
+\hfill
+
+This time, this paradigm has mostly only disadvantages: not only
+we cannot find an optimal solution directly just by finding
+a truth assignment to the variables, but also the ``language''
+is less expressive, or, rather, more rigid since it only allows
+Boolean clauses in CNF than the one used in Constraint or Linear
+Programming. However, the constraints and variables that have
+to be implemented are exactly the same as the ones formalised
+in section \ref{sec:modelling} and, as will be explained in the
+coming sections, optimality can be reached using fairly simple
+methods.
+
+\hfill
+
+By less expressive we mean the following: take, for example,
+the constraint \ref{constr:box-placed} formalised in section
+\ref{sec:modelling:constraints}. This was implemented in
+sections \ref{sec:constraint-programming} and \ref{sec:linear-programming}
+following equation \ref{eq:constraint:all-boxes-used} literally.
+This time we can not do that. This constraint formalised the idea
+that each box has to have its top-left corner assigned to exactly
+one cell. In Boolean satisfiability this can be seen as ``given $n$
+Boolean variables, exactly one of the $n$ variables $x_1,\cdots,x_n$ has
+to be true''.
+
+
+
+This type of constraint
+can be interpreted as ``of the $n$ variables $x_1,\cdots,x_n$ exactly
+one of them''. Implementing this
+constraint requires two types of constraints: ``at least one''
+and ``at most one''. If we manage to implement them using two
+Boolean expressions in CNF each, the conjunction of the two
+will give use the ``exactly one'' constraint. The former is
+extremely easy: given $n$ variables $x_1,\cdots,x_n$, the
+``at least one'' constraint ($x_1+\cdots+x_n\le 1$) is obtained
+from the disjunction of all of the positive literals $l_1,\cdots,l_n$.
+
+\subsection{Implementation}
+
