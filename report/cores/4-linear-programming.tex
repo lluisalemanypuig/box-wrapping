@@ -225,18 +225,19 @@ using the CPLEX library is as follows:
     
 \end{enumerate}
 
-The implementation for constraint \ref{eq:span-cells:square-boxes} using linear
-expressions can be done in the following way. For non-square boxes, the constraints
-are expressed as follows:
+The use of non-linear expressions in the Linear Programming model is not allowed. For example,
+constraint \ref{eq:span-cells:rectangular-boxes:0}
 \[
 (R_b = 0) \wedge (X_{b,x,y} = 1) \Longrightarrow (C_{b,j,i} = 1)
 \]
-This is clearly not a linear expression but it can be transformed into one by noticing
+is clearly not a linear expression. Although CPLEX does the necessary transformations
+of non-linear expressions to linear ones, it can be transformed manually into one by noticing
 that the logical constraint is equivalent to
 \[
 (R_b = 1) \vee (X_{b,x,y} = 0) \vee (C_{b,j,i} = 1)
 \]
-From here we can obtain the linear expressions that model this logical constraint.
+From here we can obtain the linear expressions that model this logical constraint using
+the transformations explained at the beginning of this section.
 The transformation for this particular case is detailed in section
 \ref{sec:conv-non-linear:3-ors}.
 
