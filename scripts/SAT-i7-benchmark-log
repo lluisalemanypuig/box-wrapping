@@ -1,0 +1,977 @@
+[1;4mRead[0m inputs from '../inputs/material'
+[1;4mStore[0m outputs in '../outputs/SAT-i7'
+Exe file used: ../SAT/exe-SAT.sh
+[1;32mSolver for[0m [1;4;32mSAT[0m [1;32mexists. Proceed to benchmarking...[0m
+
+Executing SAT solver with input file: ../inputs/material/bwp_3_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .510 seconds
+    Current progress:
+            Solved optimally : 1 / 1 ( 100.00% )
+        Solved sub-optimally : 0 / 1 ( 0% )
+                    Unsolved : 0 / 1 ( 0% )
+                   Processed : 1 / 108 ( .92% )
+          Total time elapsed : .510 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .202 seconds
+    Current progress:
+            Solved optimally : 2 / 2 ( 100.00% )
+        Solved sub-optimally : 0 / 2 ( 0% )
+                    Unsolved : 0 / 2 ( 0% )
+                   Processed : 2 / 108 ( 1.85% )
+          Total time elapsed : .712 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .085 seconds
+    Current progress:
+            Solved optimally : 3 / 3 ( 100.00% )
+        Solved sub-optimally : 0 / 3 ( 0% )
+                    Unsolved : 0 / 3 ( 0% )
+                   Processed : 3 / 108 ( 2.77% )
+          Total time elapsed : .797 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .077 seconds
+    Current progress:
+            Solved optimally : 4 / 4 ( 100.00% )
+        Solved sub-optimally : 0 / 4 ( 0% )
+                    Unsolved : 0 / 4 ( 0% )
+                   Processed : 4 / 108 ( 3.70% )
+          Total time elapsed : .874 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .105 seconds
+    Current progress:
+            Solved optimally : 5 / 5 ( 100.00% )
+        Solved sub-optimally : 0 / 5 ( 0% )
+                    Unsolved : 0 / 5 ( 0% )
+                   Processed : 5 / 108 ( 4.62% )
+          Total time elapsed : .979 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .476 seconds
+    Current progress:
+            Solved optimally : 6 / 6 ( 100.00% )
+        Solved sub-optimally : 0 / 6 ( 0% )
+                    Unsolved : 0 / 6 ( 0% )
+                   Processed : 6 / 108 ( 5.55% )
+          Total time elapsed : 1.455 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.772 seconds
+    Current progress:
+            Solved optimally : 7 / 7 ( 100.00% )
+        Solved sub-optimally : 0 / 7 ( 0% )
+                    Unsolved : 0 / 7 ( 0% )
+                   Processed : 7 / 108 ( 6.48% )
+          Total time elapsed : 4.227 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.722 seconds
+    Current progress:
+            Solved optimally : 8 / 8 ( 100.00% )
+        Solved sub-optimally : 0 / 8 ( 0% )
+                    Unsolved : 0 / 8 ( 0% )
+                   Processed : 8 / 108 ( 7.40% )
+          Total time elapsed : 5.949 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 6.073 seconds
+    Current progress:
+            Solved optimally : 9 / 9 ( 100.00% )
+        Solved sub-optimally : 0 / 9 ( 0% )
+                    Unsolved : 0 / 9 ( 0% )
+                   Processed : 9 / 108 ( 8.33% )
+          Total time elapsed : 12.022 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 45.666 seconds
+    Current progress:
+            Solved optimally : 10 / 10 ( 100.00% )
+        Solved sub-optimally : 0 / 10 ( 0% )
+                    Unsolved : 0 / 10 ( 0% )
+                   Processed : 10 / 108 ( 9.25% )
+          Total time elapsed : 57.688 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.440 seconds
+    Current progress:
+            Solved optimally : 11 / 11 ( 100.00% )
+        Solved sub-optimally : 0 / 11 ( 0% )
+                    Unsolved : 0 / 11 ( 0% )
+                   Processed : 11 / 108 ( 10.18% )
+          Total time elapsed : 61.128 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_3_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.122 seconds
+    Current progress:
+            Solved optimally : 12 / 12 ( 100.00% )
+        Solved sub-optimally : 0 / 12 ( 0% )
+                    Unsolved : 0 / 12 ( 0% )
+                   Processed : 12 / 108 ( 11.11% )
+          Total time elapsed : 181.250 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .089 seconds
+    Current progress:
+            Solved optimally : 13 / 13 ( 100.00% )
+        Solved sub-optimally : 0 / 13 ( 0% )
+                    Unsolved : 0 / 13 ( 0% )
+                   Processed : 13 / 108 ( 12.03% )
+          Total time elapsed : 181.339 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .099 seconds
+    Current progress:
+            Solved optimally : 14 / 14 ( 100.00% )
+        Solved sub-optimally : 0 / 14 ( 0% )
+                    Unsolved : 0 / 14 ( 0% )
+                   Processed : 14 / 108 ( 12.96% )
+          Total time elapsed : 181.438 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .153 seconds
+    Current progress:
+            Solved optimally : 15 / 15 ( 100.00% )
+        Solved sub-optimally : 0 / 15 ( 0% )
+                    Unsolved : 0 / 15 ( 0% )
+                   Processed : 15 / 108 ( 13.88% )
+          Total time elapsed : 181.591 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .233 seconds
+    Current progress:
+            Solved optimally : 16 / 16 ( 100.00% )
+        Solved sub-optimally : 0 / 16 ( 0% )
+                    Unsolved : 0 / 16 ( 0% )
+                   Processed : 16 / 108 ( 14.81% )
+          Total time elapsed : 181.824 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .440 seconds
+    Current progress:
+            Solved optimally : 17 / 17 ( 100.00% )
+        Solved sub-optimally : 0 / 17 ( 0% )
+                    Unsolved : 0 / 17 ( 0% )
+                   Processed : 17 / 108 ( 15.74% )
+          Total time elapsed : 182.264 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .685 seconds
+    Current progress:
+            Solved optimally : 18 / 18 ( 100.00% )
+        Solved sub-optimally : 0 / 18 ( 0% )
+                    Unsolved : 0 / 18 ( 0% )
+                   Processed : 18 / 108 ( 16.66% )
+          Total time elapsed : 182.949 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 31.456 seconds
+    Current progress:
+            Solved optimally : 19 / 19 ( 100.00% )
+        Solved sub-optimally : 0 / 19 ( 0% )
+                    Unsolved : 0 / 19 ( 0% )
+                   Processed : 19 / 108 ( 17.59% )
+          Total time elapsed : 214.405 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_9_1.in
+    [1;32mOptimal solution reached[0m
+    In .851 seconds
+    Current progress:
+            Solved optimally : 20 / 20 ( 100.00% )
+        Solved sub-optimally : 0 / 20 ( 0% )
+                    Unsolved : 0 / 20 ( 0% )
+                   Processed : 20 / 108 ( 18.51% )
+          Total time elapsed : 215.256 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 74.471 seconds
+    Current progress:
+            Solved optimally : 21 / 21 ( 100.00% )
+        Solved sub-optimally : 0 / 21 ( 0% )
+                    Unsolved : 0 / 21 ( 0% )
+                   Processed : 21 / 108 ( 19.44% )
+          Total time elapsed : 289.727 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.077 seconds
+    Current progress:
+            Solved optimally : 22 / 22 ( 100.00% )
+        Solved sub-optimally : 0 / 22 ( 0% )
+                    Unsolved : 0 / 22 ( 0% )
+                   Processed : 22 / 108 ( 20.37% )
+          Total time elapsed : 409.804 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.257 seconds
+    Current progress:
+            Solved optimally : 23 / 23 ( 100.00% )
+        Solved sub-optimally : 0 / 23 ( 0% )
+                    Unsolved : 0 / 23 ( 0% )
+                   Processed : 23 / 108 ( 21.29% )
+          Total time elapsed : 412.061 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_4_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.104 seconds
+    Current progress:
+            Solved optimally : 24 / 24 ( 100.00% )
+        Solved sub-optimally : 0 / 24 ( 0% )
+                    Unsolved : 0 / 24 ( 0% )
+                   Processed : 24 / 108 ( 22.22% )
+          Total time elapsed : 532.165 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .091 seconds
+    Current progress:
+            Solved optimally : 25 / 25 ( 100.00% )
+        Solved sub-optimally : 0 / 25 ( 0% )
+                    Unsolved : 0 / 25 ( 0% )
+                   Processed : 25 / 108 ( 23.14% )
+          Total time elapsed : 532.256 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .075 seconds
+    Current progress:
+            Solved optimally : 26 / 26 ( 100.00% )
+        Solved sub-optimally : 0 / 26 ( 0% )
+                    Unsolved : 0 / 26 ( 0% )
+                   Processed : 26 / 108 ( 24.07% )
+          Total time elapsed : 532.331 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .354 seconds
+    Current progress:
+            Solved optimally : 27 / 27 ( 100.00% )
+        Solved sub-optimally : 0 / 27 ( 0% )
+                    Unsolved : 0 / 27 ( 0% )
+                   Processed : 27 / 108 ( 25.00% )
+          Total time elapsed : 532.685 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_5_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.797 seconds
+    Current progress:
+            Solved optimally : 28 / 28 ( 100.00% )
+        Solved sub-optimally : 0 / 28 ( 0% )
+                    Unsolved : 0 / 28 ( 0% )
+                   Processed : 28 / 108 ( 25.92% )
+          Total time elapsed : 534.482 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.092 seconds
+    Current progress:
+            Solved optimally : 29 / 29 ( 100.00% )
+        Solved sub-optimally : 0 / 29 ( 0% )
+                    Unsolved : 0 / 29 ( 0% )
+                   Processed : 29 / 108 ( 26.85% )
+          Total time elapsed : 536.574 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .366 seconds
+    Current progress:
+            Solved optimally : 30 / 30 ( 100.00% )
+        Solved sub-optimally : 0 / 30 ( 0% )
+                    Unsolved : 0 / 30 ( 0% )
+                   Processed : 30 / 108 ( 27.77% )
+          Total time elapsed : 536.940 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_8_1.in
+    [1;32mOptimal solution reached[0m
+    In .585 seconds
+    Current progress:
+            Solved optimally : 31 / 31 ( 100.00% )
+        Solved sub-optimally : 0 / 31 ( 0% )
+                    Unsolved : 0 / 31 ( 0% )
+                   Processed : 31 / 108 ( 28.70% )
+          Total time elapsed : 537.525 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_9_1.in
+    [1;32mOptimal solution reached[0m
+    In .978 seconds
+    Current progress:
+            Solved optimally : 32 / 32 ( 100.00% )
+        Solved sub-optimally : 0 / 32 ( 0% )
+                    Unsolved : 0 / 32 ( 0% )
+                   Processed : 32 / 108 ( 29.62% )
+          Total time elapsed : 538.503 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.049 seconds
+    Current progress:
+            Solved optimally : 33 / 33 ( 100.00% )
+        Solved sub-optimally : 0 / 33 ( 0% )
+                    Unsolved : 0 / 33 ( 0% )
+                   Processed : 33 / 108 ( 30.55% )
+          Total time elapsed : 541.552 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 4.473 seconds
+    Current progress:
+            Solved optimally : 34 / 34 ( 100.00% )
+        Solved sub-optimally : 0 / 34 ( 0% )
+                    Unsolved : 0 / 34 ( 0% )
+                   Processed : 34 / 108 ( 31.48% )
+          Total time elapsed : 546.025 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.736 seconds
+    Current progress:
+            Solved optimally : 35 / 35 ( 100.00% )
+        Solved sub-optimally : 0 / 35 ( 0% )
+                    Unsolved : 0 / 35 ( 0% )
+                   Processed : 35 / 108 ( 32.40% )
+          Total time elapsed : 551.761 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_5_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.075 seconds
+    Current progress:
+            Solved optimally : 36 / 36 ( 100.00% )
+        Solved sub-optimally : 0 / 36 ( 0% )
+                    Unsolved : 0 / 36 ( 0% )
+                   Processed : 36 / 108 ( 33.33% )
+          Total time elapsed : 671.836 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .202 seconds
+    Current progress:
+            Solved optimally : 37 / 37 ( 100.00% )
+        Solved sub-optimally : 0 / 37 ( 0% )
+                    Unsolved : 0 / 37 ( 0% )
+                   Processed : 37 / 108 ( 34.25% )
+          Total time elapsed : 672.038 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .229 seconds
+    Current progress:
+            Solved optimally : 38 / 38 ( 100.00% )
+        Solved sub-optimally : 0 / 38 ( 0% )
+                    Unsolved : 0 / 38 ( 0% )
+                   Processed : 38 / 108 ( 35.18% )
+          Total time elapsed : 672.267 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .159 seconds
+    Current progress:
+            Solved optimally : 39 / 39 ( 100.00% )
+        Solved sub-optimally : 0 / 39 ( 0% )
+                    Unsolved : 0 / 39 ( 0% )
+                   Processed : 39 / 108 ( 36.11% )
+          Total time elapsed : 672.426 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .182 seconds
+    Current progress:
+            Solved optimally : 40 / 40 ( 100.00% )
+        Solved sub-optimally : 0 / 40 ( 0% )
+                    Unsolved : 0 / 40 ( 0% )
+                   Processed : 40 / 108 ( 37.03% )
+          Total time elapsed : 672.608 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .363 seconds
+    Current progress:
+            Solved optimally : 41 / 41 ( 100.00% )
+        Solved sub-optimally : 0 / 41 ( 0% )
+                    Unsolved : 0 / 41 ( 0% )
+                   Processed : 41 / 108 ( 37.96% )
+          Total time elapsed : 672.971 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.512 seconds
+    Current progress:
+            Solved optimally : 42 / 42 ( 100.00% )
+        Solved sub-optimally : 0 / 42 ( 0% )
+                    Unsolved : 0 / 42 ( 0% )
+                   Processed : 42 / 108 ( 38.88% )
+          Total time elapsed : 674.483 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.511 seconds
+    Current progress:
+            Solved optimally : 43 / 43 ( 100.00% )
+        Solved sub-optimally : 0 / 43 ( 0% )
+                    Unsolved : 0 / 43 ( 0% )
+                   Processed : 43 / 108 ( 39.81% )
+          Total time elapsed : 675.994 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.112 seconds
+    Current progress:
+            Solved optimally : 44 / 44 ( 100.00% )
+        Solved sub-optimally : 0 / 44 ( 0% )
+                    Unsolved : 0 / 44 ( 0% )
+                   Processed : 44 / 108 ( 40.74% )
+          Total time elapsed : 677.106 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.653 seconds
+    Current progress:
+            Solved optimally : 45 / 45 ( 100.00% )
+        Solved sub-optimally : 0 / 45 ( 0% )
+                    Unsolved : 0 / 45 ( 0% )
+                   Processed : 45 / 108 ( 41.66% )
+          Total time elapsed : 678.759 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.691 seconds
+    Current progress:
+            Solved optimally : 46 / 46 ( 100.00% )
+        Solved sub-optimally : 0 / 46 ( 0% )
+                    Unsolved : 0 / 46 ( 0% )
+                   Processed : 46 / 108 ( 42.59% )
+          Total time elapsed : 684.450 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 17.209 seconds
+    Current progress:
+            Solved optimally : 47 / 47 ( 100.00% )
+        Solved sub-optimally : 0 / 47 ( 0% )
+                    Unsolved : 0 / 47 ( 0% )
+                   Processed : 47 / 108 ( 43.51% )
+          Total time elapsed : 701.659 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_6_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.422 seconds
+    Current progress:
+            Solved optimally : 48 / 48 ( 100.00% )
+        Solved sub-optimally : 0 / 48 ( 0% )
+                    Unsolved : 0 / 48 ( 0% )
+                   Processed : 48 / 108 ( 44.44% )
+          Total time elapsed : 822.081 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .141 seconds
+    Current progress:
+            Solved optimally : 49 / 49 ( 100.00% )
+        Solved sub-optimally : 0 / 49 ( 0% )
+                    Unsolved : 0 / 49 ( 0% )
+                   Processed : 49 / 108 ( 45.37% )
+          Total time elapsed : 822.222 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .175 seconds
+    Current progress:
+            Solved optimally : 50 / 50 ( 100.00% )
+        Solved sub-optimally : 0 / 50 ( 0% )
+                    Unsolved : 0 / 50 ( 0% )
+                   Processed : 50 / 108 ( 46.29% )
+          Total time elapsed : 822.397 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .210 seconds
+    Current progress:
+            Solved optimally : 51 / 51 ( 100.00% )
+        Solved sub-optimally : 0 / 51 ( 0% )
+                    Unsolved : 0 / 51 ( 0% )
+                   Processed : 51 / 108 ( 47.22% )
+          Total time elapsed : 822.607 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .325 seconds
+    Current progress:
+            Solved optimally : 52 / 52 ( 100.00% )
+        Solved sub-optimally : 0 / 52 ( 0% )
+                    Unsolved : 0 / 52 ( 0% )
+                   Processed : 52 / 108 ( 48.14% )
+          Total time elapsed : 822.932 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .262 seconds
+    Current progress:
+            Solved optimally : 53 / 53 ( 100.00% )
+        Solved sub-optimally : 0 / 53 ( 0% )
+                    Unsolved : 0 / 53 ( 0% )
+                   Processed : 53 / 108 ( 49.07% )
+          Total time elapsed : 823.194 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .480 seconds
+    Current progress:
+            Solved optimally : 54 / 54 ( 100.00% )
+        Solved sub-optimally : 0 / 54 ( 0% )
+                    Unsolved : 0 / 54 ( 0% )
+                   Processed : 54 / 108 ( 50.00% )
+          Total time elapsed : 823.674 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.651 seconds
+    Current progress:
+            Solved optimally : 55 / 55 ( 100.00% )
+        Solved sub-optimally : 0 / 55 ( 0% )
+                    Unsolved : 0 / 55 ( 0% )
+                   Processed : 55 / 108 ( 50.92% )
+          Total time elapsed : 825.325 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.905 seconds
+    Current progress:
+            Solved optimally : 56 / 56 ( 100.00% )
+        Solved sub-optimally : 0 / 56 ( 0% )
+                    Unsolved : 0 / 56 ( 0% )
+                   Processed : 56 / 108 ( 51.85% )
+          Total time elapsed : 828.230 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 4.310 seconds
+    Current progress:
+            Solved optimally : 57 / 57 ( 100.00% )
+        Solved sub-optimally : 0 / 57 ( 0% )
+                    Unsolved : 0 / 57 ( 0% )
+                   Processed : 57 / 108 ( 52.77% )
+          Total time elapsed : 832.540 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 52.166 seconds
+    Current progress:
+            Solved optimally : 58 / 58 ( 100.00% )
+        Solved sub-optimally : 0 / 58 ( 0% )
+                    Unsolved : 0 / 58 ( 0% )
+                   Processed : 58 / 108 ( 53.70% )
+          Total time elapsed : 884.706 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.939 seconds
+    Current progress:
+            Solved optimally : 59 / 59 ( 100.00% )
+        Solved sub-optimally : 0 / 59 ( 0% )
+                    Unsolved : 0 / 59 ( 0% )
+                   Processed : 59 / 108 ( 54.62% )
+          Total time elapsed : 890.645 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_7_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.153 seconds
+    Current progress:
+            Solved optimally : 60 / 60 ( 100.00% )
+        Solved sub-optimally : 0 / 60 ( 0% )
+                    Unsolved : 0 / 60 ( 0% )
+                   Processed : 60 / 108 ( 55.55% )
+          Total time elapsed : 1010.798 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .068 seconds
+    Current progress:
+            Solved optimally : 61 / 61 ( 100.00% )
+        Solved sub-optimally : 0 / 61 ( 0% )
+                    Unsolved : 0 / 61 ( 0% )
+                   Processed : 61 / 108 ( 56.48% )
+          Total time elapsed : 1010.866 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .113 seconds
+    Current progress:
+            Solved optimally : 62 / 62 ( 100.00% )
+        Solved sub-optimally : 0 / 62 ( 0% )
+                    Unsolved : 0 / 62 ( 0% )
+                   Processed : 62 / 108 ( 57.40% )
+          Total time elapsed : 1010.979 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .160 seconds
+    Current progress:
+            Solved optimally : 63 / 63 ( 100.00% )
+        Solved sub-optimally : 0 / 63 ( 0% )
+                    Unsolved : 0 / 63 ( 0% )
+                   Processed : 63 / 108 ( 58.33% )
+          Total time elapsed : 1011.139 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .925 seconds
+    Current progress:
+            Solved optimally : 64 / 64 ( 100.00% )
+        Solved sub-optimally : 0 / 64 ( 0% )
+                    Unsolved : 0 / 64 ( 0% )
+                   Processed : 64 / 108 ( 59.25% )
+          Total time elapsed : 1012.064 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.331 seconds
+    Current progress:
+            Solved optimally : 65 / 65 ( 100.00% )
+        Solved sub-optimally : 0 / 65 ( 0% )
+                    Unsolved : 0 / 65 ( 0% )
+                   Processed : 65 / 108 ( 60.18% )
+          Total time elapsed : 1017.395 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.363 seconds
+    Current progress:
+            Solved optimally : 66 / 66 ( 100.00% )
+        Solved sub-optimally : 0 / 66 ( 0% )
+                    Unsolved : 0 / 66 ( 0% )
+                   Processed : 66 / 108 ( 61.11% )
+          Total time elapsed : 1019.758 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.043 seconds
+    Current progress:
+            Solved optimally : 67 / 67 ( 100.00% )
+        Solved sub-optimally : 0 / 67 ( 0% )
+                    Unsolved : 0 / 67 ( 0% )
+                   Processed : 67 / 108 ( 62.03% )
+          Total time elapsed : 1020.801 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.530 seconds
+    Current progress:
+            Solved optimally : 68 / 68 ( 100.00% )
+        Solved sub-optimally : 0 / 68 ( 0% )
+                    Unsolved : 0 / 68 ( 0% )
+                   Processed : 68 / 108 ( 62.96% )
+          Total time elapsed : 1026.331 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 7.055 seconds
+    Current progress:
+            Solved optimally : 69 / 69 ( 100.00% )
+        Solved sub-optimally : 0 / 69 ( 0% )
+                    Unsolved : 0 / 69 ( 0% )
+                   Processed : 69 / 108 ( 63.88% )
+          Total time elapsed : 1033.386 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.463 seconds
+    Current progress:
+            Solved optimally : 70 / 70 ( 100.00% )
+        Solved sub-optimally : 0 / 70 ( 0% )
+                    Unsolved : 0 / 70 ( 0% )
+                   Processed : 70 / 108 ( 64.81% )
+          Total time elapsed : 1036.849 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 86.652 seconds
+    Current progress:
+            Solved optimally : 71 / 71 ( 100.00% )
+        Solved sub-optimally : 0 / 71 ( 0% )
+                    Unsolved : 0 / 71 ( 0% )
+                   Processed : 71 / 108 ( 65.74% )
+          Total time elapsed : 1123.501 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_8_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.230 seconds
+    Current progress:
+            Solved optimally : 72 / 72 ( 100.00% )
+        Solved sub-optimally : 0 / 72 ( 0% )
+                    Unsolved : 0 / 72 ( 0% )
+                   Processed : 72 / 108 ( 66.66% )
+          Total time elapsed : 1243.731 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .125 seconds
+    Current progress:
+            Solved optimally : 73 / 73 ( 100.00% )
+        Solved sub-optimally : 0 / 73 ( 0% )
+                    Unsolved : 0 / 73 ( 0% )
+                   Processed : 73 / 108 ( 67.59% )
+          Total time elapsed : 1243.856 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .157 seconds
+    Current progress:
+            Solved optimally : 74 / 74 ( 100.00% )
+        Solved sub-optimally : 0 / 74 ( 0% )
+                    Unsolved : 0 / 74 ( 0% )
+                   Processed : 74 / 108 ( 68.51% )
+          Total time elapsed : 1244.013 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .413 seconds
+    Current progress:
+            Solved optimally : 75 / 75 ( 100.00% )
+        Solved sub-optimally : 0 / 75 ( 0% )
+                    Unsolved : 0 / 75 ( 0% )
+                   Processed : 75 / 108 ( 69.44% )
+          Total time elapsed : 1244.426 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .166 seconds
+    Current progress:
+            Solved optimally : 76 / 76 ( 100.00% )
+        Solved sub-optimally : 0 / 76 ( 0% )
+                    Unsolved : 0 / 76 ( 0% )
+                   Processed : 76 / 108 ( 70.37% )
+          Total time elapsed : 1244.592 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.196 seconds
+    Current progress:
+            Solved optimally : 77 / 77 ( 100.00% )
+        Solved sub-optimally : 0 / 77 ( 0% )
+                    Unsolved : 0 / 77 ( 0% )
+                   Processed : 77 / 108 ( 71.29% )
+          Total time elapsed : 1245.788 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.336 seconds
+    Current progress:
+            Solved optimally : 78 / 78 ( 100.00% )
+        Solved sub-optimally : 0 / 78 ( 0% )
+                    Unsolved : 0 / 78 ( 0% )
+                   Processed : 78 / 108 ( 72.22% )
+          Total time elapsed : 1249.124 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.395 seconds
+    Current progress:
+            Solved optimally : 79 / 79 ( 100.00% )
+        Solved sub-optimally : 0 / 79 ( 0% )
+                    Unsolved : 0 / 79 ( 0% )
+                   Processed : 79 / 108 ( 73.14% )
+          Total time elapsed : 1250.519 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.896 seconds
+    Current progress:
+            Solved optimally : 80 / 80 ( 100.00% )
+        Solved sub-optimally : 0 / 80 ( 0% )
+                    Unsolved : 0 / 80 ( 0% )
+                   Processed : 80 / 108 ( 74.07% )
+          Total time elapsed : 1252.415 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.159 seconds
+    Current progress:
+            Solved optimally : 81 / 81 ( 100.00% )
+        Solved sub-optimally : 0 / 81 ( 0% )
+                    Unsolved : 0 / 81 ( 0% )
+                   Processed : 81 / 108 ( 75.00% )
+          Total time elapsed : 1257.574 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 11.084 seconds
+    Current progress:
+            Solved optimally : 82 / 82 ( 100.00% )
+        Solved sub-optimally : 0 / 82 ( 0% )
+                    Unsolved : 0 / 82 ( 0% )
+                   Processed : 82 / 108 ( 75.92% )
+          Total time elapsed : 1268.658 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 6.977 seconds
+    Current progress:
+            Solved optimally : 83 / 83 ( 100.00% )
+        Solved sub-optimally : 0 / 83 ( 0% )
+                    Unsolved : 0 / 83 ( 0% )
+                   Processed : 83 / 108 ( 76.85% )
+          Total time elapsed : 1275.635 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_9_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 16.605 seconds
+    Current progress:
+            Solved optimally : 84 / 84 ( 100.00% )
+        Solved sub-optimally : 0 / 84 ( 0% )
+                    Unsolved : 0 / 84 ( 0% )
+                   Processed : 84 / 108 ( 77.77% )
+          Total time elapsed : 1292.240 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .177 seconds
+    Current progress:
+            Solved optimally : 85 / 85 ( 100.00% )
+        Solved sub-optimally : 0 / 85 ( 0% )
+                    Unsolved : 0 / 85 ( 0% )
+                   Processed : 85 / 108 ( 78.70% )
+          Total time elapsed : 1292.417 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .320 seconds
+    Current progress:
+            Solved optimally : 86 / 86 ( 100.00% )
+        Solved sub-optimally : 0 / 86 ( 0% )
+                    Unsolved : 0 / 86 ( 0% )
+                   Processed : 86 / 108 ( 79.62% )
+          Total time elapsed : 1292.737 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .605 seconds
+    Current progress:
+            Solved optimally : 87 / 87 ( 100.00% )
+        Solved sub-optimally : 0 / 87 ( 0% )
+                    Unsolved : 0 / 87 ( 0% )
+                   Processed : 87 / 108 ( 80.55% )
+          Total time elapsed : 1293.342 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_5_1.in
+    [1;32mOptimal solution reached[0m
+    In .928 seconds
+    Current progress:
+            Solved optimally : 88 / 88 ( 100.00% )
+        Solved sub-optimally : 0 / 88 ( 0% )
+                    Unsolved : 0 / 88 ( 0% )
+                   Processed : 88 / 108 ( 81.48% )
+          Total time elapsed : 1294.270 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_6_1.in
+    [1;32mOptimal solution reached[0m
+    In .970 seconds
+    Current progress:
+            Solved optimally : 89 / 89 ( 100.00% )
+        Solved sub-optimally : 0 / 89 ( 0% )
+                    Unsolved : 0 / 89 ( 0% )
+                   Processed : 89 / 108 ( 82.40% )
+          Total time elapsed : 1295.240 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_7_1.in
+    [1;32mOptimal solution reached[0m
+    In .766 seconds
+    Current progress:
+            Solved optimally : 90 / 90 ( 100.00% )
+        Solved sub-optimally : 0 / 90 ( 0% )
+                    Unsolved : 0 / 90 ( 0% )
+                   Processed : 90 / 108 ( 83.33% )
+          Total time elapsed : 1296.006 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 1.959 seconds
+    Current progress:
+            Solved optimally : 91 / 91 ( 100.00% )
+        Solved sub-optimally : 0 / 91 ( 0% )
+                    Unsolved : 0 / 91 ( 0% )
+                   Processed : 91 / 108 ( 84.25% )
+          Total time elapsed : 1297.965 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 8.447 seconds
+    Current progress:
+            Solved optimally : 92 / 92 ( 100.00% )
+        Solved sub-optimally : 0 / 92 ( 0% )
+                    Unsolved : 0 / 92 ( 0% )
+                   Processed : 92 / 108 ( 85.18% )
+          Total time elapsed : 1306.412 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 8.335 seconds
+    Current progress:
+            Solved optimally : 93 / 93 ( 100.00% )
+        Solved sub-optimally : 0 / 93 ( 0% )
+                    Unsolved : 0 / 93 ( 0% )
+                   Processed : 93 / 108 ( 86.11% )
+          Total time elapsed : 1314.747 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 9.584 seconds
+    Current progress:
+            Solved optimally : 94 / 94 ( 100.00% )
+        Solved sub-optimally : 0 / 94 ( 0% )
+                    Unsolved : 0 / 94 ( 0% )
+                   Processed : 94 / 108 ( 87.03% )
+          Total time elapsed : 1324.331 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.088 seconds
+    Current progress:
+            Solved optimally : 95 / 95 ( 100.00% )
+        Solved sub-optimally : 0 / 95 ( 0% )
+                    Unsolved : 0 / 95 ( 0% )
+                   Processed : 95 / 108 ( 87.96% )
+          Total time elapsed : 1444.419 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_10_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 120.263 seconds
+    Current progress:
+            Solved optimally : 96 / 96 ( 100.00% )
+        Solved sub-optimally : 0 / 96 ( 0% )
+                    Unsolved : 0 / 96 ( 0% )
+                   Processed : 96 / 108 ( 88.88% )
+          Total time elapsed : 1564.682 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_2_1.in
+    [1;32mOptimal solution reached[0m
+    In .085 seconds
+    Current progress:
+            Solved optimally : 97 / 97 ( 100.00% )
+        Solved sub-optimally : 0 / 97 ( 0% )
+                    Unsolved : 0 / 97 ( 0% )
+                   Processed : 97 / 108 ( 89.81% )
+          Total time elapsed : 1564.767 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_3_1.in
+    [1;32mOptimal solution reached[0m
+    In .110 seconds
+    Current progress:
+            Solved optimally : 98 / 98 ( 100.00% )
+        Solved sub-optimally : 0 / 98 ( 0% )
+                    Unsolved : 0 / 98 ( 0% )
+                   Processed : 98 / 108 ( 90.74% )
+          Total time elapsed : 1564.877 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_4_1.in
+    [1;32mOptimal solution reached[0m
+    In .494 seconds
+    Current progress:
+            Solved optimally : 99 / 99 ( 100.00% )
+        Solved sub-optimally : 0 / 99 ( 0% )
+                    Unsolved : 0 / 99 ( 0% )
+                   Processed : 99 / 108 ( 91.66% )
+          Total time elapsed : 1565.371 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_5_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.123 seconds
+    Current progress:
+            Solved optimally : 100 / 100 ( 100.00% )
+        Solved sub-optimally : 0 / 100 ( 0% )
+                    Unsolved : 0 / 100 ( 0% )
+                   Processed : 100 / 108 ( 92.59% )
+          Total time elapsed : 1567.494 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_6_1.in
+    [1;32mOptimal solution reached[0m
+    In 5.030 seconds
+    Current progress:
+            Solved optimally : 101 / 101 ( 100.00% )
+        Solved sub-optimally : 0 / 101 ( 0% )
+                    Unsolved : 0 / 101 ( 0% )
+                   Processed : 101 / 108 ( 93.51% )
+          Total time elapsed : 1572.524 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_7_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.261 seconds
+    Current progress:
+            Solved optimally : 102 / 102 ( 100.00% )
+        Solved sub-optimally : 0 / 102 ( 0% )
+                    Unsolved : 0 / 102 ( 0% )
+                   Processed : 102 / 108 ( 94.44% )
+          Total time elapsed : 1574.785 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_8_1.in
+    [1;32mOptimal solution reached[0m
+    In 16.106 seconds
+    Current progress:
+            Solved optimally : 103 / 103 ( 100.00% )
+        Solved sub-optimally : 0 / 103 ( 0% )
+                    Unsolved : 0 / 103 ( 0% )
+                   Processed : 103 / 108 ( 95.37% )
+          Total time elapsed : 1590.891 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_9_1.in
+    [1;32mOptimal solution reached[0m
+    In 2.608 seconds
+    Current progress:
+            Solved optimally : 104 / 104 ( 100.00% )
+        Solved sub-optimally : 0 / 104 ( 0% )
+                    Unsolved : 0 / 104 ( 0% )
+                   Processed : 104 / 108 ( 96.29% )
+          Total time elapsed : 1593.499 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_10_1.in
+    [1;32mOptimal solution reached[0m
+    In 15.688 seconds
+    Current progress:
+            Solved optimally : 105 / 105 ( 100.00% )
+        Solved sub-optimally : 0 / 105 ( 0% )
+                    Unsolved : 0 / 105 ( 0% )
+                   Processed : 105 / 108 ( 97.22% )
+          Total time elapsed : 1609.187 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_11_1.in
+    [1;32mOptimal solution reached[0m
+    In 3.665 seconds
+    Current progress:
+            Solved optimally : 106 / 106 ( 100.00% )
+        Solved sub-optimally : 0 / 106 ( 0% )
+                    Unsolved : 0 / 106 ( 0% )
+                   Processed : 106 / 108 ( 98.14% )
+          Total time elapsed : 1612.852 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_12_1.in
+    [1;32mOptimal solution reached[0m
+    In 14.192 seconds
+    Current progress:
+            Solved optimally : 107 / 107 ( 100.00% )
+        Solved sub-optimally : 0 / 107 ( 0% )
+                    Unsolved : 0 / 107 ( 0% )
+                   Processed : 107 / 108 ( 99.07% )
+          Total time elapsed : 1627.044 seconds
+Executing SAT solver with input file: ../inputs/material/bwp_11_13_1.in
+    [1;32mOptimal solution reached[0m
+    In 13.253 seconds
+    Current progress:
+            Solved optimally : 108 / 108 ( 100.00% )
+        Solved sub-optimally : 0 / 108 ( 0% )
+                    Unsolved : 0 / 108 ( 0% )
+                   Processed : 108 / 108 ( 100.00% )
+          Total time elapsed : 1640.297 seconds
