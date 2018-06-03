@@ -151,7 +151,7 @@ do
 			--solver=rotate				\
 			--amo-encoder=quadratic		\
 			--script-timeout=120		\
-			--solver-timeout=10			\
+			--solver-timeout=120		\
 			>>  logs/$OUT_LOG_FILE		\
 			2>> logs/$ERR_LOG_FILE
 		end=$(date +%s%3N)
