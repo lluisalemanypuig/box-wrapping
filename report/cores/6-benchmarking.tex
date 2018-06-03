@@ -19,11 +19,11 @@ Constraint Programming on the inputs in the \textit{inputs/material/} directory.
 \label{fig:benchmark-example}
 \end{figure}
 
-All the other solvers available are $CP$ and $LP$. This script will, for every input in the
-directory, invoke the specified solver and check the quality of the solution
-found with a ``hand-made'' solution of that same instance, that can be found in
-the directory \textit{outputs/hand-made/}. If the solution is as good as the
-hand-made then it will output a message similar to the one in figure
+All the other solvers available are $CP$, $LP$ and $SAT$. This script will, for
+every input in the directory, invoke the specified solver and check the quality of
+the solution found with a ``hand-made'' solution of that same instance, that can
+be found in the directory \textit{outputs/hand-made/}. If the solution is as good
+as the hand-made one then it will output a message similar to the one in figure
 \ref{fig:benchmark-verbose:optimal}. If it is worse, a message similar to the
 one in figure \ref{fig:benchmark-verbose:suboptimal}.
 
@@ -65,14 +65,13 @@ Unix-like environment use the command \textit{less -r} to visualise the contents
 Suboptimal solution:
         Optimal : 12
              CP : 15
-    In 45.025 seconds
-    Current progress:
-            Solved optimally : 88 / 103 ( 85.43% )
-        Solved sub-optimally : 15 / 103 ( 14.56% )
-                    Unsolved : 0 / 103 ( 14.56% )
-                   Remaining : 103 / 108 ( 95.37% )
-          Total time elapsed : 2091.806 seconds
-
+In 45.025 seconds
+Current progress:
+        Solved optimally : 88 / 103 ( 85.43% )
+    Solved sub-optimally : 15 / 103 ( 14.56% )
+                Unsolved : 0 / 103 ( 14.56% )
+               Remaining : 103 / 108 ( 95.37% )
+      Total time elapsed : 2091.806 seconds
 \end{BVerbatim}
 }
 \centeredcaption{Example of the output of the benchmark script for the
@@ -281,3 +280,5 @@ although with a bad-quality solution, when using four threads.
 For further details, see the output of the ``benchmark.sh'' script in the files
 ``scripts/LP-i7-1-benchmark-log'' and ``scripts/LP-i7-4-benchmark-log'', respectively.
 
+\subsection{Satisfiability}
+\label{sec:benchmarking:satisfiability}
