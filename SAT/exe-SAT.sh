@@ -6,9 +6,8 @@ LINGELING=~/Documents/software/lingeling/lingeling
 OUT_DIR=/tmp
 # ----------------------------
 
-mode=debug
-
 # generator compilation and selection
+mode=release
 cd build-rules
 make -f Makefile $mode > /dev/null
 cd ..
