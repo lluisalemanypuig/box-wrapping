@@ -51,7 +51,12 @@ if [ "$SOLVER_TEC" != "CP" ] && [ "$SOLVER_TEC" != "LP" ] && [ "$SOLVER_TEC" != 
 	exit
 fi
 
-EXE_FILE=$PROJ_DIR/$SOLVER_TEC/build-release/wrapping-boxes
+if [ "$SOLVER_TEC" == "CP" ] || [ "$SOLVER_TEC" == "LP" ]; then
+	EXE_FILE=$PROJ_DIR/$SOLVER_TEC/build-release/wrapping-boxes
+elif [ "$SOLVER_TEC" == "SAT" ]; then
+	EXE_FILE=$PROJ_DIR/$SOLVER_TEC/exe-SAT.sh
+fi
+
 SUFFIX="."$SOLVER_TEC
 
 echo "Exe file used: $EXE_FILE"
@@ -138,7 +143,20 @@ do
 		msecs=$(($end - $begin))
 		
 	elif [ "$SOLVER_TEC" == "SAT" ]; then
-		echo -e "\e[1;31mCall to solver $SOLVER_TEC not implemented yet\e[0m" 
+		
+		begin=$(date +%s%3N)
+		./$EXE_FILE 					\
+			-i=$INPUT_DIR/$INFILE 		\
+			-o=$OUTPUT_DIR/$OUTFILE 	\
+			--solver=rotate				\
+			--amo-encoder=quadratic		\
+			--script-timeout=120		\
+			--solver-timeout=10			\
+			>>  logs/$OUT_LOG_FILE		\
+			2>> logs/$ERR_LOG_FILE
+		end=$(date +%s%3N)
+		msecs=$(($end - $begin))
+		
 	fi
 	
 	n_processed=$((n_processed + 1))
