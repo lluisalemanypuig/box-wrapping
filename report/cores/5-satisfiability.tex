@@ -1,45 +1,39 @@
 \section{Satisfiability}
 \label{sec:satisfiability}
 
-This part of the project is aimed at solving the BWP using the
-satisfiability paradigm, that is, construct a Boolean formula
-in Conjunctive Normal Form (CNF) using a number of Boolean
-variables and solve it. The solution is a truth assignment to
-the variables. The way this solution is obtained is by means
-of a SAT solver.
+This part of the project is aimed at solving the BWP using the satisfiability
+paradigm, that is, by constructing a Boolean formula in Conjunctive Normal Form
+(CNF), using a number of Boolean variables, and then solving it. The solution
+is a truth assignment to the variables. The way this solution is obtained is
+by means of a SAT solver.
 
 \hfill
 
-This time, this paradigm has mostly only disadvantages: not only
-we cannot find an optimal solution directly just by finding
-a truth assignment to the variables, but also the ``language''
-is less expressive, or, rather, more rigid since it only allows
-Boolean clauses in CNF than the one used in Constraint or Linear
-Programming. However, the constraints and variables that have
-to be implemented are exactly the same as the ones formalised
-in section \ref{sec:modelling} and, as will be explained in the
-coming sections, optimality can be reached using fairly simple
-methods.
+This time, this paradigm has mostly only disadvantages: not only we cannot find
+an optimal solution directly just by finding a truth assignment to the variables,
+but also the ``language'' is less expressive, or, rather, more rigid since it
+only allows Boolean clauses in CNF than the one used in Constraint or Linear
+Programming. However, the constraints and variables that have to be imposed
+are exactly the same as the ones formalised in section \ref{sec:modelling} and,
+as will be explained in the coming sections, optimality can be reached using
+fairly simple methods.
 
 \hfill
 
-By less expressive we mean the following: take, for example,
-the constraint \ref{constr:box-placed} formalised in section
-\ref{sec:modelling:constraints}. This was implemented in
-sections \ref{sec:constraint-programming} and \ref{sec:linear-programming}
-following equation \ref{eq:constraint:all-boxes-used} literally.
+By less expressive we mean the following: take, for example, the constraint
+\ref{constr:box-placed} formalised in section \ref{sec:modelling:constraints}.
 This constraint formalised the idea that each box has to have its
-top-left corner assigned to exactly one cell, and, given the
-Boolean variables detailed in \ref{var:box-corner} for each cell
-on the roll for a certain box, we only had to add up all the
-variables and impose that the sum be equal to 1. This time we can
-not do that. In Boolean satisfiability this can be seen as ``given $n$
-Boolean variables, exactly one of the $n$ variables $x_1,\cdots,x_n$ has
-to be true''. Implementing this constraint requires two types
-of constraints: ``at least one'' and ``at most one''. If we
-manage to implement them using two Boolean expressions in CNF
-each, the conjunction of the two will give us the ``exactly one''
-constraint.
+top-left corner assigned to exactly one cell, and, given the Boolean variables
+detailed in \ref{var:box-corner} for each cell on the roll for a certain box, we
+only had to add up all the variables and impose that the sum be equal to 1.
+This was implemented in sections \ref{sec:constraint-programming} and
+\ref{sec:linear-programming} following equation \ref{eq:constraint:all-boxes-used}
+literally. This time we can not do this. In Boolean satisfiability this can be seen
+as ``given $n$ Boolean variables, exactly one of the $n$ variables $x_1,\cdots,x_n$
+has to be true''. Encoding this constraint requires two types of constraints:
+``at least one'' and ``at most one''. If we manage to encode them using two Boolean
+expressions in CNF each, the conjunction of the two will give us the ``exactly one''
+constraint:
 \begin{itemize}
 	\item At least one: given variables $x_1,\cdots,x_n$ at least
 	one of them must be true. This is straightforward, we only need
@@ -49,7 +43,7 @@ constraint.
 	x_1 \vee x_2 \vee \cdots \vee x_n
 	\end{equation}
 	Since all clauses of the formula have to evaluate to true to make
-	it satisfiable then one of the variables $x_i$ must be set to true.
+	it satisfiable then at least one of the variables $x_i$ must be set to true.
 	
 	\item At most one: given variables $x_1,\cdots,x_n$ at most
 	one of them must be true. This is the most difficult constraint
@@ -100,8 +94,9 @@ constraint.
 	\end{enumerate}
 \end{itemize}
 
-The performance of the SAT solver will depend largely on the
-encoding chosen for constraints of type ``at most one''.
+The performance of the SAT solver will depend largely on the encoding chosen for
+constraints of type ``at most one''. Further details are given in section
+\ref{sec:benchmarking:satisfiability}.
 
 \subsection{Implementation}
 \label{sec:satisfiability:implementation}
@@ -246,11 +241,11 @@ have been implemented as follows:
 \subsection{Finding the optimum solution}
 \label{sec:satisfiability:optimum}
 
-As it happened with the Constraint Programming, the Satisfiability paradigm is not
-defined to solve optimisation problems. However, we can use the SAT solver as a
-black box to obtain optimal solutions. To achieve this, the ideas explained in
-section \ref{sec:constraint-programming:optimum} will be applied similarly.
-The framework applied consists of three independent modules: the clause generator,
+Likewise the Constraint Programming paradigm, Satisfiability is not defined to solve
+optimisation problems either. However, we can use a SAT solver as a black box to find
+optimal solutions. To achieve this, the ideas explained in section
+\ref{sec:constraint-programming:optimum} will be applied similarly within a framework
+that consists of three independent modules: the clause generator,
 the SAT solver, and the solution generator. The first will generate the necessary
 clauses in CNF for a given instance of the Box Wrapping Problem, which will be passed
 on to the SAT solver, which in turn will compute a truth assignment (or decide that the
@@ -259,10 +254,10 @@ generator will process this truth assignment and build a solution, that is, find
 the position of each top-left and bottom-right corners for each box. Now, this
 solution generator returns the length that was used and sends it to the clause generator
 which will compute the minimum between the length's upper bound (using equation
-\ref{eq:upper-bound-L}) and this value (minus 1). In short, it will apply equation
-\ref{eq:upper-bound-L:better} to force the SAT solver find a solution with a shorter
-roll length. This process is applied until the SAT solver decides that the Boolean
-formula generated is unsatisfiable, which implies that optimality was reached.
+\ref{eq:upper-bound-L}) and this value (minus 1). Basically, the ideas behind equation
+\ref{eq:upper-bound-L:better} are applied so as to force the SAT solver find a solution
+with a shorter roll length. This process is applied until the SAT solver decides that
+the Boolean formula generated is unsatisfiable, which implies that optimality was reached.
 See figure \ref{fig:satisfiability:framework} for a graphical representation of this
 process. Therefore, the optimal value of the roll's length $L$ is such that the Boolean
 formula produced is satisfiable, but the one produced with $L - 1$ is unsatisfiable.
@@ -270,12 +265,13 @@ formula produced is satisfiable, but the one produced with $L - 1$ is unsatisfia
 \begin{figure}[H]
 	\centering
 	\includegraphics{satisfiability/framework}
-	\centeredcaption{Finding an optimal solution using a SAT solver.}
+	\centeredcaption{Finding an optimal solution using a SAT solver. The initial
+	value of the length used in equation \ref{eq:upper-bound-L:better} is $\infty$.}
 	\label{fig:satisfiability:framework}
 \end{figure}
 
 Other methods could have been used. For example, binary search could have been applied.
-However, deciding whether a Boolean formula is satisfiable or not (and computing a
+However, deciding whether a Boolean formula is satisfiable (and computing a
 truth value in case it is) is far easier than concluding unsatisfiablity. This way
 we avoid sending values of $L$ that will certainly lead to producing an unsatisfiable
 formula hence facing the challenge of deciding unsatisfiability only once (for that
