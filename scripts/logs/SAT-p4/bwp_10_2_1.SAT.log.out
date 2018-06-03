@@ -1,0 +1,91 @@
+dg jun 3 19:38:23 CEST 2018
+    [1;34mTry max length:[0m 999999
+    [1;34m    At iteration:[0m 0
+        lingeling found a solution in .042 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 9 
+    -------------------------
+    0 | . . . . . . . . . . 
+    1 | . . . . . . . . . 2 
+    2 | . . . . . . . . 1 2 
+    3 | . . . . . . . . 1 . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (8,2)
+            bottom right (8,3)
+    
+        Box 2 is at 
+            top left     (9,1)
+            bottom right (9,2)
+    
+        Roll length used: 4
+
+    [1;34mTry max length:[0m 3
+    [1;34m    At iteration:[0m 1
+        lingeling found a solution in .028 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 9 
+    -------------------------
+    0 | . . . . . . . . . . 
+    1 | . . 2 . . . . . . 1 
+    2 | . . 2 . . . . . . 1 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (9,1)
+            bottom right (9,2)
+    
+        Box 2 is at 
+            top left     (2,1)
+            bottom right (2,2)
+    
+        Roll length used: 3
+
+    [1;34mTry max length:[0m 2
+    [1;34m    At iteration:[0m 2
+        lingeling found a solution in .017 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 9 
+    -------------------------
+    0 | 2 . . . . . . . . 1 
+    1 | 2 . . . . . . . . 1 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (9,0)
+            bottom right (9,1)
+    
+        Box 2 is at 
+            top left     (0,0)
+            bottom right (0,1)
+    
+        Roll length used: 2
+
+    [1;34mTry max length:[0m 1
+    [1;34m    At iteration:[0m 3
+        lingeling found a solution in .009 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 9 
+    -------------------------
+    0 | . 2 2 . . . . 1 1 . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (7,0)
+            bottom right (8,0)
+    
+        Box 2 is at 
+            top left     (1,0)
+            bottom right (2,0)
+    
+        Roll length used: 1
+
+    [1;34mTry max length:[0m 0
+    [1;34m    At iteration:[0m 4
+        [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
+        [1;32mOptimality reached![0m
