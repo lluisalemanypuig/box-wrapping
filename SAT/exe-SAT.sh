@@ -95,8 +95,6 @@ while
 	[ $SOLVER_TIMEOUT -eq 0 ] && [ $SCRIPT_TIMEOUT -eq 0 ] &&
 	[ $ITER -le $MAX_ITER ];
 do
-	begin=$(date +%s%3N)
-	
 	echo -e "    \e[1;34mTry max length:\e[0m $maxL"
 	echo -e "    \e[1;34m    At iteration:\e[0m $ITER"
 	
@@ -115,9 +113,17 @@ do
 		SOLUTION_VARS=$OUT_DIR/box-wrapping.vars
 		
 		rm -f $SOLUTION_FILE
+		
+		# <SAT time>
+		# measure execution time of SAT solver
+		begin=$(date +%s%3N)
+		
 		/usr/bin/time --output=/dev/null 				\
 			timeout $SOLVER_TIME						\
 			$LINGELING $CLAUSE_FILE > $SOLUTION_FILE
+		
+		end=$(date +%s%3N)
+		# </SAT time>
 		
 		TIMEOUT_FILE=$OUT_DIR/lingeling-timeout
 		cat $SOLUTION_FILE | grep SIGNAL > $TIMEOUT_FILE
@@ -177,7 +183,6 @@ do
 	fi
 	ITER=$(($ITER + 1))
 	
-	end=$(date +%s%3N)
 	msecs=$(($msecs + $end - $begin))
 	
 	if [ $msecs -gt $SCRIPT_TIME ]; then
