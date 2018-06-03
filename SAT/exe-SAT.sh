@@ -1,5 +1,18 @@
 #!/bin/bash
 
+function less_than() {
+	echo $1'<'$2 | bc -l
+}
+
+function min() {
+	k=$(less_than $1 $2)
+	if [ $k -eq 1 ]; then
+		echo $1
+	else
+		echo $2
+	fi
+}
+
 # ----------------------------
 # MODIFY ONLY THESE VARIABLES
 LINGELING=~/Documents/software/lingeling/lingeling
@@ -21,7 +34,7 @@ ENCODER="quadratic"
 IN_FILE=""
 BOXES_SOLUTION=""
 SOLVER_TIME=5.0
-SCRIPT_TIME=120
+MAX_SCRIPT_TIME=120
 MAX_ITER=100
 
 for i in "$@"; do
@@ -53,7 +66,7 @@ for i in "$@"; do
 		;;
 		
 		--script-timeout=*)
-		SCRIPT_TIME="${i#*=}"
+		MAX_SCRIPT_TIME="${i#*=}"
 		shift
 		;;
 		
@@ -81,7 +94,7 @@ SOLVER_TIMEOUT=0
 SCRIPT_TIMEOUT=0
 ITER=0
 msecs=0
-SCRIPT_TIME=$((1000*$SCRIPT_TIME))
+MAX_SCRIPT_TIME_MS=$(echo '1000*'$MAX_SCRIPT_TIME | bc -l)
 
 # keep iterating until:
 #    the limit on iterations has been reached (unlikely)
@@ -116,13 +129,18 @@ do
 		
 		# <SAT time>
 		# measure execution time of SAT solver
+		
+		# Current Script Time in seconds
+		cstsecs=$(echo "scale=3; $msecs/1000" | bc)
+		script_allowed=$(echo $MAX_SCRIPT_TIME'-'$cstsecs | bc -l)
+		solver_allowed=$(min $script_allowed $SOLVER_TIME)
+		
 		begin=$(date +%s%3N)
-		
 		/usr/bin/time --output=/dev/null 				\
-			timeout $SOLVER_TIME						\
+			timeout $solver_allowed						\
 			$LINGELING $CLAUSE_FILE > $SOLUTION_FILE
-		
 		end=$(date +%s%3N)
+		msecs=$(($msecs + $end - $begin))
 		# </SAT time>
 		
 		TIMEOUT_FILE=$OUT_DIR/lingeling-timeout
@@ -183,9 +201,8 @@ do
 	fi
 	ITER=$(($ITER + 1))
 	
-	msecs=$(($msecs + $end - $begin))
-	
-	if [ $msecs -gt $SCRIPT_TIME ]; then
+	cmp=$(less_than $MAX_SCRIPT_TIME_MS $msecs)
+	if [ $cmp -eq 1 ]; then
 		# the script reached its time limit
 		SCRIPT_TIMEOUT=1
 	fi
