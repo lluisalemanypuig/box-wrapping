@@ -19,14 +19,16 @@ LINGELING=~/Documents/software/lingeling/lingeling
 OUT_DIR=/tmp
 # ----------------------------
 
+SCRIPT=$(readlink -f "$0")
+path=$(dirname "$SCRIPT")
+
 # generator compilation and selection
 mode=release
-cd build-rules
+cd $path/build-rules
 make -f Makefile $mode > /dev/null
 cd ..
-CLAUSE_GEN=build-$mode/clause-generator
-SOL_GEN=build-$mode/solution-generator
-CHECKER=../checker/checker
+CLAUSE_GEN=$path/build-$mode/clause-generator
+SOL_GEN=$path/build-$mode/solution-generator
 
 # argument parsing
 SOLVER="rotate"
