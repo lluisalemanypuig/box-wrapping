@@ -14,6 +14,13 @@ void split_path_filename(const string& full_path, string& filename, string& exte
 		--i;
 		++ext_length;
 	}
+	if (i == 0) {
+		// filename does not have a extension
+		extension = "null";
+		filename = full_path;
+		return;
+	}
+
 	extension = full_path.substr(i + 1, ext_length);
 
 	// extract filename
@@ -59,7 +66,19 @@ void LoadButton::read_output(ifstream& fin) {
 	while (i < instance_name.length() and instance_name[i] != '_') {
 		++i;
 	}
-	int W = atoi(instance_name.substr(4, i - 1 - 3 + 1).c_str());
+	int W;
+
+	if (i == instance_name.length()) {
+		cerr << "Error: filename '" << instance_name << "'"
+			 << " does not contain the description of the input" << endl;
+		cerr << "    therefore the roll's width cannot be obtained." << endl;
+		cerr << "    Width set to arbitrary value 10" << endl;
+
+		W = 10;
+	}
+	else {
+		W = atoi(instance_name.substr(4, i - 1 - 3 + 1).c_str());
+	}
 
 	box_org->set_max_width(W);
 	box_org->set_max_length(L);
