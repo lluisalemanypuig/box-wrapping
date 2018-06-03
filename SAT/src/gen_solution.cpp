@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
 
 	size_t N = INPUT.total_boxes;	// number of boxes
 	width W = INPUT.W;	// roll's width
-	length L;
+	length L = inf_t<length>();
 	
 	if (S == solver::simple) {
 		L = INPUT.get_max_length_s();
