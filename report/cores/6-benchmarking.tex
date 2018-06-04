@@ -98,11 +98,12 @@ it is worth mentioning that this is known for two reasons. One, because the solv
 terminated of its own accord, that is, at some point it either decided that
 it found the optimal solution (the case for the Linear Programming solver) or
 that no better solutions can possibly be found using applying the same algorithm
-(the case for the Constraint Programming solver). The other, although the solver
-was timeout-terminated, the solution's optimality is known because an optimal
-solution is known (the ``hand-made'' solutions). In the case this ``hand-made''
-solution did not exist, the optimality of the solver's solution could not be
-determined. In this case, the amount of solutions is indicated in \textcolor{red}{red}.
+(the case for the Constraint Programming solver and the Satisfiability framework).
+The other, although the solver was timeout-terminated, the solution's optimality
+is known because an optimal solution is known (the ``hand-made'' solutions). In
+the case this ``hand-made'' solution did not exist, the optimality of the solver's
+solution could not be determined. The amount of ``optimal'' solutions found in these
+circumstances is indicated in \textcolor{red}{red}.
 
 \subsection{Constraint Programming}
 \label{sec:benchmarking:constraint-programming}
@@ -126,7 +127,7 @@ $5 \text{ seconds/execution} \times 9 \text{ executions} = 45 \text{ seconds}$ o
 
 Needless to say that, in spite of having the same time limits, a more powerful computer
 is more likely to find better solutions since it can explore the search tree more exhaustively
-in the same amount of time. Indeed, this is confirmed in table \ref{table:CP-results}.
+in the same amount of time. Indeed, this is confirmed in table \ref{table:benchmark:CP-results}.
 The ``(x1)'' and ``(x4)'' refer to the number of threads used for that CPU. However,
 the improvement is not as good as one could expect.
 
@@ -145,12 +146,12 @@ the improvement is not as good as one could expect.
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
 	directory. Also, the total execution time is given for the CP solver in two different CPUs.}
-	\label{table:CP-results}
+	\label{table:benchmark:CP-results}
 \end{table}
 
 The outputs can be found in the \textit{outputs/} directory, inside folders
 \textit{CP-p4/}, \textit{CP-i7-1/} and \textit{CP-i7-4/} respectively.
-Table \ref{table:CP-results:suboptimalinstances} gives the list of instances
+Table \ref{table:benchmark:CP-results:suboptimalinstances} gives the list of instances
 solved suboptimally for each CPU.
 
 \begin{table}[H]
@@ -178,7 +179,7 @@ solved suboptimally for each CPU.
 	\centeredcaption{Instances in the \textit{inputs/material/} directory
 	solved suboptimally and the roll's length found. An empty cell in the
 	table indicates that the instance was solved optimally.}
-	\label{table:CP-results:suboptimalinstances}
+	\label{table:benchmark:CP-results:suboptimalinstances}
 \end{table}
 
 For further details, see the output of the ``benchmark.sh'' script in the files
@@ -265,10 +266,10 @@ gives the list of unsolved instances and instances solved suboptimally.
 	solved suboptimally and the roll's length found. An empty cell in the
 	table indicates that the instance was solved optimally, and an $x$
 	that no solution was produced.}
-	\label{table:LP-results:suboptimalinstances}
+	\label{table:benchmark:LP-results:suboptimalinstances}
 \end{table}
 
-In table \ref{table:LP-results:suboptimalinstances} we can see that using more
+In table \ref{table:benchmark:LP-results:suboptimalinstances} we can see that using more
 computation power helps, but some odd behaviour can be spotted. For example,
 instances $(7,12,1)$, $(10,9,1)$, $(11,6,1)$ and $(11,10,1)$  where using four
 threads led to a worse solution. However, this is a minor issue since these are
@@ -282,3 +283,87 @@ For further details, see the output of the ``benchmark.sh'' script in the files
 
 \subsection{Satisfiability}
 \label{sec:benchmarking:satisfiability}
+
+The parameters used to execute the Satisfiability solver are the following:
+\begin{itemize}
+	\item The execution of the whole framework depicted in figure \ref{fig:satisfiability:framework}
+	has a time limit of 120 seconds.
+	\item The SAT solver module has a time limit of 120 seconds within the total 120 seconds
+	available (if the framework has been executed for 100 seconds and the SAT solver needs
+	to be executed again then it is allowed to run for only 20 seconds).
+	\item The encoding used for the ``at most constraint'' is the Heule encoding 
+	(see equation \ref{eq:cnf:at-most-one:heule}) since it seems to be the one that makes the framework
+	run the fastest (see table \ref{table:benchmark:encoding-comparison}).
+\end{itemize}
+
+As mentioned in section \ref{sec:satisfiability} the solver used is \textbf{lingeling}\cite{lingeling}.
+This solver has several command line options. However, none of them was used. The results
+are presented in table \ref{table:benchmark:SAT-results}.
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{rccc}
+								& i7 	& p4 \\
+		\midrule
+		Optimal solutions		& 108 \textcolor{red}{(9)} / 108
+											& 106 \textcolor{red}{(12)} / 108 \\
+		Sub-optimal solutions	& 0 / 108	& 2 / 108 \\
+		Unsolved instances		& 0 / 108	& 0 / 108 \\
+		Total time				& 27 mins	& 45 mins \\
+	\end{tabular}
+	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
+	instances, and unsolved instances. Also, the total execution time is given for the SAT framework.}
+	\label{table:benchmark:SAT-results}
+\end{table}
+
+The only machine not powerful enough to solve (presumably) all instances optimally
+was the Pentium IV (\textit{p4}). These instances are shown in table
+\ref{table:benchmark:SAT-results:suboptimalinstances}.
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{ccccc}
+		\multicolumn{3}{c}{Instance name}
+					& P4	& Optimal value \\
+		\midrule
+		 6 & 13 & 1	& 38	& 35 \\
+		10 & 13 & 1	& 42	& 14 \\
+	\end{tabular}
+	\centeredcaption{Instances in the \textit{inputs/material/} directory
+	solved suboptimally and the roll's length found. An empty cell in the
+	table indicates that the instance was solved optimally.}
+	\label{table:benchmark:SAT-results:suboptimalinstances}
+\end{table}
+
+Table \ref{table:benchmark:encoding-comparison} shows a performance comparison of the
+framework when solving several instances using the different encodings. The performance
+is the time, in seconds, of a single execution. Although there is not much statistical
+significance in the measurement of the time of a single execution (see for example the
+execution times for instance $(4,12,1)$), some of the differences
+are significant enough to determine that the Heule encoding is the best for the scope
+of this project (see for example the execution times for instances $(3,12,1)$, $(6,12,1)$,
+$(11,12,1)$).
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{cccccc}
+		\multicolumn{3}{c}{Instance name}
+					& $\mathcal{Q}$	& $\mathcal{L}$ & $\mathcal{H}$ \\
+		\midrule
+		 3 & 12 & 1	&  3.86			&  5.71			&  3.91 \\
+		 4 & 12 & 1	&  2.86			&  2.46			&  2.21 \\
+		 5 & 12 & 1	&  6.50			&  4.03			&  4.10 \\
+		 6 & 12 & 1	& 17.86			& 14.93			& 10.03 \\
+		 7 & 12 & 1	&  6.97			&  4.09			&  5.47 \\
+		 8 & 12 & 1	& 87.03			& 42.10			& 56.76 \\
+		 9 & 12 & 1	&  7.69			&  7.49			&  5.76 \\
+		11 & 12 & 1	& 15.38			&  9.11			&  7.6 \\
+	\end{tabular}
+	\centeredcaption{Time in seconds that the framework in figure \ref{fig:satisfiability:framework}
+	needed to solve the different instances for the different encodings of the ``at most one'' constraint.
+	$\mathcal{Q}$ for the quadratic, $\mathcal{L}$ for the logarithmic, and $\mathcal{H}$ for
+	the Heule encoding, as formalised in section \ref{sec:satisfiability}, equations \ref{eq:cnf:at-most-one:quad},
+	\ref{eq:cnf:at-most-one:log} and \ref{eq:cnf:at-most-one:heule}, respectively.}
+	\label{table:benchmark:encoding-comparison}
+\end{table}
+
