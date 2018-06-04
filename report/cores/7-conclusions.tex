@@ -1,0 +1,71 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+The aim of this project was to use three different strategies to solve the Box Wrapping
+Problem, an optimisation problem with a huge combinatorial space. Two of the
+strategies applied are not defined to solve optimisation problems (the Constraint
+Programming paradigm, in section \ref{sec:constraint-programming}, and the
+Satisfiability paradigm, in section \ref{sec:satisfiability}) and the other
+was defined for this particular purpose (the Linear Programming paradigm, in
+section \ref{sec:linear-programming}). The latter, in spite of being specifically
+made to solve such type of problems, lacks the ability to solve problems with
+a significant constraint-solving component, one of the reasons we had to apply,
+not the ``pure'' Linear Programming approach, but the Mixed-Integer Linear Programming.
+
+\hfill
+
+This project has shown that all of these strategies can be applied to solve this problem,
+though some of them more easily than others: the Constraint Programming technique only
+required the addition of extra constraints (see section \ref{sec:constraint-programming:optimum}),
+the Linear Programming technique the definition of an objective function (see
+\ref{sec:linear-programming:optimum}) and Satisfiability required the implementation of a
+whole framework that uses a SAT solver as a black box to find an optimal solution (see section
+\ref{sec:satisfiability:optimum}). The difficulty in finding the optimal solution increases
+with every technique.
+
+\hfill
+
+Despite of this, the most difficult technique turned out to be the one that seems to be most
+efficient. Table \ref{table:benchmark:SAT-results} shows that with the Satisfiability
+paradigm we could find the optimal solution to 99 instances (the other 9 are known
+to be optimal due to the existence of a hand-made solution to the corresponding
+instance, see discussion at the beginning of section \ref{sec:benchmarking}), while tables
+\ref{table:benchmark:CP-results} and \ref{table:LP-results} show, respectively, that
+the Constraint Programming approach could find 88 optimal instances (and 12 presumably
+optimal) and that the Linear Programming approach could find 80 optimal instances (and
+8 presumably optimal). Therefore, it seems that Satisfiability seems to be the best
+approach to tackle the BWP.
+
+\hfill
+
+However, it is worth mentioning that the license of CPLEX (see \cite{CplexWEB}), used for the
+Linear Programming part, is ``academical'': it is quite likely that a complete license
+of this software might be more efficient and even outperform the Gecode library (see
+\cite{GecodeWEB}) and/or \textbf{lingeling} (see \cite{lingeling}).
+
+\hfill
+
+It could be argued that the mathematical modelling of the problem (see section
+\ref{sec:modelling}) is rather simple. For example, constraints to stop the solvers from
+trying to improve a soluion by swaping two identical boxes (avoidance of symmetries) should
+have been implemented. Admittedly, this could have speeded up the solvers, but it has been
+proven that a few and simple heuristics can also help, even a great deal, in finding optimal
+solutions. Furthermore, the lack of these constraints does not seem to be an issue in the
+Satisfiability part. However, these solvers were only tested on rather small instances.
+
+\hfill
+
+Taking everything into account, it seems that the Satisfiability approach seems to be the
+best for solving this problem, as long as there is no more evidence in favour of the
+Linear Programming approach.
+
+
+
+
+
+
+
+
+
+
+
