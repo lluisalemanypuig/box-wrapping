@@ -163,8 +163,8 @@ have been implemented as follows:
     
 	{\NOINDENT \begin{lstlisting}
 	clause cl0;
-	for (length y = 0; y < L/2; ++y) {
-		for (width x = 0; x < W/2; ++x) {
+	for (length y = 0; y <= L/2; ++y) {
+		for (width x = 0; x <= W/2; ++x) {
 			cl0 += X(0,x,y);
 		}
 	}
