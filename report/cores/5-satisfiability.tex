@@ -154,10 +154,22 @@ have been implemented as follows:
 \begin{enumerate}
 	\item All boxes must be in the solution (constraint formalised in
 	\ref{constr:box-placed}, equation \ref{eq:constraint:all-boxes-used}),
-	also read as ``assign a top-left corner to each box''.
+	also read as ``assign a top-left corner to each box''. This has been
+	slightly modified: the first for loop forces the box with index 0 (the first
+	that is read from the input file) to be placed, unconditionally, on the upper-left
+	quadrant of the roll. This model-independent constraint will produce less
+	clauses which we expect will translate into an increase of the efficiency while
+	mantaining correctness.
     
 	{\NOINDENT \begin{lstlisting}
-	for (size_t b = 0; b < N; ++b) {
+	clause cl0;
+	for (length y = 0; y < L/2; ++y) {
+		for (width x = 0; x < W/2; ++x) {
+			cl0 += X(0,x,y);
+		}
+	}
+	CE.exactly_one(cl0, out);
+	for (size_t b = 1; b < N; ++b) {
 		clause cl;
 		for (length y = 0; y < L; ++y) {
 			for (width x = 0; x < W; ++x) {
@@ -237,6 +249,12 @@ have been implemented as follows:
 	\end{itemize}
     
 \end{enumerate}
+
+Notice that all the clauses produced by the last constraint are clauses with at most
+two literals (Horn clauses). Some other constraints are also implemented using Horn clauses.
+Furhermore, any of the encodings used for the ``at most one'' constraints are also Horn
+clauses. This allows for easy propagation for the SAT solver that will be used. However,
+the problem cannot be solved in polynomial time since some of the clauses have 3 literals.
 
 \subsection{Finding the optimum solution}
 \label{sec:satisfiability:optimum}
@@ -384,5 +402,5 @@ is the following:
 }
 \centeredcaption{Edited output of the script \textit{exe-SAT.sh} using the parameters of the
 example in figure \ref{fig:satisfiability:gov-script}.}
-\label{fig:satisfiability:gov-script}
+\label{fig:satisfiability:gov-script:result}
 \end{figure}
