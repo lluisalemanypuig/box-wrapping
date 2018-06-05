@@ -72,7 +72,7 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 	global_info& gI = global_info::get_info();
 	
 	// (1). one corner per box
-	for (size_t b = 0; b < N; ++b) {
+	for (size_t b = 1; b < N; ++b) {
 		clause cl;
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
@@ -81,6 +81,14 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 		}
 		CE.exactly_one(cl, out);
 	}
+	// (1.2). box 0 at first quadrant
+	clause box0_first;
+	for (length i = 0; i < L/2; ++i) {
+		for (width j = 0; j < W/2; ++j) {
+			box0_first += X(0,i,j);
+		}
+	}
+	CE.exactly_one(box0_first, out);
 	
 	// (2). at most one box per cell
 	for (length i = 0; i < L; ++i) {
@@ -145,7 +153,7 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 	global_info& gI = global_info::get_info();
 	
 	// (1). one corner per box
-	for (size_t b = 0; b < N; ++b) {
+	for (size_t b = 1; b < N; ++b) {
 		clause cl;
 		for (length i = 0; i < L; ++i) {
 			for (width j = 0; j < W; ++j) {
@@ -154,6 +162,14 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 		}
 		CE.exactly_one(cl, out);
 	}
+	// (1.2). box 0 at first quadrant
+	clause box0_first;
+	for (length i = 0; i < L/2; ++i) {
+		for (width j = 0; j < W/2; ++j) {
+			box0_first += X(0,i,j);
+		}
+	}
+	CE.exactly_one(box0_first, out);
 	
 	// (2). at most one box per cell
 	for (length i = 0; i < L; ++i) {
