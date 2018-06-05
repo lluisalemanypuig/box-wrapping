@@ -9,4 +9,4 @@ report/build
 *.pyg
 *.bbl
 *.blg
-*.pdf
+report/*.pdf
