@@ -1,0 +1,95 @@
+dt jun 5 18:56:45 CEST 2018
+    [1;34mTry max length:[0m 999999
+    [1;34m    At iteration:[0m 0
+        lingeling found a solution in .015 ms
+
+      | W
+    L | 0 1 2 
+    ----------
+    0 | 1 . . 
+    1 | 2 . 3 
+    2 | . . . 
+    3 | . . 4 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,0)
+            bottom right (0,0)
+    
+        Box 2 is at 
+            top left     (0,1)
+            bottom right (0,1)
+    
+        Box 3 is at 
+            top left     (2,1)
+            bottom right (2,1)
+    
+        Box 4 is at 
+            top left     (2,3)
+            bottom right (2,3)
+    
+        Roll length used: 4
+
+    [1;34mTry max length:[0m 3
+    [1;34m    At iteration:[0m 1
+        lingeling found a solution in .012 ms
+
+      | W
+    L | 0 1 2 
+    ----------
+    0 | . . 4 
+    1 | . 1 . 
+    2 | . 2 3 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (1,1)
+            bottom right (1,1)
+    
+        Box 2 is at 
+            top left     (1,2)
+            bottom right (1,2)
+    
+        Box 3 is at 
+            top left     (2,2)
+            bottom right (2,2)
+    
+        Box 4 is at 
+            top left     (2,0)
+            bottom right (2,0)
+    
+        Roll length used: 3
+
+    [1;34mTry max length:[0m 2
+    [1;34m    At iteration:[0m 2
+        lingeling found a solution in .012 ms
+
+      | W
+    L | 0 1 2 
+    ----------
+    0 | 4 . 3 
+    1 | 2 1 . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (1,1)
+            bottom right (1,1)
+    
+        Box 2 is at 
+            top left     (0,1)
+            bottom right (0,1)
+    
+        Box 3 is at 
+            top left     (2,0)
+            bottom right (2,0)
+    
+        Box 4 is at 
+            top left     (0,0)
+            bottom right (0,0)
+    
+        Roll length used: 2
+
+    [1;34mTry max length:[0m 1
+    [1;34m    At iteration:[0m 3
+        [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
+        [1;32mOptimality reached![0m
