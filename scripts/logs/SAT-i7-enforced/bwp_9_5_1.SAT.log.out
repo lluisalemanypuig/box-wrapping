@@ -1,0 +1,175 @@
+Tue 5 Jun 21:21:32 CEST 2018
+    [1;34mTry max length:[0m 999999
+    [1;34m    At iteration:[0m 0
+        lingeling found a solution in .014 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | . . . . 1 . . . . 
+    1 | . . . . . . 2 . . 
+    2 | . . . . . . . . . 
+    3 | . . . . . . . . 3 
+    4 | . 4 . . . . 5 . . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (4,0)
+            bottom right (4,0)
+    
+        Box 2 is at 
+            top left     (6,1)
+            bottom right (6,1)
+    
+        Box 3 is at 
+            top left     (8,3)
+            bottom right (8,3)
+    
+        Box 4 is at 
+            top left     (1,4)
+            bottom right (1,4)
+    
+        Box 5 is at 
+            top left     (6,4)
+            bottom right (6,4)
+    
+        Roll length used: 5
+
+    [1;34mTry max length:[0m 4
+    [1;34m    At iteration:[0m 1
+        lingeling found a solution in .011 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | . . . . . . . . . 
+    1 | . . . . . . . 5 . 
+    2 | 1 . . . . . 4 . 3 
+    3 | . . . 2 . . . . . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,2)
+            bottom right (0,2)
+    
+        Box 2 is at 
+            top left     (3,3)
+            bottom right (3,3)
+    
+        Box 3 is at 
+            top left     (8,2)
+            bottom right (8,2)
+    
+        Box 4 is at 
+            top left     (6,2)
+            bottom right (6,2)
+    
+        Box 5 is at 
+            top left     (7,1)
+            bottom right (7,1)
+    
+        Roll length used: 4
+
+    [1;34mTry max length:[0m 3
+    [1;34m    At iteration:[0m 2
+        lingeling found a solution in .011 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | . . . . . 4 . . . 
+    1 | 1 . . . . . 2 . . 
+    2 | . . . . . . 5 3 . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,1)
+            bottom right (0,1)
+    
+        Box 2 is at 
+            top left     (6,1)
+            bottom right (6,1)
+    
+        Box 3 is at 
+            top left     (7,2)
+            bottom right (7,2)
+    
+        Box 4 is at 
+            top left     (5,0)
+            bottom right (5,0)
+    
+        Box 5 is at 
+            top left     (6,2)
+            bottom right (6,2)
+    
+        Roll length used: 3
+
+    [1;34mTry max length:[0m 2
+    [1;34m    At iteration:[0m 3
+        lingeling found a solution in .009 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | . . . . . 5 . 2 . 
+    1 | 1 . . . . 4 . 3 . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,1)
+            bottom right (0,1)
+    
+        Box 2 is at 
+            top left     (7,0)
+            bottom right (7,0)
+    
+        Box 3 is at 
+            top left     (7,1)
+            bottom right (7,1)
+    
+        Box 4 is at 
+            top left     (5,1)
+            bottom right (5,1)
+    
+        Box 5 is at 
+            top left     (5,0)
+            bottom right (5,0)
+    
+        Roll length used: 2
+
+    [1;34mTry max length:[0m 1
+    [1;34m    At iteration:[0m 4
+        lingeling found a solution in .007 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | 1 . . . . 5 3 4 2 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,0)
+            bottom right (0,0)
+    
+        Box 2 is at 
+            top left     (8,0)
+            bottom right (8,0)
+    
+        Box 3 is at 
+            top left     (6,0)
+            bottom right (6,0)
+    
+        Box 4 is at 
+            top left     (7,0)
+            bottom right (7,0)
+    
+        Box 5 is at 
+            top left     (5,0)
+            bottom right (5,0)
+    
+        Roll length used: 1
+
+    [1;34mTry max length:[0m 0
+    [1;34m    At iteration:[0m 5
+        [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
+        [1;32mOptimality reached![0m
