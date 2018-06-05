@@ -16,25 +16,14 @@ void logarithmic_encoder::make_binaries() {
 	int n_vars = gI.get_model_vars();
 	
 	n_bits = ceil(log(1.0*n_vars)/log(2.0));
-	
-	mpz_t binary;
-	mpz_init(binary);
 	binaries = vector<string>(n_vars);
 	
 	for (int i = 0; i < n_vars; ++i) {
-		mpz_set_ui(binary, i);
-		char *buf = nullptr;
-		buf = mpz_get_str(buf, 2, binary);
-		
-		string small_bin = string(buf);
+		string small_bin = to_binary(i);
 		
 		// leading zeros + minimal binary representation
 		binaries[i] = string(n_bits - small_bin.size(), '0') + small_bin;
-		
-		free(buf);
 	}
-	
-	mpz_clear(binary);
 }
 
 void logarithmic_encoder::amo(const clause& C, ostream& out) const {

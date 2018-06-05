@@ -1,8 +1,5 @@
 #pragma once
 
-// C includes
-#include <gmp.h>
-
 // C++ includes
 #include <iostream>
 #include <fstream>
@@ -12,6 +9,7 @@ using namespace std;
 
 // Custom includes
 #include "utils/global_info.hpp"
+#include "utils/to_binary.hpp"
 #include "clause_encoder.hpp"
 using namespace utils;
 

@@ -17,7 +17,8 @@ DEB_UTILS_OBJECTS	= $(DEB_BIN_DIR)/global_info.o			\
 					  $(DEB_BIN_DIR)/input_data.o			\
 					  $(DEB_BIN_DIR)/parse_string.o			\
 					  $(DEB_BIN_DIR)/time.o					\
-					  $(DEB_BIN_DIR)/wrapped_boxes.o
+					  $(DEB_BIN_DIR)/wrapped_boxes.o		\
+					  $(DEB_BIN_DIR)/to_binary.o
 
 DEB_CLS_GEN_OBJECTS	= $(DEB_BIN_DIR)/gen_clauses.o			\
 					  $(DEB_SOLVER_OBJECTS)					\
@@ -94,6 +95,9 @@ $(DEB_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
 $(DEB_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
+	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(DEB_BIN_DIR)/to_binary.o: $(UTILS_DIR)/to_binary.cpp $(TO_BINARY_DPS)
 	g++ $(DEB_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
 #############

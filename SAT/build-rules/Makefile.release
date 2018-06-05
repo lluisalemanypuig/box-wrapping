@@ -17,7 +17,8 @@ REL_UTILS_OBJECTS	= $(REL_BIN_DIR)/global_info.o			\
 					  $(REL_BIN_DIR)/input_data.o			\
 					  $(REL_BIN_DIR)/parse_string.o			\
 					  $(REL_BIN_DIR)/time.o					\
-					  $(REL_BIN_DIR)/wrapped_boxes.o
+					  $(REL_BIN_DIR)/wrapped_boxes.o		\
+					  $(REL_BIN_DIR)/to_binary.o
 
 REL_CLS_GEN_OBJECTS	= $(REL_BIN_DIR)/gen_clauses.o			\
 					  $(REL_SOLVER_OBJECTS)					\
@@ -94,6 +95,9 @@ $(REL_BIN_DIR)/time.o: $(UTILS_DIR)/time.cpp $(TIME_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
 $(REL_BIN_DIR)/wrapped_boxes.o: $(UTILS_DIR)/wrapped_boxes.cpp $(WRAPPED_BOXES)
+	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
+
+$(REL_BIN_DIR)/to_binary.o: $(UTILS_DIR)/to_binary.cpp $(TO_BINARY_DPS)
 	g++ $(REL_FLAGS) -c $< -o $@ -I$(INCLUDE)
 
 #############

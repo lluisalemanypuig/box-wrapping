@@ -12,7 +12,7 @@ RULES_DIR = $(PROJ_DIR)/build-rules
 DEB_BIN_DIR = $(PROJ_DIR)/build-debug
 REL_BIN_DIR = $(PROJ_DIR)/build-release
 
-CLS_GEN_LIBS = -lgmp
+CLS_GEN_LIBS =
 SOL_GEN_LIBS =
 
 INCLUDE = $(SRC_DIR)
