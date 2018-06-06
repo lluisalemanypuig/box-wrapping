@@ -18,6 +18,11 @@ using namespace std;
 using namespace encoder;
 using namespace utils;
 
+inline
+int half(int k) {
+	return (k%2 == 0 ? k/2 - 1 : k/2);
+}
+
 // -----------------------------
 // HELPER FUNCTIONS
 void open_stream(const string& output_file, ofstream& of, streambuf **buf) {
@@ -75,8 +80,8 @@ void simple_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 	for (size_t b = 0; b < 1; ++b) {
 		// (1.2). box 0 at first quadrant
 		clause box0_first;
-		for (length i = 0; i <= L/2; ++i) {
-			for (width j = 0; j <= W/2; ++j) {
+		for (length i = 0; i <= half(L); ++i) {
+			for (width j = 0; j <= half(W); ++j) {
 				box0_first += X(0,i,j);
 			}
 		}
@@ -158,8 +163,8 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 	for (size_t b = 0; b < 1; ++b) {
 		// (1.2). box 0 at first quadrant
 		clause box0_first;
-		for (length i = 0; i <= L/2; ++i) {
-			for (width j = 0; j <= W/2; ++j) {
+		for (length i = 0; i <= half(L); ++i) {
+			for (width j = 0; j <= half(W); ++j) {
 				box0_first += X(0,i,j);
 			}
 		}
