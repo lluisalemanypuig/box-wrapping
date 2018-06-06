@@ -1,7 +1,7 @@
-dt jun 5 18:56:46 CEST 2018
+dc jun 6 20:25:39 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .720 ms
+        lingeling found a solution in .740 ms
 
        | W
      L | 0 1 2 
@@ -55,60 +55,60 @@ dt jun 5 18:56:46 CEST 2018
 
     [1;34mTry max length:[0m 14
     [1;34m    At iteration:[0m 1
-        lingeling found a solution in .231 ms
+        lingeling found a solution in .192 ms
 
        | W
      L | 0 1 2 
     ----------
-     0 | . . . 
-     1 | 7 7 7 
-     2 | 4 4 . 
-     3 | 4 4 . 
+     0 | 6 6 . 
+     1 | 6 6 . 
+     2 | . . . 
+     3 | 1 1 . 
      4 | 1 1 . 
-     5 | 1 1 . 
+     5 | 3 3 . 
      6 | 3 3 . 
-     7 | 3 3 . 
-     8 | 6 6 . 
-     9 | 6 6 . 
-    10 | 5 5 . 
-    11 | 5 5 . 
-    12 | 2 2 . 
-    13 | 2 2 . 
+     7 | 5 5 . 
+     8 | 5 5 . 
+     9 | 2 2 . 
+    10 | 2 2 . 
+    11 | 7 7 7 
+    12 | 4 4 . 
+    13 | 4 4 . 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
-            top left     (0,4)
-            bottom right (1,5)
+            top left     (0,3)
+            bottom right (1,4)
     
         Box 2 is at 
+            top left     (0,9)
+            bottom right (1,10)
+    
+        Box 3 is at 
+            top left     (0,5)
+            bottom right (1,6)
+    
+        Box 4 is at 
             top left     (0,12)
             bottom right (1,13)
     
-        Box 3 is at 
-            top left     (0,6)
-            bottom right (1,7)
-    
-        Box 4 is at 
-            top left     (0,2)
-            bottom right (1,3)
-    
         Box 5 is at 
-            top left     (0,10)
-            bottom right (1,11)
+            top left     (0,7)
+            bottom right (1,8)
     
         Box 6 is at 
-            top left     (0,8)
-            bottom right (1,9)
+            top left     (0,0)
+            bottom right (1,1)
     
         Box 7 is at 
-            top left     (0,1)
-            bottom right (2,1)
+            top left     (0,11)
+            bottom right (2,11)
     
         Roll length used: 14
 
     [1;34mTry max length:[0m 13
     [1;34m    At iteration:[0m 2
-        lingeling found a solution in .200 ms
+        lingeling found a solution in .196 ms
 
        | W
      L | 0 1 2 
@@ -160,52 +160,52 @@ dt jun 5 18:56:46 CEST 2018
 
     [1;34mTry max length:[0m 12
     [1;34m    At iteration:[0m 3
-        lingeling found a solution in .101 ms
+        lingeling found a solution in .102 ms
 
        | W
      L | 0 1 2 
     ----------
-     0 | 5 5 7 
-     1 | 5 5 7 
-     2 | 1 1 7 
-     3 | 1 1 . 
-     4 | 4 4 . 
-     5 | 4 4 . 
-     6 | 2 2 . 
-     7 | 2 2 . 
-     8 | 6 6 . 
-     9 | 6 6 . 
-    10 | 3 3 . 
-    11 | 3 3 . 
+     0 | . 4 4 
+     1 | . 4 4 
+     2 | . 2 2 
+     3 | . 2 2 
+     4 | . 1 1 
+     5 | 7 1 1 
+     6 | 7 5 5 
+     7 | 7 5 5 
+     8 | 3 3 . 
+     9 | 3 3 . 
+    10 | 6 6 . 
+    11 | 6 6 . 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
-            top left     (0,2)
-            bottom right (1,3)
+            top left     (1,4)
+            bottom right (2,5)
     
         Box 2 is at 
-            top left     (0,6)
-            bottom right (1,7)
+            top left     (1,2)
+            bottom right (2,3)
     
         Box 3 is at 
-            top left     (0,10)
-            bottom right (1,11)
-    
-        Box 4 is at 
-            top left     (0,4)
-            bottom right (1,5)
-    
-        Box 5 is at 
-            top left     (0,0)
-            bottom right (1,1)
-    
-        Box 6 is at 
             top left     (0,8)
             bottom right (1,9)
     
+        Box 4 is at 
+            top left     (1,0)
+            bottom right (2,1)
+    
+        Box 5 is at 
+            top left     (1,6)
+            bottom right (2,7)
+    
+        Box 6 is at 
+            top left     (0,10)
+            bottom right (1,11)
+    
         Box 7 is at 
-            top left     (2,0)
-            bottom right (2,2)
+            top left     (0,5)
+            bottom right (0,7)
     
         Roll length used: 12
 

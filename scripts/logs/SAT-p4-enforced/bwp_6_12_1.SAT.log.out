@@ -1,42 +1,42 @@
-dt jun 5 19:12:08 CEST 2018
+dc jun 6 20:39:32 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .625 ms
+        lingeling found a solution in .617 ms
 
        | W
-     L | 0 1 2  3  4  5 
-    -------------------
-     0 | . . . 12 12 12 
-     1 | . . . 12 12 12 
-     2 | . . .  .  .  . 
-     3 | . . .  .  .  . 
-     4 | . . .  .  .  . 
-     5 | . . .  .  .  . 
-     6 | 1 . .  .  .  . 
-     7 | . . .  .  .  . 
-     8 | . . .  .  .  . 
-     9 | . . .  .  . 11 
-    10 | . . .  .  . 11 
-    11 | . . .  .  .  . 
-    12 | . . .  .  .  . 
-    13 | . . .  .  .  . 
-    14 | . . .  .  .  . 
-    15 | 9 . .  .  .  . 
-    16 | 9 . .  .  .  . 
-    17 | 8 . .  .  .  . 
-    18 | 8 . .  .  . 10 
-    19 | 7 . .  .  . 10 
-    20 | 7 . .  5  5  5 
-    21 | 6 . .  5  5  5 
-    22 | 6 . 2  5  5  5 
-    23 | 4 4 4  3  3  3 
-    24 | 4 4 4  3  3  3 
-    25 | 4 4 4  3  3  3 
+     L |  0 1 2  3  4  5 
+    --------------------
+     0 |  . . . 12 12 12 
+     1 |  . . . 12 12 12 
+     2 |  . . .  .  .  . 
+     3 |  . . .  .  .  . 
+     4 |  . . .  .  .  . 
+     5 |  . 1 .  .  .  . 
+     6 |  . . .  .  .  . 
+     7 |  . . .  .  .  . 
+     8 |  . . .  .  .  . 
+     9 |  . . .  .  .  . 
+    10 |  . . .  .  .  . 
+    11 |  . . .  .  .  . 
+    12 |  . . .  .  .  . 
+    13 | 11 . .  .  .  . 
+    14 | 11 . .  .  .  . 
+    15 | 10 . .  .  .  . 
+    16 | 10 . .  .  .  . 
+    17 |  9 . .  .  .  . 
+    18 |  9 . .  .  .  8 
+    19 |  7 . .  .  .  8 
+    20 |  7 . .  5  5  5 
+    21 |  6 . .  5  5  5 
+    22 |  6 . 2  5  5  5 
+    23 |  4 4 4  3  3  3 
+    24 |  4 4 4  3  3  3 
+    25 |  4 4 4  3  3  3 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (0,6)
-            bottom right (0,6)
+            top left     (1,5)
+            bottom right (1,5)
     
         Box  2 is at 
             top left     (2,22)
@@ -63,20 +63,20 @@ dt jun 5 19:12:08 CEST 2018
             bottom right (0,20)
     
         Box  8 is at 
-            top left     (0,17)
-            bottom right (0,18)
-    
-        Box  9 is at 
-            top left     (0,15)
-            bottom right (0,16)
-    
-        Box 10 is at 
             top left     (5,18)
             bottom right (5,19)
     
+        Box  9 is at 
+            top left     (0,17)
+            bottom right (0,18)
+    
+        Box 10 is at 
+            top left     (0,15)
+            bottom right (0,16)
+    
         Box 11 is at 
-            top left     (5,9)
-            bottom right (5,10)
+            top left     (0,13)
+            bottom right (0,14)
     
         Box 12 is at 
             top left     (3,0)
@@ -86,53 +86,53 @@ dt jun 5 19:12:08 CEST 2018
 
     [1;34mTry max length:[0m 25
     [1;34m    At iteration:[0m 1
-        lingeling found a solution in .627 ms
+        lingeling found a solution in .660 ms
 
        | W
-     L |  0 1 2  3  4  5 
-    --------------------
-     0 |  . . .  .  .  . 
-     1 |  . . .  .  .  . 
-     2 |  . . .  1  .  . 
-     3 |  . . .  .  .  . 
-     4 |  . . .  5  5  5 
-     5 |  . . .  5  5  5 
-     6 |  . . .  5  5  5 
-     7 |  . . .  .  .  . 
-     8 |  . . .  .  .  . 
-     9 |  . . .  .  .  . 
-    10 |  4 4 4  .  .  . 
-    11 |  4 4 4  .  .  . 
-    12 |  4 4 4  .  .  . 
-    13 | 11 . .  .  .  . 
-    14 | 11 . .  .  .  . 
-    15 | 10 . .  3  3  3 
-    16 | 10 . .  3  3  3 
-    17 |  9 . .  3  3  3 
-    18 |  9 . .  .  .  . 
-    19 |  8 . .  .  .  . 
-    20 |  8 . .  .  .  . 
-    21 |  7 . .  .  .  . 
-    22 |  7 . .  .  .  . 
-    23 |  6 . . 12 12 12 
-    24 |  6 . 2 12 12 12 
+     L | 0 1 2  3  4  5 
+    -------------------
+     0 | . . . 12 12 12 
+     1 | . . . 12 12 12 
+     2 | . . .  .  .  . 
+     3 | . . .  .  .  . 
+     4 | . . .  5  5  5 
+     5 | . . .  5  5  5 
+     6 | 1 . .  5  5  5 
+     7 | . . .  .  .  . 
+     8 | . . .  .  . 11 
+     9 | . . .  .  . 11 
+    10 | . . .  .  . 10 
+    11 | . . .  .  . 10 
+    12 | . . .  .  .  . 
+    13 | 4 4 4  3  3  3 
+    14 | 4 4 4  3  3  3 
+    15 | 4 4 4  3  3  3 
+    16 | . . .  .  .  . 
+    17 | 9 . .  .  .  . 
+    18 | 9 . .  .  .  . 
+    19 | 8 . .  .  .  . 
+    20 | 8 . .  .  .  . 
+    21 | 7 . .  .  .  . 
+    22 | 7 . .  .  .  . 
+    23 | 6 . .  .  .  . 
+    24 | 6 . .  .  .  2 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (3,2)
-            bottom right (3,2)
+            top left     (0,6)
+            bottom right (0,6)
     
         Box  2 is at 
-            top left     (2,24)
-            bottom right (2,24)
+            top left     (5,24)
+            bottom right (5,24)
     
         Box  3 is at 
-            top left     (3,15)
-            bottom right (5,17)
+            top left     (3,13)
+            bottom right (5,15)
     
         Box  4 is at 
-            top left     (0,10)
-            bottom right (2,12)
+            top left     (0,13)
+            bottom right (2,15)
     
         Box  5 is at 
             top left     (3,4)
@@ -155,268 +155,268 @@ dt jun 5 19:12:08 CEST 2018
             bottom right (0,18)
     
         Box 10 is at 
-            top left     (0,15)
-            bottom right (0,16)
+            top left     (5,10)
+            bottom right (5,11)
     
         Box 11 is at 
-            top left     (0,13)
-            bottom right (0,14)
+            top left     (5,8)
+            bottom right (5,9)
     
         Box 12 is at 
-            top left     (3,23)
-            bottom right (5,24)
+            top left     (3,0)
+            bottom right (5,1)
     
         Roll length used: 25
 
     [1;34mTry max length:[0m 24
     [1;34m    At iteration:[0m 2
-        lingeling found a solution in .682 ms
+        lingeling found a solution in .673 ms
 
        | W
-     L |  0  1  2 3 4  5 
-    --------------------
-     0 |  .  .  . . .  . 
-     1 |  .  .  . 5 5  5 
-     2 |  .  .  . 5 5  5 
-     3 |  .  .  . 5 5  5 
-     4 |  .  .  . . .  9 
-     5 |  .  .  . . .  9 
-     6 |  .  .  . . .  . 
-     7 |  .  .  . . .  . 
-     8 |  .  .  . . .  . 
-     9 |  .  1  . . . 10 
-    10 |  .  .  . . . 10 
-    11 |  .  .  . . .  . 
-    12 |  .  .  . . .  . 
-    13 | 11  .  . . .  . 
-    14 | 11  .  . . .  . 
-    15 |  .  .  . . .  . 
-    16 |  8  .  . 4 4  4 
-    17 |  8  .  . 4 4  4 
-    18 |  3  3  3 4 4  4 
-    19 |  3  3  3 . .  . 
-    20 |  3  3  3 . .  7 
-    21 |  .  .  . . .  7 
-    22 | 12 12 12 . .  6 
-    23 | 12 12 12 . 2  6 
+     L | 0 1 2  3  4  5 
+    -------------------
+     0 | . 1 . 12 12 12 
+     1 | . . . 12 12 12 
+     2 | . . .  .  .  . 
+     3 | . . .  .  . 10 
+     4 | . . .  .  . 10 
+     5 | . . .  .  .  . 
+     6 | 5 5 5  .  .  . 
+     7 | 5 5 5  .  .  . 
+     8 | 5 5 5  .  .  . 
+     9 | . . .  .  .  . 
+    10 | . . .  .  .  . 
+    11 | . . .  .  . 11 
+    12 | . . .  .  . 11 
+    13 | 3 3 3  .  .  . 
+    14 | 3 3 3  .  .  . 
+    15 | 3 3 3  .  .  . 
+    16 | 4 4 4  .  .  . 
+    17 | 4 4 4  .  .  . 
+    18 | 4 4 4  .  .  . 
+    19 | . . .  .  .  . 
+    20 | 7 . .  .  .  8 
+    21 | 7 . .  .  .  8 
+    22 | 6 . .  .  .  9 
+    23 | 6 . .  .  2  9 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (1,9)
-            bottom right (1,9)
+            top left     (1,0)
+            bottom right (1,0)
     
         Box  2 is at 
             top left     (4,23)
             bottom right (4,23)
     
         Box  3 is at 
-            top left     (0,18)
-            bottom right (2,20)
+            top left     (0,13)
+            bottom right (2,15)
     
         Box  4 is at 
-            top left     (3,16)
-            bottom right (5,18)
+            top left     (0,16)
+            bottom right (2,18)
     
         Box  5 is at 
-            top left     (3,1)
-            bottom right (5,3)
+            top left     (0,6)
+            bottom right (2,8)
     
         Box  6 is at 
-            top left     (5,22)
-            bottom right (5,23)
+            top left     (0,22)
+            bottom right (0,23)
     
         Box  7 is at 
+            top left     (0,20)
+            bottom right (0,21)
+    
+        Box  8 is at 
             top left     (5,20)
             bottom right (5,21)
     
-        Box  8 is at 
-            top left     (0,16)
-            bottom right (0,17)
-    
         Box  9 is at 
-            top left     (5,4)
-            bottom right (5,5)
+            top left     (5,22)
+            bottom right (5,23)
     
         Box 10 is at 
-            top left     (5,9)
-            bottom right (5,10)
+            top left     (5,3)
+            bottom right (5,4)
     
         Box 11 is at 
-            top left     (0,13)
-            bottom right (0,14)
+            top left     (5,11)
+            bottom right (5,12)
     
         Box 12 is at 
-            top left     (0,22)
-            bottom right (2,23)
+            top left     (3,0)
+            bottom right (5,1)
     
         Roll length used: 24
 
     [1;34mTry max length:[0m 23
     [1;34m    At iteration:[0m 3
-        lingeling found a solution in .803 ms
+        lingeling found a solution in .776 ms
 
        | W
-     L |  0  1  2 3 4  5 
+     L |  0 1 2  3  4  5 
     --------------------
-     0 |  .  .  . 3 3  3 
-     1 |  .  .  . 3 3  3 
-     2 |  .  .  . 3 3  3 
-     3 |  .  .  . . .  . 
-     4 |  .  .  . 4 4  4 
-     5 |  .  .  . 4 4  4 
-     6 |  .  .  . 4 4  4 
-     7 |  .  .  . . .  . 
-     8 |  .  1  . . .  . 
-     9 |  .  .  . . .  . 
-    10 |  .  .  . . . 10 
-    11 |  .  .  . . . 10 
-    12 | 11  .  . . .  . 
-    13 | 11  .  . . .  . 
-    14 |  .  .  . 5 5  5 
-    15 |  8  .  . 5 5  5 
-    16 |  8  .  . 5 5  5 
-    17 |  7  .  . . .  . 
-    18 |  7  .  . . .  . 
-    19 |  6  .  . . .  . 
-    20 |  6  .  . . .  . 
-    21 | 12 12 12 . .  9 
-    22 | 12 12 12 . 2  9 
+     0 |  . . . 12 12 12 
+     1 |  . . . 12 12 12 
+     2 |  . . .  3  3  3 
+     3 |  . . .  3  3  3 
+     4 |  . . .  3  3  3 
+     5 |  . . .  .  .  . 
+     6 |  . . .  .  .  . 
+     7 |  . 1 .  .  .  . 
+     8 |  . . .  .  .  . 
+     9 |  . . .  .  .  . 
+    10 |  . . .  4  4  4 
+    11 |  . . .  4  4  4 
+    12 |  . . .  4  4  4 
+    13 | 10 . .  .  .  . 
+    14 | 10 . .  .  .  . 
+    15 |  9 . .  .  .  . 
+    16 |  9 . .  .  .  . 
+    17 |  8 . .  .  . 11 
+    18 |  8 . .  .  . 11 
+    19 |  7 . .  .  .  . 
+    20 |  7 . .  5  5  5 
+    21 |  6 . .  5  5  5 
+    22 |  6 . 2  5  5  5 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (1,8)
-            bottom right (1,8)
+            top left     (1,7)
+            bottom right (1,7)
     
         Box  2 is at 
-            top left     (4,22)
-            bottom right (4,22)
+            top left     (2,22)
+            bottom right (2,22)
     
         Box  3 is at 
-            top left     (3,0)
-            bottom right (5,2)
+            top left     (3,2)
+            bottom right (5,4)
     
         Box  4 is at 
-            top left     (3,4)
-            bottom right (5,6)
+            top left     (3,10)
+            bottom right (5,12)
     
         Box  5 is at 
-            top left     (3,14)
-            bottom right (5,16)
+            top left     (3,20)
+            bottom right (5,22)
     
         Box  6 is at 
+            top left     (0,21)
+            bottom right (0,22)
+    
+        Box  7 is at 
             top left     (0,19)
             bottom right (0,20)
     
-        Box  7 is at 
+        Box  8 is at 
             top left     (0,17)
             bottom right (0,18)
     
-        Box  8 is at 
+        Box  9 is at 
             top left     (0,15)
             bottom right (0,16)
     
-        Box  9 is at 
-            top left     (5,21)
-            bottom right (5,22)
-    
         Box 10 is at 
-            top left     (5,10)
-            bottom right (5,11)
+            top left     (0,13)
+            bottom right (0,14)
     
         Box 11 is at 
-            top left     (0,12)
-            bottom right (0,13)
+            top left     (5,17)
+            bottom right (5,18)
     
         Box 12 is at 
-            top left     (0,21)
-            bottom right (2,22)
+            top left     (3,0)
+            bottom right (5,1)
     
         Roll length used: 23
 
     [1;34mTry max length:[0m 22
     [1;34m    At iteration:[0m 4
-        lingeling found a solution in .551 ms
+        lingeling found a solution in .536 ms
 
        | W
      L |  0  1  2 3 4 5 
     -------------------
-     0 |  .  .  . . . . 
-     1 |  .  .  . . . . 
+     0 | 12 12 12 . . . 
+     1 | 12 12 12 . . . 
      2 |  .  .  . . . . 
-     3 |  7  .  . . . . 
-     4 |  7  .  . . . . 
-     5 |  5  5  5 . . . 
-     6 |  5  5  5 . . . 
-     7 |  5  5  5 4 4 4 
-     8 |  .  .  . 4 4 4 
-     9 |  .  .  . 4 4 4 
-    10 |  .  .  . . . . 
-    11 |  .  .  . 1 . . 
-    12 | 10  .  . . . . 
-    13 | 10  .  . . . . 
-    14 |  8  .  . 6 . . 
-    15 |  8  .  . 6 . . 
-    16 | 11  .  . . . . 
-    17 | 11  .  . . . . 
-    18 |  9  .  . . . . 
-    19 |  9  .  2 3 3 3 
-    20 | 12 12 12 3 3 3 
-    21 | 12 12 12 3 3 3 
+     3 |  .  .  . . . . 
+     4 |  .  .  . . . . 
+     5 |  .  .  . . . . 
+     6 |  .  .  . . . . 
+     7 |  .  .  . . . . 
+     8 |  .  .  . . . . 
+     9 |  .  .  . . . . 
+    10 |  6  .  1 . . . 
+    11 |  6  .  . 7 . . 
+    12 |  4  4  4 7 . . 
+    13 |  4  4  4 . . . 
+    14 |  4  4  4 . . . 
+    15 | 11  .  . . . . 
+    16 | 11  .  . 3 3 3 
+    17 |  .  .  . 3 3 3 
+    18 |  8  .  . 3 3 3 
+    19 |  8  .  . 5 5 5 
+    20 | 10  .  2 5 5 5 
+    21 | 10  9  9 5 5 5 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (3,11)
-            bottom right (3,11)
+            top left     (2,10)
+            bottom right (2,10)
     
         Box  2 is at 
-            top left     (2,19)
-            bottom right (2,19)
+            top left     (2,20)
+            bottom right (2,20)
     
         Box  3 is at 
+            top left     (3,16)
+            bottom right (5,18)
+    
+        Box  4 is at 
+            top left     (0,12)
+            bottom right (2,14)
+    
+        Box  5 is at 
             top left     (3,19)
             bottom right (5,21)
     
-        Box  4 is at 
-            top left     (3,7)
-            bottom right (5,9)
-    
-        Box  5 is at 
-            top left     (0,5)
-            bottom right (2,7)
-    
         Box  6 is at 
-            top left     (3,14)
-            bottom right (3,15)
+            top left     (0,10)
+            bottom right (0,11)
     
         Box  7 is at 
-            top left     (0,3)
-            bottom right (0,4)
+            top left     (3,11)
+            bottom right (3,12)
     
         Box  8 is at 
-            top left     (0,14)
-            bottom right (0,15)
-    
-        Box  9 is at 
             top left     (0,18)
             bottom right (0,19)
     
+        Box  9 is at 
+            top left     (1,21)
+            bottom right (2,21)
+    
         Box 10 is at 
-            top left     (0,12)
-            bottom right (0,13)
+            top left     (0,20)
+            bottom right (0,21)
     
         Box 11 is at 
-            top left     (0,16)
-            bottom right (0,17)
+            top left     (0,15)
+            bottom right (0,16)
     
         Box 12 is at 
-            top left     (0,20)
-            bottom right (2,21)
+            top left     (0,0)
+            bottom right (2,1)
     
         Roll length used: 22
 
     [1;34mTry max length:[0m 21
     [1;34m    At iteration:[0m 5
-        lingeling found a solution in 1.022 ms
+        lingeling found a solution in 1.071 ms
 
        | W
      L |  0 1 2  3  4  5 
@@ -424,57 +424,57 @@ dt jun 5 19:12:08 CEST 2018
      0 |  . . . 12 12 12 
      1 |  . . . 12 12 12 
      2 |  . . .  .  .  . 
-     3 |  . . .  .  .  . 
-     4 |  4 4 4  .  .  . 
-     5 |  4 4 4  5  5  5 
-     6 |  4 4 4  5  5  5 
-     7 |  . . .  5  5  5 
+     3 |  . . .  5  5  5 
+     4 |  . . .  5  5  5 
+     5 |  . . .  5  5  5 
+     6 |  . . .  .  .  . 
+     7 |  . 1 .  .  .  . 
      8 |  . . .  .  .  . 
      9 |  . . .  .  .  . 
-    10 |  . . .  1  .  . 
-    11 | 11 . .  .  .  . 
-    12 | 11 . .  .  .  . 
-    13 | 10 . .  3  3  3 
-    14 | 10 . .  3  3  3 
-    15 |  9 . .  3  3  3 
-    16 |  9 . .  .  .  . 
-    17 |  8 . .  .  .  . 
-    18 |  8 . .  .  .  . 
-    19 |  6 . .  .  .  7 
-    20 |  6 . .  .  2  7 
+    10 |  . . .  3  3  3 
+    11 | 11 . .  3  3  3 
+    12 | 11 . .  3  3  3 
+    13 | 10 . .  .  .  . 
+    14 | 10 . .  .  .  . 
+    15 |  9 . .  .  .  8 
+    16 |  9 . .  .  .  8 
+    17 |  7 . .  .  .  . 
+    18 |  7 . .  4  4  4 
+    19 |  6 . .  4  4  4 
+    20 |  6 . 2  4  4  4 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (3,10)
-            bottom right (3,10)
+            top left     (1,7)
+            bottom right (1,7)
     
         Box  2 is at 
-            top left     (4,20)
-            bottom right (4,20)
+            top left     (2,20)
+            bottom right (2,20)
     
         Box  3 is at 
-            top left     (3,13)
-            bottom right (5,15)
+            top left     (3,10)
+            bottom right (5,12)
     
         Box  4 is at 
-            top left     (0,4)
-            bottom right (2,6)
+            top left     (3,18)
+            bottom right (5,20)
     
         Box  5 is at 
-            top left     (3,5)
-            bottom right (5,7)
+            top left     (3,3)
+            bottom right (5,5)
     
         Box  6 is at 
             top left     (0,19)
             bottom right (0,20)
     
         Box  7 is at 
-            top left     (5,19)
-            bottom right (5,20)
-    
-        Box  8 is at 
             top left     (0,17)
             bottom right (0,18)
+    
+        Box  8 is at 
+            top left     (5,15)
+            bottom right (5,16)
     
         Box  9 is at 
             top left     (0,15)
@@ -496,668 +496,72 @@ dt jun 5 19:12:08 CEST 2018
 
     [1;34mTry max length:[0m 20
     [1;34m    At iteration:[0m 6
-        lingeling found a solution in .710 ms
+        lingeling found a solution in .706 ms
 
        | W
-     L |  0 1 2 3  4  5 
-    -------------------
-     0 |  . . . .  .  . 
-     1 |  . . . .  .  . 
-     2 |  . . . .  .  . 
-     3 |  4 4 4 .  .  . 
-     4 |  4 4 4 .  7  . 
-     5 |  4 4 4 .  7  . 
-     6 |  . . 1 5  5  5 
-     7 |  . . . 5  5  5 
-     8 |  . . . 5  5  5 
-     9 | 10 . . .  .  . 
-    10 | 10 . . .  .  . 
-    11 | 11 . . .  .  . 
-    12 | 11 . . . 12 12 
-    13 |  8 . . . 12 12 
-    14 |  8 . . . 12 12 
-    15 |  9 . . .  .  . 
-    16 |  9 . . .  .  . 
-    17 |  . . 3 3  3  . 
-    18 |  6 . 3 3  3  . 
-    19 |  6 . 3 3  3  2 
+     L |  0 1 2  3  4  5 
+    --------------------
+     0 |  . . 1 12 12 12 
+     1 |  9 . . 12 12 12 
+     2 |  9 . .  .  .  . 
+     3 |  . . .  .  .  . 
+     4 |  . . .  .  .  . 
+     5 | 11 . .  .  .  . 
+     6 | 11 . .  5  5  5 
+     7 | 10 . .  5  5  5 
+     8 | 10 . .  5  5  5 
+     9 |  . . .  .  .  . 
+    10 |  6 . .  .  .  . 
+    11 |  6 . .  3  3  3 
+    12 |  4 4 4  3  3  3 
+    13 |  4 4 4  3  3  3 
+    14 |  4 4 4  .  .  . 
+    15 |  8 . .  .  .  . 
+    16 |  8 . .  .  .  . 
+    17 |  7 . .  .  .  . 
+    18 |  7 . .  .  .  . 
+    19 |  . . .  .  .  2 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (2,6)
-            bottom right (2,6)
+            top left     (2,0)
+            bottom right (2,0)
     
         Box  2 is at 
             top left     (5,19)
             bottom right (5,19)
     
         Box  3 is at 
-            top left     (2,17)
-            bottom right (4,19)
+            top left     (3,11)
+            bottom right (5,13)
     
         Box  4 is at 
-            top left     (0,3)
-            bottom right (2,5)
+            top left     (0,12)
+            bottom right (2,14)
     
         Box  5 is at 
             top left     (3,6)
             bottom right (5,8)
     
         Box  6 is at 
-            top left     (0,18)
-            bottom right (0,19)
+            top left     (0,10)
+            bottom right (0,11)
     
         Box  7 is at 
-            top left     (4,4)
-            bottom right (4,5)
-    
-        Box  8 is at 
-            top left     (0,13)
-            bottom right (0,14)
-    
-        Box  9 is at 
-            top left     (0,15)
-            bottom right (0,16)
-    
-        Box 10 is at 
-            top left     (0,9)
-            bottom right (0,10)
-    
-        Box 11 is at 
-            top left     (0,11)
-            bottom right (0,12)
-    
-        Box 12 is at 
-            top left     (4,12)
-            bottom right (5,14)
-    
-        Roll length used: 20
-
-    [1;34mTry max length:[0m 19
-    [1;34m    At iteration:[0m 7
-        lingeling found a solution in .591 ms
-
-       | W
-     L |  0 1 2  3  4  5 
-    --------------------
-     0 |  1 . .  .  .  . 
-     1 |  . . .  .  .  . 
-     2 |  . . .  .  .  8 
-     3 |  . . .  .  .  8 
-     4 |  3 3 3  .  .  . 
-     5 |  3 3 3  5  5  5 
-     6 |  3 3 3  5  5  5 
-     7 |  . . .  5  5  5 
-     8 |  . . .  .  .  . 
-     9 |  . . .  4  4  4 
-    10 |  9 . .  4  4  4 
-    11 |  9 . .  4  4  4 
-    12 |  . . .  .  . 11 
-    13 | 10 . .  .  . 11 
-    14 | 10 . .  .  .  . 
-    15 |  7 . .  .  .  . 
-    16 |  7 . .  .  .  . 
-    17 |  6 . . 12 12 12 
-    18 |  6 . 2 12 12 12 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (0,0)
-            bottom right (0,0)
-    
-        Box  2 is at 
-            top left     (2,18)
-            bottom right (2,18)
-    
-        Box  3 is at 
-            top left     (0,4)
-            bottom right (2,6)
-    
-        Box  4 is at 
-            top left     (3,9)
-            bottom right (5,11)
-    
-        Box  5 is at 
-            top left     (3,5)
-            bottom right (5,7)
-    
-        Box  6 is at 
             top left     (0,17)
             bottom right (0,18)
     
-        Box  7 is at 
+        Box  8 is at 
             top left     (0,15)
             bottom right (0,16)
     
-        Box  8 is at 
-            top left     (5,2)
-            bottom right (5,3)
-    
         Box  9 is at 
-            top left     (0,10)
-            bottom right (0,11)
-    
-        Box 10 is at 
-            top left     (0,13)
-            bottom right (0,14)
-    
-        Box 11 is at 
-            top left     (5,12)
-            bottom right (5,13)
-    
-        Box 12 is at 
-            top left     (3,17)
-            bottom right (5,18)
-    
-        Roll length used: 19
-
-    [1;34mTry max length:[0m 18
-    [1;34m    At iteration:[0m 8
-        lingeling found a solution in .433 ms
-
-       | W
-     L | 0 1 2  3  4  5 
-    -------------------
-     0 | . . . 12 12 12 
-     1 | . . . 12 12 12 
-     2 | . . .  .  .  . 
-     3 | . . .  .  .  . 
-     4 | . . .  .  . 11 
-     5 | . . .  .  . 11 
-     6 | . . .  .  . 10 
-     7 | . . .  .  . 10 
-     8 | . . .  .  .  9 
-     9 | . . .  1  .  9 
-    10 | . . .  .  .  8 
-    11 | 7 . .  .  .  8 
-    12 | 7 . .  5  5  5 
-    13 | 6 . .  5  5  5 
-    14 | 6 . 2  5  5  5 
-    15 | 4 4 4  3  3  3 
-    16 | 4 4 4  3  3  3 
-    17 | 4 4 4  3  3  3 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (3,9)
-            bottom right (3,9)
-    
-        Box  2 is at 
-            top left     (2,14)
-            bottom right (2,14)
-    
-        Box  3 is at 
-            top left     (3,15)
-            bottom right (5,17)
-    
-        Box  4 is at 
-            top left     (0,15)
-            bottom right (2,17)
-    
-        Box  5 is at 
-            top left     (3,12)
-            bottom right (5,14)
-    
-        Box  6 is at 
-            top left     (0,13)
-            bottom right (0,14)
-    
-        Box  7 is at 
-            top left     (0,11)
-            bottom right (0,12)
-    
-        Box  8 is at 
-            top left     (5,10)
-            bottom right (5,11)
-    
-        Box  9 is at 
-            top left     (5,8)
-            bottom right (5,9)
-    
-        Box 10 is at 
-            top left     (5,6)
-            bottom right (5,7)
-    
-        Box 11 is at 
-            top left     (5,4)
-            bottom right (5,5)
-    
-        Box 12 is at 
-            top left     (3,0)
-            bottom right (5,1)
-    
-        Roll length used: 18
-
-    [1;34mTry max length:[0m 17
-    [1;34m    At iteration:[0m 9
-        lingeling found a solution in .430 ms
-
-       | W
-     L |  0  1  2  3 4 5 
-    --------------------
-     0 | 10  .  .  3 3 3 
-     1 | 10  .  .  3 3 3 
-     2 |  .  .  .  3 3 3 
-     3 |  .  .  .  1 . . 
-     4 |  9  .  .  . . . 
-     5 |  9  .  .  . . . 
-     6 |  .  .  .  . . . 
-     7 |  .  .  .  . . . 
-     8 |  . 11  .  6 . . 
-     9 |  7 11  .  6 . . 
-    10 |  7  .  .  . . . 
-    11 |  8 12 12 12 . . 
-    12 |  8 12 12 12 . . 
-    13 |  .  .  2  5 5 5 
-    14 |  4  4  4  5 5 5 
-    15 |  4  4  4  5 5 5 
-    16 |  4  4  4  . . . 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (3,3)
-            bottom right (3,3)
-    
-        Box  2 is at 
-            top left     (2,13)
-            bottom right (2,13)
-    
-        Box  3 is at 
-            top left     (3,0)
-            bottom right (5,2)
-    
-        Box  4 is at 
-            top left     (0,14)
-            bottom right (2,16)
-    
-        Box  5 is at 
-            top left     (3,13)
-            bottom right (5,15)
-    
-        Box  6 is at 
-            top left     (3,8)
-            bottom right (3,9)
-    
-        Box  7 is at 
-            top left     (0,9)
-            bottom right (0,10)
-    
-        Box  8 is at 
-            top left     (0,11)
-            bottom right (0,12)
-    
-        Box  9 is at 
-            top left     (0,4)
-            bottom right (0,5)
-    
-        Box 10 is at 
-            top left     (0,0)
-            bottom right (0,1)
-    
-        Box 11 is at 
-            top left     (1,8)
-            bottom right (1,9)
-    
-        Box 12 is at 
-            top left     (1,11)
-            bottom right (3,12)
-    
-        Roll length used: 17
-
-    [1;34mTry max length:[0m 16
-    [1;34m    At iteration:[0m 10
-        lingeling found a solution in .605 ms
-
-       | W
-     L |  0 1 2  3  4  5 
-    --------------------
-     0 |  . 6 . 12 12 12 
-     1 |  . 6 . 12 12 12 
-     2 |  . . .  .  .  . 
-     3 |  . . .  .  .  . 
-     4 |  . . .  .  .  . 
-     5 |  5 5 5  4  4  4 
-     6 |  5 5 5  4  4  4 
-     7 |  5 5 5  4  4  4 
-     8 | 10 . .  1  8  . 
-     9 | 10 . .  .  8  . 
-    10 |  9 . .  .  .  . 
-    11 |  9 . .  .  .  . 
-    12 |  7 . .  .  .  . 
-    13 |  7 . 2  3  3  3 
-    14 | 11 . .  3  3  3 
-    15 | 11 . .  3  3  3 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (3,8)
-            bottom right (3,8)
-    
-        Box  2 is at 
-            top left     (2,13)
-            bottom right (2,13)
-    
-        Box  3 is at 
-            top left     (3,13)
-            bottom right (5,15)
-    
-        Box  4 is at 
-            top left     (3,5)
-            bottom right (5,7)
-    
-        Box  5 is at 
-            top left     (0,5)
-            bottom right (2,7)
-    
-        Box  6 is at 
-            top left     (1,0)
-            bottom right (1,1)
-    
-        Box  7 is at 
-            top left     (0,12)
-            bottom right (0,13)
-    
-        Box  8 is at 
-            top left     (4,8)
-            bottom right (4,9)
-    
-        Box  9 is at 
-            top left     (0,10)
-            bottom right (0,11)
-    
-        Box 10 is at 
-            top left     (0,8)
-            bottom right (0,9)
-    
-        Box 11 is at 
-            top left     (0,14)
-            bottom right (0,15)
-    
-        Box 12 is at 
-            top left     (3,0)
-            bottom right (5,1)
-    
-        Roll length used: 16
-
-    [1;34mTry max length:[0m 15
-    [1;34m    At iteration:[0m 11
-        lingeling found a solution in .399 ms
-
-       | W
-     L | 0 1 2  3  4  5 
-    -------------------
-     0 | . . . 12 12 12 
-     1 | . . . 12 12 12 
-     2 | . . .  .  . 11 
-     3 | . . .  .  . 11 
-     4 | 7 . .  .  .  8 
-     5 | 7 . .  1  .  8 
-     6 | 6 . .  .  .  9 
-     7 | 6 . .  .  .  9 
-     8 | 5 5 5  .  .  . 
-     9 | 5 5 5  .  .  . 
-    10 | 5 5 5  .  .  . 
-    11 | . . 2  3  3  3 
-    12 | 4 4 4  3  3  3 
-    13 | 4 4 4  3  3  3 
-    14 | 4 4 4 10 10  . 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (3,5)
-            bottom right (3,5)
-    
-        Box  2 is at 
-            top left     (2,11)
-            bottom right (2,11)
-    
-        Box  3 is at 
-            top left     (3,11)
-            bottom right (5,13)
-    
-        Box  4 is at 
-            top left     (0,12)
-            bottom right (2,14)
-    
-        Box  5 is at 
-            top left     (0,8)
-            bottom right (2,10)
-    
-        Box  6 is at 
-            top left     (0,6)
-            bottom right (0,7)
-    
-        Box  7 is at 
-            top left     (0,4)
-            bottom right (0,5)
-    
-        Box  8 is at 
-            top left     (5,4)
-            bottom right (5,5)
-    
-        Box  9 is at 
-            top left     (5,6)
-            bottom right (5,7)
-    
-        Box 10 is at 
-            top left     (3,14)
-            bottom right (4,14)
-    
-        Box 11 is at 
-            top left     (5,2)
-            bottom right (5,3)
-    
-        Box 12 is at 
-            top left     (3,0)
-            bottom right (5,1)
-    
-        Roll length used: 15
-
-    [1;34mTry max length:[0m 14
-    [1;34m    At iteration:[0m 12
-        lingeling found a solution in .490 ms
-
-       | W
-     L |  0  1  2 3  4  5 
-    ---------------------
-     0 | 12 12 12 .  .  7 
-     1 | 12 12 12 . 10  7 
-     2 |  .  .  . . 10  8 
-     3 |  .  .  . .  .  8 
-     4 |  .  .  . .  .  9 
-     5 |  .  .  . .  6  9 
-     6 |  .  .  . .  6 11 
-     7 |  .  .  . 1  . 11 
-     8 |  .  .  . 5  5  5 
-     9 |  .  .  . 5  5  5 
-    10 |  .  .  2 5  5  5 
-    11 |  4  4  4 3  3  3 
-    12 |  4  4  4 3  3  3 
-    13 |  4  4  4 3  3  3 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (3,7)
-            bottom right (3,7)
-    
-        Box  2 is at 
-            top left     (2,10)
-            bottom right (2,10)
-    
-        Box  3 is at 
-            top left     (3,11)
-            bottom right (5,13)
-    
-        Box  4 is at 
-            top left     (0,11)
-            bottom right (2,13)
-    
-        Box  5 is at 
-            top left     (3,8)
-            bottom right (5,10)
-    
-        Box  6 is at 
-            top left     (4,5)
-            bottom right (4,6)
-    
-        Box  7 is at 
-            top left     (5,0)
-            bottom right (5,1)
-    
-        Box  8 is at 
-            top left     (5,2)
-            bottom right (5,3)
-    
-        Box  9 is at 
-            top left     (5,4)
-            bottom right (5,5)
-    
-        Box 10 is at 
-            top left     (4,1)
-            bottom right (4,2)
-    
-        Box 11 is at 
-            top left     (5,6)
-            bottom right (5,7)
-    
-        Box 12 is at 
-            top left     (0,0)
-            bottom right (2,1)
-    
-        Roll length used: 14
-
-    [1;34mTry max length:[0m 13
-    [1;34m    At iteration:[0m 13
-        lingeling found a solution in .359 ms
-
-       | W
-     L |  0  1  2 3 4  5 
-    --------------------
-     0 | 12 12 12 5 5  5 
-     1 | 12 12 12 5 5  5 
-     2 |  .  .  . 5 5  5 
-     3 |  .  .  1 . . 11 
-     4 |  4  4  4 . . 11 
-     5 |  4  4  4 . .  8 
-     6 |  4  4  4 9 7  8 
-     7 | 10  .  . 9 7  . 
-     8 | 10  .  . . .  . 
-     9 |  .  .  2 3 3  3 
-    10 |  .  .  . 3 3  3 
-    11 |  .  .  6 3 3  3 
-    12 |  .  .  6 . .  . 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (2,3)
-            bottom right (2,3)
-    
-        Box  2 is at 
-            top left     (2,9)
-            bottom right (2,9)
-    
-        Box  3 is at 
-            top left     (3,9)
-            bottom right (5,11)
-    
-        Box  4 is at 
-            top left     (0,4)
-            bottom right (2,6)
-    
-        Box  5 is at 
-            top left     (3,0)
-            bottom right (5,2)
-    
-        Box  6 is at 
-            top left     (2,11)
-            bottom right (2,12)
-    
-        Box  7 is at 
-            top left     (4,6)
-            bottom right (4,7)
-    
-        Box  8 is at 
-            top left     (5,5)
-            bottom right (5,6)
-    
-        Box  9 is at 
-            top left     (3,6)
-            bottom right (3,7)
+            top left     (0,1)
+            bottom right (0,2)
     
         Box 10 is at 
             top left     (0,7)
             bottom right (0,8)
-    
-        Box 11 is at 
-            top left     (5,3)
-            bottom right (5,4)
-    
-        Box 12 is at 
-            top left     (0,0)
-            bottom right (2,1)
-    
-        Roll length used: 13
-
-    [1;34mTry max length:[0m 12
-    [1;34m    At iteration:[0m 14
-        lingeling found a solution in .399 ms
-
-       | W
-     L |  0 1 2  3  4  5 
-    --------------------
-     0 |  9 9 . 12 12 12 
-     1 |  . . . 12 12 12 
-     2 |  7 . .  .  .  6 
-     3 |  7 . .  .  .  6 
-     4 |  . . .  .  . 10 
-     5 | 11 . .  .  2 10 
-     6 | 11 . 1  5  5  5 
-     7 |  3 3 3  5  5  5 
-     8 |  3 3 3  5  5  5 
-     9 |  3 3 3  4  4  4 
-    10 |  . . .  4  4  4 
-    11 |  8 8 .  4  4  4 
-    
-    Boxes' corners:       (w,l)
-        Box  1 is at 
-            top left     (2,6)
-            bottom right (2,6)
-    
-        Box  2 is at 
-            top left     (4,5)
-            bottom right (4,5)
-    
-        Box  3 is at 
-            top left     (0,7)
-            bottom right (2,9)
-    
-        Box  4 is at 
-            top left     (3,9)
-            bottom right (5,11)
-    
-        Box  5 is at 
-            top left     (3,6)
-            bottom right (5,8)
-    
-        Box  6 is at 
-            top left     (5,2)
-            bottom right (5,3)
-    
-        Box  7 is at 
-            top left     (0,2)
-            bottom right (0,3)
-    
-        Box  8 is at 
-            top left     (0,11)
-            bottom right (1,11)
-    
-        Box  9 is at 
-            top left     (0,0)
-            bottom right (1,0)
-    
-        Box 10 is at 
-            top left     (5,4)
-            bottom right (5,5)
     
         Box 11 is at 
             top left     (0,5)
@@ -1167,162 +571,187 @@ dt jun 5 19:12:08 CEST 2018
             top left     (3,0)
             bottom right (5,1)
     
-        Roll length used: 12
+        Roll length used: 20
 
-    [1;34mTry max length:[0m 11
-    [1;34m    At iteration:[0m 15
-        lingeling found a solution in .321 ms
+    [1;34mTry max length:[0m 19
+    [1;34m    At iteration:[0m 7
+        lingeling found a solution in .604 ms
 
        | W
-     L |  0  1  2  3  4 5 
+     L |  0  1 2  3  4  5 
     ---------------------
-     0 | 12 12 12 11 11 9 
-     1 | 12 12 12  1  . 9 
-     2 |  .  .  .  .  2 6 
-     3 |  . 10 10  .  8 6 
-     4 |  .  .  .  .  8 . 
-     5 |  .  .  .  5  5 5 
-     6 |  7  .  .  5  5 5 
-     7 |  7  .  .  5  5 5 
-     8 |  4  4  4  3  3 3 
-     9 |  4  4  4  3  3 3 
-    10 |  4  4  4  3  3 3 
+     0 |  .  . . 12 12 12 
+     1 |  .  1 . 12 12 12 
+     2 |  .  . .  .  .  . 
+     3 |  .  . .  .  .  . 
+     4 |  7  . .  .  .  . 
+     5 |  7  . .  4  4  4 
+     6 |  .  . .  4  4  4 
+     7 |  5  5 5  4  4  4 
+     8 |  5  5 5  .  .  . 
+     9 |  5  5 5  .  .  . 
+    10 | 10  . .  .  .  . 
+    11 | 10  . .  .  .  . 
+    12 |  9  . .  .  .  . 
+    13 |  9  . .  .  .  . 
+    14 |  8  . .  .  .  . 
+    15 |  8  . .  .  .  . 
+    16 |  . 11 .  3  3  3 
+    17 |  6 11 .  3  3  3 
+    18 |  6  . 2  3  3  3 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (3,1)
-            bottom right (3,1)
+            top left     (1,1)
+            bottom right (1,1)
     
         Box  2 is at 
-            top left     (4,2)
-            bottom right (4,2)
+            top left     (2,18)
+            bottom right (2,18)
     
         Box  3 is at 
-            top left     (3,8)
-            bottom right (5,10)
+            top left     (3,16)
+            bottom right (5,18)
     
         Box  4 is at 
-            top left     (0,8)
-            bottom right (2,10)
-    
-        Box  5 is at 
             top left     (3,5)
             bottom right (5,7)
     
+        Box  5 is at 
+            top left     (0,7)
+            bottom right (2,9)
+    
         Box  6 is at 
-            top left     (5,2)
-            bottom right (5,3)
+            top left     (0,17)
+            bottom right (0,18)
     
         Box  7 is at 
-            top left     (0,6)
-            bottom right (0,7)
+            top left     (0,4)
+            bottom right (0,5)
     
         Box  8 is at 
-            top left     (4,3)
-            bottom right (4,4)
+            top left     (0,14)
+            bottom right (0,15)
     
         Box  9 is at 
-            top left     (5,0)
-            bottom right (5,1)
+            top left     (0,12)
+            bottom right (0,13)
     
         Box 10 is at 
-            top left     (1,3)
-            bottom right (2,3)
+            top left     (0,10)
+            bottom right (0,11)
     
         Box 11 is at 
-            top left     (3,0)
-            bottom right (4,0)
+            top left     (1,16)
+            bottom right (1,17)
     
         Box 12 is at 
-            top left     (0,0)
-            bottom right (2,1)
+            top left     (3,0)
+            bottom right (5,1)
     
-        Roll length used: 11
+        Roll length used: 19
 
-    [1;34mTry max length:[0m 10
-    [1;34m    At iteration:[0m 16
-        lingeling found a solution in .315 ms
+    [1;34mTry max length:[0m 18
+    [1;34m    At iteration:[0m 8
+        lingeling found a solution in .469 ms
 
        | W
      L |  0  1  2 3 4 5 
     -------------------
-     0 | 12 12 12 5 5 5 
+     0 | 12 12 12 . . . 
      1 | 12 12 12 5 5 5 
-     2 | 11  .  . 5 5 5 
-     3 | 11 10  . . 9 7 
-     4 |  6 10  . 8 9 7 
-     5 |  6  1  2 8 . . 
-     6 |  4  4  4 3 3 3 
-     7 |  4  4  4 3 3 3 
-     8 |  4  4  4 3 3 3 
-     9 |  .  .  . . . . 
+     2 |  .  .  . 5 5 5 
+     3 |  .  .  . 5 5 5 
+     4 |  .  .  . . . . 
+     5 |  .  .  . 4 4 4 
+     6 |  .  .  6 4 4 4 
+     7 |  .  .  6 4 4 4 
+     8 |  .  .  1 . . . 
+     9 |  7  .  . . . . 
+    10 |  7  .  . 8 . . 
+    11 | 11  .  . 8 . . 
+    12 | 11  .  . . . . 
+    13 | 10  .  . . . . 
+    14 | 10  .  . . . . 
+    15 |  9  3  3 3 . 2 
+    16 |  9  3  3 3 . . 
+    17 |  .  3  3 3 . . 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
-            top left     (1,5)
-            bottom right (1,5)
-    
-        Box  2 is at 
-            top left     (2,5)
-            bottom right (2,5)
-    
-        Box  3 is at 
-            top left     (3,6)
-            bottom right (5,8)
-    
-        Box  4 is at 
-            top left     (0,6)
+            top left     (2,8)
             bottom right (2,8)
     
+        Box  2 is at 
+            top left     (5,15)
+            bottom right (5,15)
+    
+        Box  3 is at 
+            top left     (1,15)
+            bottom right (3,17)
+    
+        Box  4 is at 
+            top left     (3,5)
+            bottom right (5,7)
+    
         Box  5 is at 
-            top left     (3,0)
-            bottom right (5,2)
+            top left     (3,1)
+            bottom right (5,3)
     
         Box  6 is at 
-            top left     (0,4)
-            bottom right (0,5)
+            top left     (2,6)
+            bottom right (2,7)
     
         Box  7 is at 
-            top left     (5,3)
-            bottom right (5,4)
+            top left     (0,9)
+            bottom right (0,10)
     
         Box  8 is at 
-            top left     (3,4)
-            bottom right (3,5)
+            top left     (3,10)
+            bottom right (3,11)
     
         Box  9 is at 
-            top left     (4,3)
-            bottom right (4,4)
+            top left     (0,15)
+            bottom right (0,16)
     
         Box 10 is at 
-            top left     (1,3)
-            bottom right (1,4)
+            top left     (0,13)
+            bottom right (0,14)
     
         Box 11 is at 
-            top left     (0,2)
-            bottom right (0,3)
+            top left     (0,11)
+            bottom right (0,12)
     
         Box 12 is at 
             top left     (0,0)
             bottom right (2,1)
     
-        Roll length used: 9
+        Roll length used: 18
 
-    [1;34mTry max length:[0m 8
-    [1;34m    At iteration:[0m 17
-        lingeling found a solution in .267 ms
+    [1;34mTry max length:[0m 17
+    [1;34m    At iteration:[0m 9
+        lingeling found a solution in .367 ms
 
-      | W
-    L |  0  1 2 3 4 5 
-    ------------------
-    0 | 10 10 3 3 3 9 
-    1 | 12 12 3 3 3 9 
-    2 | 12 12 3 3 3 6 
-    3 | 12 12 1 2 . 6 
-    4 | 11 11 8 8 7 7 
-    5 |  5  5 5 4 4 4 
-    6 |  5  5 5 4 4 4 
-    7 |  5  5 5 4 4 4 
+       | W
+     L | 0 1 2  3  4  5 
+    -------------------
+     0 | . . . 12 12 12 
+     1 | . . . 12 12 12 
+     2 | . . .  .  .  . 
+     3 | . . 1  .  . 11 
+     4 | . . .  .  . 11 
+     5 | . . .  .  . 10 
+     6 | . . .  .  . 10 
+     7 | . . .  .  .  9 
+     8 | . . .  .  .  9 
+     9 | . . .  .  .  8 
+    10 | 7 . .  .  .  8 
+    11 | 7 . .  5  5  5 
+    12 | 6 . .  5  5  5 
+    13 | 6 . 2  5  5  5 
+    14 | 4 4 4  3  3  3 
+    15 | 4 4 4  3  3  3 
+    16 | 4 4 4  3  3  3 
     
     Boxes' corners:       (w,l)
         Box  1 is at 
@@ -1330,52 +759,691 @@ dt jun 5 19:12:08 CEST 2018
             bottom right (2,3)
     
         Box  2 is at 
-            top left     (3,3)
-            bottom right (3,3)
+            top left     (2,13)
+            bottom right (2,13)
     
         Box  3 is at 
+            top left     (3,14)
+            bottom right (5,16)
+    
+        Box  4 is at 
+            top left     (0,14)
+            bottom right (2,16)
+    
+        Box  5 is at 
+            top left     (3,11)
+            bottom right (5,13)
+    
+        Box  6 is at 
+            top left     (0,12)
+            bottom right (0,13)
+    
+        Box  7 is at 
+            top left     (0,10)
+            bottom right (0,11)
+    
+        Box  8 is at 
+            top left     (5,9)
+            bottom right (5,10)
+    
+        Box  9 is at 
+            top left     (5,7)
+            bottom right (5,8)
+    
+        Box 10 is at 
+            top left     (5,5)
+            bottom right (5,6)
+    
+        Box 11 is at 
+            top left     (5,3)
+            bottom right (5,4)
+    
+        Box 12 is at 
+            top left     (3,0)
+            bottom right (5,1)
+    
+        Roll length used: 17
+
+    [1;34mTry max length:[0m 16
+    [1;34m    At iteration:[0m 10
+        lingeling found a solution in .614 ms
+
+       | W
+     L | 0 1 2  3  4  5 
+    -------------------
+     0 | . . . 12 12 12 
+     1 | . . . 12 12 12 
+     2 | . . .  .  . 11 
+     3 | . . .  .  . 11 
+     4 | . . .  .  . 10 
+     5 | . . .  .  . 10 
+     6 | . . .  .  .  9 
+     7 | . 1 .  .  .  9 
+     8 | . . .  .  .  8 
+     9 | 7 . .  .  .  8 
+    10 | 7 . .  5  5  5 
+    11 | 6 . .  5  5  5 
+    12 | 6 . 2  5  5  5 
+    13 | 4 4 4  3  3  3 
+    14 | 4 4 4  3  3  3 
+    15 | 4 4 4  3  3  3 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,7)
+            bottom right (1,7)
+    
+        Box  2 is at 
+            top left     (2,12)
+            bottom right (2,12)
+    
+        Box  3 is at 
+            top left     (3,13)
+            bottom right (5,15)
+    
+        Box  4 is at 
+            top left     (0,13)
+            bottom right (2,15)
+    
+        Box  5 is at 
+            top left     (3,10)
+            bottom right (5,12)
+    
+        Box  6 is at 
+            top left     (0,11)
+            bottom right (0,12)
+    
+        Box  7 is at 
+            top left     (0,9)
+            bottom right (0,10)
+    
+        Box  8 is at 
+            top left     (5,8)
+            bottom right (5,9)
+    
+        Box  9 is at 
+            top left     (5,6)
+            bottom right (5,7)
+    
+        Box 10 is at 
+            top left     (5,4)
+            bottom right (5,5)
+    
+        Box 11 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box 12 is at 
+            top left     (3,0)
+            bottom right (5,1)
+    
+        Roll length used: 16
+
+    [1;34mTry max length:[0m 15
+    [1;34m    At iteration:[0m 11
+        lingeling found a solution in .396 ms
+
+       | W
+     L | 0 1 2  3  4  5 
+    -------------------
+     0 | . . . 12 12 12 
+     1 | . . . 12 12 12 
+     2 | . . .  .  .  9 
+     3 | 7 . .  .  .  9 
+     4 | 7 . .  .  . 11 
+     5 | 6 . .  .  . 11 
+     6 | 6 . .  .  .  8 
+     7 | 1 . .  .  .  8 
+     8 | 5 5 5  .  .  . 
+     9 | 5 5 5  3  3  3 
+    10 | 5 5 5  3  3  3 
+    11 | . . .  3  3  3 
+    12 | 4 4 4 10  .  . 
+    13 | 4 4 4 10  .  2 
+    14 | 4 4 4  .  .  . 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (0,7)
+            bottom right (0,7)
+    
+        Box  2 is at 
+            top left     (5,13)
+            bottom right (5,13)
+    
+        Box  3 is at 
+            top left     (3,9)
+            bottom right (5,11)
+    
+        Box  4 is at 
+            top left     (0,12)
+            bottom right (2,14)
+    
+        Box  5 is at 
+            top left     (0,8)
+            bottom right (2,10)
+    
+        Box  6 is at 
+            top left     (0,5)
+            bottom right (0,6)
+    
+        Box  7 is at 
+            top left     (0,3)
+            bottom right (0,4)
+    
+        Box  8 is at 
+            top left     (5,6)
+            bottom right (5,7)
+    
+        Box  9 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box 10 is at 
+            top left     (3,12)
+            bottom right (3,13)
+    
+        Box 11 is at 
+            top left     (5,4)
+            bottom right (5,5)
+    
+        Box 12 is at 
+            top left     (3,0)
+            bottom right (5,1)
+    
+        Roll length used: 15
+
+    [1;34mTry max length:[0m 14
+    [1;34m    At iteration:[0m 12
+        lingeling found a solution in .484 ms
+
+       | W
+     L |  0 1 2  3  4  5 
+    --------------------
+     0 |  . 1 . 12 12 12 
+     1 |  . . . 12 12 12 
+     2 |  . . .  .  .  8 
+     3 |  . . .  .  .  8 
+     4 |  . . .  .  . 10 
+     5 |  . . .  .  . 10 
+     6 |  . . .  .  .  9 
+     7 | 11 . .  .  .  9 
+     8 | 11 . 5  5  5  7 
+     9 |  6 . 5  5  5  7 
+    10 |  6 . 5  5  5  2 
+    11 |  4 4 4  3  3  3 
+    12 |  4 4 4  3  3  3 
+    13 |  4 4 4  3  3  3 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,0)
+            bottom right (1,0)
+    
+        Box  2 is at 
+            top left     (5,10)
+            bottom right (5,10)
+    
+        Box  3 is at 
+            top left     (3,11)
+            bottom right (5,13)
+    
+        Box  4 is at 
+            top left     (0,11)
+            bottom right (2,13)
+    
+        Box  5 is at 
+            top left     (2,8)
+            bottom right (4,10)
+    
+        Box  6 is at 
+            top left     (0,9)
+            bottom right (0,10)
+    
+        Box  7 is at 
+            top left     (5,8)
+            bottom right (5,9)
+    
+        Box  8 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box  9 is at 
+            top left     (5,6)
+            bottom right (5,7)
+    
+        Box 10 is at 
+            top left     (5,4)
+            bottom right (5,5)
+    
+        Box 11 is at 
+            top left     (0,7)
+            bottom right (0,8)
+    
+        Box 12 is at 
+            top left     (3,0)
+            bottom right (5,1)
+    
+        Roll length used: 14
+
+    [1;34mTry max length:[0m 13
+    [1;34m    At iteration:[0m 13
+        lingeling found a solution in .354 ms
+
+       | W
+     L |  0  1  2 3 4  5 
+    --------------------
+     0 | 12 12 12 . .  . 
+     1 | 12 12 12 7 .  . 
+     2 |  .  .  . 7 . 11 
+     3 |  .  .  . . . 11 
+     4 |  .  .  . . .  . 
+     5 |  .  .  . . .  9 
+     6 |  .  1  . 2 8  9 
+     7 | 10  5  5 5 8  . 
+     8 | 10  5  5 5 6  . 
+     9 |  .  5  5 5 6  . 
+    10 |  4  4  4 3 3  3 
+    11 |  4  4  4 3 3  3 
+    12 |  4  4  4 3 3  3 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,6)
+            bottom right (1,6)
+    
+        Box  2 is at 
+            top left     (3,6)
+            bottom right (3,6)
+    
+        Box  3 is at 
+            top left     (3,10)
+            bottom right (5,12)
+    
+        Box  4 is at 
+            top left     (0,10)
+            bottom right (2,12)
+    
+        Box  5 is at 
+            top left     (1,7)
+            bottom right (3,9)
+    
+        Box  6 is at 
+            top left     (4,8)
+            bottom right (4,9)
+    
+        Box  7 is at 
+            top left     (3,1)
+            bottom right (3,2)
+    
+        Box  8 is at 
+            top left     (4,6)
+            bottom right (4,7)
+    
+        Box  9 is at 
+            top left     (5,5)
+            bottom right (5,6)
+    
+        Box 10 is at 
+            top left     (0,7)
+            bottom right (0,8)
+    
+        Box 11 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box 12 is at 
+            top left     (0,0)
+            bottom right (2,1)
+    
+        Roll length used: 13
+
+    [1;34mTry max length:[0m 12
+    [1;34m    At iteration:[0m 14
+        lingeling found a solution in .396 ms
+
+       | W
+     L |  0  1  2 3 4  5 
+    --------------------
+     0 | 12 12 12 4 4  4 
+     1 | 12 12 12 4 4  4 
+     2 |  .  .  . 4 4  4 
+     3 |  .  .  5 5 5  . 
+     4 |  .  .  5 5 5  7 
+     5 |  .  1  5 5 5  7 
+     6 |  9  9  . . 6  . 
+     7 |  8  .  . . 6 10 
+     8 |  8  .  . 2 . 10 
+     9 |  .  .  3 3 3  . 
+    10 | 11  .  3 3 3  . 
+    11 | 11  .  3 3 3  . 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,5)
+            bottom right (1,5)
+    
+        Box  2 is at 
+            top left     (3,8)
+            bottom right (3,8)
+    
+        Box  3 is at 
+            top left     (2,9)
+            bottom right (4,11)
+    
+        Box  4 is at 
+            top left     (3,0)
+            bottom right (5,2)
+    
+        Box  5 is at 
+            top left     (2,3)
+            bottom right (4,5)
+    
+        Box  6 is at 
+            top left     (4,6)
+            bottom right (4,7)
+    
+        Box  7 is at 
+            top left     (5,4)
+            bottom right (5,5)
+    
+        Box  8 is at 
+            top left     (0,7)
+            bottom right (0,8)
+    
+        Box  9 is at 
+            top left     (0,6)
+            bottom right (1,6)
+    
+        Box 10 is at 
+            top left     (5,7)
+            bottom right (5,8)
+    
+        Box 11 is at 
+            top left     (0,10)
+            bottom right (0,11)
+    
+        Box 12 is at 
+            top left     (0,0)
+            bottom right (2,1)
+    
+        Roll length used: 12
+
+    [1;34mTry max length:[0m 11
+    [1;34m    At iteration:[0m 15
+        lingeling found a solution in .320 ms
+
+       | W
+     L |  0 1 2  3  4  5 
+    --------------------
+     0 |  . . 8 12 12 12 
+     1 |  . . 8 12 12 12 
+     2 | 11 . .  .  .  7 
+     3 | 11 . .  . 10  7 
+     4 |  . . .  . 10  . 
+     5 |  1 . .  5  5  5 
+     6 |  6 9 .  5  5  5 
+     7 |  6 9 2  5  5  5 
+     8 |  3 3 3  4  4  4 
+     9 |  3 3 3  4  4  4 
+    10 |  3 3 3  4  4  4 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (0,5)
+            bottom right (0,5)
+    
+        Box  2 is at 
+            top left     (2,7)
+            bottom right (2,7)
+    
+        Box  3 is at 
+            top left     (0,8)
+            bottom right (2,10)
+    
+        Box  4 is at 
+            top left     (3,8)
+            bottom right (5,10)
+    
+        Box  5 is at 
+            top left     (3,5)
+            bottom right (5,7)
+    
+        Box  6 is at 
+            top left     (0,6)
+            bottom right (0,7)
+    
+        Box  7 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box  8 is at 
+            top left     (2,0)
+            bottom right (2,1)
+    
+        Box  9 is at 
+            top left     (1,6)
+            bottom right (1,7)
+    
+        Box 10 is at 
+            top left     (4,3)
+            bottom right (4,4)
+    
+        Box 11 is at 
+            top left     (0,2)
+            bottom right (0,3)
+    
+        Box 12 is at 
+            top left     (3,0)
+            bottom right (5,1)
+    
+        Roll length used: 11
+
+    [1;34mTry max length:[0m 10
+    [1;34m    At iteration:[0m 16
+        lingeling found a solution in .316 ms
+
+       | W
+     L |  0  1  2  3 4  5 
+    ---------------------
+     0 | 10  1  .  8 7  . 
+     1 | 10  .  .  8 7  . 
+     2 |  9  5  5  5 . 11 
+     3 |  9  5  5  5 . 11 
+     4 |  .  5  5  5 .  . 
+     5 |  6 12 12 12 .  . 
+     6 |  6 12 12 12 2  . 
+     7 |  4  4  4  3 3  3 
+     8 |  4  4  4  3 3  3 
+     9 |  4  4  4  3 3  3 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,0)
+            bottom right (1,0)
+    
+        Box  2 is at 
+            top left     (4,6)
+            bottom right (4,6)
+    
+        Box  3 is at 
+            top left     (3,7)
+            bottom right (5,9)
+    
+        Box  4 is at 
+            top left     (0,7)
+            bottom right (2,9)
+    
+        Box  5 is at 
+            top left     (1,2)
+            bottom right (3,4)
+    
+        Box  6 is at 
+            top left     (0,5)
+            bottom right (0,6)
+    
+        Box  7 is at 
+            top left     (4,0)
+            bottom right (4,1)
+    
+        Box  8 is at 
+            top left     (3,0)
+            bottom right (3,1)
+    
+        Box  9 is at 
+            top left     (0,2)
+            bottom right (0,3)
+    
+        Box 10 is at 
+            top left     (0,0)
+            bottom right (0,1)
+    
+        Box 11 is at 
+            top left     (5,2)
+            bottom right (5,3)
+    
+        Box 12 is at 
+            top left     (1,5)
+            bottom right (3,6)
+    
+        Roll length used: 10
+
+    [1;34mTry max length:[0m 9
+    [1;34m    At iteration:[0m 17
+        lingeling found a solution in .257 ms
+
+      | W
+    L |  0  1  2  3 4 5 
+    --------------------
+    0 |  9  8  4  4 4 . 
+    1 |  9  8  4  4 4 . 
+    2 | 11  1  4  4 4 . 
+    3 | 11  2 12 12 . 6 
+    4 |  . 10 12 12 7 6 
+    5 |  . 10 12 12 7 . 
+    6 |  5  5  5  3 3 3 
+    7 |  5  5  5  3 3 3 
+    8 |  5  5  5  3 3 3 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (1,2)
+            bottom right (1,2)
+    
+        Box  2 is at 
+            top left     (1,3)
+            bottom right (1,3)
+    
+        Box  3 is at 
+            top left     (3,6)
+            bottom right (5,8)
+    
+        Box  4 is at 
             top left     (2,0)
             bottom right (4,2)
+    
+        Box  5 is at 
+            top left     (0,6)
+            bottom right (2,8)
+    
+        Box  6 is at 
+            top left     (5,3)
+            bottom right (5,4)
+    
+        Box  7 is at 
+            top left     (4,4)
+            bottom right (4,5)
+    
+        Box  8 is at 
+            top left     (1,0)
+            bottom right (1,1)
+    
+        Box  9 is at 
+            top left     (0,0)
+            bottom right (0,1)
+    
+        Box 10 is at 
+            top left     (1,4)
+            bottom right (1,5)
+    
+        Box 11 is at 
+            top left     (0,2)
+            bottom right (0,3)
+    
+        Box 12 is at 
+            top left     (2,3)
+            bottom right (3,5)
+    
+        Roll length used: 9
+
+    [1;34mTry max length:[0m 8
+    [1;34m    At iteration:[0m 18
+        lingeling found a solution in .302 ms
+
+      | W
+    L |  0  1  2  3  4 5 
+    ---------------------
+    0 |  5  5  5 10 10 7 
+    1 |  5  5  5  9  9 7 
+    2 |  5  5  5  3  3 3 
+    3 | 12 12  1  3  3 3 
+    4 | 12 12  6  3  3 3 
+    5 | 12 12  6  4  4 4 
+    6 |  8  8  .  4  4 4 
+    7 |  2 11 11  4  4 4 
+    
+    Boxes' corners:       (w,l)
+        Box  1 is at 
+            top left     (2,3)
+            bottom right (2,3)
+    
+        Box  2 is at 
+            top left     (0,7)
+            bottom right (0,7)
+    
+        Box  3 is at 
+            top left     (3,2)
+            bottom right (5,4)
     
         Box  4 is at 
             top left     (3,5)
             bottom right (5,7)
     
         Box  5 is at 
-            top left     (0,5)
-            bottom right (2,7)
+            top left     (0,0)
+            bottom right (2,2)
     
         Box  6 is at 
-            top left     (5,2)
-            bottom right (5,3)
+            top left     (2,4)
+            bottom right (2,5)
     
         Box  7 is at 
-            top left     (4,4)
-            bottom right (5,4)
-    
-        Box  8 is at 
-            top left     (2,4)
-            bottom right (3,4)
-    
-        Box  9 is at 
             top left     (5,0)
             bottom right (5,1)
     
+        Box  8 is at 
+            top left     (0,6)
+            bottom right (1,6)
+    
+        Box  9 is at 
+            top left     (3,1)
+            bottom right (4,1)
+    
         Box 10 is at 
-            top left     (0,0)
-            bottom right (1,0)
+            top left     (3,0)
+            bottom right (4,0)
     
         Box 11 is at 
-            top left     (0,4)
-            bottom right (1,4)
+            top left     (1,7)
+            bottom right (2,7)
     
         Box 12 is at 
-            top left     (0,1)
-            bottom right (1,3)
+            top left     (0,3)
+            bottom right (1,5)
     
         Roll length used: 8
 
     [1;34mTry max length:[0m 7
-    [1;34m    At iteration:[0m 18
+    [1;34m    At iteration:[0m 19
         [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
         [1;32mOptimality reached![0m
