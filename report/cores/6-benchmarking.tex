@@ -293,8 +293,7 @@ The parameters used to execute the Satisfiability solver are the following:
 	to be executed again then it is allowed to run for only 20 seconds).
 	\item The encoding used for the ``at most constraint'' is the Heule encoding 
 	(see equation \ref{eq:cnf:at-most-one:heule}) since it seems to be the one that makes the framework
-	run the fastest (see tables \ref{table:benchmark:encoding-comparison:without-enf} and
-	\ref{table:benchmark:encoding-comparison:with-enf}).
+	run the fastest (see table \ref{table:benchmark:encoding-comparison}).
 \end{itemize}
 
 As mentioned in section \ref{sec:satisfiability} the solver used is \textbf{lingeling}\cite{lingeling}.
@@ -307,10 +306,10 @@ are presented in table \ref{table:benchmark:SAT-results}.
 								& i7 	& p4 \\
 		\midrule
 		Optimal solutions		& 108 \textcolor{red}{(9)} / 108
-											& 106 \textcolor{red}{(12)} / 108 \\
-		Sub-optimal solutions	& 0 / 108	& 2 / 108 \\
+											& 107 \textcolor{red}{(7)} / 108 \\
+		Sub-optimal solutions	& 0 / 108	& 1 / 108 \\
 		Unsolved instances		& 0 / 108	& 0 / 108 \\
-		Total time				& 27 mins	& 42 mins \\
+		Total time				& 27 mins	& 39 mins \\
 	\end{tabular}
 	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution time is given for the SAT framework.}
@@ -327,8 +326,7 @@ was the Pentium IV (\textit{p4}). These instances are shown in table
 		\multicolumn{3}{c}{Instance name}
 					& P4		& Optimal value \\
 		\midrule
-		 6 & 13 & 1	& 36		& 35 \\
-		10 & 13 & 1	& 40		& 14 \\
+		10 & 13 & 1	& 41		& 14 \\
 	\end{tabular}
 	\centeredcaption{Instances in the \textit{inputs/material/} directory
 	solved suboptimally and the roll's length found. An empty cell in the
@@ -336,15 +334,26 @@ was the Pentium IV (\textit{p4}). These instances are shown in table
 	\label{table:benchmark:SAT-results:suboptimalinstances}
 \end{table}
 
-Table \ref{table:benchmark:encoding-comparison} shows a performance comparison of the
-framework when solving several instances using the different encodings. The performance
+For further details, the scripts \textit{SAT-i7-\{free/enforced\}-benchmark-log}
+and \textit{SAT-p4-\{free/enforced\}-benchmark-log}, all four in the \textit{scripts/}
+directory, contain the result of the \textit{benchmark.sh} script with the ``free''
+version of the model (no enforcement) and with the ``enforced'' version of the solver
+(as detailed in section \ref{sec:satisfiability:implementation}). Moreover, the
+outputs of both versions of the solver found by both machines can be found in the
+folders \textit{SAT-i7-\{free/enforced\}} and \textit{SAT-p4-\{free/enforced\}}
+in the \textit{outputs/} directory.
+
+\hfill
+
+Table \ref{table:benchmark:encoding-comparison} shows a comparison of the framework's
+performance when solving several instances using the different encodings. The performance
 is the time, in seconds, of a single execution. Although there is not much statistical
 significance in the measurement of the time of a single execution (see for example the
 execution times for instance $(4,12,1)$), some of the differences
 are significant enough to determine that the Heule encoding is the best for the scope
-of this project (see for example the execution times for instances $(3,12,1)$, $(6,12,1)$,
-$(11,12,1)$). It also shows the impact of the enforcement of box 0 to be
-placed at the upper-right quadrant of the roll. The table to the left shows the execution time
+of this project (see for example the execution times for instance $(6,12,1)$).
+It also shows the impact of the enforcement of box 0 to be
+placed at the upper-left quadrant of the roll. The table to the left shows the execution time
 the framework in figure \ref{fig:satisfiability:framework} needs for several instances,
 and for different encodings, without this enforcement. In turn, the table to the right
 shows the execution time of the framework with the enforcement.
@@ -357,14 +366,12 @@ shows the execution time of the framework with the enforcement.
 									& \multicolumn{1}{c}{$\mathcal{L}$}
 													& \multicolumn{1}{c}{$\mathcal{H}$} \\
 		\midrule
-		 3 & 12 & 1	&  3.86			&  5.71			&  3.91 \\
 		 4 & 12 & 1	&  2.86			&  2.46			&  2.21 \\
 		 5 & 12 & 1	&  6.50			&  4.03			&  4.10 \\
 		 6 & 12 & 1	& 17.86			& 14.93			& 10.03 \\
 		 7 & 12 & 1	&  6.97			&  4.09			&  5.47 \\
 		 8 & 12 & 1	& 87.03			& 42.10			& 56.76 \\
 		 9 & 12 & 1	&  7.69			&  7.49			&  5.76 \\
-		11 & 12 & 1	& 15.38			&  9.11			&  7.60 \\
 	\end{tabular}
 	\quad
 	\begin{tabular}{cccrrr}
@@ -373,20 +380,17 @@ shows the execution time of the framework with the enforcement.
 									& \multicolumn{1}{c}{$\mathcal{L}$}
 													& \multicolumn{1}{c}{$\mathcal{H}$} \\
 		\midrule
-		 3 & 12 & 1	&  2.43			&  3.42			&  2.52 \\
 		 4 & 12 & 1	&  2.43			&  1.76			&  1.88 \\
 		 5 & 12 & 1	&  6.12			&  5.08			&  3.24 \\
 		 6 & 12 & 1	&  7.66			&  7.02			&  5.59 \\
 		 7 & 12 & 1	&  6.03			&  4.21			&  2.90 \\
 		 8 & 12 & 1	& 24.31			&  9.78			& 11.90 \\
 		 9 & 12 & 1	&  6.27			&  5.10			&  3.73 \\
-		11 & 12 & 1	& 14.91			&  7.56			&  6.59 \\
 	\end{tabular}
 	\centeredcaption{Without enforcement (left) and with enforcement (right). Time in seconds that
 	the framework in figure \ref{fig:satisfiability:framework} needed to solve the different instances
-	for the different encodings of the ``at most one'' constraint. $\mathcal{Q}$ for the quadratic,
-	$\mathcal{L}$ for the logarithmic, and $\mathcal{H}$ for the Heule encoding, as formalised in
-	section \ref{sec:satisfiability}, equations \ref{eq:cnf:at-most-one:quad},
+	for the different encodings of the ``at most one'' constraint. The columns refer to the names
+	given to the different encodings formalised in equations \ref{eq:cnf:at-most-one:quad},
 	\ref{eq:cnf:at-most-one:log} and \ref{eq:cnf:at-most-one:heule}, respectively.}
 	\label{table:benchmark:encoding-comparison}
 \end{table}
