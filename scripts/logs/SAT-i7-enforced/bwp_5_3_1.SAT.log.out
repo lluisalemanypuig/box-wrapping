@@ -1,7 +1,7 @@
-Tue 5 Jun 20:59:22 CEST 2018
+Wed 6 Jun 09:01:23 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .005 ms
+        lingeling found a solution in .006 ms
 
       | W
     L | 0 1 2 3 4 
@@ -27,7 +27,7 @@ Tue 5 Jun 20:59:22 CEST 2018
 
     [1;34mTry max length:[0m 1
     [1;34m    At iteration:[0m 1
-        lingeling found a solution in .003 ms
+        lingeling found a solution in .006 ms
 
       | W
     L | 0 1 2 3 4 

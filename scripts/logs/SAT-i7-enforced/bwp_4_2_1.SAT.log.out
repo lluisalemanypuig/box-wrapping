@@ -1,13 +1,13 @@
-Tue 5 Jun 20:51:16 CEST 2018
+Wed 6 Jun 08:53:44 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .006 ms
+        lingeling found a solution in .003 ms
 
       | W
     L | 0 1 2 3 
     ------------
     0 | 1 . . . 
-    1 | 2 . . . 
+    1 | . . . 2 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
@@ -15,28 +15,28 @@ Tue 5 Jun 20:51:16 CEST 2018
             bottom right (0,0)
     
         Box 2 is at 
-            top left     (0,1)
-            bottom right (0,1)
+            top left     (3,1)
+            bottom right (3,1)
     
         Roll length used: 2
 
     [1;34mTry max length:[0m 1
     [1;34m    At iteration:[0m 1
-        lingeling found a solution in .008 ms
+        lingeling found a solution in .002 ms
 
       | W
     L | 0 1 2 3 
     ------------
-    0 | 1 . 2 . 
+    0 | . 1 . 2 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
-            top left     (0,0)
-            bottom right (0,0)
+            top left     (1,0)
+            bottom right (1,0)
     
         Box 2 is at 
-            top left     (2,0)
-            bottom right (2,0)
+            top left     (3,0)
+            bottom right (3,0)
     
         Roll length used: 1
 

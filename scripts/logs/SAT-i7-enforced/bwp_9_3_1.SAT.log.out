@@ -1,7 +1,7 @@
-Tue 5 Jun 21:21:01 CEST 2018
+Wed 6 Jun 09:21:40 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .020 ms
+        lingeling found a solution in .019 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 
@@ -31,7 +31,7 @@ Tue 5 Jun 21:21:01 CEST 2018
 
     [1;34mTry max length:[0m 6
     [1;34m    At iteration:[0m 1
-        lingeling found a solution in .016 ms
+        lingeling found a solution in .015 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 
@@ -60,7 +60,7 @@ Tue 5 Jun 21:21:01 CEST 2018
 
     [1;34mTry max length:[0m 5
     [1;34m    At iteration:[0m 2
-        lingeling found a solution in .012 ms
+        lingeling found a solution in .011 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 
@@ -88,7 +88,7 @@ Tue 5 Jun 21:21:01 CEST 2018
 
     [1;34mTry max length:[0m 4
     [1;34m    At iteration:[0m 3
-        lingeling found a solution in .008 ms
+        lingeling found a solution in .006 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 

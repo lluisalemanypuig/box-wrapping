@@ -1,24 +1,24 @@
-Tue 5 Jun 21:24:31 CEST 2018
+Wed 6 Jun 09:25:10 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .013 ms
+        lingeling found a solution in .012 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 9 
     -------------------------
-    0 | . . . . . . . . 2 2 
-    1 | . . . . . . . . . . 
-    2 | . . . 1 1 . . . . . 
+    0 | . . . . . . . . . . 
+    1 | 1 . . . . . . . . . 
+    2 | 1 . . . . . . 2 2 . 
     3 | . . . . . . . . . . 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
-            top left     (3,2)
-            bottom right (4,2)
+            top left     (0,1)
+            bottom right (0,2)
     
         Box 2 is at 
-            top left     (8,0)
-            bottom right (9,0)
+            top left     (7,2)
+            bottom right (8,2)
     
         Roll length used: 3
 
@@ -29,21 +29,41 @@ Tue 5 Jun 21:24:31 CEST 2018
       | W
     L | 0 1 2 3 4 5 6 7 8 9 
     -------------------------
-    0 | . . . 1 1 . . . 2 2 
-    1 | . . . . . . . . . . 
+    0 | 1 1 . . . . . . . . 
+    1 | . . . . . . . 2 2 . 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
-            top left     (3,0)
-            bottom right (4,0)
+            top left     (0,0)
+            bottom right (1,0)
     
         Box 2 is at 
-            top left     (8,0)
-            bottom right (9,0)
+            top left     (7,1)
+            bottom right (8,1)
+    
+        Roll length used: 2
+
+    [1;34mTry max length:[0m 1
+    [1;34m    At iteration:[0m 2
+        lingeling found a solution in .003 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 9 
+    -------------------------
+    0 | 1 1 . 2 2 . . . . . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,0)
+            bottom right (1,0)
+    
+        Box 2 is at 
+            top left     (3,0)
+            bottom right (4,0)
     
         Roll length used: 1
 
     [1;34mTry max length:[0m 0
-    [1;34m    At iteration:[0m 2
+    [1;34m    At iteration:[0m 3
         [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
         [1;32mOptimality reached![0m

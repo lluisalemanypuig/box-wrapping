@@ -1,13 +1,33 @@
-Tue 5 Jun 21:20:46 CEST 2018
+Wed 6 Jun 09:21:25 CEST 2018
     [1;34mTry max length:[0m 999999
     [1;34m    At iteration:[0m 0
-        lingeling found a solution in .009 ms
+        lingeling found a solution in .005 ms
+
+      | W
+    L | 0 1 2 3 4 5 6 7 8 
+    ----------------------
+    0 | 1 . . . . . . . . 
+    1 | 2 . . . . . . . . 
+    
+    Boxes' corners:      (w,l)
+        Box 1 is at 
+            top left     (0,0)
+            bottom right (0,0)
+    
+        Box 2 is at 
+            top left     (0,1)
+            bottom right (0,1)
+    
+        Roll length used: 2
+
+    [1;34mTry max length:[0m 1
+    [1;34m    At iteration:[0m 1
+        lingeling found a solution in .005 ms
 
       | W
     L | 0 1 2 3 4 5 6 7 8 
     ----------------------
     0 | 1 2 . . . . . . . 
-    1 | . . . . . . . . . 
     
     Boxes' corners:      (w,l)
         Box 1 is at 
@@ -21,6 +41,6 @@ Tue 5 Jun 21:20:46 CEST 2018
         Roll length used: 1
 
     [1;34mTry max length:[0m 0
-    [1;34m    At iteration:[0m 1
+    [1;34m    At iteration:[0m 2
         [3;31mlingeling determined unsatisfiability of the Boolean formula[0m
         [1;32mOptimality reached![0m
