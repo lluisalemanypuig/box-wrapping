@@ -221,5 +221,4 @@ do
 	echo -n "        "
 	printf "%+20s : " "Total time elapsed"
 	echo "$total_time_secs seconds"
-	sleep 15
 done
