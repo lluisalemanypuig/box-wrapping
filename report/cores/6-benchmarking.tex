@@ -143,9 +143,9 @@ the improvement is not as good as one could expect.
 		Unsolved instances		&  0 / 108	&  0 / 108	&   0 / 108 \\
 		Total time				& 37 mins	& 33 mins	& 31 mins \\
 	\end{tabular}
-	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
-	instances, and unsolved instances over all 108 instances in the \textit{inputs/material/}
-	directory. Also, the total execution time is given for the CP solver in two different CPUs.}
+	\centeredcaption{Amount of optimally and suboptimally solved
+	instances, and unsolved instances. Also, the total execution time is given for the
+	CP solver in two different CPUs.}
 	\label{table:benchmark:CP-results}
 \end{table}
 
@@ -219,7 +219,7 @@ for a summary on the amount of optimally and suboptimally solved instances for \
 		Unsolved instances		& 13 / 108	& 3 / 108 \\
 		Total time				& 34 mins	& 34 mins \\
 	\end{tabular}
-	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
+	\centeredcaption{Amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution time is given for the LP solver.}
 	\label{table:LP-results}
 \end{table}
@@ -305,13 +305,13 @@ are presented in table \ref{table:benchmark:SAT-results}.
 	\begin{tabular}{rccc}
 								& i7 	& p4 \\
 		\midrule
-		Optimal solutions		& 108 \textcolor{red}{(9)} / 108
+		Optimal solutions		& 108 \textcolor{red}{(6)} / 108
 											& 107 \textcolor{red}{(7)} / 108 \\
 		Sub-optimal solutions	& 0 / 108	& 1 / 108 \\
 		Unsolved instances		& 0 / 108	& 0 / 108 \\
-		Total time				& 27 mins	& 39 mins \\
+		Total time				& 21 mins	& 39 mins \\
 	\end{tabular}
-	\centeredcaption{Summary presenting the amount of optimally and suboptimally solved
+	\centeredcaption{Amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution time is given for the SAT framework.}
 	\label{table:benchmark:SAT-results}
 \end{table}
@@ -334,8 +334,8 @@ was the Pentium IV (\textit{p4}). These instances are shown in table
 	\label{table:benchmark:SAT-results:suboptimalinstances}
 \end{table}
 
-For further details, the scripts \textit{SAT-i7-\{free/enforced\}-benchmark-log}
-and \textit{SAT-p4-\{free/enforced\}-benchmark-log}, all four in the \textit{scripts/}
+For further details, the scripts ``SAT-i7-\{free/enforced\}-benchmark-log''
+and ``SAT-p4-\{free/enforced\}-benchmark-log'', all four in the \textit{scripts/}
 directory, contain the result of the \textit{benchmark.sh} script with the ``free''
 version of the model (no enforcement) and with the ``enforced'' version of the solver
 (as detailed in section \ref{sec:satisfiability:implementation}). Moreover, the
