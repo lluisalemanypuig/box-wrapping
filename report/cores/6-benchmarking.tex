@@ -158,7 +158,7 @@ solved suboptimally for each CPU.
 \centering
 	\begin{tabular}{ccccccc}
 		\multicolumn{3}{c}{Instance name}
-					& P4		& i7 (x1)	& i7 (x4)	& Optimal value \\
+					& p4		& i7 (x1)	& i7 (x4)	& Optimal value \\
 		\midrule
 		 3 &  7 & 1	& 13		&  			&  			& 12 \\
 		 3 & 11 & 1	& 31		&  31		& 30			& 29 \\
@@ -303,13 +303,13 @@ are presented in table \ref{table:benchmark:SAT-results}.
 \begin{table}[H]
 \centering
 	\begin{tabular}{rccc}
-								& i7 	& p4 \\
+								& p4 	& i7 \\
 		\midrule
-		Optimal solutions		& 108 \textcolor{red}{(6)} / 108
-											& 107 \textcolor{red}{(7)} / 108 \\
-		Sub-optimal solutions	& 0 / 108	& 1 / 108 \\
+		Optimal solutions		& 107 \textcolor{red}{(7)} / 108
+										& 108 \textcolor{red}{(6)} / 108	 \\
+		Sub-optimal solutions	& 1 / 108	& 0 / 108 \\
 		Unsolved instances		& 0 / 108	& 0 / 108 \\
-		Total time				& 21 mins	& 39 mins \\
+		Total time				& 39 mins	& 21 mins \\
 	\end{tabular}
 	\centeredcaption{Amount of optimally and suboptimally solved
 	instances, and unsolved instances. Also, the total execution time is given for the SAT framework.}
@@ -324,7 +324,7 @@ was the Pentium IV (\textit{p4}). These instances are shown in table
 \centering
 	\begin{tabular}{ccccc}
 		\multicolumn{3}{c}{Instance name}
-					& P4		& Optimal value \\
+					& p4		& Optimal value \\
 		\midrule
 		10 & 13 & 1	& 41		& 14 \\
 	\end{tabular}
