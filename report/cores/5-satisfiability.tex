@@ -394,7 +394,23 @@ is the following:
                                 |                               |           Optimality reached!
 \end{BVerbatim}
 }
-\centeredcaption{Edited output of the script \textit{exe-SAT.sh} using the parameters of the
+\centeredcaption{Edited output of the script ``exe-SAT.sh'' using the parameters of the
 example in figure \ref{fig:satisfiability:gov-script}.}
 \label{fig:satisfiability:gov-script:result}
 \end{figure}
+
+The execution, however, requires knowing how to execute the lingeling SAT solver.
+For this, the ``exe-SAT.sh'' script has to be modified. At the beginning of the
+script one will find the following piece of bash code:
+
+\begin{lstlisting}[language=bash]
+# ----------------------------
+# MODIFY ONLY THESE VARIABLES
+LINGELING=~/Documents/software/lingeling/lingeling
+OUT_DIR=/tmp
+# ----------------------------
+\end{lstlisting}
+
+Modify the variable LINGELING with an appropriate command or path that can be used
+to execute the SAT solver. Optionally, one can change the directory the files generated
+by this script will be stored into. For this, change the variable OUT\_DIR.
