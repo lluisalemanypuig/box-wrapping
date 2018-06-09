@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# ----------------------------
+# MODIFY ONLY THESE VARIABLES
+LINGELING=~/Documents/software/lingeling/lingeling
+OUT_DIR=/tmp
+# ----------------------------
+
 function less_than() {
 	echo $1'<'$2 | bc -l
 }
@@ -12,12 +18,6 @@ function min() {
 		echo $2
 	fi
 }
-
-# ----------------------------
-# MODIFY ONLY THESE VARIABLES
-LINGELING=~/Documents/software/lingeling/lingeling
-OUT_DIR=/tmp
-# ----------------------------
 
 SCRIPT=$(readlink -f "$0")
 path=$(dirname "$SCRIPT")
