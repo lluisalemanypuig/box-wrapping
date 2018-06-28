@@ -14,7 +14,7 @@ this repository can be found [here](https://github.com/lluisalemanypuig/box-wrap
 This project was graded with:
 * Constraint Programming: 10/10
 * Linear Programming: 9/10
-* Satisfiability: _to be determined_
+* Satisfiability: 10/10
 
 ## Constraint programming (CP)
 
