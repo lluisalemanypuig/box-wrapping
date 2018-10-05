@@ -3,9 +3,11 @@
 This repository contains 3 different approaches to solve the Box Wrapping Problem:
 * [Constraint Programming](https://github.com/lluisalemanypuig/box-wrapping/tree/master/CP)
 * [Linear Programming](https://github.com/lluisalemanypuig/box-wrapping/tree/master/LP)
-* [Satisfiability](https://github.com/lluisalemanypuig/box-wrapping/tree/master/SAT).
+* [Satisfiability](https://github.com/lluisalemanypuig/box-wrapping/tree/master/SAT)
 
-This is part of the course project [Combinatorial Problem solving](http://www.cs.upc.edu/~erodri/webpage/cps/cps.html).
+This project was developed during the second semester of the academic year 2017-2018 as part
+of the [Combinatorial Problem solving](http://www.cs.upc.edu/~erodri/webpage/cps/cps.html)
+course project from the Master in Innovation and Research in Informatics (MIRI).
 The complete specification of the problem (input and output format, exact goals, ..) can be found
 [in this pdf file](https://github.com/lluisalemanypuig/box-wrapping/blob/master/statement.pdf), which could be downloaded
 from the course's webpage during the second semester of academic year 2017-2018. The report explaining the contents of
