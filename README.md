@@ -33,3 +33,13 @@ The Linear Programming approach consists on implementing a mathematical model us
 
 The Satisfiablity approach consists on generating a Boolean formula in conjunctive normal
 form (CNF) so that a SAT solver can solve it. The SAT solver used is [lingeling](https://github.com/arminbiere/lingeling).
+
+## Dependencies
+
+Apart from the tools and libraries mentioned above, this project has other dependencies
+that have to be taken into account.
+
+### Tools
+
+In order to compile each part of the project, one needs to have the [make](https://www.gnu.org/software/make/) tool installed.
+Also, for the Satisfiability part, a _bash_ interpreter is needed to run the scripts.
