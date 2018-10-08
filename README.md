@@ -10,7 +10,7 @@ of the [Combinatorial Problem solving](http://www.cs.upc.edu/~erodri/webpage/cps
 course project from the Master in Innovation and Research in Informatics (MIRI).
 The complete specification of the problem (input and output format, exact goals, ..) can be found
 [in this pdf file](https://github.com/lluisalemanypuig/box-wrapping/blob/master/statement.pdf), which could be downloaded
-from the course's webpage during the second semester of academic year 2017-2018. The report explaining the contents of
+from the course's webpage during the second semester of academic year 2017-2018. A report explaining the contents of
 this repository can be found [here](https://github.com/lluisalemanypuig/box-wrapping/blob/master/report.pdf).
 
 This project was graded with:
