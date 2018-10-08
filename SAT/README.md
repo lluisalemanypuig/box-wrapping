@@ -9,8 +9,8 @@ the mathematical models used in the [report](https://github.com/lluisalemanypuig
 In order to compile the project, first open a terminal and go inside the root
 directory of the project. Then, issue the following commands.
 
-		cd SAT/build-rules
-		make -f Makefile release
+	cd SAT/build-rules
+	make -f Makefile release
 
 ## Execution
 
@@ -90,18 +90,18 @@ Alternatively, one can use the [exe-SAT.sh](https://github.com/lluisalemanypuig/
 script for an automatic execution of the two. This script has the following parameters:
 
 		[-i=,--input=] 		Specify the input file containing the instance of the
-							problem to be solved.
+					problem to be solved.
 						
 		[-o=,--output=] 	Specify the output file where to store the solution 
-							of the instance.
+					of the instance.
 		
-		[--solver=]			Specify the solver used in the _clause-generator_
-							executable file. The valid values are the ones specified
-							in that program's help.
+		[--solver=]		Specify the solver used in the _clause-generator_
+					executable file. The valid values are the ones specified
+					in that program's help.
 		
 		[--amo-encoder]		Specify the type of encoder used for the _at most one_
-							constraints. The valid values are the ones specified
-							in that program's help.
+					constraints. The valid values are the ones specified
+					in that program's help.
 		
 		[--solver-timeout]	Specify a time limit for the execution time of the SAT solver.
 		
