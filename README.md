@@ -43,3 +43,12 @@ that have to be taken into account.
 
 In order to compile each part of the project, one needs to have the [make](https://www.gnu.org/software/make/) tool installed.
 Also, for the Satisfiability part, a _bash_ interpreter is needed to run the scripts.
+
+Compiling the [box-wrapper](https://github.com/lluisalemanypuig/box-wrapping/tree/master/box-wrapper) interface
+requires the use of either the _qmake_ tool, or the _Qt creator_ IDE.
+
+### Libraries
+
+The interface [box-wrapper](https://github.com/lluisalemanypuig/box-wrapping/tree/master/box-wrapper) needs the
+[Qt](https://www.qt.io/) library. Bear in mind that, since it uses OpenGL, it is also needed to have installed the
+<QtOpenGL> modules of the Qt library.
