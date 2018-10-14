@@ -39,10 +39,11 @@ form (CNF) so that a SAT solver can solve it. The SAT solver used is [lingeling]
 Apart from the tools and libraries mentioned above, this project has other dependencies
 that have to be taken into account.
 
-### Tools
+In order to compile each part of the project, one needs to have the [make](https://www.gnu.org/software/make/)
+tool installed. It is mandatory to have a compiler that supports C++11. Also, for the Satisfiability part,
+a _bash_ interpreter is needed to run the scripts.
 
-In order to compile each part of the project, one needs to have the [make](https://www.gnu.org/software/make/) tool installed.
-Also, for the Satisfiability part, a _bash_ interpreter is needed to run the scripts.
+### Tools
 
 Compiling the [box-wrapper](https://github.com/lluisalemanypuig/box-wrapping/tree/master/box-wrapper) interface
 requires the use of either the _qmake_ tool, or the _Qt creator_ IDE.
@@ -51,4 +52,4 @@ requires the use of either the _qmake_ tool, or the _Qt creator_ IDE.
 
 The interface [box-wrapper](https://github.com/lluisalemanypuig/box-wrapping/tree/master/box-wrapper) needs the
 [Qt](https://www.qt.io/) library. Bear in mind that, since it uses OpenGL, it is also needed to have installed the
-<QtOpenGL> modules of the Qt library.
+<QtOpenGL> corresponding modules of the Qt library.
