@@ -13,11 +13,6 @@ The complete specification of the problem (input and output format, exact goals,
 from the course's webpage during the second semester of academic year 2017-2018. A report explaining the contents of
 this repository can be found [here](https://github.com/lluisalemanypuig/box-wrapping/blob/master/report.pdf).
 
-This project was graded with:
-* Constraint Programming: 10/10
-* Linear Programming: 9/10
-* Satisfiability: 10/10
-
 ## Constraint programming (CP)
 
 The Constraint Programming approach consists on implementing a mathematical model using
