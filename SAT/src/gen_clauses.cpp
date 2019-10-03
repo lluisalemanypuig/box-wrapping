@@ -311,6 +311,11 @@ void rotate_solver(const gifts& data, ostream& out, clause_encoder& CE) {
 void print_usage() {
 	cout << "BOX WRAPPING PROBLEM - Satisfiability (CNF) Solver" << endl;
 	cout << endl;
+	cout << "Box Wrapping solver  Copyright (C) 2018  Lluís Alemany Puig" << endl;
+	cout << "This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'." << endl;
+	cout << "This is free software, and you are welcome to redistribute it" << endl;
+	cout << "under certain conditions; type `show c' for details." << endl;
+	cout << endl;
 	cout << "This software uses SAT solver lingeling [1] to solve the Box Wrapping" << endl;
 	cout << "Problem (BWP). It admits several options and are described below. Most" << endl;
 	cout << "of them are optional but it requires the specification of an input file" << endl;
